@@ -118,12 +118,13 @@ class QuestionGenerator:
             
         return True
         
-    def convert_format(self, questions: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    def convert_format(self, questions: List[Dict[str, Any]], shuffle_choices: bool = True) -> List[Dict[str, Any]]:
         """
         Convert JSON question format to JavaScript-compatible structure
         
         Args:
             questions: List of questions in JSON format
+            shuffle_choices: Whether to randomize the order of answer choices
             
         Returns:
             List of questions in JS-compatible format
@@ -131,18 +132,26 @@ class QuestionGenerator:
         js_questions = []
         
         for question in questions:
-            # Find the index of the correct answer
-            correct_index = question['answers'].index(question['correct'])
+            choices = question['answers'].copy()
+            correct_answer = question['correct']
+            
+            if shuffle_choices:
+                # Shuffle the choices and find new correct index
+                random.shuffle(choices)
+                correct_index = choices.index(correct_answer)
+            else:
+                # Keep original order
+                correct_index = choices.index(correct_answer)
             
             js_question = {
                 'question': question['question'],
-                'choices': question['answers'],
+                'choices': choices,
                 'correct': correct_index
             }
             
             js_questions.append(js_question)
             
-        logger.info(f"Converted {len(js_questions)} questions to JS format")
+        logger.info(f"Converted {len(js_questions)} questions to JS format (shuffle_choices={shuffle_choices})")
         return js_questions
         
     def select_random_questions(self, questions: List[Dict[str, Any]], count: Optional[int] = None) -> List[Dict[str, Any]]:

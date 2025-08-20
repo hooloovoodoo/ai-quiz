@@ -1,38 +1,8 @@
 function createRandomAIQuiz() {
   const questionsPool = [
     {
-      question: "What is AI best suited for in terms of tasks?",
-      choices: ["High-volume, repetitive tasks with clear patterns", "Tasks requiring deep emotional understanding", "One-time creative projects"],
-      correct: 0
-    },
-    {
       question: "What makes AI systems vulnerable?",
       choices: ["They are heavily dependent on the quality of their training data", "They consume too much electricity", "They are too fast for human oversight"],
-      correct: 0
-    },
-    {
-      question: "Why do technical limitations of AI create ethical concerns?",
-      choices: ["Because AI mistakes and biases can affect people\\'s lives and perpetuate unfairness", "Because AI is too expensive to develop", "Because AI learns too quickly"],
-      correct: 0
-    },
-    {
-      question: "What is the main purpose of Generative AI?",
-      choices: ["Creates new content", "Classifies existing data", "Predicts future outcomes"],
-      correct: 0
-    },
-    {
-      question: "What is a key principle of good prompt engineering?",
-      choices: ["Be specific and provide context", "Keep prompts as short as possible", "Use technical jargon to be precise"],
-      correct: 0
-    },
-    {
-      question: "What does LLM stand for?",
-      choices: ["Large Language Model", "Long Learning Memory", "Linear Logic Machine"],
-      correct: 0
-    },
-    {
-      question: "What is a key characteristic of supervised learning?",
-      choices: ["It learns from labeled examples", "It learns without any data", "It only works with images"],
       correct: 0
     },
     {
@@ -41,25 +11,30 @@ function createRandomAIQuiz() {
       correct: 0
     },
     {
-      question: "What type of data is typically used to train AI systems?",
-      choices: ["Large amounts of examples with patterns", "Only perfectly clean data", "Small, carefully selected datasets"],
+      question: "What does LLM stand for?",
+      choices: ["Large Language Model", "Linear Logic Machine", "Long Learning Memory"],
       correct: 0
     },
     {
-      question: "What is a context window in AI?",
-      choices: ["The maximum amount of text the model can \\'see\\' at once", "The time it takes for the model to respond", "The graphical interface for interacting with AI"],
+      question: "What are AI \'hallucinations\'?",
+      choices: ["When AI refuses to answer questions", "When AI becomes self-aware", "When AI generates plausible but incorrect information"],
+      correct: 2
+    },
+    {
+      question: "What is AI best suited for in terms of tasks?",
+      choices: ["High-volume, repetitive tasks with clear patterns", "Tasks requiring deep emotional understanding", "One-time creative projects"],
       correct: 0
     }
   ];
 
-  // Shuffle and pick 10 questions
-  const selectedQuestions = shuffleArray(questionsPool).slice(0, 10);
+  // Shuffle and pick 5 questions
+  const selectedQuestions = shuffleArray(questionsPool).slice(0, 5);
 
   // Create the quiz form
-  const form = FormApp.create('Advanced AI Knowledge Test');
+  const form = FormApp.create('AI Knowledge Quiz');
   form.setIsQuiz(true);
-  form.setTitle('Advanced AI Knowledge Test');
-  form.setDescription('Challenge yourself with advanced AI concepts');
+  form.setTitle('AI Knowledge Quiz');
+  form.setDescription('Test your knowledge about Artificial Intelligence. Choose the best answer.');
 
   // Add selected questions to the form
   selectedQuestions.forEach(q => {
@@ -69,7 +44,7 @@ function createRandomAIQuiz() {
     );
     item.setTitle(q.question)
       .setChoices(choices)
-      .setPoints(10)
+      .setPoints(5)
       .setRequired(true);
   });
 
