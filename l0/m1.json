@@ -3,270 +3,300 @@
     "question": "What does ANI stand for?",
     "answers": [
       "Artificial Narrow Intelligence",
-      "Advanced Neural Intelligence",
+      "Artificial Neural Intelligence",
+      "Advanced Natural Intelligence",
       "Automated Network Intelligence"
     ],
     "correct": "Artificial Narrow Intelligence"
+  },
+  {
+    "question": "Which AI level represents human-level intelligence across all domains?",
+    "answers": [
+      "ANI (Artificial Narrow Intelligence)",
+      "AGI (Artificial General Intelligence)",
+      "ASI (Artificial Super Intelligence)",
+      "ADI (Artificial Deep Intelligence)"
+    ],
+    "correct": "AGI (Artificial General Intelligence)"
   },
   {
     "question": "What is the correct relationship between AI, ML, and DL?",
     "answers": [
       "AI > ML > DL",
       "ML > AI > DL",
-      "DL > ML > AI"
+      "DL > ML > AI",
+      "ML > DL > AI"
     ],
     "correct": "AI > ML > DL"
   },
   {
-    "question": "What is the difference between an algorithm and a model?",
+    "question": "What is the difference between an algorithm and a model in AI?",
     "answers": [
-      "Algorithm is the recipe/instructions, model is the result after training with data",
-      "Algorithm and model are the same thing",
-      "Model is the recipe/instructions, algorithm is the result after training"
+      "Algorithm is the blueprint; model is the finished product after training",
+      "Model is the blueprint; algorithm is the finished product",
+      "They are the same thing",
+      "Algorithm works with images; model works with text"
     ],
-    "correct": "Algorithm is the recipe/instructions, model is the result after training with data"
+    "correct": "Algorithm is the blueprint; model is the finished product after training"
   },
   {
-    "question": "Which phase of AI is computationally expensive and time-consuming?",
+    "question": "During which phase does an AI system learn patterns from data?",
     "answers": [
-      "Training phase",
-      "Inference phase",
-      "Both are equally expensive"
+      "Inference Phase",
+      "Training Phase",
+      "Deployment Phase",
+      "Production Phase"
     ],
-    "correct": "Training phase"
+    "correct": "Training Phase"
   },
   {
-    "question": "What is a key principle of good prompt engineering?",
+    "question": "Which type of Machine Learning learns from labeled examples?",
     "answers": [
-      "Be specific and provide context",
-      "Keep prompts as short as possible",
-      "Use technical jargon to be precise"
+      "Supervised Learning",
+      "Unsupervised Learning",
+      "Reinforcement Learning",
+      "Transfer Learning"
     ],
-    "correct": "Be specific and provide context"
+    "correct": "Supervised Learning"
   },
   {
-    "question": "What is a context window in AI?",
+    "question": "What does the 'deep' in Deep Learning refer to?",
     "answers": [
-      "The maximum amount of text the model can 'see' at once",
-      "The time it takes for the model to respond",
-      "The graphical interface for interacting with AI"
+      "Deep understanding of data",
+      "Multiple layers of processing",
+      "Deep mathematical calculations",
+      "Deep database connections"
     ],
-    "correct": "The maximum amount of text the model can 'see' at once"
+    "correct": "Multiple layers of processing"
   },
   {
-    "question": "What is a knowledge cutoff in AI models?",
+    "question": "What is a key characteristic of Large Language Models (LLMs)?",
     "answers": [
-      "The most recent point in time when the AI's training data was updated",
-      "The maximum number of facts the AI can remember",
-      "The point where AI stops learning from user interactions"
+      "They only work with programming languages",
+      "They have billions to trillions of parameters",
+      "They can only process 100 words at a time",
+      "They require constant internet connection to function"
     ],
-    "correct": "The most recent point in time when the AI's training data was updated"
+    "correct": "They have billions to trillions of parameters"
   },
   {
-    "question": "What is the main purpose of Generative AI?",
+    "question": "What is a 'context window' in AI models?",
     "answers": [
-      "Creates new content",
-      "Classifies existing data",
-      "Predicts future outcomes"
+      "A graphical user interface for AI",
+      "Maximum amount of text the model can process at once",
+      "The time window for training the model",
+      "A debugging tool for AI developers"
     ],
-    "correct": "Creates new content"
+    "correct": "Maximum amount of text the model can process at once"
   },
   {
-    "question": "What does LLM stand for?",
+    "question": "What is 'knowledge cutoff' in AI models?",
     "answers": [
-      "Large Language Model",
-      "Long Learning Memory",
-      "Linear Logic Machine"
+      "When the AI stops working",
+      "The maximum number of users allowed",
+      "The most recent point in time when the model's training data was updated",
+      "The maximum file size the AI can process"
     ],
-    "correct": "Large Language Model"
+    "correct": "The most recent point in time when the model's training data was updated"
   },
   {
-    "question": "What does GIGO stand for in AI context?",
+    "question": "Which AI paradigm creates entirely new content?",
     "answers": [
+      "Predictive AI",
+      "Discriminative AI",
+      "Generative AI",
+      "Analytical AI"
+    ],
+    "correct": "Generative AI"
+  },
+  {
+    "question": "How does traditional software differ from AI/ML software?",
+    "answers": [
+      "Traditional software uses explicitly programmed rules; AI/ML learns patterns from data",
+      "AI/ML software uses explicitly programmed rules; traditional software learns patterns",
+      "They work exactly the same way",
+      "Traditional software is always faster than AI/ML"
+    ],
+    "correct": "Traditional software uses explicitly programmed rules; AI/ML learns patterns from data"
+  },
+  {
+    "question": "What does GIGO stand for in the context of data and AI?",
+    "answers": [
+      "Good Input, Good Output",
       "Garbage In, Garbage Out",
-      "Global Intelligence Growth Optimization",
-      "Generated Intelligence, Generated Output"
+      "Generated Input, Generated Output",
+      "Global Intelligence, Global Optimization"
     ],
     "correct": "Garbage In, Garbage Out"
   },
   {
+    "question": "In prompt engineering, what makes a good prompt?",
+    "answers": [
+      "Being as vague as possible",
+      "Using only technical jargon",
+      "Being specific and providing relevant context",
+      "Making it as short as possible regardless of clarity"
+    ],
+    "correct": "Being specific and providing relevant context"
+  },
+  {
+    "question": "What is a neural network in Deep Learning?",
+    "answers": [
+      "A physical network of computers",
+      "Connected nodes that process information like simplified brain neurons",
+      "A social network for AI researchers",
+      "A type of internet connection"
+    ],
+    "correct": "Connected nodes that process information like simplified brain neurons"
+  },
+  {
     "question": "What is multimodal AI?",
     "answers": [
-      "AI that can process multiple types of data (text, images, audio, etc.)",
-      "AI that runs on multiple computers simultaneously",
-      "AI with multiple different algorithms"
+      "AI that works only with multiple programming languages",
+      "AI that combines different types of inputs like text, images, and audio",
+      "AI that requires multiple computers to run",
+      "AI that can only work in multiple countries"
     ],
-    "correct": "AI that can process multiple types of data (text, images, audio, etc.)"
+    "correct": "AI that combines different types of inputs like text, images, and audio"
   },
   {
-    "question": "How does traditional software differ from AI/ML software in terms of behavior?",
+    "question": "Which learning approach involves learning through trial and error with rewards?",
     "answers": [
-      "Traditional is deterministic (same input → same output), AI/ML is probabilistic",
-      "Traditional is probabilistic, AI/ML is deterministic",
-      "Both behave exactly the same way"
+      "Supervised Learning",
+      "Unsupervised Learning",
+      "Reinforcement Learning",
+      "Deep Learning"
     ],
-    "correct": "Traditional is deterministic (same input → same output), AI/ML is probabilistic"
+    "correct": "Reinforcement Learning"
   },
   {
-    "question": "What are the three types of Machine Learning?",
+    "question": "What is a token in the context of LLMs?",
     "answers": [
-      "Supervised, Unsupervised, and Reinforcement Learning",
-      "Fast, Medium, and Slow Learning",
-      "Basic, Intermediate, and Advanced Learning"
+      "A security key for accessing AI",
+      "A unit of text, usually about 0.75 words",
+      "A type of cryptocurrency",
+      "A programming variable"
     ],
-    "correct": "Supervised, Unsupervised, and Reinforcement Learning"
+    "correct": "A unit of text, usually about 0.75 words"
   },
   {
-    "question": "Why is Deep Learning called 'deep'?",
+    "question": "During the inference phase, what happens?",
     "answers": [
-      "It uses multiple layers of processing",
-      "It learns very detailed information",
-      "It takes a long time to train"
-    ],
-    "correct": "It uses multiple layers of processing"
-  },
-  {
-    "question": "What type of data is typically used to train AI systems?",
-    "answers": [
-      "Large amounts of examples with patterns",
-      "Only perfectly clean data",
-      "Small, carefully selected datasets"
-    ],
-    "correct": "Large amounts of examples with patterns"
-  },
-  {
-    "question": "What is a major limitation of current AI systems?",
-    "answers": [
-      "They cannot transfer knowledge between different domains",
-      "They are too slow to be useful",
-      "They require constant internet connection"
-    ],
-    "correct": "They cannot transfer knowledge between different domains"
-  },
-  {
-    "question": "What are AI 'hallucinations'?",
-    "answers": [
-      "When AI generates plausible but incorrect information",
-      "When AI becomes self-aware",
-      "When AI refuses to answer questions"
-    ],
-    "correct": "When AI generates plausible but incorrect information"
-  },
-  {
-    "question": "Approximately how many words does one token represent?",
-    "answers": [
-      "About 0.75 words",
-      "Exactly 1 word",
-      "About 2-3 words"
-    ],
-    "correct": "About 0.75 words"
-  },
-  {
-    "question": "What is the difference between pre-training and fine-tuning in AI?",
-    "answers": [
-      "Pre-training learns general patterns, fine-tuning specializes for specific tasks",
-      "Pre-training is faster, fine-tuning is slower",
-      "They are the same process"
-    ],
-    "correct": "Pre-training learns general patterns, fine-tuning specializes for specific tasks"
-  },
-  {
-    "question": "What is AI particularly strong at?",
-    "answers": [
-      "Pattern recognition at scale",
-      "Common sense reasoning",
-      "Emotional understanding"
-    ],
-    "correct": "Pattern recognition at scale"
-  },
-  {
-    "question": "How can biased training data affect AI systems?",
-    "answers": [
-      "It can cause AI to make biased decisions and perpetuate discrimination",
-      "It makes AI run slower",
-      "It has no significant impact"
-    ],
-    "correct": "It can cause AI to make biased decisions and perpetuate discrimination"
-  },
-  {
-    "question": "What happens during the inference phase?",
-    "answers": [
+      "The AI learns from new data",
+      "The AI is being built from scratch",
       "The trained AI applies what it learned to new situations",
-      "The AI learns new patterns from data",
-      "The AI is being programmed with rules"
+      "The AI forgets everything it learned"
     ],
     "correct": "The trained AI applies what it learned to new situations"
   },
   {
-    "question": "What type of AI does NOT yet exist?",
+    "question": "What type of AI is currently available and in use today?",
     "answers": [
       "AGI (Artificial General Intelligence)",
+      "ASI (Artificial Super Intelligence)",
       "ANI (Artificial Narrow Intelligence)",
-      "Deep Learning systems"
+      "ACI (Artificial Conscious Intelligence)"
     ],
-    "correct": "AGI (Artificial General Intelligence)"
+    "correct": "ANI (Artificial Narrow Intelligence)"
   },
   {
-    "question": "What is a key characteristic of supervised learning?",
+    "question": "What is a key limitation of current AI systems?",
     "answers": [
-      "It learns from labeled examples",
-      "It learns without any data",
-      "It only works with images"
+      "They can transfer knowledge perfectly between any domains",
+      "They lack true causal reasoning and common sense",
+      "They never make mistakes",
+      "They don't need any data to function"
     ],
-    "correct": "It learns from labeled examples"
+    "correct": "They lack true causal reasoning and common sense"
   },
   {
-    "question": "Why is data quality more important than data quantity?",
+    "question": "What happens when an AI model 'hallucinates'?",
     "answers": [
-      "Poor quality data leads to poor AI performance regardless of volume",
-      "Quality data is always smaller in size",
-      "Quantity doesn't matter at all in AI"
+      "It shuts down completely",
+      "It generates plausible but false information",
+      "It becomes self-aware",
+      "It deletes all its training data"
     ],
-    "correct": "Poor quality data leads to poor AI performance regardless of volume"
+    "correct": "It generates plausible but false information"
   },
   {
-    "question": "What is a limitation of AI creativity?",
+    "question": "What is Computer Vision in AI?",
     "answers": [
-      "AI lacks genuine emotion, consciousness, and lived experience",
-      "AI cannot create any form of art",
-      "AI creativity is too expensive to use"
+      "A tool for improving human eyesight",
+      "AI's ability to understand and process visual information",
+      "A type of computer monitor",
+      "Software for video editing"
     ],
-    "correct": "AI lacks genuine emotion, consciousness, and lived experience"
+    "correct": "AI's ability to understand and process visual information"
   },
   {
-    "question": "What is a major challenge with AI explainability?",
+    "question": "What percentage split is typically used for training data in ML?",
     "answers": [
-      "Many advanced models operate as 'black boxes' making decisions hard to trace",
-      "AI always explains its decisions too verbosely",
-      "AI explanations are always 100% accurate"
+      "50% training, 25% validation, 25% test",
+      "70% training, 15% validation, 15% test",
+      "90% training, 5% validation, 5% test",
+      "33% training, 33% validation, 34% test"
     ],
-    "correct": "Many advanced models operate as 'black boxes' making decisions hard to trace"
+    "correct": "70% training, 15% validation, 15% test"
   },
   {
-    "question": "What makes AI systems vulnerable?",
+    "question": "What is NLP in the context of AI?",
     "answers": [
-      "They are heavily dependent on the quality of their training data",
-      "They consume too much electricity",
-      "They are too fast for human oversight"
+      "Neural Link Processing",
+      "Natural Language Processing",
+      "Network Layer Protocol",
+      "Numerical Learning Platform"
     ],
-    "correct": "They are heavily dependent on the quality of their training data"
+    "correct": "Natural Language Processing"
   },
   {
-    "question": "What is AI best suited for in terms of tasks?",
+    "question": "What characterizes unsupervised learning?",
     "answers": [
-      "High-volume, repetitive tasks with clear patterns",
-      "Tasks requiring deep emotional understanding",
-      "One-time creative projects"
+      "Learning with a human supervisor present",
+      "Finding patterns without labeled data",
+      "Learning only from images",
+      "Requiring constant supervision during inference"
     ],
-    "correct": "High-volume, repetitive tasks with clear patterns"
+    "correct": "Finding patterns without labeled data"
   },
   {
-    "question": "Why do technical limitations of AI create ethical concerns?",
+    "question": "What is the primary purpose of fine-tuning in LLMs?",
     "answers": [
-      "Because AI mistakes and biases can affect people's lives and perpetuate unfairness",
-      "Because AI is too expensive to develop",
-      "Because AI learns too quickly"
+      "To make the model smaller",
+      "To adapt the model to specific tasks or domains",
+      "To delete unnecessary data",
+      "To slow down the model's responses"
     ],
-    "correct": "Because AI mistakes and biases can affect people's lives and perpetuate unfairness"
+    "correct": "To adapt the model to specific tasks or domains"
+  },
+  {
+    "question": "Which statement best describes Machine Learning?",
+    "answers": [
+      "Computers following exact pre-programmed rules",
+      "Computers learning from data without being explicitly programmed for every scenario",
+      "Machines physically learning to move",
+      "Computers that never need updates"
+    ],
+    "correct": "Computers learning from data without being explicitly programmed for every scenario"
+  },
+  {
+    "question": "What is a major environmental concern with training large AI models?",
+    "answers": [
+      "They produce too much noise",
+      "They consume significant energy and produce substantial CO₂ emissions",
+      "They require too much physical space",
+      "They generate radioactive waste"
+    ],
+    "correct": "They consume significant energy and produce substantial CO₂ emissions"
+  },
+  {
+    "question": "When should you use traditional software instead of AI/ML?",
+    "answers": [
+      "When rules are clear, fixed, and 100% accuracy is required",
+      "When you have massive amounts of data",
+      "When patterns are complex and hard to define",
+      "When you want unpredictable outputs"
+    ],
+    "correct": "When rules are clear, fixed, and 100% accuracy is required"
   }
 ]
