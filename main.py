@@ -299,8 +299,8 @@ def main():
     # Configuration options
     parser.add_argument('--config', help='Path to JSON configuration file')
     parser.add_argument('--questions', default='l0/m1.json', help='Path to questions JSON file')
-    parser.add_argument('--recipients', help='Path to recipients file (one email per line)')
-    parser.add_argument('--emails', nargs='+', help='Email addresses (space-separated)')
+    parser.add_argument('--recipients-file', dest='recipients_file', help='Path to recipients file (one email per line)')
+    parser.add_argument('--recipients', '--emails', dest='emails', nargs='+', help='Email addresses (space-separated)')
     parser.add_argument('--count', type=int, default=10, help='Number of questions to include')
     parser.add_argument('--title', help='Quiz title')
     parser.add_argument('--deadline', help='Quiz deadline (free text)')
@@ -351,7 +351,7 @@ def main():
         
         other_settings = {
             'questions_file': args.questions,
-            'recipients_file': args.recipients,
+            'recipients_file': args.recipients_file,
             'recipients': args.emails or [],
             'deadline': args.deadline,
             'credentials_path': args.credentials
