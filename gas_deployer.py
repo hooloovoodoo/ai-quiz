@@ -356,7 +356,7 @@ class GoogleAppsScriptDeployer:
             logger.error(f"Error extracting form URLs: {e}")
             return None, None
 
-    def create_script_deployment(self, project_id: str, version_description: str = "Initial version") -> Optional[str]:
+    def create_api_executable_deployment(self, project_id: str, version_description: str = "API Executable Version") -> Optional[str]:
         """
         Create a deployment version of a Google Apps Script project
 
@@ -386,11 +386,11 @@ class GoogleAppsScriptDeployer:
             version_number = version_response.get('versionNumber')
             logger.info(f"Created version {version_number}")
 
-            # Create deployment
+            # Create API executable deployment
             deployment_body = {
                 'versionNumber': version_number,
                 'manifestFileName': 'appsscript',
-                'description': f"Deployment of version {version_number}"
+                'description': f"API Executable - Version {version_number}"
             }
 
             logger.info(f"Creating deployment for version {version_number}")
@@ -410,9 +410,41 @@ class GoogleAppsScriptDeployer:
             logger.error(f"Error creating deployment: {e}")
             return None
 
+    def deploy_quiz_script(self, script_content: str, project_title: str = "AI Quiz Generator") -> Optional[str]:
+        """
+        Deploy script to Google Apps Script (without execution)
+
+        Args:
+            script_content: Generated Google Apps Script code
+            project_title: Name for the script project
+
+        Returns:
+            Project ID if successful, None otherwise
+        """
+        try:
+            # Create new script project
+            project_id = self.create_script_project(project_title)
+            if not project_id:
+                logger.error("Failed to create script project")
+                return None
+
+            # Upload script content
+            if not self.upload_script_content(project_id, script_content):
+                logger.error("Failed to upload script content")
+                return None
+
+            logger.info(f"Successfully deployed script to Google Apps Script!")
+            logger.info(f"Script URL: https://script.google.com/d/{project_id}/edit")
+            return project_id
+
+        except Exception as e:
+            logger.error(f"Error in deploy_quiz_script workflow: {e}")
+            return None
+
     def deploy_and_execute_quiz(self, script_content: str, project_title: str = "AI Quiz Generator") -> Tuple[Optional[str], Optional[str]]:
         """
-        Complete workflow: Create project, upload script, execute, and get URLs
+        Complete workflow: Create project, upload script, and attempt execution
+        If execution fails, provides manual instructions
 
         Args:
             script_content: Generated Google Apps Script code
@@ -447,41 +479,60 @@ class GoogleAppsScriptDeployer:
             except Exception as e:
                 logger.warning(f"Could not verify script in Drive: {e}")
 
-            # Attempt #1: Simple execution without development mode
+            # Attempt #1: Simple execution with development mode
             logger.info("Attempting simple function execution...")
             execution_response = self.execute_function(
                 project_id=project_id,
                 function_name='createRandomAIQuiz',
-                dev_mode=False,  # Try without dev mode first
+                dev_mode=True,
                 max_retries=2,
                 retry_delay=10
             )
 
-            # Attempt #2: Try development mode if first attempt failed
+            # If that didn't work, try creating proper API executable deployment
             if not execution_response:
-                logger.info("First execution attempt failed, trying with development mode...")
+                logger.info("Development mode execution failed, creating API executable deployment...")
+                
+                # Create API executable deployment
+                deployment_id = self.create_api_executable_deployment(project_id, "Quiz API Executable")
+                if not deployment_id:
+                    logger.error("Failed to create API executable deployment")
+                    logger.info("\n" + "="*60)
+                    logger.info("MANUAL EXECUTION REQUIRED")
+                    logger.info("="*60)
+                    logger.info(f"1. Open your script: https://script.google.com/d/{project_id}/edit")
+                    logger.info("2. Click the 'Run' button (▶️) next to 'createRandomAIQuiz'")
+                    logger.info("3. Grant permissions when prompted")
+                    logger.info("4. Check the execution log for the form URLs")
+                    logger.info("5. The quiz will be created and URLs will be displayed in the log")
+                    logger.info("="*60)
+                    return None, None
+                    
+                # Wait for deployment to be ready
+                logger.info("Waiting for API executable deployment to be ready... (20 seconds)")
+                time.sleep(20)
+                
+                # Try executing with the API executable deployment
+                logger.info("Attempting to execute function with API executable deployment")
                 execution_response = self.execute_function(
                     project_id=project_id,
                     function_name='createRandomAIQuiz',
-                    dev_mode=True,
+                    dev_mode=False,  # Use deployed version
                     max_retries=2,
-                    retry_delay=10
+                    retry_delay=15
                 )
-
-            # Attempt #3: Last resort - try with no retries but much longer delay
-            if not execution_response:
-                logger.info("Both execution attempts failed, trying with longer delay (30 seconds)...")
-                time.sleep(30)  # Much longer delay
-                execution_response = self.execute_function(
-                    project_id=project_id,
-                    function_name='createRandomAIQuiz',
-                    dev_mode=True,
-                    max_retries=1
-                )
-
+                
                 if not execution_response:
                     logger.error("All execution approaches failed")
-                    logger.info(f"You can still access your script at: https://script.google.com/d/{project_id}/edit")
+                    logger.info("\n" + "="*60)
+                    logger.info("MANUAL EXECUTION REQUIRED")
+                    logger.info("="*60)
+                    logger.info(f"1. Open your script: https://script.google.com/d/{project_id}/edit")
+                    logger.info("2. Click the 'Run' button (▶️) next to 'createRandomAIQuiz'")
+                    logger.info("3. Grant permissions when prompted")
+                    logger.info("4. Check the execution log for the form URLs")
+                    logger.info("5. The quiz will be created and URLs will be displayed in the log")
+                    logger.info("="*60)
                     return None, None
 
             # Log the full execution response for troubleshooting
