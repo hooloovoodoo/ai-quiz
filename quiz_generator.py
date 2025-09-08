@@ -48,6 +48,44 @@ class QuestionGenerator:
 
     def __init__(self, config: Optional[QuizConfig] = None):
         self.config = config or QuizConfig()
+        # Set random seed for reproducible question selection during development
+        random.seed(42)
+
+    def load_questions_from_multiple_files(self, file_configs: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """
+        Load and validate questions from multiple JSON files with specific counts
+
+        Args:
+            file_configs: List of dicts with 'path' and 'count' keys
+                         e.g., [{'path': 'l0/m1.json', 'count': 10}, ...]
+
+        Returns:
+            List of validated question dictionaries from all files
+
+        Raises:
+            FileNotFoundError: If any JSON file doesn't exist
+            ValueError: If JSON format is invalid or insufficient questions
+        """
+        all_questions = []
+
+        for config in file_configs:
+            file_path = config['path']
+            required_count = config['count']
+
+            logger.info(f"Loading {required_count} questions from {file_path}")
+            file_questions = self.load_questions(file_path)
+
+            if len(file_questions) < required_count:
+                raise ValueError(f"File {file_path} has only {len(file_questions)} questions, but {required_count} required")
+
+            # Select random questions from this file
+            selected_questions = random.sample(file_questions, required_count)
+            all_questions.extend(selected_questions)
+
+            logger.info(f"Selected {len(selected_questions)} questions from {file_path}")
+
+        logger.info(f"Total questions loaded: {len(all_questions)}")
+        return all_questions
 
     def load_questions(self, json_path: str) -> List[Dict[str, Any]]:
         """
@@ -312,6 +350,42 @@ function shuffleArray(array) {{
             logger.error(f"Error saving script: {e}")
             raise
 
+    def generate_quiz_from_multiple_files(self, file_configs: List[Dict[str, Any]], output_path: str) -> str:
+        """
+        Complete workflow: Load questions from multiple JSON files, generate script, and save to file
+
+        Args:
+            file_configs: List of dicts with 'path' and 'count' keys
+                         e.g., [{'path': 'l0/m1.json', 'count': 10}, ...]
+            output_path: Path to save generated script
+
+        Returns:
+            Generated script content
+        """
+        try:
+            # Load questions from multiple files
+            all_questions = self.load_questions_from_multiple_files(file_configs)
+
+            # Convert to JS format
+            js_questions = self.convert_format(all_questions)
+
+            # Shuffle all questions together
+            random.shuffle(js_questions)
+
+            # Generate script
+            script_content = self.generate_script(js_questions)
+
+            # Save to file
+            self.save_script(script_content, output_path)
+
+            total_questions = sum(config['count'] for config in file_configs)
+            logger.info(f"Successfully generated quiz script with {total_questions} questions from {len(file_configs)} files")
+            return script_content
+
+        except Exception as e:
+            logger.error(f"Error in multi-file quiz generation workflow: {e}")
+            raise
+
     def generate_quiz_from_json(self, json_path: str, output_path: str, question_count: Optional[int] = None) -> str:
         """
         Complete workflow: Load JSON, generate script, and save to file
@@ -352,24 +426,30 @@ function shuffleArray(array) {{
 if __name__ == "__main__":
     # Create custom configuration
     config = QuizConfig(
-        title="Advanced AI Knowledge Test",
-        description="Challenge yourself with advanced AI concepts",
-        question_count=10,
-        points_per_question=10
+        title="Comprehensive AI Knowledge Quiz",
+        description="Test your knowledge across AI fundamentals, ethics, and practical applications",
+        question_count=33,  # Total: 10 + 13 + 10
+        points_per_question=5
     )
 
     # Initialize generator
     generator = QuestionGenerator(config)
 
-    # Generate quiz from JSON file
+    # Generate quiz from multiple JSON files with specific counts
     try:
-        script_content = generator.generate_quiz_from_json(
-            json_path="l0/m1.json",
-            output_path="generated_quiz.gs",
-            question_count=10
+        file_configs = [
+            {'path': 'l0/m1.json', 'count': 10},  # AI Fundamentals
+            {'path': 'l0/m2.json', 'count': 13},  # AI Ethics & Bias
+            {'path': 'l0/m3.json', 'count': 10}   # AI Applications
+        ]
+
+        script_content = generator.generate_quiz_from_multiple_files(
+            file_configs=file_configs,
+            output_path="generated_quiz.gs"
         )
-        print("Quiz generation completed successfully!")
-        print(f"Generated script length: {len(script_content)} characters")
+        print("Multi-file quiz generation completed successfully!")
+        print(f"Generated script with 33 questions (10+13+10) from 3 files")
+        print(f"Script length: {len(script_content)} characters")
 
     except Exception as e:
         print(f"Error: {e}")
