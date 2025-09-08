@@ -69,13 +69,13 @@ from gas_deployer import GoogleAppsScriptDeployer
 # Generate quiz script
 config = QuizConfig(title="My AI Quiz", question_count=10)
 generator = QuestionGenerator(config)
-script_content = generator.generate_quiz_from_json("l0/m1.json", "quiz.gs")
+script_content = generator.generate_quiz_from_json("l0/m1.json", "generated_quiz.gs")
 
 # Deploy to Google Apps Script
 deployer = GoogleAppsScriptDeployer()
 if deployer.authenticate_google():
     published_url, edit_url = deployer.deploy_and_execute_quiz(script_content)
-    
+
     if published_url:
         print(f"Quiz created! Share this URL: {published_url}")
     else:
