@@ -23,12 +23,13 @@ script_content = generator.generate_quiz_from_multiple_files(
     output_path="generated_quiz.gs"
 )
 
-# Deploy to Google Apps Script with automated API executable deployment
+# Deploy to Google Apps Script with simplified deployment
 deployer = GoogleAppsScriptDeployer()
 if deployer.authenticate_google():
-    published_url, edit_url = deployer.deploy_and_execute_quiz(script_content)
+    project_id, edit_url = deployer.deploy_quiz_script(script_content)
     
-    if published_url:
-        print(f"Quiz created! Share this URL: {published_url}")
+    if project_id and edit_url:
+        print(f"Quiz script deployed! Edit URL: {edit_url}")
+        print("Please open the URL and click 'Run' to create the quiz form")
     else:
-        print("Failed to create quiz")
+        print("Failed to deploy quiz script")

@@ -85,14 +85,14 @@ class AIQuizOrchestrator:
                               questions_file: str,
                               project_title: Optional[str] = None) -> tuple[Optional[str], Optional[str]]:
         """
-        Generate quiz script and deploy to Google Apps Script
+        Create quiz script and deploy to Google Apps Script
 
         Args:
             questions_file: Path to JSON file containing questions
             project_title: Optional title for the Google Apps Script project
 
         Returns:
-            Tuple of (published_url, edit_url) or (None, None) if failed
+            Tuple of (project_id, edit_url) or (None, None) if failed
         """
         try:
             logger.info("=== Step 1: Generating Quiz Script ===")
@@ -120,18 +120,11 @@ class AIQuizOrchestrator:
                 logger.error("Failed to authenticate with Google APIs")
                 return None, None
 
-            # Deploy and execute
-            project_title = project_title or f"{self.quiz_config.title} - {self.quiz_config.question_count}Q"
-            published_url, edit_url = self.gas_deployer.deploy_and_execute_quiz(
-                script_content=script_content,
-                project_title=project_title
-            )
+            # Deploy script
+            project_id, edit_url = self.gas_deployer.deploy_quiz_script(script_content)
 
-            if published_url and edit_url:
-                logger.info(f"✓ Quiz deployed successfully!")
-                logger.info(f"  Published URL: {published_url}")
-                logger.info(f"  Edit URL: {edit_url}")
-                return published_url, edit_url
+            if project_id and edit_url:
+                return project_id, edit_url
             else:
                 logger.error("Failed to deploy quiz")
                 return None, None
@@ -216,39 +209,27 @@ class AIQuizOrchestrator:
             logger.info("-" * 60)
 
             # Step 1 & 2: Generate and deploy quiz
-            published_url, edit_url = self.create_and_deploy_quiz(
+            project_id, edit_url = self.create_and_deploy_quiz(
                 questions_file=questions_file,
                 project_title=project_title
             )
 
-            if not published_url:
+            if not project_id:
                 logger.error("❌ Workflow failed at quiz deployment stage")
                 return False
 
-            # Step 3: Send notifications
+            # Deployment-only workflow
+            logger.info("✅ Quiz script deployed - ready for manual execution")
+            
+            # Skip email notifications since we don't have quiz URLs yet
             if recipients:
-                email_results = self.send_notifications(
-                    recipients=recipients,
-                    quiz_url=published_url,
-                    edit_url=edit_url,
-                    deadline=deadline
-                )
+                logger.info(f"📧 {len(recipients)} recipients waiting for quiz URL")
+                logger.info("💡 Run the script manually, then send the quiz URL to recipients")
 
-                successful_emails = sum(1 for success in email_results.values() if success)
-                if successful_emails == 0:
-                    logger.error("❌ Workflow failed: No emails sent successfully")
-                    return False
-                elif successful_emails < len(recipients):
-                    logger.warning("⚠️ Workflow completed with some email failures")
-                else:
-                    logger.info("✅ All emails sent successfully")
-            else:
-                logger.info("ℹ️ No recipients provided, skipping email notifications")
-
-            logger.info("-" * 60)
-            logger.info("🎉 AI Quiz Workflow Completed Successfully!")
-            logger.info(f"📝 Quiz URL: {published_url}")
-            logger.info(f"⚙️ Edit URL: {edit_url}")
+            logger.info("-" * 50)
+            logger.info("🎯 DEPLOYMENT COMPLETE")
+            logger.info(f"🔗 Edit URL: {edit_url}")
+            logger.info("-" * 50)
 
             return True
 
