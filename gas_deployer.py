@@ -11,8 +11,9 @@ This module handles:
 import json
 import logging
 from datetime import datetime
-from typing import Optional, Tuple
+from typing import Optional, Tuple, List, Dict
 from pathlib import Path
+import glob
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -119,13 +120,23 @@ class GoogleAppsScriptDeployer:
             project_id = project['scriptId']
             logger.info(f"✓ Created project with ID: {project_id}")
 
-            # Upload script content
+            # Upload script content with manifest
             logger.info("Uploading script content...")
             files = [
                 {
                     'name': 'Code',
                     'type': 'SERVER_JS',
                     'source': script_content
+                },
+                {
+                    'name': 'appsscript',
+                    'type': 'JSON',
+                    'source': json.dumps({
+                        "timeZone": "America/New_York",
+                        "dependencies": {},
+                        "exceptionLogging": "STACKDRIVER",
+                        "runtimeVersion": "V8"
+                    })
                 }
             ]
 
@@ -186,3 +197,89 @@ class GoogleAppsScriptDeployer:
         except Exception as e:
             logger.error(f"Error deploying quiz script: {e}")
             return None, None
+
+    def deploy_batch_quiz_scripts(self, quiz_files_pattern: str = "/tmp/AI Quiz | L0 | * | Variant *.gs") -> List[Dict[str, str]]:
+        """
+        Deploy multiple quiz scripts from /tmp directory
+
+        Args:
+            quiz_files_pattern: Glob pattern to find quiz files
+
+        Returns:
+            List of dictionaries with 'variant', 'project_id', 'edit_url' for each deployed quiz
+        """
+        try:
+            # Find all quiz files matching the pattern
+            quiz_files = glob.glob(quiz_files_pattern)
+            
+            if not quiz_files:
+                logger.error(f"No quiz files found matching pattern: {quiz_files_pattern}")
+                return []
+            
+            # Sort files to ensure consistent ordering
+            quiz_files.sort()
+            
+            logger.info("=" * 60)
+            logger.info("🚀 BATCH QUIZ DEPLOYMENT")
+            logger.info("=" * 60)
+            logger.info(f"📁 Found {len(quiz_files)} quiz files to deploy")
+            
+            deployed_quizzes = []
+            
+            for i, quiz_file in enumerate(quiz_files):
+                try:
+                    file_path = Path(quiz_file)
+                    filename = file_path.name
+                    
+                    logger.info(f"📝 Deploying {i+1}/{len(quiz_files)}: {filename}")
+                    
+                    # Read the quiz script content
+                    with open(quiz_file, 'r', encoding='utf-8') as f:
+                        script_content = f.read()
+                    
+                    # Extract variant number from filename
+                    # Format: "AI Quiz | L0 | 2025-09-15 | Variant 0.gs"
+                    variant_part = filename.split(" | Variant ")[-1].replace(".gs", "")
+                    
+                    # Use the filename (without .gs) as the project title
+                    project_title = filename.replace(".gs", "")
+                    
+                    # Create and upload the project
+                    project_id = self.create_script_project(project_title, script_content)
+                    
+                    if project_id:
+                        edit_url = f"https://script.google.com/d/{project_id}/edit"
+                        
+                        deployed_quizzes.append({
+                            'variant': variant_part,
+                            'filename': filename,
+                            'project_id': project_id,
+                            'edit_url': edit_url
+                        })
+                        
+                        logger.info(f"✅ Variant {variant_part} deployed successfully")
+                    else:
+                        logger.error(f"❌ Failed to deploy variant {variant_part}")
+                        
+                except Exception as e:
+                    logger.error(f"❌ Error deploying {quiz_file}: {e}")
+                    continue
+            
+            # Summary
+            logger.info("=" * 60)
+            logger.info(f"🎉 BATCH DEPLOYMENT COMPLETE")
+            logger.info(f"✅ Successfully deployed: {len(deployed_quizzes)}/{len(quiz_files)} quizzes")
+            logger.info("=" * 60)
+            
+            # List all deployed URLs
+            if deployed_quizzes:
+                logger.info("🔗 DEPLOYED QUIZ URLS:")
+                for quiz in deployed_quizzes:
+                    logger.info(f"   📄 Variant {quiz['variant']}: {quiz['edit_url']}")
+                logger.info("=" * 60)
+            
+            return deployed_quizzes
+            
+        except Exception as e:
+            logger.error(f"Error in batch deployment: {e}")
+            return []
