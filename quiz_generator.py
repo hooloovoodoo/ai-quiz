@@ -31,7 +31,8 @@ class QuizConfig:
                  collect_email: bool = True,
                  limit_responses: bool = True,
                  show_link_to_respond_again: bool = False,
-                 confirmation_message: str = "Thanks for taking the quiz! You'll receive your score after submitting."):
+                 confirmation_message: str = "Thanks for taking the quiz! You'll receive your score after submitting.",
+                 language: str = "ENG"):
 
         self.title = title
         self.description = description
@@ -41,6 +42,7 @@ class QuizConfig:
         self.limit_responses = limit_responses
         self.show_link_to_respond_again = show_link_to_respond_again
         self.confirmation_message = confirmation_message
+        self.language = language.upper()  # Ensure uppercase
 
 
 class QuestionGenerator:
@@ -50,6 +52,31 @@ class QuestionGenerator:
         self.config = config or QuizConfig()
         # Set random seed for reproducible question selection during development
         random.seed(42)
+
+    def get_file_configs_for_language(self, language: str = "ENG") -> List[Dict[str, Any]]:
+        """
+        Get file configurations for the specified language
+
+        Args:
+            language: Language code ("ENG" or "SRB")
+
+        Returns:
+            List of file configurations with paths and question counts
+        """
+        language = language.upper()
+
+        if language == "ENG":
+            base_path = "QAPool/eng/L0"
+        elif language == "SRB":
+            base_path = "QAPool/srb/L0"
+        else:
+            raise ValueError(f"Unsupported language: {language}. Use 'ENG' or 'SRB'")
+
+        return [
+            {'path': f'{base_path}/M1/m1.json', 'count': 10},  # AI Fundamentals
+            {'path': f'{base_path}/M2/m2.json', 'count': 13},  # AI Ethics & Bias
+            {'path': f'{base_path}/M3/m3.json', 'count': 10}   # AI Applications
+        ]
 
     def load_questions_from_multiple_files(self, file_configs: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """
@@ -350,19 +377,29 @@ function shuffleArray(array) {{
             logger.error(f"Error saving script: {e}")
             raise
 
-    def generate_quiz_from_multiple_files(self, file_configs: List[Dict[str, Any]], output_path: str) -> str:
+    def generate_quiz_from_multiple_files(self, file_configs: List[Dict[str, Any]], output_path: str, variant_number: Optional[int] = None) -> str:
         """
         Complete workflow: Load questions from multiple JSON files, generate script, and save to file
 
         Args:
             file_configs: List of dicts with 'path' and 'count' keys
-                         e.g., [{'path': 'l0/m1.json', 'count': 10}, ...]
+                         e.g., [{'path': 'QAPool/eng/L0/M1/m1.json', 'count': 10}, ...]
             output_path: Path to save generated script
+            variant_number: Optional variant number to include in title
 
         Returns:
             Generated script content
         """
         try:
+            # Update title with language and variant info
+            original_title = self.config.title
+            language_tag = f"[{self.config.language}]"
+
+            if variant_number is not None:
+                self.config.title = f"{original_title} {language_tag} Variant {variant_number}"
+            else:
+                self.config.title = f"{original_title} {language_tag}"
+
             # Load questions from multiple files
             all_questions = self.load_questions_from_multiple_files(file_configs)
 
@@ -379,14 +416,18 @@ function shuffleArray(array) {{
             self.save_script(script_content, output_path)
 
             total_questions = sum(config['count'] for config in file_configs)
-            logger.info(f"Successfully generated quiz script with {total_questions} questions from {len(file_configs)} files")
+            logger.info(f"Successfully generated {self.config.language} quiz script with {total_questions} questions from {len(file_configs)} files")
+
+            # Restore original title
+            self.config.title = original_title
+
             return script_content
 
         except Exception as e:
             logger.error(f"Error in multi-file quiz generation workflow: {e}")
             raise
 
-    def generate_quiz_from_json(self, json_path: str, output_path: str, question_count: Optional[int] = None) -> str:
+    def generate_quiz_from_json(self, json_path: str, output_path: str, question_count: Optional[int] = None, variant_number: Optional[int] = None) -> str:
         """
         Complete workflow: Load JSON, generate script, and save to file
 
@@ -394,11 +435,21 @@ function shuffleArray(array) {{
             json_path: Path to JSON question file
             output_path: Path to save generated script
             question_count: Number of questions to select (optional)
+            variant_number: Optional variant number to include in title
 
         Returns:
             Generated script content
         """
         try:
+            # Update title with language and variant info
+            original_title = self.config.title
+            language_tag = f"[{self.config.language}]"
+
+            if variant_number is not None:
+                self.config.title = f"{original_title} {language_tag} Variant {variant_number}"
+            else:
+                self.config.title = f"{original_title} {language_tag}"
+
             # Load and validate questions
             questions = self.load_questions(json_path)
 
@@ -414,42 +465,83 @@ function shuffleArray(array) {{
             # Save to file
             self.save_script(script_content, output_path)
 
-            logger.info(f"Successfully generated quiz script with {len(selected_questions)} questions")
+            logger.info(f"Successfully generated {self.config.language} quiz script with {len(selected_questions)} questions")
+
+            # Restore original title
+            self.config.title = original_title
+
             return script_content
 
         except Exception as e:
             logger.error(f"Error in quiz generation workflow: {e}")
             raise
 
+    def generate_quiz_for_language(self, language: str = "ENG", output_path: str = None, variant_number: Optional[int] = None) -> str:
+        """
+        Generate quiz using the standard file structure for the specified language
+
+        Args:
+            language: Language code ("ENG" or "SRB")
+            output_path: Path to save generated script (optional)
+            variant_number: Optional variant number to include in title
+
+        Returns:
+            Generated script content
+        """
+        # Update config language
+        self.config.language = language.upper()
+
+        # Get file configurations for the language
+        file_configs = self.get_file_configs_for_language(language)
+
+        # Generate default output path if not provided
+        if output_path is None:
+            lang_suffix = language.lower()
+            if variant_number is not None:
+                output_path = f"generated_quiz_{lang_suffix}_variant_{variant_number}.gs"
+            else:
+                output_path = f"generated_quiz_{lang_suffix}.gs"
+
+        return self.generate_quiz_from_multiple_files(file_configs, output_path, variant_number)
+
 
 # Example usage and testing
 if __name__ == "__main__":
     # Create custom configuration
     config = QuizConfig(
-        title="Comprehensive AI Knowledge Quiz",
+        title="AI Fundamentals",
         description="Test your knowledge across AI fundamentals, ethics, and practical applications",
         question_count=33,  # Total: 10 + 13 + 10
-        points_per_question=5
+        points_per_question=5,
+        language="ENG"
     )
 
     # Initialize generator
     generator = QuestionGenerator(config)
 
-    # Generate quiz from multiple JSON files with specific counts
+    # Test both languages
     try:
-        file_configs = [
-            {'path': 'l0/m1.json', 'count': 10},  # AI Fundamentals
-            {'path': 'l0/m2.json', 'count': 13},  # AI Ethics & Bias
-            {'path': 'l0/m3.json', 'count': 10}   # AI Applications
-        ]
-
-        script_content = generator.generate_quiz_from_multiple_files(
-            file_configs=file_configs,
-            output_path="generated_quiz.gs"
+        # Generate English quiz
+        print("Generating English quiz...")
+        eng_script = generator.generate_quiz_for_language(
+            language="ENG",
+            output_path="generated_quiz_eng.gs",
+            variant_number=1
         )
-        print("Multi-file quiz generation completed successfully!")
+        print("English quiz generation completed successfully!")
         print(f"Generated script with 33 questions (10+13+10) from 3 files")
-        print(f"Script length: {len(script_content)} characters")
+        print(f"Script length: {len(eng_script)} characters")
+
+        # Generate Serbian quiz
+        print("\nGenerating Serbian quiz...")
+        srb_script = generator.generate_quiz_for_language(
+            language="SRB",
+            output_path="generated_quiz_srb.gs",
+            variant_number=1
+        )
+        print("Serbian quiz generation completed successfully!")
+        print(f"Generated script with 33 questions (10+13+10) from 3 files")
+        print(f"Script length: {len(srb_script)} characters")
 
     except Exception as e:
         print(f"Error: {e}")
