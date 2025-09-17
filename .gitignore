@@ -177,3 +177,6 @@ delivery_log.json
 # AI Quiz System - Local Configuration
 local_config.json
 .env.local
+
+# Questions analysis
+analyze_questions.py
