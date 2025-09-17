@@ -1,0 +1,292 @@
+[
+  {
+    "question": "What is AI bias?",
+    "answers": [
+      "When AI systems are too slow to process information",
+      "When systems make unfair decisions based on race, gender, age, or other protected characteristics",
+      "When AI refuses to work properly",
+      "When AI costs too much to implement"
+    ],
+    "correct": "When systems make unfair decisions based on race, gender, age, or other protected characteristics"
+  },
+  {
+    "question": "What are AI hallucinations?",
+    "answers": [
+      "When AI sees things that aren't there",
+      "When AI dreams while processing",
+      "When systems generate incorrect information while presenting it confidently as fact",
+      "When AI gets confused by user input"
+    ],
+    "correct": "When systems generate incorrect information while presenting it confidently as fact"
+  },
+  {
+    "question": "Why did Amazon scrap its resume screening AI system (2014-2018)?",
+    "answers": [
+      "It was too expensive to maintain",
+      "It couldn't guarantee bias elimination after downgrading women's resumes",
+      "It was too slow to process applications",
+      "Competitors had better systems"
+    ],
+    "correct": "It couldn't guarantee bias elimination after downgrading women's resumes"
+  },
+  {
+    "question": "What happened to Microsoft's Tay chatbot within 24 hours of launch?",
+    "answers": [
+      "It became the most popular chatbot ever",
+      "It stopped working due to technical issues",
+      "It was manipulated by trolls to post offensive content and had to be shut down",
+      "It achieved sentience"
+    ],
+    "correct": "It was manipulated by trolls to post offensive content and had to be shut down"
+  },
+  {
+    "question": "Which of the following is NOT a core principle of Ethical AI?",
+    "answers": [
+      "Transparency",
+      "Maximum profit generation",
+      "Fairness",
+      "Human in the Loop"
+    ],
+    "correct": "Maximum profit generation"
+  },
+  {
+    "question": "What are guardrails in AI systems?",
+    "answers": [
+      "Physical barriers around computers",
+      "Safety mechanisms that prevent AI from generating harmful, biased, or inappropriate content",
+      "Training programs for AI developers",
+      "Hardware limitations"
+    ],
+    "correct": "Safety mechanisms that prevent AI from generating harmful, biased, or inappropriate content"
+  },
+  {
+    "question": "What is the 'Black Box' problem in AI?",
+    "answers": [
+      "AI systems are painted black",
+      "We often can't see inside to understand how or why AI reached a conclusion",
+      "AI systems are stored in dark rooms",
+      "The code is encrypted"
+    ],
+    "correct": "We often can't see inside to understand how or why AI reached a conclusion"
+  },
+  {
+    "question": "Which type of data is considered Personally Identifiable Information (PII)?",
+    "answers": [
+      "Weather data",
+      "Stock prices",
+      "Name, address, phone number, and biometric data",
+      "Public news articles"
+    ],
+    "correct": "Name, address, phone number, and biometric data"
+  },
+  {
+    "question": "What should you do before using AI tools for sensitive work?",
+    "answers": [
+      "Nothing special is needed",
+      "Just use private mode",
+      "Consult with security teams and use only approved tools",
+      "Delete your browser history"
+    ],
+    "correct": "Consult with security teams and use only approved tools"
+  },
+  {
+    "question": "What is a key lesson from the Microsoft Tay incident?",
+    "answers": [
+      "AI systems are perfect",
+      "AI systems exposed to public input need robust protection against manipulation",
+      "Chatbots should never be used",
+      "Social media is always safe"
+    ],
+    "correct": "AI systems exposed to public input need robust protection against manipulation"
+  },
+  {
+    "question": "Your colleague asks ChatGPT for statistics about your industry and gets very specific numbers. What should you do before using this data in a presentation?",
+    "answers": [
+      "Use it immediately - AI is always accurate",
+      "Cross-reference with multiple reliable sources and verify the statistics exist",
+      "Only check if the numbers sound wrong",
+      "Add more decimal places to make it look more accurate"
+    ],
+    "correct": "Cross-reference with multiple reliable sources and verify the statistics exist"
+  },
+  {
+    "question": "You need help debugging code that contains your company's proprietary algorithm. What's the best approach?",
+    "answers": [
+      "Paste the entire codebase into ChatGPT",
+      "Share only small, non-proprietary code snippets or use pseudocode",
+      "Post it on a public forum first",
+      "Email the code to your personal account to work on at home"
+    ],
+    "correct": "Share only small, non-proprietary code snippets or use pseudocode"
+  },
+  {
+    "question": "An AI tool generates a report citing several academic papers. Before submitting this report, you should:",
+    "answers": [
+      "Trust that all citations are accurate",
+      "Verify that each cited source actually exists and contains the referenced information",
+      "Only check the formatting of citations",
+      "Assume academic citations are always real"
+    ],
+    "correct": "Verify that each cited source actually exists and contains the referenced information"
+  },
+  {
+    "question": "You're using AI to help write an email about employee salaries. What should you do?",
+    "answers": [
+      "Include actual salary figures to get more accurate help",
+      "Use hypothetical numbers or ranges instead of real salary data",
+      "Share only executive salaries since they're public",
+      "Include employee names but not amounts"
+    ],
+    "correct": "Use hypothetical numbers or ranges instead of real salary data"
+  },
+  {
+    "question": "A customer service AI asks for your full social security number to 'verify your identity.' You should:",
+    "answers": [
+      "Provide it immediately",
+      "Never provide such sensitive information to AI tools",
+      "Only provide the last four digits",
+      "Check if the AI promises to keep it secure"
+    ],
+    "correct": "Never provide such sensitive information to AI tools"
+  },
+  {
+    "question": "You want to use a colleague's photo in an AI-powered presentation tool. What must you do first?",
+    "answers": [
+      "Nothing, it's just for work purposes",
+      "Get explicit consent from your colleague before using their image",
+      "Only blur their face slightly",
+      "Use it now and ask for permission later"
+    ],
+    "correct": "Get explicit consent from your colleague before using their image"
+  },
+  {
+    "question": "An AI chatbot confidently states that your company's main competitor filed for bankruptcy yesterday. Your next step should be:",
+    "answers": [
+      "Immediately inform your management team",
+      "Verify this information through official sources before taking any action",
+      "Start planning to acquire their assets",
+      "Post about it on social media"
+    ],
+    "correct": "Verify this information through official sources before taking any action"
+  },
+  {
+    "question": "You need AI help with a customer database containing names and addresses. The best approach is:",
+    "answers": [
+      "Upload the entire database for analysis",
+      "Anonymize data or use fictional examples that represent your use case",
+      "Only share customers who have opted into marketing",
+      "Use real data but delete the conversation afterward"
+    ],
+    "correct": "Anonymize data or use fictional examples that represent your use case"
+  },
+  {
+    "question": "An AI tool generates legal advice about a contract dispute. You should:",
+    "answers": [
+      "Follow the advice immediately to save legal fees",
+      "Use it as a starting point but consult with qualified legal professionals",
+      "Only follow it if the AI seems confident",
+      "Assume it's accurate since AI knows all laws"
+    ],
+    "correct": "Use it as a starting point but consult with qualified legal professionals"
+  },
+  {
+    "question": "Your team wants to use an unapproved AI tool for processing internal documents. What should you recommend?",
+    "answers": [
+      "Use it secretly to avoid bureaucracy",
+      "First check with your security team for approved alternatives or get the tool vetted",
+      "It's fine if you use incognito mode",
+      "Only use it for non-confidential documents"
+    ],
+    "correct": "First check with your security team for approved alternatives or get the tool vetted"
+  },
+  {
+    "question": "What constitutes proprietary code as confidential information?",
+    "answers": [
+      "Only code comments",
+      "Complete codebases, algorithms, and business logic",
+      "Only variable names",
+      "Documentation only"
+    ],
+    "correct": "Complete codebases, algorithms, and business logic"
+  },
+  {
+    "question": "When you input confidential information into AI tools, who are you sharing it with?",
+    "answers": [
+      "Only with the AI system",
+      "With no one",
+      "With the AI service provider, potentially other users, and future AI models",
+      "Only with your company"
+    ],
+    "correct": "With the AI service provider, potentially other users, and future AI models"
+  },
+  {
+    "question": "What are red flags for recognizing AI hallucinations?",
+    "answers": [
+      "Short responses",
+      "Overly specific details without sources, precise quotes without attribution",
+      "Fast responses",
+      "Long responses"
+    ],
+    "correct": "Overly specific details without sources, precise quotes without attribution"
+  },
+  {
+    "question": "What is the basic difference between training phase and inference phase?",
+    "answers": [
+      "There is no difference",
+      "Training learns patterns from data, inference applies learned patterns to new situations",
+      "Inference is more expensive than training",
+      "Training is faster than inference"
+    ],
+    "correct": "Training learns patterns from data, inference applies learned patterns to new situations"
+  },
+  {
+    "question": "What does 'data sharing minimization' mean?",
+    "answers": [
+      "Don't share any data",
+      "Provide only what is truly necessary",
+      "Share all data",
+      "Share only personal data"
+    ],
+    "correct": "Provide only what is truly necessary"
+  },
+  {
+    "question": "What was the core problem with Amazon's resume AI system?",
+    "answers": [
+      "It was too slow",
+      "It learned that male candidates were historically 'preferred' from 10 years of data",
+      "It didn't work at all",
+      "It was too expensive"
+    ],
+    "correct": "It learned that male candidates were historically 'preferred' from 10 years of data"
+  },
+  {
+    "question": "A colleague wants to record a meeting without participants' knowledge for AI transcription. Your response?",
+    "answers": [
+      "Help them hide the recording",
+      "Explain that they must get consent from all participants before recording",
+      "Say it's okay if it's for work",
+      "Record only audio without video"
+    ],
+    "correct": "Explain that they must get consent from all participants before recording"
+  },
+  {
+    "question": "An AI tool asks for your password to 'verify identity.' What should you do?",
+    "answers": [
+      "Provide the password immediately",
+      "Never share passwords, API keys, or credentials with AI tools",
+      "Give only part of the password",
+      "Check if the AI promises security"
+    ],
+    "correct": "Never share passwords, API keys, or credentials with AI tools"
+  },
+  {
+    "question": "You notice that AI gives different medical advice for the same query. What does this show?",
+    "answers": [
+      "AI is reliable for medical advice",
+      "AI can hallucinate and should not be used for medical decisions without professional verification",
+      "You should try again",
+      "AI learns from your questions"
+    ],
+    "correct": "AI can hallucinate and should not be used for medical decisions without professional verification"
+  }
+]

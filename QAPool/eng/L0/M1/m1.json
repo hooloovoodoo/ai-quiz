@@ -1,0 +1,282 @@
+[
+  {
+    "question": "What does ANI stand for?",
+    "answers": [
+      "Artificial Narrow Intelligence",
+      "Artificial Natural Intelligence",
+      "Advanced Neural Intelligence",
+      "Automated Network Intelligence"
+    ],
+    "correct": "Artificial Narrow Intelligence"
+  },
+  {
+    "question": "What is the correct relationship between AI, Machine Learning, and Deep Learning?",
+    "answers": [
+      "ML > AI > DL",
+      "DL > ML > AI",
+      "AI > ML > DL",
+      "They are all the same thing"
+    ],
+    "correct": "AI > ML > DL"
+  },
+  {
+    "question": "Which type of AI is currently available and in use today?",
+    "answers": [
+      "Artificial General Intelligence (AGI)",
+      "Artificial Super Intelligence (ASI)",
+      "Artificial Narrow Intelligence (ANI)",
+      "Artificial Conscious Intelligence (ACI)"
+    ],
+    "correct": "Artificial Narrow Intelligence (ANI)"
+  },
+  {
+    "question": "What is the main difference between traditional software and AI/ML software?",
+    "answers": [
+      "Traditional software learns from data, AI/ML uses fixed rules",
+      "Traditional software uses explicit rules, AI/ML learns patterns from data",
+      "There is no difference",
+      "Traditional software is faster than AI/ML"
+    ],
+    "correct": "Traditional software uses explicit rules, AI/ML learns patterns from data"
+  },
+  {
+    "question": "In machine learning, what is an algorithm?",
+    "answers": [
+      "The final trained system that makes predictions",
+      "A set of rules or instructions for solving a problem",
+      "The data used for training",
+      "The output of the system"
+    ],
+    "correct": "A set of rules or instructions for solving a problem"
+  },
+  {
+    "question": "What is a model in machine learning?",
+    "answers": [
+      "The recipe or instructions",
+      "The raw data before processing",
+      "The result of training - the learned patterns",
+      "The computer hardware used"
+    ],
+    "correct": "The result of training - the learned patterns"
+  },
+  {
+    "question": "What does 'deep' refer to in Deep Learning?",
+    "answers": [
+      "The depth of data analysis",
+      "Multiple layers of processing in neural networks",
+      "The complexity of the problem",
+      "The amount of data used"
+    ],
+    "correct": "Multiple layers of processing in neural networks"
+  },
+  {
+    "question": "What is the training phase in AI systems?",
+    "answers": [
+      "When the AI applies learned patterns to new situations",
+      "When the AI system learns patterns from large amounts of data",
+      "When users interact with the AI",
+      "When the AI is being tested"
+    ],
+    "correct": "When the AI system learns patterns from large amounts of data"
+  },
+  {
+    "question": "What is the inference phase in AI systems?",
+    "answers": [
+      "When the AI is learning from data",
+      "When the AI is being developed",
+      "When trained AI applies what it learned to new situations",
+      "When the AI is shut down"
+    ],
+    "correct": "When trained AI applies what it learned to new situations"
+  },
+  {
+    "question": "What type of AI focuses on creating new content rather than just analyzing existing data?",
+    "answers": [
+      "Predictive AI",
+      "Discriminative AI",
+      "Generative AI",
+      "Analytical AI"
+    ],
+    "correct": "Generative AI"
+  },
+  {
+    "question": "Which of the following is an example of Generative AI?",
+    "answers": [
+      "Spam filters",
+      "Credit scoring systems",
+      "ChatGPT",
+      "Fraud detection"
+    ],
+    "correct": "ChatGPT"
+  },
+  {
+    "question": "What does NLP stand for in AI?",
+    "answers": [
+      "Neural Learning Protocol",
+      "Natural Language Processing",
+      "Network Layer Protection",
+      "Non-Linear Programming"
+    ],
+    "correct": "Natural Language Processing"
+  },
+  {
+    "question": "What is a Large Language Model (LLM)?",
+    "answers": [
+      "A small, efficient text processor",
+      "A model with billions/trillions of parameters trained on vast text data",
+      "A traditional rule-based system",
+      "A voice recognition system"
+    ],
+    "correct": "A model with billions/trillions of parameters trained on vast text data"
+  },
+  {
+    "question": "What is the 'context window' in AI systems?",
+    "answers": [
+      "The graphical user interface",
+      "Maximum amount of text the model can 'see' at once",
+      "The time period for training",
+      "The screen resolution"
+    ],
+    "correct": "Maximum amount of text the model can 'see' at once"
+  },
+  {
+    "question": "What is a knowledge cutoff in AI models?",
+    "answers": [
+      "When the AI stops working",
+      "The most recent point when the AI's training data was updated",
+      "The maximum processing speed",
+      "The minimum data required"
+    ],
+    "correct": "The most recent point when the AI's training data was updated"
+  },
+  {
+    "question": "What does 'GIGO' mean in the context of AI and data?",
+    "answers": [
+      "Great Input, Great Output",
+      "General Intelligence Goes Online",
+      "Garbage In, Garbage Out",
+      "Generated Input, Generated Output"
+    ],
+    "correct": "Garbage In, Garbage Out"
+  },
+  {
+    "question": "What type of machine learning uses labeled examples to learn?",
+    "answers": [
+      "Unsupervised Learning",
+      "Supervised Learning",
+      "Reinforcement Learning",
+      "Transfer Learning"
+    ],
+    "correct": "Supervised Learning"
+  },
+  {
+    "question": "What type of machine learning learns through trial and error with rewards?",
+    "answers": [
+      "Supervised Learning",
+      "Unsupervised Learning",
+      "Reinforcement Learning",
+      "Deep Learning"
+    ],
+    "correct": "Reinforcement Learning"
+  },
+  {
+    "question": "What is multimodal AI?",
+    "answers": [
+      "AI that only processes text",
+      "AI that combines multiple types of input like text, images, and audio",
+      "AI that runs on multiple computers",
+      "AI with multiple users"
+    ],
+    "correct": "AI that combines multiple types of input like text, images, and audio"
+  },
+  {
+    "question": "What is a token in the context of LLMs?",
+    "answers": [
+      "A security credential",
+      "A unit of text (usually about 0.75 words)",
+      "A type of cryptocurrency",
+      "A processing chip"
+    ],
+    "correct": "A unit of text (usually about 0.75 words)"
+  },
+  {
+    "question": "Why is data quality important for AI systems?",
+    "answers": [
+      "It makes the system run faster",
+      "AI systems are only as good as the data they're trained on",
+      "It reduces hardware costs",
+      "It's not important"
+    ],
+    "correct": "AI systems are only as good as the data they're trained on"
+  },
+  {
+    "question": "What can happen when AI is trained on biased data?",
+    "answers": [
+      "The system becomes faster",
+      "Nothing significant",
+      "The AI can amplify and perpetuate those biases",
+      "The system automatically corrects the bias"
+    ],
+    "correct": "The AI can amplify and perpetuate those biases"
+  },
+  {
+    "question": "What is a 'hallucination' in the context of AI?",
+    "answers": [
+      "When AI sees images",
+      "When the model generates plausible but false information",
+      "When the system crashes",
+      "When AI dreams"
+    ],
+    "correct": "When the model generates plausible but false information"
+  },
+  {
+    "question": "What type of AI is best for classifying emails as spam or not spam?",
+    "answers": [
+      "Generative AI",
+      "Creative AI",
+      "Predictive/Discriminative AI",
+      "Artistic AI"
+    ],
+    "correct": "Predictive/Discriminative AI"
+  },
+  {
+    "question": "What is Computer Vision in AI?",
+    "answers": [
+      "AI that improves human eyesight",
+      "AI that can recognize and generate visual content",
+      "A computer monitor technology",
+      "Virtual reality systems"
+    ],
+    "correct": "AI that can recognize and generate visual content"
+  },
+  {
+    "question": "Which statement best describes AGI (Artificial General Intelligence)?",
+    "answers": [
+      "It's currently available in smartphones",
+      "Human-level intelligence across all domains that doesn't yet exist",
+      "It only works for games",
+      "It's the same as ANI"
+    ],
+    "correct": "Human-level intelligence across all domains that doesn't yet exist"
+  },
+  {
+    "question": "What makes Deep Learning different from traditional Machine Learning?",
+    "answers": [
+      "It uses less data",
+      "It uses artificial neural networks with multiple layers",
+      "It's always faster",
+      "It doesn't need training"
+    ],
+    "correct": "It uses artificial neural networks with multiple layers"
+  },
+  {
+    "question": "When using AI, why is it important to know about the context window limitation?",
+    "answers": [
+      "It affects the screen resolution",
+      "Longer documents may need splitting and earlier conversation parts may be 'forgotten'",
+      "It determines the AI's speed",
+      "It's not important"
+    ],
+    "correct": "Longer documents may need splitting and earlier conversation parts may be 'forgotten'"
+  }
+]

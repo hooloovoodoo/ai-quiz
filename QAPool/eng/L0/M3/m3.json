@@ -1,0 +1,252 @@
+[
+  {
+    "question": "What is prompting in the context of AI?",
+    "answers": [
+      "The process of training AI models",
+      "The instructions, questions, or text you provide to get desired outputs",
+      "The speed at which AI responds",
+      "The cost of using AI services"
+    ],
+    "correct": "The instructions, questions, or text you provide to get desired outputs"
+  },
+  {
+    "question": "Which of the following is a basic prompt pattern for assigning roles?",
+    "answers": [
+      "Summarize this article in 3 bullet points",
+      "You are an expert chef. Create a recipe for...",
+      "Explain quantum physics like I'm 10 years old",
+      "Write a poem about AI without using the letter 'e'"
+    ],
+    "correct": "You are an expert chef. Create a recipe for..."
+  },
+  {
+    "question": "What is the main difference between zero-shot and few-shot prompting?",
+    "answers": [
+      "Zero-shot uses more data than few-shot",
+      "Few-shot is faster than zero-shot",
+      "Zero-shot provides no examples, while few-shot provides a few examples",
+      "Zero-shot is more expensive than few-shot"
+    ],
+    "correct": "Zero-shot provides no examples, while few-shot provides a few examples"
+  },
+  {
+    "question": "According to the security guidelines, what should you NEVER input into public AI tools?",
+    "answers": [
+      "Public information and general questions",
+      "Client data, passwords, or sensitive company information",
+      "Creative writing requests",
+      "Simple translation tasks"
+    ],
+    "correct": "Client data, passwords, or sensitive company information"
+  },
+  {
+    "question": "Which AI tool is best suited for real-time web research and current information?",
+    "answers": [
+      "ChatGPT",
+      "NotebookLM",
+      "Gemini",
+      "HAIP"
+    ],
+    "correct": "Gemini"
+  },
+  {
+    "question": "What makes NotebookLM special for research tasks?",
+    "answers": [
+      "It has the fastest response time",
+      "It provides source-grounded responses with minimal hallucinations",
+      "It can generate images",
+      "It has the largest context window"
+    ],
+    "correct": "It provides source-grounded responses with minimal hallucinations"
+  },
+  {
+    "question": "Which AI tools are officially approved for all Hooloovoo employees?",
+    "answers": [
+      "ChatGPT, Claude, and Midjourney",
+      "Gemini, NotebookLM, and HAIP",
+      "DALL-E, GitHub Copilot, and DeepSeek",
+      "All AI tools are approved"
+    ],
+    "correct": "Gemini, NotebookLM, and HAIP"
+  },
+  {
+    "question": "What is HAIP's main advantage for enterprise use?",
+    "answers": [
+      "It's the cheapest option available",
+      "It provides secure enterprise gateway with data privacy compliance",
+      "It has the best image generation capabilities",
+      "It works only in English"
+    ],
+    "correct": "It provides secure enterprise gateway with data privacy compliance"
+  },
+  {
+    "question": "According to the data classification table, when can you use client data with internal tools like HAIP?",
+    "answers": [
+      "Never, under any circumstances",
+      "Always, without restrictions",
+      "Only with proper approval from IT security",
+      "Only for translation tasks"
+    ],
+    "correct": "Only with proper approval from IT security"
+  },
+  {
+    "question": "What is the HLV Success Vision mentioned in the document?",
+    "answers": [
+      "Replace all human workers with AI",
+      "AI-augmented teams delivering higher quality work faster while maintaining ethical standards and human creativity",
+      "Use only the most expensive AI tools",
+      "Avoid AI completely in business processes"
+    ],
+    "correct": "AI-augmented teams delivering higher quality work faster while maintaining ethical standards and human creativity"
+  },
+  {
+    "question": "You need to analyze multiple research papers about AI ethics and want minimal hallucinations with precise citations. Which tool should you choose?",
+    "answers": [
+      "ChatGPT for its creative capabilities",
+      "Gemini for real-time information",
+      "NotebookLM for source-grounded responses",
+      "HAIP for enterprise security"
+    ],
+    "correct": "NotebookLM for source-grounded responses"
+  },
+  {
+    "question": "Your team needs to work with sensitive client data for document analysis. Which tool is most appropriate?",
+    "answers": [
+      "ChatGPT with data controls disabled",
+      "Gemini for its integration capabilities",
+      "HAIP with proper IT security approval",
+      "Any public AI tool is fine"
+    ],
+    "correct": "HAIP with proper IT security approval"
+  },
+  {
+    "question": "You want to create a compelling marketing email for CTOs at mid-size companies. Which prompt approach is better?",
+    "answers": [
+      "Write an email about our product",
+      "Write a compelling product launch email for our new AI analytics tool. Target audience: CTOs at mid-size companies. Tone: professional but approachable. Include a clear call-to-action for a demo.",
+      "Create marketing content",
+      "Help me with business writing"
+    ],
+    "correct": "Write a compelling product launch email for our new AI analytics tool. Target audience: CTOs at mid-size companies. Tone: professional but approachable. Include a clear call-to-action for a demo."
+  },
+  {
+    "question": "Which of the following is NOT mentioned as a common prompting mistake?",
+    "answers": [
+      "Being too vague",
+      "Assuming AI knows context",
+      "Not specifying format or length",
+      "Using technical jargon"
+    ],
+    "correct": "Using technical jargon"
+  },
+  {
+    "question": "What feature does NotebookLM offer to help find relevant documents from the web?",
+    "answers": [
+      "Web Search",
+      "Discover sources",
+      "Auto-complete",
+      "Real-time browsing"
+    ],
+    "correct": "Discover sources"
+  },
+  {
+    "question": "According to the GPT vs. Gemini comparison, which has superior context window capabilities?",
+    "answers": [
+      "GPT has superior context window",
+      "Both are equal",
+      "Gemini has superior context window",
+      "Neither supports context windows"
+    ],
+    "correct": "Gemini has superior context window"
+  },
+  {
+    "question": "What does HAIP's 'Improve Prompt' feature do?",
+    "answers": [
+      "Automatically generates responses",
+      "Suggests prompt enhancement in 1-click",
+      "Translates prompts to different languages",
+      "Saves prompts to a library"
+    ],
+    "correct": "Suggests prompt enhancement in 1-click"
+  },
+  {
+    "question": "Which AI tool category does GitHub Copilot belong to?",
+    "answers": [
+      "Multimodal",
+      "Image",
+      "Code",
+      "Audio"
+    ],
+    "correct": "Code"
+  },
+  {
+    "question": "What is data pseudonymization in the context of AI tools?",
+    "answers": [
+      "Completely avoiding AI tools",
+      "Using fake data only",
+      "Removing identifying details from data before sharing with AI",
+      "Encrypting all communications"
+    ],
+    "correct": "Removing identifying details from data before sharing with AI"
+  },
+  {
+    "question": "For company accounts, what is a downside of using Gemini mentioned in the document?",
+    "answers": [
+      "It's too expensive",
+      "Chat sessions can't be deleted since Google considers them company property",
+      "It doesn't support multiple languages",
+      "It has limited functionality"
+    ],
+    "correct": "Chat sessions can't be deleted since Google considers them company property"
+  },
+  {
+    "question": "You need to research the latest AI regulation developments in the EU with recent policy changes. Which tool and approach should you use?",
+    "answers": [
+      "NotebookLM with uploaded documents",
+      "ChatGPT for creative analysis",
+      "Gemini with a prompt asking for latest developments and recent updates",
+      "HAIP for enterprise security"
+    ],
+    "correct": "Gemini with a prompt asking for latest developments and recent updates"
+  },
+  {
+    "question": "Your company wants to implement AI tools while maintaining ethical standards. Which principle from the HLV Success Vision should guide this implementation?",
+    "answers": [
+      "Use AI to replace human creativity entirely",
+      "Focus only on speed and efficiency",
+      "AI-augmented teams maintaining ethical standards and human creativity",
+      "Avoid AI tools completely"
+    ],
+    "correct": "AI-augmented teams maintaining ethical standards and human creativity"
+  },
+  {
+    "question": "Which constraint pattern example is provided in the basic prompt patterns section?",
+    "answers": [
+      "Summarize this article in 3 bullet points",
+      "You are an expert chef. Create a recipe for...",
+      "Write a poem about AI without using the letter 'e'",
+      "Explain quantum physics like I'm 10 years old"
+    ],
+    "correct": "Write a poem about AI without using the letter 'e'"
+  },
+  {
+    "question": "What is the recommended approach when you need to cross-validate AI-generated information?",
+    "answers": [
+      "Use only one AI tool for consistency",
+      "Always trust the first response",
+      "Use multiple tools for comprehensive analysis and fact-check important information",
+      "Avoid fact-checking to save time"
+    ],
+    "correct": "Use multiple tools for comprehensive analysis and fact-check important information"
+  },
+  {
+    "question": "What should you do if approval is needed for using certain data types with AI tools?",
+    "answers": [
+      "Proceed without approval if it's urgent",
+      "Contact IT security",
+      "Use the data with any public AI tool",
+      "Avoid using AI tools entirely"
+    ],
+    "correct": "Contact IT security"
+  }
+]

@@ -1,0 +1,252 @@
+[
+  {
+    "question": "Šta je promptovanje u kontekstu AI?",
+    "answers": [
+      "Proces treniranja AI modela",
+      "Instrukcije, pitanja ili tekst koji pružate da biste dobili željene rezultate",
+      "Brzina kojom AI odgovara",
+      "Troškovi korišćenja AI usluga"
+    ],
+    "correct": "Instrukcije, pitanja ili tekst koji pružate da biste dobili željene rezultate"
+  },
+  {
+    "question": "Koji od sledećih primera predstavlja osnovni obrazac promptova za dodjeljivanje uloga?",
+    "answers": [
+      "Sumiraj ovaj članak u 3 tačke",
+      "Ti si profesionalni kuvar. Kreiraj recept za...",
+      "Objasni kvantnu fiziku kao da imam 10 godina",
+      "Napiši pesmu o AI bez korišćenja slova 'a'"
+    ],
+    "correct": "Ti si profesionalni kuvar. Kreiraj recept za..."
+  },
+  {
+    "question": "Koja je glavna razlika između zero-shot i few-shot promptovanja?",
+    "answers": [
+      "Zero-shot koristi više podataka od few-shot",
+      "Few-shot je brži od zero-shot",
+      "Zero-shot ne daje primere, dok few-shot daje nekoliko primera",
+      "Zero-shot je skuplji od few-shot"
+    ],
+    "correct": "Zero-shot ne daje primere, dok few-shot daje nekoliko primera"
+  },
+  {
+    "question": "Prema smernicama bezbednosti, šta NIKADA ne treba unositi u javne AI alate?",
+    "answers": [
+      "Javne informacije i opšta pitanja",
+      "Podatke klijenata, lozinke ili osetljive informacije kompanije",
+      "Zahteve za kreativno pisanje",
+      "Jednostavne zadatke prevođenja"
+    ],
+    "correct": "Podatke klijenata, lozinke ili osetljive informacije kompanije"
+  },
+  {
+    "question": "Koji AI alat je najbolji za istraživanje weba u realnom vremenu i aktuelne informacije?",
+    "answers": [
+      "ChatGPT",
+      "NotebookLM",
+      "Gemini",
+      "HAIP"
+    ],
+    "correct": "Gemini"
+  },
+  {
+    "question": "Šta čini NotebookLM posebnim za istraživačke zadatke?",
+    "answers": [
+      "Ima najbrže vreme odgovora",
+      "Pruža odgovore zasnovane na izvorima sa minimalnim halucinacijama",
+      "Može generisati slike",
+      "Ima najveći kontekstni prozor"
+    ],
+    "correct": "Pruža odgovore zasnovane na izvorima sa minimalnim halucinacijama"
+  },
+  {
+    "question": "Koji AI alati su zvanično odobreni za sve zaposlene u HLV-u?",
+    "answers": [
+      "ChatGPT, Claude i Midjourney",
+      "Gemini, NotebookLM i HAIP",
+      "DALL-E, GitHub Copilot i DeepSeek",
+      "Svi AI alati su odobreni"
+    ],
+    "correct": "Gemini, NotebookLM i HAIP"
+  },
+  {
+    "question": "Koja je glavna prednost HAIP-a za enterprise korišćenje?",
+    "answers": [
+      "To je najjeftinija dostupna opcija",
+      "Pruža siguran enterprise pristup sa usklađenošću privatnosti podataka",
+      "Ima najbolje mogućnosti generisanja slika",
+      "Radi samo na engleskom jeziku"
+    ],
+    "correct": "Pruža siguran enterprise pristup sa usklađenošću privatnosti podataka"
+  },
+  {
+    "question": "Prema tabeli klasifikacije podataka, kada možete koristiti podatke klijenata sa internim alatima poput HAIP-a?",
+    "answers": [
+      "Nikada, ni pod kojim okolnostima",
+      "Uvek, bez ograničenja",
+      "Samo uz odgovarajuće odobrenje od IT bezbednosti",
+      "Samo za zadatke prevođenja"
+    ],
+    "correct": "Samo uz odgovarajuće odobrenje od IT bezbednosti"
+  },
+  {
+    "question": "Koja je HLV vizija uspeha?",
+    "answers": [
+      "Zameniti sve ljudske radnike sa AI",
+      "Timovi potpomognuti AI koji ispoljavaju kvalitetniji rad brže uz održavanje etičkih standarda i ljudske kreativnosti",
+      "Koristiti samo najskuplje AI alate",
+      "Potpuno izbegavati AI u poslovnim procesima"
+    ],
+    "correct": "Timovi potpomognuti AI koji ispoljavaju kvalitetniji rad brže uz održavanje etičkih standarda i ljudske kreativnosti"
+  },
+  {
+    "question": "Potrebno vam je da analizirate više istraživačkih radova o etici AI i želite minimalne halucinacije sa preciznim citatima. Koji alat treba da izaberete?",
+    "answers": [
+      "ChatGPT zbog kreativnih mogućnosti",
+      "Gemini za informacije u realnom vremenu",
+      "NotebookLM za odgovore zasnovane na izvorima",
+      "HAIP zbog enterprise bezbednosti"
+    ],
+    "correct": "NotebookLM za odgovore zasnovane na izvorima"
+  },
+  {
+    "question": "Vašem timu je potrebno da radi sa osetljivim podacima klijenata za analizu dokumenata. Koji alat je najodgovarajući?",
+    "answers": [
+      "ChatGPT sa onemogućenim kontrolama podataka",
+      "Gemini zbog integracijskih mogućnosti",
+      "HAIP uz odgovarajuće odobrenje IT bezbednosti",
+      "Bilo koji javni AI alat je u redu"
+    ],
+    "correct": "HAIP uz odgovarajuće odobrenje IT bezbednosti"
+  },
+  {
+    "question": "Želite da napravite ubedljiv marketing email za direktore tehnologije u srednjim preduzećima. Koji pristup promptu je bolji?",
+    "answers": [
+      "Napiši email o našem proizvodu",
+      "Napiši ubedljiv email za lansiranje proizvoda za naš novi AI alat za analitiku. Ciljna publika: direktori tehnologije u srednjim preduzećima. Ton: profesionalan ali pristupačan. Uključi jasan poziv na akciju za demonstraciju.",
+      "Kreiraj marketing sadržaj",
+      "Pomozi mi sa poslovnim pisanjem"
+    ],
+    "correct": "Napiši ubedljiv email za lansiranje proizvoda za naš novi AI alat za analitiku. Ciljna publika: direktori tehnologije u srednjim preduzećima. Ton: profesionalan ali pristupačan. Uključi jasan poziv na akciju za demonstraciju."
+  },
+  {
+    "question": "Koja od sledećih NIJE spomenuta kao česta greška pri promptovanju?",
+    "answers": [
+      "Biti previše nejasan",
+      "Pretpostavka da AI poznaje kontekst",
+      "Neodređivanje formata ili dužine",
+      "Korišćenje tehničkog žargona"
+    ],
+    "correct": "Korišćenje tehničkog žargona"
+  },
+  {
+    "question": "Koju funkciju NotebookLM nudi za pomoć u pronalaženju relevantnih dokumenata sa weba?",
+    "answers": [
+      "Pretraga weba",
+      "Otkrivanje izvora",
+      "Automatsko dopunjavanje",
+      "Pregledanje u realnom vremenu"
+    ],
+    "correct": "Otkrivanje izvora"
+  },
+  {
+    "question": "Prema tabeli poređenja GPT vs. Gemini, koji ima superiorne mogućnosti kontekstnog prozora?",
+    "answers": [
+      "GPT ima superiorni kontekstni prozor",
+      "Oba su jednaka",
+      "Gemini ima superiorni kontekstni prozor",
+      "Nijedan ne podržava kontekstne prozore"
+    ],
+    "correct": "Gemini ima superiorni kontekstni prozor"
+  },
+  {
+    "question": "Šta radi HAIP-ova funkcija 'Poboljšanje prompta'?",
+    "answers": [
+      "Automatski generiše odgovore",
+      "Predlaže poboljšanje prompta u 1 kliku",
+      "Prevodi promptove na različite jezike",
+      "Čuva promptove u biblioteku"
+    ],
+    "correct": "Predlaže poboljšanje prompta u 1 kliku"
+  },
+  {
+    "question": "Kojoj kategoriji AI alata pripada GitHub Copilot?",
+    "answers": [
+      "Multimodalni",
+      "Slike",
+      "Kôd",
+      "Audio"
+    ],
+    "correct": "Kôd"
+  },
+  {
+    "question": "Šta je pseudonimizacija podataka u kontekstu AI alata?",
+    "answers": [
+      "Potpuno izbegavanje AI alata",
+      "Korišćenje samo lažnih podataka",
+      "Uklanjanje identifikujućih detalja iz podataka pre deljenja sa AI",
+      "Šifrovanje sve komunikacije"
+    ],
+    "correct": "Uklanjanje identifikujućih detalja iz podataka pre deljenja sa AI"
+  },
+  {
+    "question": "Za kompanijske naloge, koji je nedostatak korišćenja Gemini spomenut u dokumentu?",
+    "answers": [
+      "Previše je skup",
+      "Sesije (chatovi) se ne mogu izbrisati jer ih Google smatra vlasništvom kompanije",
+      "Ne podržava više jezika",
+      "Ima ograničenu funkcionalnost"
+    ],
+    "correct": "Sesije (chatovi) se ne mogu izbrisati jer ih Google smatra vlasništvom kompanije"
+  },
+  {
+    "question": "Potrebno vam je da istražite najnovije promene u regulaciji AI u EU sa nedavnim promenama politika. Koji alat i pristup treba da koristite?",
+    "answers": [
+      "NotebookLM sa uploadovanim dokumentima",
+      "ChatGPT za kreativnu analizu",
+      "Gemini sa promptom koji traži najnovije promene i nedavna ažuriranja",
+      "HAIP zbog enterprise bezbednosti"
+    ],
+    "correct": "Gemini sa promptom koji traži najnovije promene i nedavna ažuriranja"
+  },
+  {
+    "question": "Vaša kompanija želi da implementira AI alate uz održavanje etičkih standarda. Koji princip iz HLV vizije uspeha treba da vodi ovu implementaciju?",
+    "answers": [
+      "Koristiti AI da potpuno zameni ljudsku kreativnost",
+      "Fokusirati se samo na brzinu i efikasnost",
+      "Timovi potpomognuti AI održavaju etičke standarde i ljudsku kreativnost",
+      "Potpuno izbegavati AI alate"
+    ],
+    "correct": "Timovi potpomognuti AI održavaju etičke standarde i ljudsku kreativnost"
+  },
+  {
+    "question": "Koji primer obrasca ograničenja je dat u osnovnim obrascima promptova?",
+    "answers": [
+      "Sumiraj ovaj članak u 3 tačke",
+      "Ti si profesionalni kuvar. Kreiraj recept za...",
+      "Napiši pesmu o AI bez korišćenja slova 'a'",
+      "Objasni kvantnu fiziku kao da imam 10 godina"
+    ],
+    "correct": "Napiši pesmu o AI bez korišćenja slova 'a'"
+  },
+  {
+    "question": "Koji je preporučeni pristup kada trebate da unakrsno validirate informacije generisane od strane AI?",
+    "answers": [
+      "Koristiti samo jedan AI alat radi konzistentnosti",
+      "Uvek verovati prvom odgovoru",
+      "Koristiti više alata za sveobuhvatnu analizu i proveravati činjenice kod važnih informacija",
+      "Izbegavati proveru činjenica da biste uštedeli vreme"
+    ],
+    "correct": "Koristiti više alata za sveobuhvatnu analizu i proveravati činjenice kod važnih informacija"
+  },
+  {
+    "question": "Šta treba da uradite ako je potrebno odobrenje za korišćenje određenih tipova podataka sa AI alatima?",
+    "answers": [
+      "Nastaviti bez odobrenja ako je hitno",
+      "Kontaktirati IT bezbednost",
+      "Koristiti podatke sa bilo kojim javnim AI alatom",
+      "Potpuno izbegavati AI alate"
+    ],
+    "correct": "Kontaktirati IT bezbednost"
+  }
+]
