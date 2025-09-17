@@ -1,4 +1,0 @@
-user1@example.com
-user2@example.com
-team@company.com
-admin@organization.org
