@@ -2,7 +2,7 @@
   {
     "question": "What is prompting in the context of AI?",
     "answers": [
-      "The process of training AI models",
+      "The comprehensive process of training and fine-tuning AI models with datasets",
       "The instructions, questions, or text you provide to get desired outputs",
       "The speed at which AI responds",
       "The cost of using AI services"
@@ -22,7 +22,7 @@
   {
     "question": "What is the main difference between zero-shot and few-shot prompting?",
     "answers": [
-      "Zero-shot uses more data than few-shot",
+      "Zero-shot uses significantly more training data and computational resources than few-shot",
       "Few-shot is faster than zero-shot",
       "Zero-shot provides no examples, while few-shot provides a few examples",
       "Zero-shot is more expensive than few-shot"
@@ -52,7 +52,7 @@
   {
     "question": "What makes NotebookLM special for research tasks?",
     "answers": [
-      "It has the fastest response time",
+      "It has the fastest response time among all available and approved AI tools",
       "It provides source-grounded responses with minimal hallucinations",
       "It can generate images",
       "It has the largest context window"
@@ -72,7 +72,7 @@
   {
     "question": "What is HAIP's main advantage for enterprise use?",
     "answers": [
-      "It's the cheapest option available",
+      "It's the cheapest option available with unlimited usage for all employees",
       "It provides secure enterprise gateway with data privacy compliance",
       "It has the best image generation capabilities",
       "It works only in English"
@@ -92,9 +92,9 @@
   {
     "question": "What is the HLV Success Vision mentioned in the document?",
     "answers": [
-      "Replace all human workers with AI",
+      "Replace all human workers with AI systems to maximize efficiency and reduce operational costs, starting with our clients",
       "AI-augmented teams delivering higher quality work faster while maintaining ethical standards and human creativity",
-      "Use only the most expensive AI tools",
+      "Use only the most expensive and advanced AI tools available in the market regardless of necessity",
       "Avoid AI completely in business processes"
     ],
     "correct": "AI-augmented teams delivering higher quality work faster while maintaining ethical standards and human creativity"
@@ -124,7 +124,7 @@
     "answers": [
       "Write an email about our product",
       "Write a compelling product launch email for our new AI analytics tool. Target audience: CTOs at mid-size companies. Tone: professional but approachable. Include a clear call-to-action for a demo.",
-      "Create marketing content",
+      "Create marketing content that covers all possible use cases, industry applications, and competitive advantages while maintaining brevity",
       "Help me with business writing"
     ],
     "correct": "Write a compelling product launch email for our new AI analytics tool. Target audience: CTOs at mid-size companies. Tone: professional but approachable. Include a clear call-to-action for a demo."
@@ -182,7 +182,7 @@
   {
     "question": "What is data pseudonymization in the context of AI tools?",
     "answers": [
-      "Completely avoiding AI tools",
+      "Completely avoiding AI tools for any business-related tasks or processes",
       "Using fake data only",
       "Removing identifying details from data before sharing with AI",
       "Encrypting all communications"
@@ -192,7 +192,7 @@
   {
     "question": "For company accounts, what is a downside of using Gemini mentioned in the document?",
     "answers": [
-      "It's too expensive",
+      "It's too expensive with hidden costs and complex pricing structures for enterprises",
       "Chat sessions can't be deleted since Google considers them company property",
       "It doesn't support multiple languages",
       "It has limited functionality"
@@ -202,7 +202,7 @@
   {
     "question": "You need to research the latest AI regulation developments in the EU with recent policy changes. Which tool and approach should you use?",
     "answers": [
-      "NotebookLM with uploaded documents",
+      "NotebookLM with carefully selected and uploaded regulatory documents from official sources",
       "ChatGPT for creative analysis",
       "Gemini with a prompt asking for latest developments and recent updates",
       "HAIP for enterprise security"
@@ -232,7 +232,7 @@
   {
     "question": "What is the recommended approach when you need to cross-validate AI-generated information?",
     "answers": [
-      "Use only one AI tool for consistency",
+      "Use only one AI tool for maintaining consistency throughout the entire process",
       "Always trust the first response",
       "Use multiple tools for comprehensive analysis and fact-check important information",
       "Avoid fact-checking to save time"
