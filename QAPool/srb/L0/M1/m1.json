@@ -32,10 +32,10 @@
   {
     "question": "Koja je glavna razlika između tradicionalnog softvera i AI/ML softvera?",
     "answers": [
-      "Tradicionalni softver uči iz podataka, AI/ML koristi fiksna pravila",
+      "Tradicionalni softver uči iz podataka kroz iterativne procese, AI/ML koristi unapred definisana fiksna pravila",
       "Tradicionalni softver koristi eksplicitna pravila, AI/ML uči obrasce iz podataka",
-      "Nema razlike",
-      "Tradicionalni softver je brži od AI/ML"
+      "Nema razlike između ova dva pristupa",
+      "Tradicionalni softver je uvek značajno brži od AI/ML sistema"
     ],
     "correct": "Tradicionalni softver koristi eksplicitna pravila, AI/ML uči obrasce iz podataka"
   },
@@ -62,19 +62,19 @@
   {
     "question": "Na šta se odnosi 'duboko' u dubokom učenju?",
     "answers": [
-      "Dubinu analize podataka",
+      "Dubinu analize podataka i kompleksnost algoritama koji se koriste",
       "Više slojeva obrade u neuronskim mrežama",
-      "Složenost problema",
-      "Količinu podataka"
+      "Složenost problema koji se rešavaju",
+      "Količinu podataka potrebnih za treniranje"
     ],
     "correct": "Više slojeva obrade u neuronskim mrežama"
   },
   {
     "question": "Šta je faza treninga u AI sistemima?",
     "answers": [
-      "Kada AI primenjuje naučene obrasce na nove situacije",
+      "Kada AI primenjuje već naučene obrasce i pravila na potpuno nove i nepoznate situacije",
       "Kada AI sistem uči obrasce iz velikih količina podataka",
-      "Kada korisnici komuniciraju sa AI",
+      "Kada korisnici direktno komuniciraju i interaguju sa AI sistemom",
       "Kada se AI testira"
     ],
     "correct": "Kada AI sistem uči obrasce iz velikih količina podataka"
@@ -82,8 +82,8 @@
   {
     "question": "Šta je faza zaključivanja (inference) u AI sistemima?",
     "answers": [
-      "Kada AI uči iz podataka",
-      "Kada se AI razvija",
+      "Kada AI uči iz novih podataka i prilagođava svoje parametre",
+      "Kada se AI razvija i nadograđuje sa novim funkcionalnostima",
       "Kada istrenirani AI primenjuje naučeno na nove situacije",
       "Kada se AI gasi"
     ],
@@ -112,40 +112,40 @@
   {
     "question": "Šta znači NLP u kontekstu AI?",
     "answers": [
-      "Neural Learning Protocol",
-      "Obrada prirodnog jezika (Natural Language Processing)",
-      "Network Layer Protection",
-      "Non-Linear Programming"
+      "Neural Learning Protocol - protokol za neuronsko učenje i optimizaciju",
+      "Natural Language Processing - obrada prirodnog jezika",
+      "Network Layer Protection - zaštita mrežnog sloja",
+      "Non-Linear Programming - nelinearno programiranje i optimizacija"
     ],
-    "correct": "Obrada prirodnog jezika (Natural Language Processing)"
+    "correct": "Natural Language Processing - obrada prirodnog jezika"
   },
   {
     "question": "Šta je veliki jezički model (LLM)?",
     "answers": [
-      "Mali, efikasan tekst procesor",
+      "Mali, veoma efikasan i optimizovan tekst procesor dizajniran za brzu obradu podataka",
       "Model sa milijardama/bilionima parametara treniran na ogromnim tekstualnim podacima",
       "Tradicionalni sistem zasnovan na pravilima",
-      "Sistem za prepoznavanje glasa"
+      "Specijalizovan sistem za prepoznavanje i sintezu ljudskog glasa"
     ],
     "correct": "Model sa milijardama/bilionima parametara treniran na ogromnim tekstualnim podacima"
   },
   {
     "question": "Šta je 'kontekstni prozor' u AI sistemima?",
     "answers": [
-      "Grafički korisnički interfejs",
+      "Grafički korisnički interfejs za komunikaciju",
       "Maksimalna količina teksta koju model može da 'vidi' odjednom",
-      "Vremenski period za treniranje",
-      "Rezolucija ekrana"
+      "Vremenski period potreban za treniranje i optimizaciju AI modela",
+      "Rezolucija ekrana i vizuelni prikaz podataka"
     ],
     "correct": "Maksimalna količina teksta koju model može da 'vidi' odjednom"
   },
   {
     "question": "Šta je granična tačka znanja (knowledge cutoff) u AI modelima?",
     "answers": [
-      "Kada AI prestaje da radi",
+      "Kada AI prestaje da funkcioniše i zahteva ponovno pokretanje",
       "Najnovija tačka u vremenu kada su podaci za treniranje AI modela ažurirani",
-      "Maksimalna brzina procesiranja",
-      "Minimalni podaci potrebni"
+      "Maksimalna brzina procesiranja informacija",
+      "Minimalni podaci potrebni za početak rada sistema i generisanje osnovnih odgovora"
     ],
     "correct": "Najnovija tačka u vremenu kada su podaci za treniranje AI modela ažurirani"
   },
@@ -172,20 +172,20 @@
   {
     "question": "Koji tip mašinskog učenja uči kroz pokušaje i greške sa nagradama?",
     "answers": [
-      "Nadgledano učenje",
-      "Nenadgledano učenje",
+      "Nadgledano učenje sa eksplicitnim oznakama",
+      "Nenadgledano učenje kroz klasterovanje podataka",
       "Učenje putem nagrada (Reinforcement Learning)",
-      "Duboko učenje"
+      "Duboko učenje sa više neuronskih slojeva"
     ],
     "correct": "Učenje putem nagrada (Reinforcement Learning)"
   },
   {
     "question": "Šta je multimodalna AI?",
     "answers": [
-      "AI koja obrađuje samo tekst",
+      "AI koja obrađuje isključivo tekstualne podatke i generiše samo tekstualne odgovore",
       "AI koja kombinuje više tipova ulaza kao što su tekst, slike i audio",
-      "AI koja radi na više računara",
-      "AI sa više korisnika"
+      "AI koja radi paralelno na više računara",
+      "AI sa više korisnika koji istovremeno pristupaju sistemu"
     ],
     "correct": "AI koja kombinuje više tipova ulaza kao što su tekst, slike i audio"
   },
@@ -202,10 +202,10 @@
   {
     "question": "Zašto je kvalitet podataka važan za AI sisteme?",
     "answers": [
-      "Čini sistem bržim",
+      "Čini sistem značajno bržim u procesiranju i generisanju odgovora",
       "AI sistemi su dobri samo onoliko koliko su dobri podaci na kojima su trenirani",
       "Smanjuje troškove hardvera",
-      "Nije važan"
+      "Nije važan za moderne AI sisteme"
     ],
     "correct": "AI sistemi su dobri samo onoliko koliko su dobri podaci na kojima su trenirani"
   },
@@ -222,10 +222,10 @@
   {
     "question": "Šta su 'halucinacije' u kontekstu AI?",
     "answers": [
-      "Kada AI vidi slike",
+      "Kada AI vizualizuje i procesira slike iz tekstualnih opisa korisnika",
       "Kada model predviđa verovatne reči umesto istinitih i samouvereno izmišlja činjenice",
-      "Kada sistem padne",
-      "Kada AI sanja"
+      "Kada sistem pada i prestaje da odgovara",
+      "Kada AI generiše kreativne i umetnički inspirisane odgovore na osnovu unetih podataka"
     ],
     "correct": "Kada model predviđa verovatne reči umesto istinitih i samouvereno izmišlja činjenice"
   },
@@ -242,40 +242,40 @@
   {
     "question": "Šta je kompjuterska vizija u AI?",
     "answers": [
-      "AI koja poboljšava ljudski vid",
+      "AI koja značajno poboljšava i koriguje ljudski vid kroz napredne algoritme",
       "AI koja može da prepoznaje i generiše vizuelni sadržaj",
-      "Tehnologija kompjuterskog monitora",
-      "Sistemi virtuelne realnosti"
+      "Specijalizovana tehnologija kompjuterskog monitora visokih performansi",
+      "Sistemi virtuelne realnosti za gaming"
     ],
     "correct": "AI koja može da prepoznaje i generiše vizuelni sadržaj"
   },
   {
     "question": "Šta najbolje opisuje AGI (opštu veštačku inteligenciju)?",
     "answers": [
-      "Trenutno dostupna u pametnim telefonima",
+      "Trenutno dostupna i integrisana u savremene pametne telefone i druge uređaje",
       "Inteligencija na ljudskom nivou kroz sve domene koja još ne postoji",
-      "Radi samo za igre",
-      "Isto što i ANI"
+      "Specijalizovana AI koja radi isključivo za video igre",
+      "Potpuno isto što i ANI, samo sa boljim performansama i brzinom procesiranja"
     ],
     "correct": "Inteligencija na ljudskom nivou kroz sve domene koja još ne postoji"
   },
   {
     "question": "Šta čini duboko učenje drugačijim od tradicionalnog mašinskog učenja?",
     "answers": [
-      "Koristi manje podataka",
+      "Koristi značajno manje podataka i resursa za postizanje istih rezultata",
       "Koristi veštačke neuronske mreže sa više slojeva",
-      "Uvek je brže",
-      "Ne zahteva treniranje"
+      "Uvek je brže od tradicionalnih metoda",
+      "Ne zahteva nikakvo treniranje ili podešavanje parametara za funkcionisanje"
     ],
     "correct": "Koristi veštačke neuronske mreže sa više slojeva"
   },
   {
     "question": "Zašto je važno znati ograničenja kontekstnog prozora kod korišćenja AI?",
     "answers": [
-      "Utiče na rezoluciju ekrana",
+      "Direktno utiče na rezoluciju ekrana i kvalitet vizuelnog prikaza rezultata",
       "Duži dokumenti mogu zahtevati podelu i raniji delovi razgovora mogu biti 'zaboravljeni'",
-      "Određuje brzinu AI",
-      "Nije važno"
+      "Određuje maksimalnu brzinu procesiranja AI sistema",
+      "Nije važno za moderne AI sisteme koji nemaju ova ograničenja"
     ],
     "correct": "Duži dokumenti mogu zahtevati podelu i raniji delovi razgovora mogu biti 'zaboravljeni'"
   }
