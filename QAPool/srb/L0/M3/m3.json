@@ -2,7 +2,7 @@
   {
     "question": "Šta je promptovanje u kontekstu AI?",
     "answers": [
-      "Proces treniranja AI modela",
+      "Složen proces treniranja i prilagođavanja AI modela kroz iteracije i algoritamske modifikacije",
       "Instrukcije, pitanja ili tekst koji pružate da biste dobili željene rezultate",
       "Brzina kojom AI odgovara",
       "Troškovi korišćenja AI usluga"
@@ -22,7 +22,7 @@
   {
     "question": "Koja je glavna razlika između zero-shot i few-shot promptovanja?",
     "answers": [
-      "Zero-shot koristi više podataka od few-shot",
+      "Zero-shot koristi znatno više podataka i kompleksnije algoritme od few-shot metoda",
       "Few-shot je brži od zero-shot",
       "Zero-shot ne daje primere, dok few-shot daje nekoliko primera",
       "Zero-shot je skuplji od few-shot"
@@ -35,7 +35,7 @@
       "Javne informacije i opšta pitanja",
       "Podatke klijenata, lozinke ili osetljive informacije kompanije",
       "Zahteve za kreativno pisanje",
-      "Jednostavne zadatke prevođenja"
+      "Jednostavne zadatke prevođenja i osnovne analize teksta koji ne sadrže poverljive informacije"
     ],
     "correct": "Podatke klijenata, lozinke ili osetljive informacije kompanije"
   },
@@ -52,7 +52,7 @@
   {
     "question": "Šta čini NotebookLM posebnim za istraživačke zadatke?",
     "answers": [
-      "Ima najbrže vreme odgovora",
+      "Ima najbrže vreme odgovora i može procesirati najveći broj zahteva istovremeno",
       "Pruža odgovore zasnovane na izvorima sa minimalnim halucinacijama",
       "Može generisati slike",
       "Ima najveći kontekstni prozor"
@@ -74,7 +74,7 @@
     "answers": [
       "To je najjeftinija dostupna opcija",
       "Pruža siguran enterprise pristup sa usklađenošću privatnosti podataka",
-      "Ima najbolje mogućnosti generisanja slika",
+      "Ima najbolje mogućnosti generisanja slika i video sadržaja uz napredne opcije editovanja",
       "Radi samo na engleskom jeziku"
     ],
     "correct": "Pruža siguran enterprise pristup sa usklađenošću privatnosti podataka"
@@ -92,7 +92,7 @@
   {
     "question": "Koja je HLV vizija uspeha?",
     "answers": [
-      "Zameniti sve ljudske radnike sa AI",
+      "Potpuno zameniti sve ljudske radnike sa AI sistemima koji mogu samostalno da donose kompleksne odluke bez ljudskog nadzora",
       "Timovi potpomognuti AI koji ispoljavaju kvalitetniji rad brže uz održavanje etičkih standarda i ljudske kreativnosti",
       "Koristiti samo najskuplje AI alate",
       "Potpuno izbegavati AI u poslovnim procesima"
@@ -122,7 +122,7 @@
   {
     "question": "Želite da napravite ubedljiv marketing email za direktore tehnologije u srednjim preduzećima. Koji pristup promptu je bolji?",
     "answers": [
-      "Napiši email o našem proizvodu",
+      "Napišite detaljan marketing email sa jasnim fokusom na ROI, tehničkim specifikacijama našeg proizvoda, uključujući sve moguće benefite i karakteristike bez ograničenja dužine",
       "Napiši ubedljiv email za lansiranje proizvoda za naš novi AI alat za analitiku. Ciljna publika: direktori tehnologije u srednjim preduzećima. Ton: profesionalan ali pristupačan. Uključi jasan poziv na akciju za demonstraciju.",
       "Kreiraj marketing sadržaj",
       "Pomozi mi sa poslovnim pisanjem"
@@ -183,7 +183,7 @@
     "question": "Šta je pseudonimizacija podataka u kontekstu AI alata?",
     "answers": [
       "Potpuno izbegavanje AI alata",
-      "Korišćenje samo lažnih podataka",
+      "Korišćenje isključivo lažnih, izmišljenih podataka koji simuliraju realne scenarije za testiranje",
       "Uklanjanje identifikujućih detalja iz podataka pre deljenja sa AI",
       "Šifrovanje sve komunikacije"
     ],
@@ -195,7 +195,7 @@
       "Previše je skup",
       "Sesije (chatovi) se ne mogu izbrisati jer ih Google smatra vlasništvom kompanije",
       "Ne podržava više jezika",
-      "Ima ograničenu funkcionalnost"
+      "Ima veoma ograničenu funkcionalnost u poređenju sa drugim enterprise AI rešenjima na tržištu"
     ],
     "correct": "Sesije (chatovi) se ne mogu izbrisati jer ih Google smatra vlasništvom kompanije"
   },
@@ -213,7 +213,7 @@
     "question": "Vaša kompanija želi da implementira AI alate uz održavanje etičkih standarda. Koji princip iz HLV vizije uspeha treba da vodi ovu implementaciju?",
     "answers": [
       "Koristiti AI da potpuno zameni ljudsku kreativnost",
-      "Fokusirati se samo na brzinu i efikasnost",
+      "Fokusirati se isključivo na brzinu i efikasnost bez razmatranja drugih faktora u poslovnom procesu",
       "Timovi potpomognuti AI održavaju etičke standarde i ljudsku kreativnost",
       "Potpuno izbegavati AI alate"
     ],
@@ -233,7 +233,7 @@
     "question": "Koji je preporučeni pristup kada trebate da unakrsno validirate informacije generisane od strane AI?",
     "answers": [
       "Koristiti samo jedan AI alat radi konzistentnosti",
-      "Uvek verovati prvom odgovoru",
+      "Uvek verovati prvom odgovoru koji dobijete bez dodatne provere jer su AI sistemi veoma pouzdani",
       "Koristiti više alata za sveobuhvatnu analizu i proveravati činjenice kod važnih informacija",
       "Izbegavati proveru činjenica da biste uštedeli vreme"
     ],
