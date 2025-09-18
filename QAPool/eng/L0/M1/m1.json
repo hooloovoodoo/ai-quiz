@@ -32,10 +32,10 @@
   {
     "question": "What is the main difference between traditional software and AI/ML software?",
     "answers": [
-      "Traditional software learns from data, AI/ML uses fixed rules",
+      "Traditional software learns from data patterns while AI/ML uses predefined fixed rules",
       "Traditional software uses explicit rules, AI/ML learns patterns from data",
-      "There is no difference",
-      "Traditional software is faster than AI/ML"
+      "There is no significant difference between the two",
+      "Traditional software is always faster and more efficient than AI/ML"
     ],
     "correct": "Traditional software uses explicit rules, AI/ML learns patterns from data"
   },
@@ -62,9 +62,9 @@
   {
     "question": "What does 'deep' refer to in Deep Learning?",
     "answers": [
-      "The depth of data analysis",
+      "The depth and complexity of data analysis performed",
       "Multiple layers of processing in neural networks",
-      "The complexity of the problem",
+      "The extreme complexity of the problem being solved",
       "The amount of data used"
     ],
     "correct": "Multiple layers of processing in neural networks"
@@ -72,7 +72,7 @@
   {
     "question": "What is the training phase in AI systems?",
     "answers": [
-      "When the AI applies learned patterns to new situations",
+      "When the AI applies learned patterns to completely new and unseen situations",
       "When the AI system learns patterns from large amounts of data",
       "When users interact with the AI",
       "When the AI is being tested"
@@ -83,7 +83,7 @@
     "question": "What is the inference phase in AI systems?",
     "answers": [
       "When the AI is learning from data",
-      "When the AI is being developed",
+      "When the AI is being initially developed and programmed by engineers",
       "When trained AI applies what it learned to new situations",
       "When the AI is shut down"
     ],
@@ -122,9 +122,9 @@
   {
     "question": "What is a Large Language Model (LLM)?",
     "answers": [
-      "A small, efficient text processor",
+      "A small, highly efficient and optimized text processing system",
       "A model with billions/trillions of parameters trained on vast text data",
-      "A traditional rule-based system",
+      "A traditional rule-based system with extensive documentation",
       "A voice recognition system"
     ],
     "correct": "A model with billions/trillions of parameters trained on vast text data"
@@ -132,9 +132,9 @@
   {
     "question": "What is the 'context window' in AI systems?",
     "answers": [
-      "The graphical user interface",
+      "The graphical user interface for interacting with the model",
       "Maximum amount of text the model can 'see' at once",
-      "The time period for training",
+      "The specific time period allocated for training the model",
       "The screen resolution"
     ],
     "correct": "Maximum amount of text the model can 'see' at once"
@@ -144,8 +144,8 @@
     "answers": [
       "When the AI stops working",
       "The most recent point when the AI's training data was updated",
-      "The maximum processing speed",
-      "The minimum data required"
+      "The maximum processing speed the system can achieve over time",
+      "The minimum amount of data required for proper functioning of the model"
     ],
     "correct": "The most recent point when the AI's training data was updated"
   },
@@ -184,7 +184,7 @@
     "answers": [
       "AI that only processes text",
       "AI that combines multiple types of input like text, images, and audio",
-      "AI that runs on multiple computers",
+      "AI that runs on multiple distributed computer systems, in a systematized manner",
       "AI with multiple users"
     ],
     "correct": "AI that combines multiple types of input like text, images, and audio"
@@ -202,7 +202,7 @@
   {
     "question": "Why is data quality important for AI systems?",
     "answers": [
-      "It makes the system run faster",
+      "It makes the system run significantly faster and more efficiently",
       "AI systems are only as good as the data they're trained on",
       "It reduces hardware costs",
       "It's not important"
@@ -222,9 +222,9 @@
   {
     "question": "What is a 'hallucination' in the context of AI?",
     "answers": [
-      "When AI sees images",
+      "When AI processes and interprets visual images incorrectly",
       "When the model generates plausible but false information",
-      "When the system crashes",
+      "When the system crashes unexpectedly during operation",
       "When AI dreams"
     ],
     "correct": "When the model generates plausible but false information"
@@ -252,7 +252,7 @@
   {
     "question": "Which statement best describes AGI (Artificial General Intelligence)?",
     "answers": [
-      "It's currently available in smartphones",
+      "It's currently available and widely deployed in modern smartphones and devices",
       "Human-level intelligence across all domains that doesn't yet exist",
       "It only works for games",
       "It's the same as ANI"
@@ -262,9 +262,9 @@
   {
     "question": "What makes Deep Learning different from traditional Machine Learning?",
     "answers": [
-      "It uses less data",
+      "It uses significantly less data to achieve better results",
       "It uses artificial neural networks with multiple layers",
-      "It's always faster",
+      "It's always faster and more efficient in all applications",
       "It doesn't need training"
     ],
     "correct": "It uses artificial neural networks with multiple layers"
@@ -274,8 +274,8 @@
     "answers": [
       "It affects the screen resolution",
       "Longer documents may need splitting and earlier conversation parts may be 'forgotten'",
-      "It determines the AI's speed",
-      "It's not important"
+      "It determines the AI's speed and computational efficiency while processing input data",
+      "It's not really that important for most practical applications"
     ],
     "correct": "Longer documents may need splitting and earlier conversation parts may be 'forgotten'"
   }
