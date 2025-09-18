@@ -2,7 +2,7 @@
   {
     "question": "What is AI bias?",
     "answers": [
-      "When AI systems are too slow to process information",
+      "When AI systems are too slow to process information due to computational limitations and hardware constraints",
       "When systems make unfair decisions based on race, gender, age, or other protected characteristics",
       "When AI refuses to work properly",
       "When AI costs too much to implement"
@@ -13,7 +13,7 @@
     "question": "What are AI hallucinations?",
     "answers": [
       "When AI sees things that aren't there",
-      "When AI dreams while processing",
+      "When AI enters sleep mode and processes background data while appearing to dream or rest",
       "When systems generate incorrect information while presenting it confidently as fact",
       "When AI gets confused by user input"
     ],
@@ -25,14 +25,14 @@
       "It was too expensive to maintain",
       "It couldn't guarantee bias elimination after downgrading women's resumes",
       "It was too slow to process applications",
-      "Competitors had better systems"
+      "Competitors had developed far superior systems that made Amazon's technology obsolete"
     ],
     "correct": "It couldn't guarantee bias elimination after downgrading women's resumes"
   },
   {
     "question": "What happened to Microsoft's Tay chatbot within 24 hours of launch?",
     "answers": [
-      "It became the most popular chatbot ever",
+      "It became the most popular chatbot ever created with millions of satisfied users worldwide",
       "It stopped working due to technical issues",
       "It was manipulated by trolls to post offensive content and had to be shut down",
       "It achieved sentience"
@@ -54,7 +54,7 @@
     "answers": [
       "Physical barriers around computers",
       "Safety mechanisms that prevent AI from generating harmful, biased, or inappropriate content",
-      "Training programs for AI developers",
+      "Comprehensive training programs and certification courses designed specifically for AI developers",
       "Hardware limitations"
     ],
     "correct": "Safety mechanisms that prevent AI from generating harmful, biased, or inappropriate content"
@@ -65,7 +65,7 @@
       "AI systems are painted black",
       "We often can't see inside to understand how or why AI reached a conclusion",
       "AI systems are stored in dark rooms",
-      "The code is encrypted"
+      "The source code is heavily encrypted using advanced cryptographic methods for security"
     ],
     "correct": "We often can't see inside to understand how or why AI reached a conclusion"
   },
@@ -92,7 +92,7 @@
   {
     "question": "What is a key lesson from the Microsoft Tay incident?",
     "answers": [
-      "AI systems are perfect",
+      "AI systems are close to perfect and require no monitoring or oversight once deployed",
       "AI systems exposed to public input need robust protection against manipulation",
       "Chatbots should never be used",
       "Social media is always safe"
@@ -105,14 +105,14 @@
       "Use it immediately - AI is always accurate",
       "Cross-reference with multiple reliable sources and verify the statistics exist",
       "Only check if the numbers sound wrong",
-      "Add more decimal places to make it look more accurate"
+      "Add more decimal places and additional formatting to make the data appear more accurate and professional"
     ],
     "correct": "Cross-reference with multiple reliable sources and verify the statistics exist"
   },
   {
     "question": "You need help debugging code that contains your company's proprietary algorithm. What's the best approach?",
     "answers": [
-      "Paste the entire codebase into ChatGPT",
+      "Paste the entire codebase into ChatGPT for comprehensive and accurate analysis",
       "Share only small, non-proprietary code snippets or use pseudocode",
       "Post it on a public forum first",
       "Email the code to your personal account to work on at home"
@@ -124,7 +124,7 @@
     "answers": [
       "Trust that all citations are accurate",
       "Verify that each cited source actually exists and contains the referenced information",
-      "Only check the formatting of citations",
+      "Only check the formatting of citations to ensure they follow proper academic style guidelines",
       "Assume academic citations are always real"
     ],
     "correct": "Verify that each cited source actually exists and contains the referenced information"
@@ -162,7 +162,7 @@
   {
     "question": "An AI chatbot confidently states that your company's main competitor filed for bankruptcy yesterday. Your next step should be:",
     "answers": [
-      "Immediately inform your management team",
+      "Immediately inform your entire management team and board of directors about this development",
       "Verify this information through official sources before taking any action",
       "Start planning to acquire their assets",
       "Post about it on social media"
@@ -172,7 +172,7 @@
   {
     "question": "You need AI help with a customer database containing names and addresses. The best approach is:",
     "answers": [
-      "Upload the entire database for analysis",
+      "Upload the entire database for comprehensive analysis and better AI recommendations",
       "Anonymize data or use fictional examples that represent your use case",
       "Only share customers who have opted into marketing",
       "Use real data but delete the conversation afterward"
@@ -185,7 +185,7 @@
       "Follow the advice immediately to save legal fees",
       "Use it as a starting point but consult with qualified legal professionals",
       "Only follow it if the AI seems confident",
-      "Assume it's accurate since AI knows all laws"
+      "Assume it's completely accurate since AI has been trained on all existing laws and regulations"
     ],
     "correct": "Use it as a starting point but consult with qualified legal professionals"
   },
@@ -195,7 +195,7 @@
       "Use it secretly to avoid bureaucracy",
       "First check with your security team for approved alternatives or get the tool vetted",
       "It's fine if you use incognito mode",
-      "Only use it for non-confidential documents"
+      "It's OK from time to time and only for documents that aren't marked as strictly confidential or top secret"
     ],
     "correct": "First check with your security team for approved alternatives or get the tool vetted"
   },
@@ -224,7 +224,7 @@
     "answers": [
       "Short responses",
       "Overly specific details without sources, precise quotes without attribution",
-      "Fast responses",
+      "Fast responses that appear immediately, without any processing time or delay",
       "Long responses"
     ],
     "correct": "Overly specific details without sources, precise quotes without attribution"
@@ -234,7 +234,7 @@
     "answers": [
       "There is no difference",
       "Training learns patterns from data, inference applies learned patterns to new situations",
-      "Inference is more expensive than training",
+      "Inference is significantly more expensive and resource-intensive than the model training phase",
       "Training is faster than inference"
     ],
     "correct": "Training learns patterns from data, inference applies learned patterns to new situations"
@@ -255,7 +255,7 @@
       "It was too slow",
       "It learned that male candidates were historically 'preferred' from 10 years of data",
       "It didn't work at all",
-      "It was too expensive"
+      "It was significantly too expensive to maintain and required constant hardware upgrades"
     ],
     "correct": "It learned that male candidates were historically 'preferred' from 10 years of data"
   },
@@ -264,7 +264,7 @@
     "answers": [
       "Help them hide the recording",
       "Explain that they must get consent from all participants before recording",
-      "Say it's okay if it's for work",
+      "Say it's perfectly acceptable if the recording is exclusively for work-related purposes",
       "Record only audio without video"
     ],
     "correct": "Explain that they must get consent from all participants before recording"
@@ -284,7 +284,7 @@
     "answers": [
       "AI is reliable for medical advice",
       "AI can hallucinate and should not be used for medical decisions without professional verification",
-      "You should try again",
+      "You should simply try again until you get consistent answers from the system, but then it is OK to use it for medical decisions",
       "AI learns from your questions"
     ],
     "correct": "AI can hallucinate and should not be used for medical decisions without professional verification"
