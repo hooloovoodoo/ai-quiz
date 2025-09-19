@@ -27,11 +27,11 @@ class QuizConfig:
                  title: str = "AI Knowledge Quiz",
                  description: str = "Test your knowledge about Artificial Intelligence. Choose the best answer.",
                  question_count: int = 10,
-                 points_per_question: int = 5,
+                 points_per_question: int = 1,
                  collect_email: bool = True,
                  limit_responses: bool = True,
                  show_link_to_respond_again: bool = False,
-                 confirmation_message: str = "Thanks for taking the quiz! You'll receive your score after submitting.",
+                 confirmation_message: str = "Thanks for taking the quiz! Your results will be displayed immediately after submission. You need 70% or higher to pass.",
                  language: str = "ENG"):
 
         self.title = title
@@ -73,9 +73,9 @@ class QuestionGenerator:
             raise ValueError(f"Unsupported language: {language}. Use 'ENG' or 'SRB'")
 
         return [
-            {'path': f'{base_path}/M1/m1.json', 'count': 10},  # AI Fundamentals
-            {'path': f'{base_path}/M2/m2.json', 'count': 13},  # AI Ethics & Bias
-            {'path': f'{base_path}/M3/m3.json', 'count': 10}   # AI Applications
+            {'path': f'{base_path}/M1/m1.json', 'count': 3},  # AI Fundamentals
+            {'path': f'{base_path}/M2/m2.json', 'count': 4},  # AI Ethics & Bias
+            {'path': f'{base_path}/M3/m3.json', 'count': 3}   # AI Applications
         ]
 
     def load_questions_from_multiple_files(self, file_configs: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -256,48 +256,82 @@ class QuestionGenerator:
         # Convert questions to JavaScript array format
         questions_js = self._format_questions_for_js(questions)
 
-        script_template = f'''function createRandomAIQuiz() {{
+        script_template = f'''/**
+ * Creates an AI Knowledge Quiz with {len(questions)} questions
+ * - Autograded multiple choice questions with {self.config.points_per_question} point(s) each
+ * - Immediate feedback showing correct answers and score
+ * - Email notification with PASS/FAIL result (70% threshold)
+ */
+function createRandomAIQuiz() {{
   const questionsPool = {questions_js};
 
   // Shuffle and pick {len(questions)} questions
   const selectedQuestions = shuffleArray(questionsPool).slice(0, {len(questions)});
 
   // Create the quiz form
-  const form = FormApp.create('{self.config.title}');
-  form.setIsQuiz(true);
-  form.setTitle('{self.config.title}');
-  form.setDescription('{self.config.description}');
+  const form = FormApp.create('{self._escape_js_string(self.config.title)}')
+    .setIsQuiz(true)
+    .setCollectEmail(true)             // needed to email respondents
+    .setShowLinkToRespondAgain(false);
 
-  // Add selected questions to the form
-  selectedQuestions.forEach(q => {{
-    const item = form.addMultipleChoiceItem();
-    const choices = q.choices.map((choice, index) =>
-      item.createChoice(choice, index === q.correct)
-    );
-    item.setTitle(q.question)
-      .setChoices(choices)
-      .setPoints({self.config.points_per_question})
-      .setRequired(true);
-  }});
+  form.setTitle('{self._escape_js_string(self.config.title)}');
+  form.setDescription('{self._escape_js_string(self.config.description)}');
 
-  // Set quiz submission settings
-  form.setCollectEmail({str(self.config.collect_email).lower()});
-  form.setShowLinkToRespondAgain({str(self.config.show_link_to_respond_again).lower()});
-  form.setConfirmationMessage('{self.config.confirmation_message.replace("'", "\\'")}');
-
-  // Ensure responses are sent to the creator
-  form.setPublishingSummary(true);
+  // Optional settings for better UX
+  form.setPublishingSummary(false);
   form.setLimitOneResponsePerUser({str(self.config.limit_responses).lower()});
-  form.setAllowResponseEdits(false);
+  form.setConfirmationMessage('{self._escape_js_string(self.config.confirmation_message)}');
 
-  // Disable collaborators from editing the form after creation
-  const editors = form.getEditors();
-  editors.forEach(user => {{
-    form.removeEditor(user);
+  // Helper function to add a fully-configured MC question
+  const addMCQuestion = (questionData) => {{
+    const item = form.addMultipleChoiceItem();
+    item.setTitle(questionData.question).setPoints({self.config.points_per_question}).setRequired(true);
+
+    // Build choices with exactly one correct answer
+    const choices = questionData.choices.map((choice, index) =>
+      item.createChoice(choice, index === questionData.correct)
+    );
+    item.setChoices(choices);
+
+    // Optional feedback for immediate learning
+    const fbCorrect = FormApp.createFeedback().setText('Correct! ✅').build();
+    const fbIncorrect = FormApp.createFeedback().setText('Review this topic.').build();
+    item.setFeedbackForCorrect(fbCorrect);
+    item.setFeedbackForIncorrect(fbIncorrect);
+
+    return item;
+  }};
+
+  // Add all selected questions to the form
+  selectedQuestions.forEach(questionData => {{
+    addMCQuestion(questionData);
   }});
 
-  Logger.log("Form URL (Share this): " + form.getPublishedUrl());
-  Logger.log("Edit URL (For you only): " + form.getEditUrl());
+  // Clean up any existing triggers for this handler to avoid duplicates
+  ScriptApp.getProjectTriggers()
+    .filter(trigger => trigger.getHandlerFunction() === 'onFormSubmit')
+    .forEach(trigger => ScriptApp.deleteTrigger(trigger));
+
+  // Create the form submission trigger for PASS/FAIL email logic
+  ScriptApp.newTrigger('onFormSubmit')
+    .forForm(form)
+    .onFormSubmit()
+    .create();
+
+  const totalPoints = selectedQuestions.length * {self.config.points_per_question};
+  const passingScore = Math.ceil(totalPoints * 0.7);
+
+  Logger.log('=== QUIZ CREATED SUCCESSFULLY ===');
+  Logger.log(`Questions: ${{selectedQuestions.length}}`);
+  Logger.log(`Points per question: {self.config.points_per_question}`);
+  Logger.log(`Total possible points: ${{totalPoints}}`);
+  Logger.log(`Passing score (70%): ${{passingScore}} points`);
+  Logger.log('');
+  Logger.log('Form URLs:');
+  Logger.log('Edit form: ' + form.getEditUrl());
+  Logger.log('Live quiz: ' + form.getPublishedUrl());
+  Logger.log('');
+  Logger.log('✅ Trigger installed for PASS/FAIL email notifications');
 
   return {{
     publishedUrl: form.getPublishedUrl(),
@@ -318,6 +352,52 @@ function shuffleArray(array) {{
     array[randomIndex] = temporaryValue;
   }}
   return array;
+}}
+
+/**
+ * On submit: compute score by comparing responses to marked correct choices
+ * for all Multiple Choice items, then email PASS/FAIL at 70%.
+ */
+function onFormSubmit(e) {{
+  const form = e.source;
+  const response = e.response;
+
+  const email = response.getRespondentEmail();
+  if (!email) return;
+
+  const mcItems = form.getItems(FormApp.ItemType.MULTIPLE_CHOICE);
+  let totalPoints = 0;
+  let earnedPoints = 0;
+
+  mcItems.forEach(item => {{
+    const mci = item.asMultipleChoiceItem();
+    const points = mci.getPoints() || 0;
+    totalPoints += points;
+
+    const ir = response.getResponseForItem(item);
+    const answer = ir ? ir.getResponse() : null;
+
+    const correctChoice = mci.getChoices().find(c => c.isCorrectAnswer());
+    const correctValue = correctChoice ? correctChoice.getValue() : null;
+
+    if (answer !== null && correctValue !== null && answer === correctValue) {{
+      earnedPoints += points;
+    }}
+  }});
+
+  const pct = totalPoints > 0 ? (earnedPoints / totalPoints) * 100 : 0;
+  const passed = pct >= 70;
+
+  const subject = `Your quiz result: ${{Math.round(pct)}}% — ${{passed ? 'PASS' : 'FAIL'}}`;
+  const body = `Thanks for taking the quiz!
+
+Score: ${{earnedPoints}} / ${{totalPoints}} (${{pct.toFixed(1)}}%)
+Result: ${{passed ? 'PASS ✅' : 'FAIL ❌'}}
+Threshold: 70%
+
+Tip: If you see a "View score" button on the confirmation page, click it to review correct answers and points.`;
+
+  MailApp.sendEmail(email, subject, body);
 }}'''
 
         logger.info("Generated Google Apps Script code")
