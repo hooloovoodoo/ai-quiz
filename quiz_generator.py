@@ -73,12 +73,14 @@ class QuestionGenerator:
             raise ValueError(f"Unsupported language: {language}. Use 'ENG' or 'SRB'")
 
         return [
-            {'path': f'{base_path}/M1/m1.json', 'count': 3},  # AI Fundamentals
-            {'path': f'{base_path}/M2/m2.json', 'count': 4},  # AI Ethics & Bias
-            {'path': f'{base_path}/M3/m3.json', 'count': 3}   # AI Applications
+            {'path': f'{base_path}/M1/m1.json', 'count': 7},  # AI Fundamentals
+            {'path': f'{base_path}/M2/m2.json', 'count': 9},  # AI Ethics & Bias
+            {'path': f'{base_path}/M3/m3.json', 'count': 7}   # AI Applications
         ]
 
-    def load_questions_from_multiple_files(self, file_configs: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    def load_questions_from_multiple_files(
+        self,
+        file_configs: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """
         Load and validate questions from multiple JSON files with specific counts
 
@@ -114,7 +116,9 @@ class QuestionGenerator:
         logger.info(f"Total questions loaded: {len(all_questions)}")
         return all_questions
 
-    def load_questions(self, json_path: str) -> List[Dict[str, Any]]:
+    def load_questions(
+        self,
+        json_path: str) -> List[Dict[str, Any]]:
         """
         Load and validate questions from JSON file
 
@@ -155,7 +159,10 @@ class QuestionGenerator:
             logger.error(f"Error loading questions: {e}")
             raise
 
-    def _validate_question(self, question: Dict[str, Any], index: int) -> bool:
+    def _validate_question(
+        self,
+        question: Dict[str, Any],
+        index: int) -> bool:
         """
         Validate individual question structure
 
@@ -183,7 +190,10 @@ class QuestionGenerator:
 
         return True
 
-    def convert_format(self, questions: List[Dict[str, Any]], shuffle_choices: bool = True) -> List[Dict[str, Any]]:
+    def convert_format(
+        self,
+        questions: List[Dict[str, Any]],
+        shuffle_choices: bool = True) -> List[Dict[str, Any]]:
         """
         Convert JSON question format to JavaScript-compatible structure
 
@@ -219,7 +229,10 @@ class QuestionGenerator:
         logger.info(f"Converted {len(js_questions)} questions to JS format (shuffle_choices={shuffle_choices})")
         return js_questions
 
-    def select_random_questions(self, questions: List[Dict[str, Any]], count: Optional[int] = None) -> List[Dict[str, Any]]:
+    def select_random_questions(
+        self,
+        questions: List[Dict[str, Any]],
+        count: Optional[int] = None) -> List[Dict[str, Any]]:
         """
         Randomly select questions from the pool
 
@@ -243,7 +256,9 @@ class QuestionGenerator:
         logger.info(f"Selected {len(selected)} random questions")
         return selected
 
-    def generate_script(self, questions: List[Dict[str, Any]]) -> str:
+    def generate_script(
+        self,
+        questions: List[Dict[str, Any]]) -> str:
         """
         Generate complete Google Apps Script code with embedded questions
 
@@ -403,11 +418,15 @@ Tip: If you see a "View score" button on the confirmation page, click it to revi
         logger.info("Generated Google Apps Script code")
         return script_template
 
-    def _escape_js_string(self, text: str) -> str:
+    def _escape_js_string(
+        self,
+        text: str) -> str:
         """Escape special characters for JavaScript strings"""
         return text.replace('\\', '\\\\').replace("'", "\\'").replace('"', '\\"').replace('\n', '\\n').replace('\r', '\\r')
 
-    def _format_questions_for_js(self, questions: List[Dict[str, Any]]) -> str:
+    def _format_questions_for_js(
+        self,
+        questions: List[Dict[str, Any]]) -> str:
         """
         Format questions as JavaScript array string
 
@@ -436,7 +455,10 @@ Tip: If you see a "View score" button on the confirmation page, click it to revi
         js_array += "  ]"
         return js_array
 
-    def save_script(self, script_content: str, output_path: str) -> None:
+    def save_script(
+        self,
+        script_content: str,
+        output_path: str) -> None:
         """
         Save generated script to file
 
@@ -457,7 +479,11 @@ Tip: If you see a "View score" button on the confirmation page, click it to revi
             logger.error(f"Error saving script: {e}")
             raise
 
-    def generate_quiz_from_multiple_files(self, file_configs: List[Dict[str, Any]], output_path: str, variant_number: Optional[int] = None) -> str:
+    def generate_quiz_from_multiple_files(
+        self,
+        file_configs: List[Dict[str, Any]],
+        output_path: str,
+        variant_number: Optional[int] = None) -> str:
         """
         Complete workflow: Load questions from multiple JSON files, generate script, and save to file
 
@@ -507,7 +533,12 @@ Tip: If you see a "View score" button on the confirmation page, click it to revi
             logger.error(f"Error in multi-file quiz generation workflow: {e}")
             raise
 
-    def generate_quiz_from_json(self, json_path: str, output_path: str, question_count: Optional[int] = None, variant_number: Optional[int] = None) -> str:
+    def generate_quiz_from_json(
+        self,
+        json_path: str,
+        output_path: str,
+        question_count: Optional[int] = None,
+        variant_number: Optional[int] = None) -> str:
         """
         Complete workflow: Load JSON, generate script, and save to file
 
@@ -556,7 +587,11 @@ Tip: If you see a "View score" button on the confirmation page, click it to revi
             logger.error(f"Error in quiz generation workflow: {e}")
             raise
 
-    def generate_quiz_for_language(self, language: str = "ENG", output_path: str = None, variant_number: Optional[int] = None) -> str:
+    def generate_quiz_for_language(
+        self,
+        language: str = "ENG",
+        output_path: str = None,
+        variant_number: Optional[int] = None) -> str:
         """
         Generate quiz using the standard file structure for the specified language
 
@@ -591,7 +626,7 @@ if __name__ == "__main__":
     config = QuizConfig(
         title="AI Fundamentals",
         description="Test your knowledge across AI fundamentals, ethics, and practical applications",
-        question_count=33,  # Total: 10 + 13 + 10
+        question_count=23,  # Total: 7 + 9 + 7
         points_per_question=1,
         language="ENG"
     )
@@ -609,7 +644,7 @@ if __name__ == "__main__":
             variant_number=1
         )
         print("English quiz generation completed successfully!")
-        print(f"Generated script with 33 questions (10+13+10) from 3 files")
+        print(f"Generated script with 23 questions (7+9+7) from 3 files")
         print(f"Script length: {len(eng_script)} characters")
 
         # Generate Serbian quiz
@@ -620,7 +655,7 @@ if __name__ == "__main__":
             variant_number=1
         )
         print("Serbian quiz generation completed successfully!")
-        print(f"Generated script with 33 questions (10+13+10) from 3 files")
+        print(f"Generated script with 23 questions (7+9+7) from 3 files")
         print(f"Script length: {len(srb_script)} characters")
 
     except Exception as e:
