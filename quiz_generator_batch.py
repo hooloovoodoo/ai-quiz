@@ -48,7 +48,7 @@ def generate_quiz_variants(language: str = "ENG", num_variants: int = 10, output
         title="AI Fundamentals",
         description="Test your knowledge across AI fundamentals, ethics, and practical applications",
         question_count=33,  # Total: 10 + 13 + 10
-        points_per_question=5,
+        points_per_question=1,
         language=language
     )
     

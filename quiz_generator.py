@@ -592,7 +592,7 @@ if __name__ == "__main__":
         title="AI Fundamentals",
         description="Test your knowledge across AI fundamentals, ethics, and practical applications",
         question_count=33,  # Total: 10 + 13 + 10
-        points_per_question=5,
+        points_per_question=1,
         language="ENG"
     )
 
