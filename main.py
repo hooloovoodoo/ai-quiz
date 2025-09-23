@@ -2,7 +2,7 @@
 """
 AI Quiz System - Main Entry Point
 
-This script provides a unified interface for the complete AI quiz workflow:
+This script provides a unified interface for the complete AI quiz:
 1. Generate quiz variants in multiple languages (quiz_generator_batch.py)
 2. Deploy quizzes to Google Apps Script (gas_deployer_batch.py)
 3. Send bilingual email notifications (email_notifier.py)
@@ -19,9 +19,6 @@ Usage Examples:
 
     # Send emails with quiz URLs
     python main.py email en_urls.txt sr_urls.txt recipients.txt
-
-    # Complete workflow: generate + deploy + email
-    python main.py workflow --language BOTH --variants 3 --recipients recipients.txt
 """
 
 import argparse
@@ -40,7 +37,7 @@ logger = logging.getLogger(__name__)
 
 
 class AIQuizOrchestrator:
-    """Main orchestrator for the AI quiz system workflow"""
+    """Main orchestrator for the AI quiz system"""
 
     def __init__(self):
         """Initialize the orchestrator"""
@@ -126,50 +123,6 @@ class AIQuizOrchestrator:
         args = [en_urls_file, sr_urls_file, recipients_file]
         return self.run_script("email_notifier.py", args)
 
-    def run_complete_workflow(self, language: str = "BOTH", variants: int = 5,
-                            recipients_file: Optional[str] = None) -> bool:
-        """Run the complete workflow: generate -> deploy -> email"""
-        logger.info("🔄 Starting complete AI quiz workflow")
-
-        # Step 1: Generate quizzes
-        logger.info("Step 1: Generating quiz variants")
-        if not self.generate_quizzes(language, variants):
-            logger.error("❌ Quiz generation failed")
-            return False
-
-        # Step 2: Deploy quizzes
-        logger.info("Step 2: Deploying quizzes to Google Apps Script")
-        if not self.deploy_quizzes():
-            logger.error("❌ Quiz deployment failed")
-            return False
-
-        # Step 3: Send emails (if recipients provided)
-        if recipients_file and Path(recipients_file).exists():
-            logger.info("Step 3: Sending email notifications")
-
-            # Look for URL files created by deployment
-            en_urls = "/tmp/quiz_urls_eng.txt"
-            sr_urls = "/tmp/quiz_urls_srb.txt"
-            all_urls = "/tmp/quiz_urls_all.txt"
-
-            # Use appropriate URL files based on what was deployed
-            if Path(en_urls).exists() and Path(sr_urls).exists():
-                if not self.send_emails(en_urls, sr_urls, recipients_file):
-                    logger.error("❌ Email sending failed")
-                    return False
-            elif Path(all_urls).exists():
-                logger.warning("Using combined URL file - emails may not be properly bilingual")
-                # For now, skip email step if we don't have separate language files
-                logger.info("⚠️  Skipping email step - separate language URL files not found")
-            else:
-                logger.warning("⚠️  No URL files found - skipping email step")
-        else:
-            logger.info("Step 3: Skipping email notifications (no recipients file)")
-
-        logger.info("✅ Complete workflow finished successfully!")
-        return True
-
-
 def main():
     """Main entry point"""
     parser = argparse.ArgumentParser(
@@ -201,15 +154,6 @@ def main():
     email_parser.add_argument('en_urls_file', help='File containing English quiz URLs')
     email_parser.add_argument('sr_urls_file', help='File containing Serbian quiz URLs')
     email_parser.add_argument('recipients_file', help='File containing recipient email addresses')
-
-    # Workflow command
-    workflow_parser = subparsers.add_parser('workflow', help='Run complete workflow')
-    workflow_parser.add_argument('--language', '-l', choices=['ENG', 'SRB', 'BOTH'],
-                                default='BOTH', help='Language for quiz generation')
-    workflow_parser.add_argument('--variants', '-n', type=int, default=5,
-                                help='Number of quiz variants to generate')
-    workflow_parser.add_argument(
-        '--recipients', '-r', help='Recipients file for email notifications')
 
     # Global options
     parser.add_argument('--verbose', '-v', action='store_true', help='Enable verbose logging')
@@ -248,13 +192,6 @@ def main():
                 en_urls_file=args.en_urls_file,
                 sr_urls_file=args.sr_urls_file,
                 recipients_file=args.recipients_file
-            )
-
-        elif args.command == 'workflow':
-            success = orchestrator.run_complete_workflow(
-                language=args.language,
-                variants=args.variants,
-                recipients_file=args.recipients
             )
 
         else:
