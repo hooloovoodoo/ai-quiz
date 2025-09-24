@@ -52,7 +52,7 @@ def generate_quiz_variants(
     # Create quiz configuration
     config = QuizConfig(
         title="AI Fundamentals",
-        description="To AI or not to AI, that is the question",
+        description="Pogledajte odgovore / Review answers!",
         question_count=23,
         points_per_question=1,
         language=language,

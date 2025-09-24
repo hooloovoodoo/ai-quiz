@@ -15,7 +15,6 @@ import logging
 from typing import List, Dict, Any, Optional
 from pathlib import Path
 
-# Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -25,13 +24,14 @@ class QuizConfig:
 
     def __init__(self,
                  title: str = "AI Knowledge Quiz",
-                 description: str = "Test your knowledge about Artificial Intelligence. Choose the best answer.",
+                 description: str = "HLV 💚 AI",
                  question_count: int = 10,
                  points_per_question: int = 1,
                  collect_email: bool = True,
                  limit_responses: bool = True,
                  show_link_to_respond_again: bool = False,
-                 confirmation_message: str = "Thanks for taking the quiz! Your results will be displayed immediately after submission. You need 70% or higher to pass.",
+                 confirmation_message: str = \
+                    "Hvala što ste učestvovали u kvizu! / Thanks for taking the quiz!",
                  language: str = "ENG",
                  results_sheet: str = "1g9A2x0H_qP4MUz3pEWi-kgH3CWftx4CmcAkEgQ2FKX8"):
 
@@ -43,7 +43,7 @@ class QuizConfig:
         self.limit_responses = limit_responses
         self.show_link_to_respond_again = show_link_to_respond_again
         self.confirmation_message = confirmation_message
-        self.language = language.upper()  # Ensure uppercase
+        self.language = language.upper()
         self.results_sheet = results_sheet
 
 
@@ -52,10 +52,9 @@ class QuestionGenerator:
 
     def __init__(self, config: Optional[QuizConfig] = None):
         self.config = config or QuizConfig()
-        # Set random seed for reproducible question selection during development
-        random.seed(42)
 
-    def get_file_configs_for_language(self, language: str = "ENG") -> List[Dict[str, Any]]:
+    def get_file_configs_for_language(
+        self, language: str = "ENG") -> List[Dict[str, Any]]:
         """
         Get file configurations for the specified language
 
@@ -107,15 +106,17 @@ class QuestionGenerator:
             file_questions = self.load_questions(file_path)
 
             if len(file_questions) < required_count:
-                raise ValueError(f"File {file_path} has only {len(file_questions)} questions, but {required_count} required")
+                raise ValueError(
+                    "File %s has only %s questions, but %s required",
+                    file_path, len(file_questions), required_count)
 
-            # Select random questions from this file
             selected_questions = random.sample(file_questions, required_count)
             all_questions.extend(selected_questions)
 
-            logger.info(f"Selected {len(selected_questions)} questions from {file_path}")
+            logger.info("Selected %d questions from %s",
+                        len(selected_questions), file_path)
 
-        logger.info(f"Total questions loaded: {len(all_questions)}")
+        logger.info("Total questions loaded: %d", len(all_questions))
         return all_questions
 
     def load_questions(
@@ -179,15 +180,21 @@ class QuestionGenerator:
 
         for field in required_fields:
             if field not in question:
-                logger.warning(f"Question {index}: Missing required field '{field}', skipping")
+                logger.warning(
+                    "Question %d: Missing required field '%s', skipping",
+                    index, field)
                 return False
 
         if not isinstance(question['answers'], list) or len(question['answers']) != 4:
-            logger.warning(f"Question {index}: 'answers' must be a list with exactly 4 options, skipping")
+            logger.warning(
+                "Question %d: 'answers' must be a list of 4 options, skipping",
+                index)
             return False
 
         if question['correct'] not in question['answers']:
-            logger.warning(f"Question {index}: 'correct' answer not found in 'answers' list, skipping")
+            logger.warning(
+                "Question %d: 'correct' answer not found in 'answers', skipping",
+                index)
             return False
 
         return True
@@ -228,7 +235,8 @@ class QuestionGenerator:
 
             js_questions.append(js_question)
 
-        logger.info(f"Converted {len(js_questions)} questions to JS format (shuffle_choices={shuffle_choices})")
+        logger.info("Converted %d questions to JS format (shuffle_choices=%s)",
+                    len(js_questions), shuffle_choices)
         return js_questions
 
     def select_random_questions(
@@ -252,10 +260,11 @@ class QuestionGenerator:
             count = self.config.question_count
 
         if count > len(questions):
-            raise ValueError(f"Requested {count} questions but only {len(questions)} available")
+            raise ValueError("Requested %d questions but only %d available",
+                             count, len(questions))
 
         selected = random.sample(questions, count)
-        logger.info(f"Selected {len(selected)} random questions")
+        logger.info("Selected %d random questions", len(selected))
         return selected
 
     def generate_script(
@@ -313,7 +322,9 @@ function createRandomAIQuiz() {{
   // Helper function to add a fully-configured MC question
   const addMCQuestion = (questionData) => {{
     const item = form.addMultipleChoiceItem();
-    item.setTitle(questionData.question).setPoints({self.config.points_per_question}).setRequired(true);
+    item.setTitle(questionData.question)
+        .setPoints({self.config.points_per_question})
+        .setRequired(true);
 
     // Build choices with exactly one correct answer
     const choices = questionData.choices.map((choice, index) =>
@@ -417,13 +428,10 @@ function onFormSubmit(e) {{
   const passed = pct >= 70;
 
   const subject = `Your quiz result: ${{Math.round(pct)}}% — ${{passed ? 'PASS' : 'FAIL'}}`;
-  const body = `Thanks for taking the quiz!
+  const body = `Hvala što ste učestvovали u kvizu! / Thanks for taking the quiz!
 
-Score: ${{earnedPoints}} / ${{totalPoints}} (${{pct.toFixed(1)}}%)
-Result: ${{passed ? 'PASS ✅' : 'FAIL ❌'}}
-Threshold: 70%
-
-Tip: If you see a "View score" button on the confirmation page, click it to review correct answers and points.`;
+🎯: ${{earnedPoints}} / ${{totalPoints}} (${{pct.toFixed(1)}}%)
+🏁: ${{passed ? 'PASS ✅' : 'FAIL ❌'}}`;
 
   MailApp.sendEmail(email, subject, body);
 }}'''
@@ -435,7 +443,9 @@ Tip: If you see a "View score" button on the confirmation page, click it to revi
         self,
         text: str) -> str:
         """Escape special characters for JavaScript strings"""
-        return text.replace('\\', '\\\\').replace("'", "\\'").replace('"', '\\"').replace('\n', '\\n').replace('\r', '\\r')
+        return text.replace(
+            '\\', '\\\\').replace("'", "\\'").replace(
+                '"', '\\"').replace('\n', '\\n').replace('\r', '\\r')
 
     def _format_questions_for_js(
         self,
@@ -498,7 +508,7 @@ Tip: If you see a "View score" button on the confirmation page, click it to revi
         output_path: str,
         variant_number: Optional[int] = None) -> str:
         """
-        Complete workflow: Load questions from multiple JSON files, generate script, and save to file
+        Complete workflow: Load questions from multiple JSONs, generate script, save to file
 
         Args:
             file_configs: List of dicts with 'path' and 'count' keys
@@ -535,7 +545,11 @@ Tip: If you see a "View score" button on the confirmation page, click it to revi
             self.save_script(script_content, output_path)
 
             total_questions = sum(config['count'] for config in file_configs)
-            logger.info(f"Successfully generated {self.config.language} quiz script with {total_questions} questions from {len(file_configs)} files")
+            logger.info(
+                "Successfully generated %s quiz script with %d questions from %d files",
+                self.config.language,
+                total_questions,
+                len(file_configs))
 
             # Restore original title
             self.config.title = original_title
@@ -589,15 +603,18 @@ Tip: If you see a "View score" button on the confirmation page, click it to revi
             # Save to file
             self.save_script(script_content, output_path)
 
-            logger.info(f"Successfully generated {self.config.language} quiz script with {len(selected_questions)} questions")
+            logger.info(
+                "Successfully generated %s quiz script with %d questions",
+                self.config.language,
+                len(selected_questions))
 
             # Restore original title
             self.config.title = original_title
 
             return script_content
 
-        except Exception as e:
-            logger.error(f"Error in quiz generation workflow: {e}")
+        except RuntimeError as e:
+            logger.error("Error in quiz generation workflow: %s", e)
             raise
 
     def generate_quiz_for_language(
@@ -631,45 +648,3 @@ Tip: If you see a "View score" button on the confirmation page, click it to revi
                 output_path = f"generated_quiz_{lang_suffix}.gs"
 
         return self.generate_quiz_from_multiple_files(file_configs, output_path, variant_number)
-
-
-# Example usage and testing
-if __name__ == "__main__":
-    # Create custom configuration
-    config = QuizConfig(
-        title="AI Fundamentals",
-        description="Test your knowledge across AI fundamentals, ethics, and practical applications",
-        question_count=23,  # Total: 7 + 9 + 7
-        points_per_question=1,
-        language="ENG"
-    )
-
-    # Initialize generator
-    generator = QuestionGenerator(config)
-
-    # Test both languages
-    try:
-        # Generate English quiz
-        print("Generating English quiz...")
-        eng_script = generator.generate_quiz_for_language(
-            language="ENG",
-            output_path="generated_quiz_eng.gs",
-            variant_number=1
-        )
-        print("English quiz generation completed successfully!")
-        print(f"Generated script with 23 questions (7+9+7) from 3 files")
-        print(f"Script length: {len(eng_script)} characters")
-
-        # Generate Serbian quiz
-        print("\nGenerating Serbian quiz...")
-        srb_script = generator.generate_quiz_for_language(
-            language="SRB",
-            output_path="generated_quiz_srb.gs",
-            variant_number=1
-        )
-        print("Serbian quiz generation completed successfully!")
-        print(f"Generated script with 23 questions (7+9+7) from 3 files")
-        print(f"Script length: {len(srb_script)} characters")
-
-    except Exception as e:
-        print(f"Error: {e}")
