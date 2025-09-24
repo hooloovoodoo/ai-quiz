@@ -102,7 +102,8 @@ class QuestionGenerator:
             file_path = config['path']
             required_count = config['count']
 
-            logger.info(f"Loading {required_count} questions from {file_path}")
+            logger.info("Loading %d questions from %s",
+            required_count, file_path)
             file_questions = self.load_questions(file_path)
 
             if len(file_questions) < required_count:
@@ -138,7 +139,8 @@ class QuestionGenerator:
         try:
             json_file = Path(json_path)
             if not json_file.exists():
-                raise FileNotFoundError(f"Question file not found: {json_path}")
+                raise FileNotFoundError("Question file not found: %s",
+                json_path)
 
             with open(json_file, 'r', encoding='utf-8') as f:
                 questions = json.load(f)
@@ -153,13 +155,15 @@ class QuestionGenerator:
                     continue
                 validated_questions.append(question)
 
-            logger.info(f"Loaded {len(validated_questions)} valid questions from {json_path}")
+            logger.info("Loaded %d valid questions from %s",
+            len(validated_questions), json_path)
             return validated_questions
 
         except json.JSONDecodeError as e:
-            raise ValueError(f"Invalid JSON format in {json_path}: {e}")
-        except Exception as e:
-            logger.error(f"Error loading questions: {e}")
+            raise ValueError("Invalid JSON format in %s: %s",
+            json_path, e)
+        except RuntimeError as e:
+            logger.error("Error loading questions: %s", e)
             raise
 
     def _validate_question(
@@ -496,10 +500,10 @@ function onFormSubmit(e) {{
             with open(output_file, 'w', encoding='utf-8') as f:
                 f.write(script_content)
 
-            logger.info(f"Script saved to {output_path}")
+            logger.info("Script saved to %s", output_path)
 
-        except Exception as e:
-            logger.error(f"Error saving script: {e}")
+        except RuntimeError as e:
+            logger.error("Error saving script: %s", e)
             raise
 
     def generate_quiz_from_multiple_files(
@@ -556,8 +560,8 @@ function onFormSubmit(e) {{
 
             return script_content
 
-        except Exception as e:
-            logger.error(f"Error in multi-file quiz generation workflow: {e}")
+        except RuntimeError as e:
+            logger.error("Error in multi-file quiz generation workflow: %s", e)
             raise
 
     def generate_quiz_from_json(
