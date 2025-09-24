@@ -22,7 +22,12 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def generate_quiz_variants(language: str = "ENG", num_variants: int = 10, output_dir: str = "/tmp") -> list:
+def generate_quiz_variants(
+    language: str = "ENG",
+    num_variants: int = 10,
+    output_dir: str = "/tmp",
+    results_sheet: str = "1g9A2x0H_qP4MUz3pEWi-kgH3CWftx4CmcAkEgQ2FKX8"
+    ) -> list:
     """
     Generate multiple quiz variants for the specified language
 
@@ -30,12 +35,13 @@ def generate_quiz_variants(language: str = "ENG", num_variants: int = 10, output
         language: Language code ("ENG" or "SRB")
         num_variants: Number of quiz variants to generate
         output_dir: Directory to save generated quiz files
+        results_sheet: Google Sheets document ID to store results
 
     Returns:
         List of generated file paths
     """
 
-    logger.info(f"🎯 Generating {num_variants} quiz variants in {language}")
+    logger.info("🎯 Generating %d quiz variants in %s", num_variants, language)
 
     # Create output directory if it doesn't exist
     Path(output_dir).mkdir(parents=True, exist_ok=True)
@@ -46,10 +52,11 @@ def generate_quiz_variants(language: str = "ENG", num_variants: int = 10, output
     # Create quiz configuration
     config = QuizConfig(
         title="AI Fundamentals",
-        description="Test your knowledge across AI fundamentals, ethics, and practical applications",
-        question_count=23,  # Total: 7 + 9 + 7
+        description="To AI or not to AI, that is the question",
+        question_count=23,
         points_per_question=1,
-        language=language
+        language=language,
+        results_sheet=results_sheet
     )
 
     # Initialize generator
@@ -63,7 +70,8 @@ def generate_quiz_variants(language: str = "ENG", num_variants: int = 10, output
             filename = f"AI Fundamentals | {current_date} | [{language}] | Variant {variant_num}.gs"
             output_path = os.path.join(output_dir, filename)
 
-            logger.info(f"📝 Generating variant {variant_num}/{num_variants}: {filename}")
+            logger.info("📝 Generating variant %d/%d: %s",
+                        variant_num, num_variants, filename)
 
             # Generate quiz for the specified language
             script_content = generator.generate_quiz_for_language(
@@ -73,13 +81,14 @@ def generate_quiz_variants(language: str = "ENG", num_variants: int = 10, output
             )
 
             generated_files.append(output_path)
-            logger.info(f"✅ Generated variant {variant_num}: {len(script_content)} characters")
+            logger.info("✅ Generated variant %d: %d characters", variant_num, len(script_content))
 
-        except Exception as e:
-            logger.error(f"❌ Failed to generate variant {variant_num}: {e}")
+        except RuntimeError as e:
+            logger.error("❌ Failed to generate variant %d: %s", variant_num, e)
             continue
 
-    logger.info(f"🎉 Successfully generated {len(generated_files)}/{num_variants} quiz variants")
+    logger.info("🎉 Successfully generated %d/%d quiz variants",
+                len(generated_files), num_variants)
     return generated_files
 
 
@@ -99,19 +108,19 @@ def list_generated_files(output_dir: str = "/tmp", language: str = None):
     quiz_files = list(Path(output_dir).glob(pattern))
 
     if quiz_files:
-        logger.info(f"📁 Found {len(quiz_files)} quiz files in {output_dir}:")
+        logger.info("📁 Found %d quiz files in %s:", len(quiz_files), output_dir)
         for file_path in sorted(quiz_files):
             file_size = file_path.stat().st_size
-            logger.info(f"   📄 {file_path.name} ({file_size:,} bytes)")
+            logger.info("   📄 %s (%d bytes)", file_path.name, file_size)
     else:
-        logger.info(f"📁 No quiz files found in {output_dir}")
+        logger.info("📁 No quiz files found in %s", output_dir)
 
     return quiz_files
 
 
 def main():
     """Main entry point"""
-    parser = argparse.ArgumentParser(description='Generate multiple quiz variants')
+    parser = argparse.ArgumentParser(description='Generate multiple quizes')
 
     parser.add_argument(
         '--language', '-l',
@@ -145,6 +154,13 @@ def main():
         help='Enable verbose logging'
     )
 
+    parser.add_argument(
+        '--results-sheet',
+        '-r',
+        default='1g9A2x0H_qP4MUz3pEWi-kgH3CWftx4CmcAkEgQ2FKX8',
+        help='Google Sheets document ID to store results'
+    )
+
     args = parser.parse_args()
 
     # Set logging level
@@ -153,7 +169,8 @@ def main():
 
     # List files if requested
     if args.list_files:
-        list_generated_files(args.output_dir, args.language if args.language != 'BOTH' else None)
+        list_generated_files(
+            args.output_dir, args.language if args.language != 'BOTH' else None)
         return 0
 
     # Validate arguments
@@ -169,36 +186,40 @@ def main():
             logger.info("🌐 Generating quizzes for both languages")
 
             # Generate English variants
-            eng_files = generate_quiz_variants('ENG', args.variants, args.output_dir)
+            eng_files = generate_quiz_variants(
+                'ENG', args.variants, args.output_dir)
             all_generated_files.extend(eng_files)
 
             # Generate Serbian variants
-            srb_files = generate_quiz_variants('SRB', args.variants, args.output_dir)
+            srb_files = generate_quiz_variants(
+                'SRB', args.variants, args.output_dir)
             all_generated_files.extend(srb_files)
 
         else:
             # Generate for single language
-            generated_files = generate_quiz_variants(args.language, args.variants, args.output_dir)
+            generated_files = generate_quiz_variants(
+                args.language, args.variants, args.output_dir)
             all_generated_files.extend(generated_files)
 
         # Summary
         if all_generated_files:
-            logger.info(f"🎊 Generation complete! Created {len(all_generated_files)} quiz files")
-            logger.info(f"📂 Files saved to: {args.output_dir}")
+            logger.info("🎊 Generation complete! Created %d quiz files",
+                        len(all_generated_files))
+            logger.info("📂 Files saved to: %s", args.output_dir)
 
             # List generated files
             list_generated_files(args.output_dir)
 
             return 0
-        else:
-            logger.error("❌ No quiz files were generated")
-            return 1
+
+        logger.error("❌ No quiz files were generated")
+        return 1
 
     except KeyboardInterrupt:
         logger.info("⏹️  Generation interrupted by user")
         return 1
-    except Exception as e:
-        logger.error(f"❌ Generation failed: {e}")
+    except RuntimeError as e:
+        logger.error("❌ Generation failed: %s", e)
         return 1
 
 

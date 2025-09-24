@@ -32,7 +32,8 @@ class QuizConfig:
                  limit_responses: bool = True,
                  show_link_to_respond_again: bool = False,
                  confirmation_message: str = "Thanks for taking the quiz! Your results will be displayed immediately after submission. You need 70% or higher to pass.",
-                 language: str = "ENG"):
+                 language: str = "ENG",
+                 results_sheet: str = "1g9A2x0H_qP4MUz3pEWi-kgH3CWftx4CmcAkEgQ2FKX8"):
 
         self.title = title
         self.description = description
@@ -43,6 +44,7 @@ class QuizConfig:
         self.show_link_to_respond_again = show_link_to_respond_again
         self.confirmation_message = confirmation_message
         self.language = language.upper()  # Ensure uppercase
+        self.results_sheet = results_sheet
 
 
 class QuestionGenerator:
@@ -276,6 +278,7 @@ class QuestionGenerator:
  * - Autograded multiple choice questions with {self.config.points_per_question} point(s) each
  * - Immediate feedback showing correct answers and score
  * - Email notification with PASS/FAIL result (70% threshold)
+ * - Centralized response collection in Google Sheets: {self.config.results_sheet}
  */
 function createRandomAIQuiz() {{
   const questionsPool = {questions_js};
@@ -291,6 +294,16 @@ function createRandomAIQuiz() {{
 
   form.setTitle('{self._escape_js_string(self.config.title)}');
   form.setDescription('{self._escape_js_string(self.config.description)}');
+
+  // Link form to Google Sheets for centralized response collection
+  try {{
+    const spreadsheetId = '{self.config.results_sheet}';
+    form.setDestination(FormApp.DestinationType.SPREADSHEET, spreadsheetId);
+    Logger.log(`✅ Form linked to Google Sheets: ${{spreadsheetId}}`);
+  }} catch (error) {{
+    Logger.log(`⚠️  Could not link to spreadsheet: ${{error.message}}`);
+    Logger.log('Form will store responses in its own response sheet');
+  }}
 
   // Optional settings for better UX
   form.setPublishingSummary(false);

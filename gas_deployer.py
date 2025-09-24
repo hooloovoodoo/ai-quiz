@@ -36,7 +36,10 @@ SCOPES = [
 class GoogleAppsScriptDeployer:
     """Simplified class for deploying Google Apps Script projects"""
 
-    def __init__(self, credentials_path: Optional[str] = None, token_path: Optional[str] = None):
+    def __init__(
+        self,
+        credentials_path: Optional[str] = None,
+        token_path: Optional[str] = None):
         """
         Initialize the deployer with authentication credentials
 
@@ -69,10 +72,10 @@ class GoogleAppsScriptDeployer:
                     if not Path(self.credentials_path).exists():
                         logger.error(f"Credentials file not found: {self.credentials_path}")
                         return False
-                    
+
                     flow = InstalledAppFlow.from_client_secrets_file(self.credentials_path, SCOPES)
                     self.creds = flow.run_local_server(port=0)
-                
+
                 # Save credentials for next run
                 with open(self.token_path, 'w') as token:
                     token.write(self.creds.to_json())
@@ -172,17 +175,17 @@ class GoogleAppsScriptDeployer:
         try:
             # Create timestamped project name
             project_title = self.create_timestamped_project_name()
-            
+
             # Create and upload the project
             project_id = self.create_script_project(project_title, script_content)
-            
+
             if not project_id:
                 logger.error("Failed to create script project")
                 return None, None
 
             # Generate edit URL
             edit_url = f"https://script.google.com/d/{project_id}/edit"
-            
+
             logger.info("=" * 50)
             logger.info("🎉 QUIZ SCRIPT DEPLOYED!")
             logger.info("=" * 50)
@@ -191,7 +194,7 @@ class GoogleAppsScriptDeployer:
             logger.info("")
             logger.info("▶️ NEXT STEP: Click the URL above and run the script")
             logger.info("=" * 50)
-            
+
             return project_id, edit_url
 
         except Exception as e:
@@ -211,75 +214,75 @@ class GoogleAppsScriptDeployer:
         try:
             # Find all quiz files matching the pattern
             quiz_files = glob.glob(quiz_files_pattern)
-            
+
             if not quiz_files:
                 logger.error(f"No quiz files found matching pattern: {quiz_files_pattern}")
                 return []
-            
+
             # Sort files to ensure consistent ordering
             quiz_files.sort()
-            
+
             logger.info("=" * 60)
             logger.info("🚀 BATCH QUIZ DEPLOYMENT")
             logger.info("=" * 60)
             logger.info(f"📁 Found {len(quiz_files)} quiz files to deploy")
-            
+
             deployed_quizzes = []
-            
+
             for i, quiz_file in enumerate(quiz_files):
                 try:
                     file_path = Path(quiz_file)
                     filename = file_path.name
-                    
+
                     logger.info(f"📝 Deploying {i+1}/{len(quiz_files)}: {filename}")
-                    
+
                     # Read the quiz script content
                     with open(quiz_file, 'r', encoding='utf-8') as f:
                         script_content = f.read()
-                    
+
                     # Extract variant number from filename
                     # Format: "AI Quiz | L0 | 2025-09-15 | Variant 0.gs"
                     variant_part = filename.split(" | Variant ")[-1].replace(".gs", "")
-                    
+
                     # Use the filename (without .gs) as the project title
                     project_title = filename.replace(".gs", "")
-                    
+
                     # Create and upload the project
                     project_id = self.create_script_project(project_title, script_content)
-                    
+
                     if project_id:
                         edit_url = f"https://script.google.com/d/{project_id}/edit"
-                        
+
                         deployed_quizzes.append({
                             'variant': variant_part,
                             'filename': filename,
                             'project_id': project_id,
                             'edit_url': edit_url
                         })
-                        
+
                         logger.info(f"✅ Variant {variant_part} deployed successfully")
                     else:
                         logger.error(f"❌ Failed to deploy variant {variant_part}")
-                        
+
                 except Exception as e:
                     logger.error(f"❌ Error deploying {quiz_file}: {e}")
                     continue
-            
+
             # Summary
             logger.info("=" * 60)
             logger.info(f"🎉 BATCH DEPLOYMENT COMPLETE")
             logger.info(f"✅ Successfully deployed: {len(deployed_quizzes)}/{len(quiz_files)} quizzes")
             logger.info("=" * 60)
-            
+
             # List all deployed URLs
             if deployed_quizzes:
                 logger.info("🔗 DEPLOYED QUIZ URLS:")
                 for quiz in deployed_quizzes:
                     logger.info(f"   📄 Variant {quiz['variant']}: {quiz['edit_url']}")
                 logger.info("=" * 60)
-            
+
             return deployed_quizzes
-            
+
         except Exception as e:
             logger.error(f"Error in batch deployment: {e}")
             return []

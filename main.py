@@ -28,6 +28,8 @@ import subprocess
 from pathlib import Path
 from typing import List, Optional
 
+from google.auth import default
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -84,14 +86,17 @@ class AIQuizOrchestrator:
         self,
         language: str = "ENG",
         variants: int = 10,
-        output_dir: str = "/tmp") -> bool:
+        output_dir: str = "/tmp",
+        results_sheet: str = "1g9A2x0H_qP4MUz3pEWi-kgH3CWftx4CmcAkEgQ2FKX8"
+        ) -> bool:
         """Generate quiz variants"""
         logger.info("🎯 Generating %d quiz variants in %s", variants, language)
 
         args = [
             "--language", language,
             "--variants", str(variants),
-            "--output-dir", output_dir
+            "--output-dir", output_dir,
+            "--results-sheet", results_sheet
         ]
 
         return self.run_script("quiz_generator_batch.py", args)
@@ -141,6 +146,12 @@ def main():
                            help='Number of quiz variants to generate')
     gen_parser.add_argument('--output-dir', '-o', default='/tmp',
                            help='Output directory for generated files')
+    gen_parser.add_argument(
+        '--results-sheet',
+        '-r',
+        default='1g9A2x0H_qP4MUz3pEWi-kgH3CWftx4CmcAkEgQ2FKX8',
+        help='Google Sheets document ID to store results'
+    )
 
     # Deploy command
     deploy_parser = subparsers.add_parser('deploy', help='Deploy quizzes to Google Apps Script')
@@ -178,7 +189,8 @@ def main():
             success = orchestrator.generate_quizzes(
                 language=args.language,
                 variants=args.variants,
-                output_dir=args.output_dir
+                output_dir=args.output_dir,
+                results_sheet=args.results_sheet
             )
 
         elif args.command == 'deploy':
