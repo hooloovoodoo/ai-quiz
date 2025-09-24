@@ -12,7 +12,7 @@ import os
 import sys
 from datetime import datetime
 from pathlib import Path
-from quiz_generator import QuizConfig, QuestionGenerator
+from quiz_generator import QuestionGenerator
 
 # Configure logging
 logging.basicConfig(
@@ -49,24 +49,13 @@ def generate_quiz_variants(
     # Get current date for file naming
     current_date = datetime.now().strftime("%Y-%m-%d")
 
-    # Create quiz configuration
-    config = QuizConfig(
-        title="AI Fundamentals",
-        description="Pogledajte odgovore / Review answers!",
-        question_count=23,
-        points_per_question=1,
-        language=language,
-        results_sheet=results_sheet
-    )
-
     # Initialize generator
-    generator = QuestionGenerator(config)
+    generator = QuestionGenerator(language=language, results_sheet=results_sheet)
 
     generated_files = []
 
     for variant_num in range(1, num_variants + 1):
         try:
-            # Generate output filename with date and variant number
             filename = f"AI Fundamentals | {current_date} | [{language}] | Variant {variant_num}.gs"
             output_path = os.path.join(output_dir, filename)
 

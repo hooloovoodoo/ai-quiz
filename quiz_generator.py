@@ -19,39 +19,31 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-class QuizConfig:
-    """Configuration class for quiz settings"""
-
-    def __init__(self,
-                 title: str = "AI Knowledge Quiz",
-                 description: str = "HLV 💚 AI",
-                 question_count: int = 10,
-                 points_per_question: int = 1,
-                 collect_email: bool = True,
-                 limit_responses: bool = True,
-                 show_link_to_respond_again: bool = False,
-                 confirmation_message: str = \
-                    "Hvala što ste učestvovали u kvizu! / Thanks for taking the quiz!",
-                 language: str = "ENG",
-                 results_sheet: str = "1g9A2x0H_qP4MUz3pEWi-kgH3CWftx4CmcAkEgQ2FKX8"):
-
-        self.title = title
-        self.description = description
-        self.question_count = question_count
-        self.points_per_question = points_per_question
-        self.collect_email = collect_email
-        self.limit_responses = limit_responses
-        self.show_link_to_respond_again = show_link_to_respond_again
-        self.confirmation_message = confirmation_message
-        self.language = language.upper()
-        self.results_sheet = results_sheet
-
-
 class QuestionGenerator:
     """Main class for generating quiz scripts from JSON question data"""
 
-    def __init__(self, config: Optional[QuizConfig] = None):
-        self.config = config or QuizConfig()
+    def __init__(self,
+                 language: str = "ENG",
+                 results_sheet: str = "1g9A2x0H_qP4MUz3pEWi-kgH3CWftx4CmcAkEgQ2FKX8"):
+        """
+        Initialize the quiz generator
+
+        Args:
+            language: Language code ("ENG" or "SRB")
+            results_sheet: Google Sheets document ID to store results
+        """
+        self.language = language.upper()
+        self.results_sheet = results_sheet
+
+        # Fixed quiz settings (rarely changed)
+        self.title = "AI Fundamentals"
+        self.description = "To AI or not to AI, that is the question"
+        self.points_per_question = 1
+        self.confirmation_message = "Hvala što ste učestvovali u kvizu!" + \
+        "/ Thanks for taking the quiz!"
+
+        # Set random seed for reproducible question selection during development
+        random.seed(42)
 
     def get_file_configs_for_language(
         self, language: str = "ENG") -> List[Dict[str, Any]]:
@@ -108,8 +100,9 @@ class QuestionGenerator:
 
             if len(file_questions) < required_count:
                 raise ValueError(
-                    "File %s has only %s questions, but %s required",
-                    file_path, len(file_questions), required_count)
+                    f"File {file_path} has only {len(file_questions)} questions, "
+                    f"but {required_count} required"
+                )
 
             selected_questions = random.sample(file_questions, required_count)
             all_questions.extend(selected_questions)
@@ -139,8 +132,7 @@ class QuestionGenerator:
         try:
             json_file = Path(json_path)
             if not json_file.exists():
-                raise FileNotFoundError("Question file not found: %s",
-                json_path)
+                raise FileNotFoundError(f"Question file not found: {json_path}")
 
             with open(json_file, 'r', encoding='utf-8') as f:
                 questions = json.load(f)
@@ -160,8 +152,8 @@ class QuestionGenerator:
             return validated_questions
 
         except json.JSONDecodeError as e:
-            raise ValueError("Invalid JSON format in %s: %s",
-            json_path, e)
+            raise ValueError(f"Invalid JSON format in {json_path}: {e}") from e
+
         except RuntimeError as e:
             logger.error("Error loading questions: %s", e)
             raise
@@ -261,11 +253,10 @@ class QuestionGenerator:
             ValueError: If requested count exceeds available questions
         """
         if count is None:
-            count = self.config.question_count
+            count = 23  # Total questions: 7 + 9 + 7
 
         if count > len(questions):
-            raise ValueError("Requested %d questions but only %d available",
-                             count, len(questions))
+            raise ValueError(f"Requested {count} questions but only {len(questions)} available")
 
         selected = random.sample(questions, count)
         logger.info("Selected %d random questions", len(selected))
@@ -288,10 +279,10 @@ class QuestionGenerator:
 
         script_template = f'''/**
  * Creates an AI Knowledge Quiz with {len(questions)} questions
- * - Autograded multiple choice questions with {self.config.points_per_question} point(s) each
+ * - Autograded multiple choice questions with {self.points_per_question} point(s) each
  * - Immediate feedback showing correct answers and score
  * - Email notification with PASS/FAIL result (70% threshold)
- * - Centralized response collection in Google Sheets: {self.config.results_sheet}
+ * - Centralized response collection in Google Sheets: {self.results_sheet}
  */
 function createRandomAIQuiz() {{
   const questionsPool = {questions_js};
@@ -300,17 +291,17 @@ function createRandomAIQuiz() {{
   const selectedQuestions = shuffleArray(questionsPool).slice(0, {len(questions)});
 
   // Create the quiz form
-  const form = FormApp.create('{self._escape_js_string(self.config.title)}')
+  const form = FormApp.create('{self._escape_js_string(self.title)}')
     .setIsQuiz(true)
-    .setCollectEmail(true)             // needed to email respondents
+    .setCollectEmail(true)
     .setShowLinkToRespondAgain(false);
 
-  form.setTitle('{self._escape_js_string(self.config.title)}');
-  form.setDescription('{self._escape_js_string(self.config.description)}');
+  form.setTitle('{self._escape_js_string(self.title)}');
+  form.setDescription('{self._escape_js_string(self.description)}');
 
   // Link form to Google Sheets for centralized response collection
   try {{
-    const spreadsheetId = '{self.config.results_sheet}';
+    const spreadsheetId = '{self.results_sheet}';
     form.setDestination(FormApp.DestinationType.SPREADSHEET, spreadsheetId);
     Logger.log(`✅ Form linked to Google Sheets: ${{spreadsheetId}}`);
   }} catch (error) {{
@@ -320,14 +311,14 @@ function createRandomAIQuiz() {{
 
   // Optional settings for better UX
   form.setPublishingSummary(false);
-  form.setLimitOneResponsePerUser({str(self.config.limit_responses).lower()});
-  form.setConfirmationMessage('{self._escape_js_string(self.config.confirmation_message)}');
+  form.setLimitOneResponsePerUser(true);
+  form.setConfirmationMessage('{self._escape_js_string(self.confirmation_message)}');
 
   // Helper function to add a fully-configured MC question
   const addMCQuestion = (questionData) => {{
     const item = form.addMultipleChoiceItem();
     item.setTitle(questionData.question)
-        .setPoints({self.config.points_per_question})
+        .setPoints({self.points_per_question})
         .setRequired(true);
 
     // Build choices with exactly one correct answer
@@ -361,12 +352,12 @@ function createRandomAIQuiz() {{
     .onFormSubmit()
     .create();
 
-  const totalPoints = selectedQuestions.length * {self.config.points_per_question};
+  const totalPoints = selectedQuestions.length * {self.points_per_question};
   const passingScore = Math.ceil(totalPoints * 0.7);
 
   Logger.log('=== QUIZ CREATED SUCCESSFULLY ===');
   Logger.log(`Questions: ${{selectedQuestions.length}}`);
-  Logger.log(`Points per question: {self.config.points_per_question}`);
+  Logger.log(`Points per question: {self.points_per_question}`);
   Logger.log(`Total possible points: ${{totalPoints}}`);
   Logger.log(`Passing score (70%): ${{passingScore}} points`);
   Logger.log('');
@@ -432,7 +423,7 @@ function onFormSubmit(e) {{
   const passed = pct >= 70;
 
   const subject = `Your quiz result: ${{Math.round(pct)}}% — ${{passed ? 'PASS' : 'FAIL'}}`;
-  const body = `Hvala što ste učestvovали u kvizu! / Thanks for taking the quiz!
+  const body = `Hvala što ste učestvovali u kvizu! / Thanks for taking the quiz!
 
 🎯: ${{earnedPoints}} / ${{totalPoints}} (${{pct.toFixed(1)}}%)
 🏁: ${{passed ? 'PASS ✅' : 'FAIL ❌'}}`;
@@ -525,13 +516,13 @@ function onFormSubmit(e) {{
         """
         try:
             # Update title with language and variant info
-            original_title = self.config.title
-            language_tag = f"[{self.config.language}]"
+            original_title = self.title
+            language_tag = f"[{self.language}]"
 
             if variant_number is not None:
-                self.config.title = f"{original_title} {language_tag} Variant {variant_number}"
+                self.title = f"{original_title} {language_tag} Variant {variant_number}"
             else:
-                self.config.title = f"{original_title} {language_tag}"
+                self.title = f"{original_title} {language_tag}"
 
             # Load questions from multiple files
             all_questions = self.load_questions_from_multiple_files(file_configs)
@@ -551,12 +542,12 @@ function onFormSubmit(e) {{
             total_questions = sum(config['count'] for config in file_configs)
             logger.info(
                 "Successfully generated %s quiz script with %d questions from %d files",
-                self.config.language,
+                self.language,
                 total_questions,
                 len(file_configs))
 
             # Restore original title
-            self.config.title = original_title
+            self.title = original_title
 
             return script_content
 
@@ -584,13 +575,13 @@ function onFormSubmit(e) {{
         """
         try:
             # Update title with language and variant info
-            original_title = self.config.title
-            language_tag = f"[{self.config.language}]"
+            original_title = self.title
+            language_tag = f"[{self.language}]"
 
             if variant_number is not None:
-                self.config.title = f"{original_title} {language_tag} Variant {variant_number}"
+                self.title = f"{original_title} {language_tag} Variant {variant_number}"
             else:
-                self.config.title = f"{original_title} {language_tag}"
+                self.title = f"{original_title} {language_tag}"
 
             # Load and validate questions
             questions = self.load_questions(json_path)
@@ -609,11 +600,11 @@ function onFormSubmit(e) {{
 
             logger.info(
                 "Successfully generated %s quiz script with %d questions",
-                self.config.language,
+                self.language,
                 len(selected_questions))
 
             # Restore original title
-            self.config.title = original_title
+            self.title = original_title
 
             return script_content
 
@@ -637,8 +628,8 @@ function onFormSubmit(e) {{
         Returns:
             Generated script content
         """
-        # Update config language
-        self.config.language = language.upper()
+        # Update language
+        self.language = language.upper()
 
         # Get file configurations for the language
         file_configs = self.get_file_configs_for_language(language)
@@ -652,3 +643,34 @@ function onFormSubmit(e) {{
                 output_path = f"generated_quiz_{lang_suffix}.gs"
 
         return self.generate_quiz_from_multiple_files(file_configs, output_path, variant_number)
+
+
+# Example usage and testing
+if __name__ == "__main__":
+    # Initialize generator with defaults
+    generator = QuestionGenerator(language="ENG")
+
+    # Test both languages
+    try:
+        # Generate English quiz
+        print("Generating English quiz...")
+        eng_script = generator.generate_quiz_for_language(
+            language="ENG",
+            output_path="generated_quiz_eng.gs",
+            variant_number=1
+        )
+        print("English quiz generation completed successfully!")
+        print(f"Script length: {len(eng_script)} characters")
+
+        # Generate Serbian quiz
+        print("\nGenerating Serbian quiz...")
+        srb_script = generator.generate_quiz_for_language(
+            language="SRB",
+            output_path="generated_quiz_srb.gs",
+            variant_number=1
+        )
+        print("Serbian quiz generation completed successfully!")
+        print(f"Script length: {len(srb_script)} characters")
+
+    except RuntimeError as e:
+        print("Error: %s", e)
