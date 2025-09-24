@@ -28,8 +28,6 @@ import subprocess
 from pathlib import Path
 from typing import List, Optional
 
-from google.auth import default
-
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,

@@ -40,7 +40,7 @@ class QuestionGenerator:
         self.description = "To AI or not to AI, that is the question"
         self.points_per_question = 1
         self.confirmation_message = "Hvala što ste učestvovali u kvizu!" + \
-        "/ Thanks for taking the quiz!"
+        " / Thanks for taking the quiz!"
 
         # Set random seed for reproducible question selection during development
         random.seed(42)
