@@ -437,10 +437,12 @@ function onFormSubmit(e) {{
     def _escape_js_string(
         self,
         text: str) -> str:
-        """Escape special characters for JavaScript strings"""
+        """Escape special characters for JavaScript strings (double-quoted)"""
         return text.replace(
-            '\\', '\\\\').replace("'", "\\'").replace(
-                '"', '\\"').replace('\n', '\\n').replace('\r', '\\r')
+            '\\', '\\\\').replace(
+                '"', '\\"').replace(
+                    '\n', '\\n').replace(
+                        '\r', '\\r')
 
     def _format_questions_for_js(
         self,
