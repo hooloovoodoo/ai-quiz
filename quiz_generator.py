@@ -511,7 +511,7 @@ function onFormSubmit(e) {{
             file_configs: List of dicts with 'path' and 'count' keys
                          e.g., [{'path': 'QAPool/eng/L0/M1/m1.json', 'count': 10}, ...]
             output_path: Path to save generated script
-            variant_number: Optional variant number to include in title
+            variant_number: Optional variant number to include in file name
 
         Returns:
             Generated script content
@@ -521,10 +521,8 @@ function onFormSubmit(e) {{
             original_title = self.title
             language_tag = f"[{self.language}]"
 
-            if variant_number is not None:
-                self.title = f"{original_title} {language_tag} Variant {variant_number}"
-            else:
-                self.title = f"{original_title} {language_tag}"
+            # Set title with language tag only (no variant number for cleaner UI)
+            self.title = f"{original_title} {language_tag}"
 
             # Load questions from multiple files
             all_questions = self.load_questions_from_multiple_files(file_configs)
@@ -570,7 +568,7 @@ function onFormSubmit(e) {{
             json_path: Path to JSON question file
             output_path: Path to save generated script
             question_count: Number of questions to select (optional)
-            variant_number: Optional variant number to include in title
+            variant_number: Optional variant number to include in file name
 
         Returns:
             Generated script content
@@ -580,10 +578,8 @@ function onFormSubmit(e) {{
             original_title = self.title
             language_tag = f"[{self.language}]"
 
-            if variant_number is not None:
-                self.title = f"{original_title} {language_tag} Variant {variant_number}"
-            else:
-                self.title = f"{original_title} {language_tag}"
+            # Set title with language tag only (no variant number for cleaner UI)
+            self.title = f"{original_title} {language_tag}"
 
             # Load and validate questions
             questions = self.load_questions(json_path)
