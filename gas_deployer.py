@@ -10,7 +10,7 @@ This module handles:
 
 import json
 import logging
-from datetime import datetime
+import datetime
 from typing import Optional, Tuple, List, Dict
 from pathlib import Path
 import glob
@@ -70,14 +70,14 @@ class GoogleAppsScriptDeployer:
                     self.creds.refresh(Request())
                 else:
                     if not Path(self.credentials_path).exists():
-                        logger.error(f"Credentials file not found: {self.credentials_path}")
+                        logger.error("Credentials file not found: %s", self.credentials_path)
                         return False
 
                     flow = InstalledAppFlow.from_client_secrets_file(self.credentials_path, SCOPES)
                     self.creds = flow.run_local_server(port=0)
 
                 # Save credentials for next run
-                with open(self.token_path, 'w') as token:
+                with open(self.token_path, 'w', encoding='utf-8') as token:
                     token.write(self.creds.to_json())
 
             # Build the service
@@ -85,8 +85,8 @@ class GoogleAppsScriptDeployer:
             logger.info("✓ Successfully authenticated with Google APIs")
             return True
 
-        except Exception as e:
-            logger.error(f"Authentication failed: {e}")
+        except RuntimeError as e:
+            logger.error("Authentication failed: %s", e)
             return False
 
     def create_timestamped_project_name(self) -> str:
@@ -96,7 +96,9 @@ class GoogleAppsScriptDeployer:
         Returns:
             Project name in format "AI Citizen | 2025-09-08T12:19:18Z"
         """
-        timestamp = datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        timestamp = datetime.datetime.now(
+            datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
         return f"AI Citizen | {timestamp}"
 
     def create_script_project(self, project_title: str, script_content: str) -> Optional[str]:
@@ -118,10 +120,10 @@ class GoogleAppsScriptDeployer:
             }
 
             # Create the project
-            logger.info(f"Creating Google Apps Script project: {project_title}")
+            logger.info("Creating Google Apps Script project: %s", project_title)
             project = self.script_service.projects().create(body=request_body).execute()
             project_id = project['scriptId']
-            logger.info(f"✓ Created project with ID: {project_id}")
+            logger.info("✓ Created project with ID: %s", project_id)
 
             # Upload script content with manifest
             logger.info("Uploading script content...")
@@ -156,10 +158,10 @@ class GoogleAppsScriptDeployer:
             return project_id
 
         except HttpError as e:
-            logger.error(f"HTTP error creating project: {e}")
+            logger.error("HTTP error creating project: %s", e)
             return None
-        except Exception as e:
-            logger.error(f"Error creating project: {e}")
+        except RuntimeError as e:
+            logger.error("Error creating project: %s", e)
             return None
 
     def deploy_quiz_script(self, script_content: str) -> Tuple[Optional[str], Optional[str]]:
@@ -189,19 +191,21 @@ class GoogleAppsScriptDeployer:
             logger.info("=" * 50)
             logger.info("🎉 QUIZ SCRIPT DEPLOYED!")
             logger.info("=" * 50)
-            logger.info(f"📝 Project: {project_title}")
-            logger.info(f"🔗 Edit URL: {edit_url}")
+            logger.info("📝 Project: %s", project_title)
+            logger.info("🔗 Edit URL: %s", edit_url)
             logger.info("")
             logger.info("▶️ NEXT STEP: Click the URL above and run the script")
             logger.info("=" * 50)
 
             return project_id, edit_url
 
-        except Exception as e:
-            logger.error(f"Error deploying quiz script: {e}")
+        except RuntimeError as e:
+            logger.error("Error deploying quiz script: %s", e)
             return None, None
 
-    def deploy_batch_quiz_scripts(self, quiz_files_pattern: str = "/tmp/AI Quiz | L0 | * | Variant *.gs") -> List[Dict[str, str]]:
+    def deploy_batch_quiz_scripts(
+        self,
+        quiz_files_pattern: str = "/tmp/AI Quiz | L0 | * | Variant *.gs") -> List[Dict[str, str]]:
         """
         Deploy multiple quiz scripts from /tmp directory
 
@@ -216,7 +220,7 @@ class GoogleAppsScriptDeployer:
             quiz_files = glob.glob(quiz_files_pattern)
 
             if not quiz_files:
-                logger.error(f"No quiz files found matching pattern: {quiz_files_pattern}")
+                logger.error("No quiz files found matching pattern: %s", quiz_files_pattern)
                 return []
 
             # Sort files to ensure consistent ordering
@@ -225,16 +229,15 @@ class GoogleAppsScriptDeployer:
             logger.info("=" * 60)
             logger.info("🚀 BATCH QUIZ DEPLOYMENT")
             logger.info("=" * 60)
-            logger.info(f"📁 Found {len(quiz_files)} quiz files to deploy")
+            logger.info("📁 Found %d quiz files to deploy", len(quiz_files))
 
             deployed_quizzes = []
 
             for i, quiz_file in enumerate(quiz_files):
                 try:
-                    file_path = Path(quiz_file)
-                    filename = file_path.name
+                    filename = Path(quiz_file).name
 
-                    logger.info(f"📝 Deploying {i+1}/{len(quiz_files)}: {filename}")
+                    logger.info("📝 Deploying %d/%d: %s", i+1, len(quiz_files), filename)
 
                     # Read the quiz script content
                     with open(quiz_file, 'r', encoding='utf-8') as f:
@@ -260,29 +263,30 @@ class GoogleAppsScriptDeployer:
                             'edit_url': edit_url
                         })
 
-                        logger.info(f"✅ Variant {variant_part} deployed successfully")
+                        logger.info("✅ Variant %s deployed successfully", variant_part)
                     else:
-                        logger.error(f"❌ Failed to deploy variant {variant_part}")
+                        logger.error("❌ Failed to deploy variant %s", variant_part)
 
-                except Exception as e:
-                    logger.error(f"❌ Error deploying {quiz_file}: {e}")
+                except RuntimeError as e:
+                    logger.error("❌ Error deploying %s: %s", quiz_file, e)
                     continue
 
             # Summary
             logger.info("=" * 60)
-            logger.info(f"🎉 BATCH DEPLOYMENT COMPLETE")
-            logger.info(f"✅ Successfully deployed: {len(deployed_quizzes)}/{len(quiz_files)} quizzes")
+            logger.info("🎉 BATCH DEPLOYMENT COMPLETE")
+            logger.info("✅ Successfully deployed: %d/%d quizzes",
+                        len(deployed_quizzes), len(quiz_files))
             logger.info("=" * 60)
 
             # List all deployed URLs
             if deployed_quizzes:
                 logger.info("🔗 DEPLOYED QUIZ URLS:")
                 for quiz in deployed_quizzes:
-                    logger.info(f"   📄 Variant {quiz['variant']}: {quiz['edit_url']}")
+                    logger.info("   📄 Variant %s: %s", quiz['variant'], quiz['edit_url'])
                 logger.info("=" * 60)
 
             return deployed_quizzes
 
-        except Exception as e:
-            logger.error(f"Error in batch deployment: {e}")
+        except RuntimeError as e:
+            logger.error("Error in batch deployment: %s", e)
             return []
