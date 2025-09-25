@@ -121,7 +121,7 @@ class GoogleAppsScriptDeployer:
 
             # Create the project
             logger.info("Creating Google Apps Script project: %s", project_title)
-            project = self.script_service.projects().create(body=request_body).execute()
+            project = self.script_service.projects().create(body=request_body).execute()  # pylint: disable=no-member
             project_id = project['scriptId']
             logger.info("✓ Created project with ID: %s", project_id)
 
@@ -149,7 +149,7 @@ class GoogleAppsScriptDeployer:
                 'files': files
             }
 
-            self.script_service.projects().updateContent(
+            self.script_service.projects().updateContent(  # pylint: disable=no-member
                 scriptId=project_id,
                 body=request_body
             ).execute()
