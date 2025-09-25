@@ -28,16 +28,16 @@ logger = logging.getLogger(__name__)
 
 class EmailNotifier:
     """Handles sending bilingual quiz notification emails."""
-    
+
     def __init__(self, smtp_server: str = "smtp.gmail.com", smtp_port: int = 587):
         self.smtp_server = smtp_server
         self.smtp_port = smtp_port
         self.sender_email = os.getenv('SENDER_EMAIL')
         self.sender_password = os.getenv('SENDER_PASSWORD')
-        
+
         if not self.sender_email or not self.sender_password:
             raise ValueError("SENDER_EMAIL and SENDER_PASSWORD environment variables must be set")
-    
+
     def read_urls_from_file(self, file_path: str) -> List[str]:
         """Read URLs from a text file, one URL per line."""
         try:
@@ -51,7 +51,7 @@ class EmailNotifier:
         except Exception as e:
             logger.error(f"Error reading URLs from {file_path}: {e}")
             return []
-    
+
     def read_recipients_from_file(self, file_path: str) -> List[str]:
         """Read email addresses from a text file, one email per line."""
         try:
@@ -65,7 +65,7 @@ class EmailNotifier:
         except Exception as e:
             logger.error(f"Error reading recipients from {file_path}: {e}")
             return []
-    
+
     def create_html_email_content(self, en_url: str, sr_url: str) -> str:
         """Create HTML email content with bilingual quiz links."""
         html_content = f"""
@@ -125,23 +125,23 @@ class EmailNotifier:
         </head>
         <body>
             <div class="header">
-                <h1>🧠 AI Fundamentals Quiz Invitation</h1>
-                <h2>🤖 Poziv za AI Fundamentals Kviz</h2>
+                <h1>🧠 AI Citizen Quiz Invitation</h1>
+                <h2>🤖 Poziv za AI Citizen Kviz</h2>
             </div>
-            
+
             <div class="content">
                 <div class="quiz-section">
                     <h3>🇺🇸 English Quiz</h3>
-                    <p>Test your knowledge of AI fundamentals with our comprehensive quiz. Good luck!</p>
+                    <p>Test your knowledge of AI Citizen with our comprehensive quiz. Good luck!</p>
                     <a href="{en_url}" class="quiz-button">Take English Quiz</a>
                 </div>
-                
+
                 <div class="quiz-section">
                     <h3>🇷🇸 Serbian Quiz / Srpski Kviz</h3>
                     <p>Testirajte svoje znanje o osnovama veštačke inteligencije. Srećno!</p>
                     <a href="{sr_url}" class="quiz-button">Započni Srpski Kviz</a>
                 </div>
-                
+
                 <div class="footer">
                     <p><strong>Instructions / Uputstva:</strong></p>
                     <ul>
@@ -149,7 +149,7 @@ class EmailNotifier:
                         <li>Complete all questions to receive your score / Odgovorite na sva pitanja da biste dobili rezultat</li>
                         <li>Each quiz takes approximately 15-20 minutes / Svaki kviz traje približno 15-20 minuta</li>
                     </ul>
-                    
+
                     <p><em>This is an automated message. Please do not reply to this email.</em><br>
                     <em>Ovo je automatska poruka. Molimo ne odgovarajte na ovaj email.</em></p>
                 </div>
@@ -158,14 +158,14 @@ class EmailNotifier:
         </html>
         """
         return html_content
-    
+
     def create_plain_text_content(self, en_url: str, sr_url: str) -> str:
         """Create plain text email content as fallback."""
         text_content = f"""
-AI Fundamentals Quiz Invitation
-===============================
+AI Citizen Quiz Invitation
+==========================
 
-Hello! You have been invited to take the AI Fundamentals quiz.
+Hello! You have been invited to take the AI Citizen quiz.
 
 ENGLISH QUIZ:
 {en_url}
@@ -182,7 +182,7 @@ This is an automated message. Please do not reply to this email.
 Ovo je automatska poruka. Molimo ne odgovarajte na ovaj email.
         """
         return text_content.strip()
-    
+
     def send_email(self, recipient: str, en_url: str, sr_url: str) -> bool:
         """Send a bilingual quiz email to a single recipient."""
         try:
@@ -190,69 +190,69 @@ Ovo je automatska poruka. Molimo ne odgovarajte na ovaj email.
             msg = MIMEMultipart('alternative')
             msg['From'] = self.sender_email
             msg['To'] = recipient
-            msg['Subject'] = "🧠 AI Fundamentals Quiz Invitation / Poziv za AI Kviz"
-            
+            msg['Subject'] = "🧠 AI Citizen Quiz Invitation / Poziv za AI Citizen Kviz"
+
             # Create both HTML and plain text versions
             text_content = self.create_plain_text_content(en_url, sr_url)
             html_content = self.create_html_email_content(en_url, sr_url)
-            
+
             # Attach parts
             part1 = MIMEText(text_content, 'plain', 'utf-8')
             part2 = MIMEText(html_content, 'html', 'utf-8')
-            
+
             msg.attach(part1)
             msg.attach(part2)
-            
+
             # Send email
             with smtplib.SMTP(self.smtp_server, self.smtp_port) as server:
                 server.starttls()
                 server.login(self.sender_email, self.sender_password)
                 server.send_message(msg)
-            
+
             logger.info(f"Email sent successfully to {recipient}")
             return True
-            
+
         except Exception as e:
             logger.error(f"Failed to send email to {recipient}: {e}")
             return False
-    
+
     def send_batch_emails(self, en_urls_file: str, sr_urls_file: str, recipients_file: str) -> dict:
         """Send emails to all recipients with random quiz URLs."""
         # Read all files
         en_urls = self.read_urls_from_file(en_urls_file)
         sr_urls = self.read_urls_from_file(sr_urls_file)
         recipients = self.read_recipients_from_file(recipients_file)
-        
+
         if not en_urls:
             logger.error("No English URLs found")
             return {"success": 0, "failed": 0, "errors": ["No English URLs found"]}
-        
+
         if not sr_urls:
             logger.error("No Serbian URLs found")
             return {"success": 0, "failed": 0, "errors": ["No Serbian URLs found"]}
-        
+
         if not recipients:
             logger.error("No recipients found")
             return {"success": 0, "failed": 0, "errors": ["No recipients found"]}
-        
+
         logger.info(f"Sending emails to {len(recipients)} recipients")
         logger.info(f"Available: {len(en_urls)} English URLs, {len(sr_urls)} Serbian URLs")
-        
+
         results = {"success": 0, "failed": 0, "errors": []}
-        
+
         for recipient in recipients:
             # Select random URLs for this recipient
             en_url = random.choice(en_urls)
             sr_url = random.choice(sr_urls)
-            
+
             logger.info(f"Sending to {recipient} - EN: {en_url[:50]}... SR: {sr_url[:50]}...")
-            
+
             if self.send_email(recipient, en_url, sr_url):
                 results["success"] += 1
             else:
                 results["failed"] += 1
                 results["errors"].append(f"Failed to send to {recipient}")
-        
+
         return results
 
 
@@ -264,33 +264,33 @@ def main():
     parser.add_argument("recipients_file", help="File containing recipient email addresses (one per line)")
     parser.add_argument("--smtp-server", default="smtp.gmail.com", help="SMTP server (default: smtp.gmail.com)")
     parser.add_argument("--smtp-port", type=int, default=587, help="SMTP port (default: 587)")
-    
+
     args = parser.parse_args()
-    
+
     # Validate input files exist
     for file_path in [args.en_urls_file, args.sr_urls_file, args.recipients_file]:
         if not Path(file_path).exists():
             logger.error(f"File not found: {file_path}")
             sys.exit(1)
-    
+
     try:
         # Create notifier and send emails
         notifier = EmailNotifier(args.smtp_server, args.smtp_port)
         results = notifier.send_batch_emails(args.en_urls_file, args.sr_urls_file, args.recipients_file)
-        
+
         # Report results
         logger.info(f"Email sending completed:")
         logger.info(f"  Success: {results['success']}")
         logger.info(f"  Failed: {results['failed']}")
-        
+
         if results['errors']:
             logger.error("Errors encountered:")
             for error in results['errors']:
                 logger.error(f"  - {error}")
-        
+
         if results['failed'] > 0:
             sys.exit(1)
-            
+
     except Exception as e:
         logger.error(f"Email notifier failed: {e}")
         sys.exit(1)

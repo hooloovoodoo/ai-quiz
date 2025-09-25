@@ -94,10 +94,10 @@ class GoogleAppsScriptDeployer:
         Create a project name with ISO 8601 timestamp
 
         Returns:
-            Project name in format "AI Fundamentals | 2025-09-08T12:19:18Z"
+            Project name in format "AI Citizen | 2025-09-08T12:19:18Z"
         """
-        timestamp = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
-        return f"AI Fundamentals | {timestamp}"
+        timestamp = datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        return f"AI Citizen | {timestamp}"
 
     def create_script_project(self, project_title: str, script_content: str) -> Optional[str]:
         """

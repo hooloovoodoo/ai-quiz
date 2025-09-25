@@ -56,7 +56,7 @@ def generate_quiz_variants(
 
     for variant_num in range(1, num_variants + 1):
         try:
-            filename = f"AI Fundamentals | {current_date} | [{language}] | Variant {variant_num}.gs"
+            filename = f"AI Citizen | {current_date} | [{language}] | Variant {variant_num}.gs"
             output_path = os.path.join(output_dir, filename)
 
             logger.info("📝 Generating variant %d/%d: %s",
@@ -90,9 +90,9 @@ def list_generated_files(output_dir: str = "/tmp", language: str = None):
         language: Optional language filter ("ENG" or "SRB")
     """
 
-    pattern = "AI Fundamentals | * | *.gs"
+    pattern = "AI Citizen | * | *.gs"
     if language:
-        pattern = f"AI Fundamentals | * | [{language.upper()}] | *.gs"
+        pattern = f"AI Citizen | * | [{language.upper()}] | *.gs"
 
     quiz_files = list(Path(output_dir).glob(pattern))
 

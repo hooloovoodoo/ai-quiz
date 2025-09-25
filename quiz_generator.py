@@ -36,7 +36,7 @@ class QuestionGenerator:
         self.results_sheet = results_sheet
 
         # Fixed quiz settings (rarely changed)
-        self.title = "AI Fundamentals"
+        self.title = "AI Citizen"
         self.description = "To AI or not to AI, that is the question"
         self.points_per_question = 1
         self.confirmation_message = "Hvala što ste učestvovali u kvizu!" + \
@@ -66,9 +66,9 @@ class QuestionGenerator:
             raise ValueError(f"Unsupported language: {language}. Use 'ENG' or 'SRB'")
 
         return [
-            {'path': f'{base_path}/M1/m1.json', 'count': 7},  # AI Fundamentals
-            {'path': f'{base_path}/M2/m2.json', 'count': 9},  # AI Ethics & Bias
-            {'path': f'{base_path}/M3/m3.json', 'count': 7}   # AI Applications
+            {'path': f'{base_path}/M1/m1.json', 'count': 1},  # AI Fundamentals
+            {'path': f'{base_path}/M2/m2.json', 'count': 1},  # AI Ethics & Bias
+            {'path': f'{base_path}/M3/m3.json', 'count': 1}   # AI Applications
         ]
 
     def load_questions_from_multiple_files(
@@ -422,7 +422,7 @@ function onFormSubmit(e) {{
   const pct = totalPoints > 0 ? (earnedPoints / totalPoints) * 100 : 0;
   const passed = pct >= 70;
 
-  const subject = `Your quiz result: ${{Math.round(pct)}}% — ${{passed ? 'PASS' : 'FAIL'}}`;
+  const subject = `AI Citizen: ${{Math.round(pct)}}% — ${{passed ? 'PASS ✅' : 'FAIL ❌'}}`;
   const body = `Hvala što ste učestvovali u kvizu! / Thanks for taking the quiz!
 
 🎯: ${{earnedPoints}} / ${{totalPoints}} (${{pct.toFixed(1)}}%)
