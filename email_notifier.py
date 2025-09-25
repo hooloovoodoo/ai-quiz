@@ -16,7 +16,7 @@ import sys
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from pathlib import Path
-from typing import List, Optional
+from typing import List
 
 # Configure logging
 logging.basicConfig(
@@ -43,13 +43,13 @@ class EmailNotifier:
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
                 urls = [line.strip() for line in f if line.strip()]
-            logger.info(f"Read {len(urls)} URLs from {file_path}")
+            logger.info("Read %d URLs from %s", len(urls), file_path)
             return urls
         except FileNotFoundError:
-            logger.error(f"File not found: {file_path}")
+            logger.error("File not found: %s", file_path)
             return []
-        except Exception as e:
-            logger.error(f"Error reading URLs from {file_path}: {e}")
+        except RuntimeError as e:
+            logger.error("Error reading URLs from %s: %s", file_path, e)
             return []
 
     def read_recipients_from_file(self, file_path: str) -> List[str]:
@@ -57,13 +57,13 @@ class EmailNotifier:
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
                 emails = [line.strip() for line in f if line.strip() and '@' in line]
-            logger.info(f"Read {len(emails)} email addresses from {file_path}")
+            logger.info("Read %d email addresses from %s", len(emails), file_path)
             return emails
         except FileNotFoundError:
-            logger.error(f"File not found: {file_path}")
+            logger.error("File not found: %s", file_path)
             return []
-        except Exception as e:
-            logger.error(f"Error reading recipients from {file_path}: {e}")
+        except RuntimeError as e:
+            logger.error("Error reading recipients from %s: %s", file_path, e)
             return []
 
     def create_html_email_content(self, en_url: str, sr_url: str) -> str:
@@ -209,11 +209,11 @@ Ovo je automatska poruka. Molimo ne odgovarajte na ovaj email.
                 server.login(self.sender_email, self.sender_password)
                 server.send_message(msg)
 
-            logger.info(f"Email sent successfully to {recipient}")
+            logger.info("Email sent successfully to %s", recipient)
             return True
 
-        except Exception as e:
-            logger.error(f"Failed to send email to {recipient}: {e}")
+        except RuntimeError as e:
+            logger.error("Failed to send email to %s: %s", recipient, e)
             return False
 
     def send_batch_emails(self, en_urls_file: str, sr_urls_file: str, recipients_file: str) -> dict:
@@ -235,8 +235,8 @@ Ovo je automatska poruka. Molimo ne odgovarajte na ovaj email.
             logger.error("No recipients found")
             return {"success": 0, "failed": 0, "errors": ["No recipients found"]}
 
-        logger.info(f"Sending emails to {len(recipients)} recipients")
-        logger.info(f"Available: {len(en_urls)} English URLs, {len(sr_urls)} Serbian URLs")
+        logger.info("Sending emails to %d recipients", len(recipients))
+        logger.info("Available: %d English URLs, %d Serbian URLs", len(en_urls), len(sr_urls))
 
         results = {"success": 0, "failed": 0, "errors": []}
 
@@ -245,7 +245,7 @@ Ovo je automatska poruka. Molimo ne odgovarajte na ovaj email.
             en_url = random.choice(en_urls)
             sr_url = random.choice(sr_urls)
 
-            logger.info(f"Sending to {recipient} - EN: {en_url[:50]}... SR: {sr_url[:50]}...")
+            logger.info("Sending to %s - EN: %s... SR: %s...", recipient, en_url[:50], sr_url[:50])
 
             if self.send_email(recipient, en_url, sr_url):
                 results["success"] += 1
@@ -259,40 +259,41 @@ Ovo je automatska poruka. Molimo ne odgovarajte na ovaj email.
 def main():
     """Main function to handle command line execution."""
     parser = argparse.ArgumentParser(description="Send bilingual quiz notification emails")
-    parser.add_argument("en_urls_file", help="File containing English quiz URLs (one per line)")
-    parser.add_argument("sr_urls_file", help="File containing Serbian quiz URLs (one per line)")
-    parser.add_argument("recipients_file", help="File containing recipient email addresses (one per line)")
-    parser.add_argument("--smtp-server", default="smtp.gmail.com", help="SMTP server (default: smtp.gmail.com)")
-    parser.add_argument("--smtp-port", type=int, default=587, help="SMTP port (default: 587)")
+    parser.add_argument("en_urls_file", help="File with English quiz URLs (one per line)")
+    parser.add_argument("sr_urls_file", help="File with Serbian quiz URLs (one per line)")
+    parser.add_argument("recipients_file", help="File with recipient emails (one per line)")
+    parser.add_argument("--smtp-server", default="smtp.gmail.com", help="SMTP server")
+    parser.add_argument("--smtp-port", type=int, default=587, help="SMTP port")
 
     args = parser.parse_args()
 
     # Validate input files exist
     for file_path in [args.en_urls_file, args.sr_urls_file, args.recipients_file]:
         if not Path(file_path).exists():
-            logger.error(f"File not found: {file_path}")
+            logger.error("File not found: %s", file_path)
             sys.exit(1)
 
     try:
         # Create notifier and send emails
         notifier = EmailNotifier(args.smtp_server, args.smtp_port)
-        results = notifier.send_batch_emails(args.en_urls_file, args.sr_urls_file, args.recipients_file)
+        results = notifier.send_batch_emails(
+            args.en_urls_file, args.sr_urls_file, args.recipients_file)
 
         # Report results
-        logger.info(f"Email sending completed:")
-        logger.info(f"  Success: {results['success']}")
-        logger.info(f"  Failed: {results['failed']}")
+        logger.info("Email sending completed:")
+        logger.info("  Success: %d", results['success'])
+        logger.info("  Failed: %d", results['failed'])
 
         if results['errors']:
             logger.error("Errors encountered:")
             for error in results['errors']:
-                logger.error(f"  - {error}")
+                logger.error("  - %s", error)
 
         if results['failed'] > 0:
             sys.exit(1)
 
-    except Exception as e:
-        logger.error(f"Email notifier failed: {e}")
+    except RuntimeError as e:
+        logger.error("Email notifier failed: %s", e)
         sys.exit(1)
 
 
