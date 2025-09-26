@@ -104,7 +104,7 @@ class EmailNotifier:
                 .quiz-button {{
                     display: inline-block;
                     background-color: #4CAF50;
-                    color: white;
+                    color: white !important;
                     padding: 12px 24px;
                     text-decoration: none;
                     border-radius: 5px;
@@ -113,6 +113,13 @@ class EmailNotifier:
                 }}
                 .quiz-button:hover {{
                     background-color: #45a049;
+                    color: white !important;
+                }}
+                .quiz-button:visited {{
+                    color: white !important;
+                }}
+                .quiz-button:link {{
+                    color: white !important;
                 }}
                 .footer {{
                     margin-top: 30px;
@@ -125,35 +132,37 @@ class EmailNotifier:
         </head>
         <body>
             <div class="header">
-                <h1>🧠 AI Citizen Quiz Invitation</h1>
-                <h2>🤖 Poziv za AI Citizen Kviz</h2>
+                <h1>🧠 AI Citizen Test</h1>
             </div>
+
+            <p><strong>Instructions / Uputstva:</strong></p>
+            <ul>
+                <li>Choose one test in your preferred language / Izaberite test na željenom jeziku</li>
+                <li>Complete all questions to receive your score / Odgovorite na sva pitanja da biste dobili rezultat</li>
+                <li>Each test takes approximately 15-20 minutes / Svaki test traje približno 15-20 minuta</li>
+                <li>Email with your results (PASS/FAIL) will be sent to you after you complete the test / Posle završetka testa, dobićete email sa vašim rezultatom (PASS/FAIL)</li>
+            </ul>
 
             <div class="content">
                 <div class="quiz-section">
-                    <h3>🇺🇸 English Quiz</h3>
-                    <p>Test your knowledge of AI Citizen with our comprehensive quiz. Good luck!</p>
-                    <a href="{en_url}" class="quiz-button">Take English Quiz</a>
+                    <h3>🇺🇸 / 🇬🇧 English Test</h3>
+                    <p>Test your knowledge of AI Citizen with our comprehensive test. Good luck!</p>
+                    <a href="{en_url}" class="quiz-button">Take English Test</a>
                 </div>
 
                 <div class="quiz-section">
-                    <h3>🇷🇸 Serbian Quiz / Srpski Kviz</h3>
+                    <h3>🇷🇸 Srpski Test</h3>
                     <p>Testirajte svoje znanje o osnovama veštačke inteligencije. Srećno!</p>
-                    <a href="{sr_url}" class="quiz-button">Započni Srpski Kviz</a>
-                </div>
-
-                <div class="footer">
-                    <p><strong>Instructions / Uputstva:</strong></p>
-                    <ul>
-                        <li>Choose one quiz in your preferred language / Izaberite kviz na željenom jeziku</li>
-                        <li>Complete all questions to receive your score / Odgovorite na sva pitanja da biste dobili rezultat</li>
-                        <li>Each quiz takes approximately 15-20 minutes / Svaki kviz traje približno 15-20 minuta</li>
-                    </ul>
-
-                    <p><em>This is an automated message. Please do not reply to this email.</em><br>
-                    <em>Ovo je automatska poruka. Molimo ne odgovarajte na ovaj email.</em></p>
+                    <a href="{sr_url}" class="quiz-button">Započni Srpski Test</a>
                 </div>
             </div>
+
+            <div class="footer">
+                <p><em>This is an automated message. Please do not reply to this email.</em><br>
+                <em>Ovo je automatska poruka. Molimo ne odgovarajte na ovaj email.</em><br>
+                <em>HLV 💚 YOU \o/ :)</em></p>
+            </div>
+
         </body>
         </html>
         """
@@ -162,24 +171,26 @@ class EmailNotifier:
     def create_plain_text_content(self, en_url: str, sr_url: str) -> str:
         """Create plain text email content as fallback."""
         text_content = f"""
-AI Citizen Quiz Invitation
-==========================
+AI Citizen Test
+===============
 
-Hello! You have been invited to take the AI Citizen quiz.
+Hello! You have been invited to take the AI Citizen test.
 
-ENGLISH QUIZ:
+ENGLISH TEST:
 {en_url}
 
-SERBIAN QUIZ / SRPSKI KVIZ:
+SERBIAN TEST / SRPSKI TEST:
 {sr_url}
 
 Instructions / Uputstva:
-- Choose one quiz in your preferred language / Izaberite kviz na željenom jeziku
+- Choose one test in your preferred language / Izaberite test na željenom jeziku
 - Complete all questions to receive your score / Odgovorite na sva pitanja da biste dobili rezultat
-- Each quiz takes approximately 15-20 minutes / Svaki kviz traje približno 15-20 minuta
+- Each test takes approximately 15-20 minutes / Svaki test traje približno 15-20 minuta
+- Email with your results (PASS/FAIL) will be sent to you after you complete the test / Posle završetka testa, dobićete email sa vašim rezultatom (PASS/FAIL)
 
 This is an automated message. Please do not reply to this email.
 Ovo je automatska poruka. Molimo ne odgovarajte na ovaj email.
+HLV 💚 YOU \o/ :)
         """
         return text_content.strip()
 
@@ -190,7 +201,7 @@ Ovo je automatska poruka. Molimo ne odgovarajte na ovaj email.
             msg = MIMEMultipart('alternative')
             msg['From'] = self.sender_email
             msg['To'] = recipient
-            msg['Subject'] = "🧠 AI Citizen Quiz Invitation / Poziv za AI Citizen Kviz"
+            msg['Subject'] = "🧠 AI Citizen Test"
 
             # Create both HTML and plain text versions
             text_content = self.create_plain_text_content(en_url, sr_url)
