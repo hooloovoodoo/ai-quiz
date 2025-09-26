@@ -180,3 +180,9 @@ local_config.json
 
 # Questions analysis
 analyze_questions.py
+
+# Email and testing related
+en_urls_file.txt
+sr_urls_file.txt
+recipients.txt
+
