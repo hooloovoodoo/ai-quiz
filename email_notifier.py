@@ -164,7 +164,7 @@ class EmailNotifier:
             <div class="footer">
                 <p><em>This is an automated message. Please do not reply to this email.</em><br>
                 <em>Ovo je automatska poruka. Molimo ne odgovarajte na ovaj email.</em><br>
-                <em>HLV 💚 YOU \o/ :)</em></p>
+                <em>HLV 💚 YOU \\o/ :)</em></p>
             </div>
 
         </body>
@@ -194,7 +194,7 @@ Instructions / Uputstva:
 
 This is an automated message. Please do not reply to this email.
 Ovo je automatska poruka. Molimo ne odgovarajte na ovaj email.
-HLV 💚 YOU \o/ :)
+HLV 💚 YOU \\o/ :)
         """
         return text_content.strip()
 
