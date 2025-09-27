@@ -137,10 +137,14 @@ class EmailNotifier:
 
             <p><strong>Instructions / Uputstva:</strong></p>
             <ul>
-                <li>Choose one test in your preferred language / Izaberite test na željenom jeziku</li>
-                <li>Complete all questions to receive your score / Odgovorite na sva pitanja da biste dobili rezultat</li>
-                <li>Each test takes approximately 15-20 minutes / Svaki test traje približno 15-20 minuta</li>
-                <li>Email with your results (PASS/FAIL) will be sent to you after you complete the test / Posle završetka testa, dobićete email sa vašim rezultatom (PASS/FAIL)</li>
+                <li>Choose one test in your preferred language
+                    / Izaberite test na željenom jeziku</li>
+                <li>Complete all questions to receive your score
+                    / Odgovorite na sva pitanja da biste dobili rezultat</li>
+                <li>Each test takes approximately 15-20 minutes
+                    / Svaki test traje približno 15-20 minuta</li>
+                <li>Email with results (PASS/FAIL) will be sent to you after you complete the test
+                    / Posle završetka testa, dobićete email sa vašim rezultatom (PASS/FAIL)</li>
             </ul>
 
             <div class="content">
