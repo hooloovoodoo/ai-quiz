@@ -559,8 +559,7 @@ function onFormSubmit(e) {{
         self,
         json_path: str,
         output_path: str,
-        question_count: Optional[int] = None,
-        variant_number: Optional[int] = None) -> str:
+        question_count: Optional[int] = None) -> str:
         """
         Complete workflow: Load JSON, generate script, and save to file
 
@@ -568,7 +567,6 @@ function onFormSubmit(e) {{
             json_path: Path to JSON question file
             output_path: Path to save generated script
             question_count: Number of questions to select (optional)
-            variant_number: Optional variant number to include in file name
 
         Returns:
             Generated script content
