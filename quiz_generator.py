@@ -502,8 +502,7 @@ function onFormSubmit(e) {{
     def generate_quiz_from_multiple_files(
         self,
         file_configs: List[Dict[str, Any]],
-        output_path: str,
-        variant_number: Optional[int] = None) -> str:
+        output_path: str) -> str:
         """
         Complete workflow: Load questions from multiple JSONs, generate script, save to file
 
@@ -511,17 +510,16 @@ function onFormSubmit(e) {{
             file_configs: List of dicts with 'path' and 'count' keys
                          e.g., [{'path': 'QAPool/eng/L0/M1/m1.json', 'count': 10}, ...]
             output_path: Path to save generated script
-            variant_number: Optional variant number to include in file name
 
         Returns:
             Generated script content
         """
         try:
-            # Update title with language and variant info
+            # Update title with language
             original_title = self.title
             language_tag = f"[{self.language}]"
 
-            # Set title with language tag only (no variant number for cleaner UI)
+            # Set title with language tag only
             self.title = f"{original_title} {language_tag}"
 
             # Load questions from multiple files
@@ -572,11 +570,11 @@ function onFormSubmit(e) {{
             Generated script content
         """
         try:
-            # Update title with language and variant info
+            # Update title with language
             original_title = self.title
             language_tag = f"[{self.language}]"
 
-            # Set title with language tag only (no variant number for cleaner UI)
+            # Set title with language tag only
             self.title = f"{original_title} {language_tag}"
 
             # Load and validate questions
@@ -638,7 +636,7 @@ function onFormSubmit(e) {{
             else:
                 output_path = f"generated_quiz_{lang_suffix}.gs"
 
-        return self.generate_quiz_from_multiple_files(file_configs, output_path, variant_number)
+        return self.generate_quiz_from_multiple_files(file_configs, output_path)
 
 
 # Example usage and testing
