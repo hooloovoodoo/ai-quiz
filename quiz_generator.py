@@ -442,18 +442,11 @@ function onFormSubmit(e) {{
             <tr>
               <td align="center" style="padding:24px;">
                 <h1 style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:20px;line-height:1.3;color:#222;">
-                  AI Citizen — Rezultat / Result
+                  AI Citizen
                 </h1>
                 <p style="font-family:Arial,Helvetica,sans-serif;color:#555;margin:12px 0 24px;">
                   Hvala što ste učestvovali u kvizu! / Thanks for taking the quiz!
                 </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td align="center" style="padding:0 24px 16px;">
-                <img src="cid:logo-cid" width="200" height="60" alt="Inline Logo"
-                     style="display:block;border:0;outline:0;text-decoration:none;margin:0 auto;">
               </td>
             </tr>
 
