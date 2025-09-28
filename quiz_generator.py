@@ -66,9 +66,9 @@ class QuestionGenerator:
             raise ValueError(f"Unsupported language: {language}. Use 'ENG' or 'SRB'")
 
         return [
-            {'path': f'{base_path}/M1/m1.json', 'count': 7},  # AI Fundamentals
-            {'path': f'{base_path}/M2/m2.json', 'count': 9},  # AI Ethics & Bias
-            {'path': f'{base_path}/M3/m3.json', 'count': 7}   # AI Applications
+            {'path': f'{base_path}/M1/m1.json', 'count': 1},  # AI Fundamentals
+            {'path': f'{base_path}/M2/m2.json', 'count': 1},  # AI Ethics & Bias
+            {'path': f'{base_path}/M3/m3.json', 'count': 1}   # AI Applications
         ]
 
     def load_questions_from_multiple_files(
@@ -423,12 +423,28 @@ function onFormSubmit(e) {{
   const passed = pct >= 70;
 
   const subject = `AI Citizen: ${{Math.round(pct)}}% — ${{passed ? 'PASS ✅' : 'FAIL ❌'}}`;
-  const body = `Hvala što ste učestvovali u kvizu! / Thanks for taking the quiz!
+
+  const HERO_IMAGE_URL = `https://cdn.haip.hooloovoo.rs/${{passed ? "pass" : "fail"}}.jpg`;
+  const heroBlob = UrlFetchApp.fetch(HERO_IMAGE_URL, {{ muteHttpExceptions: true }}).getBlob().setName("hero.jpg");
+
+  const textBody = `Hvala što ste učestvovali u kvizu! / Thanks for taking the quiz!
+  const htmlBody = `<!doctype html>
 
 🎯: ${{earnedPoints}} / ${{totalPoints}} (${{pct.toFixed(1)}}%)
 🏁: ${{passed ? 'PASS ✅' : 'FAIL ❌'}}`;
 
-  MailApp.sendEmail(email, subject, body);
+  MailApp.sendEmail({{
+    to: email,
+    subject: subject,
+    body: textBody,
+    htmlBody: htmlBody,
+    inlineImages: {{
+      "hero-cid": heroBlob
+    }},
+    name: "AI Citizen Quiz"
+  }});
+
+
 }}'''
 
         logger.info("Generated Google Apps Script code")
