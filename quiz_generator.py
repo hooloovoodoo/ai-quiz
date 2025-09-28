@@ -428,10 +428,11 @@ function onFormSubmit(e) {{
   const heroBlob = UrlFetchApp.fetch(HERO_IMAGE_URL, {{ muteHttpExceptions: true }}).getBlob().setName("hero.jpg");
 
   const textBody = `Hvala što ste učestvovali u kvizu! / Thanks for taking the quiz!
-  const htmlBody = `<!doctype html>
 
 🎯: ${{earnedPoints}} / ${{totalPoints}} (${{pct.toFixed(1)}}%)
 🏁: ${{passed ? 'PASS ✅' : 'FAIL ❌'}}`;
+
+  const htmlBody = `<!doctype html>`;
 
   MailApp.sendEmail({{
     to: email,
