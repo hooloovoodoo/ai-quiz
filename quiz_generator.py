@@ -432,7 +432,65 @@ function onFormSubmit(e) {{
 🎯: ${{earnedPoints}} / ${{totalPoints}} (${{pct.toFixed(1)}}%)
 🏁: ${{passed ? 'PASS ✅' : 'FAIL ❌'}}`;
 
-  const htmlBody = `<!doctype html>`;
+  const htmlBody = `<!doctype html>
+<html lang="en">
+  <body style="margin:0;padding:0;background:#f6f6f6;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f6f6f6;">
+      <tr>
+        <td align="center" style="padding:24px;">
+          <table role="presentation" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;background:#ffffff;border-radius:8px;overflow:hidden;">
+            <tr>
+              <td align="center" style="padding:24px;">
+                <h1 style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:20px;line-height:1.3;color:#222;">
+                  AI Citizen — Rezultat / Result
+                </h1>
+                <p style="font-family:Arial,Helvetica,sans-serif;color:#555;margin:12px 0 24px;">
+                  Hvala što ste učestvovali u kvizu! / Thanks for taking the quiz!
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center" style="padding:0 24px 16px;">
+                <img src="cid:logo-cid" width="200" height="60" alt="Inline Logo"
+                     style="display:block;border:0;outline:0;text-decoration:none;margin:0 auto;">
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:0 24px 24px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #eee;border-radius:8px;">
+                  <tr>
+                    <td style="padding:16px 20px;font-family:Arial,Helvetica,sans-serif;color:#333;">
+                      <div style="font-size:16px;margin-bottom:6px;">🎯: <strong>${{earnedPoints}} / ${{totalPoints}}</strong> (${{pct.toFixed(1)}}%)</div>
+                      <div style="font-size:16px;">🏁: <strong>${{passed ? "PASS ✅" : "FAIL ❌"}}</strong></div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- HERO as CID (no hosting needed) -->
+            <tr>
+              <td align="center" style="padding:0 24px 24px;">
+                <img src="cid:hero-cid" width="600" height="200" alt="Hero"
+                     style="display:block;border:0;outline:0;text-decoration:none;margin:0 auto;max-width:100%;height:auto;">
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:0 24px 24px;">
+                <p style="font-family:Arial,Helvetica,sans-serif;color:#666;margin:0;">
+                  Ova poruka je automatski poslata nakon podnošenja Google Forme.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>`;
 
   MailApp.sendEmail({{
     to: email,
