@@ -3,7 +3,7 @@
     "question": "Šta označava skraćenica ANI?",
     "answers": [
       "Artificial Narrow Intelligence (Uska veštačka inteligencija)",
-      "Artificial Natural Intelligence (Prirodna veštačka inteligencija)",
+      "Artificial Niche Intelligence (Nišna veštačka inteligencija)",
       "Advanced Neural Intelligence (Napredna neuronska inteligencija)",
       "Automated Network Intelligence (Automatizovana mrežna inteligencija)"
     ],
@@ -15,7 +15,7 @@
       "ML > AI > DL",
       "DL > ML > AI",
       "AI > ML > DL",
-      "Sve su isto"
+      "AI > DL > ML"
     ],
     "correct": "AI > ML > DL"
   },
@@ -25,14 +25,14 @@
       "Opšta veštačka inteligencija (AGI)",
       "Super veštačka inteligencija (ASI)",
       "Uska veštačka inteligencija (ANI)",
-      "Svesna veštačka inteligencija"
+      "Domen-specifična inteligencija (ADI)"
     ],
     "correct": "Uska veštačka inteligencija (ANI)"
   },
   {
     "question": "Koja je glavna razlika između tradicionalnog softvera i AI/ML softvera?",
     "answers": [
-      "Tradicionalni softver uči iz podataka kroz iterativne procese, AI/ML koristi unapred definisana fiksna pravila",
+      "Tradicionalni softver koristi unapred podešene heuristike, AI/ML se oslanja na ručno podešene parametre umesto na podatke",
       "Tradicionalni softver koristi eksplicitna pravila, AI/ML uči obrasce iz podataka",
       "Nema razlike između ova dva pristupa",
       "Tradicionalni softver je uvek značajno brži od AI/ML sistema"
@@ -55,7 +55,7 @@
       "Recept ili instrukcije",
       "Sirovi podaci pre obrade",
       "Rezultat treninga - naučeni obrasci",
-      "Računarski hardver"
+      "Softverska biblioteka (npr. TensorFlow)"
     ],
     "correct": "Rezultat treninga - naučeni obrasci"
   },
@@ -85,7 +85,7 @@
       "Kada AI uči iz novih podataka i prilagođava svoje parametre",
       "Kada se AI razvija i nadograđuje sa novim funkcionalnostima",
       "Kada istrenirani AI primenjuje naučeno na nove situacije",
-      "Kada se AI gasi"
+      "Kada je AI inicijalizovan, ali još nije treniran"
     ],
     "correct": "Kada istrenirani AI primenjuje naučeno na nove situacije"
   },
@@ -112,7 +112,7 @@
   {
     "question": "Šta znači NLP u kontekstu AI?",
     "answers": [
-      "Neural Learning Protocol - protokol za neuronsko učenje i optimizaciju",
+      "Natural Language Programming - programski jezik za obradu teksta",
       "Natural Language Processing - obrada prirodnog jezika",
       "Network Layer Protection - zaštita mrežnog sloja",
       "Non-Linear Programming - nelinearno programiranje i optimizacija"
@@ -125,7 +125,7 @@
       "Mali, veoma efikasan i optimizovan tekst procesor dizajniran za brzu obradu podataka",
       "Model sa milijardama/bilionima parametara treniran na ogromnim tekstualnim podacima",
       "Tradicionalni sistem zasnovan na pravilima",
-      "Specijalizovan sistem za prepoznavanje i sintezu ljudskog glasa"
+      "Model sa stotinama miliona parametara za specijalizovane jezičke zadatke"
     ],
     "correct": "Model sa milijardama/bilionima parametara treniran na ogromnim tekstualnim podacima"
   },
@@ -135,14 +135,14 @@
       "Grafički korisnički interfejs za komunikaciju",
       "Maksimalna količina teksta koju model može da 'vidi' odjednom",
       "Vremenski period potreban za treniranje i optimizaciju AI modela",
-      "Rezolucija ekrana i vizuelni prikaz podataka"
+      "Vremenski prozor iz poslednjih poruka koje model prioritetno obrađuje"
     ],
     "correct": "Maksimalna količina teksta koju model može da 'vidi' odjednom"
   },
   {
     "question": "Šta je granična tačka znanja (knowledge cutoff) u AI modelima?",
     "answers": [
-      "Kada AI prestaje da funkcioniše i zahteva ponovno pokretanje",
+      "Poslednji trenutak kada je model dobio upit od korisnika",
       "Najnovija tačka u vremenu kada su podaci za treniranje AI modela ažurirani",
       "Maksimalna brzina procesiranja informacija",
       "Minimalni podaci potrebni za početak rada sistema i generisanje osnovnih odgovora"
@@ -152,7 +152,7 @@
   {
     "question": "Šta znači 'GIGO' u kontekstu AI i podataka?",
     "answers": [
-      "Odličan ulaz, odličan izlaz",
+      "Dobri podaci, dobar izlaz (Good Input, Good Output)",
       "Opšta inteligencija ide online",
       "Đubre unutra, đubre napolje (Garbage In, Garbage Out)",
       "Generisan ulaz, generisan izlaz"
@@ -175,17 +175,17 @@
       "Nadgledano učenje sa eksplicitnim oznakama",
       "Nenadgledano učenje kroz klasterovanje podataka",
       "Učenje putem nagrada (Reinforcement Learning)",
-      "Duboko učenje sa više neuronskih slojeva"
+      "Duboko učenje sa zamrznutim slojevima"
     ],
     "correct": "Učenje putem nagrada (Reinforcement Learning)"
   },
   {
     "question": "Šta je multimodalna AI?",
     "answers": [
-      "AI koja obrađuje isključivo tekstualne podatke i generiše samo tekstualne odgovore",
+      "AI koja obrađuje isključivo tekstualne podatke i generiše tekstualne odgovore",
       "AI koja kombinuje više tipova ulaza kao što su tekst, slike i audio",
       "AI koja radi paralelno na više računara",
-      "AI sa više korisnika koji istovremeno pristupaju sistemu"
+      "AI koja obrađuje više jezika, ali samo u tekstualnom obliku"
     ],
     "correct": "AI koja kombinuje više tipova ulaza kao što su tekst, slike i audio"
   },
@@ -195,7 +195,7 @@
       "Sigurnosni kredencijal",
       "Jedinica teksta (obično oko 0,75 reči)",
       "Vrsta kriptovalute",
-      "Procesni čip"
+      "Cela reč bez obzira na dužinu"
     ],
     "correct": "Jedinica teksta (obično oko 0,75 reči)"
   },
@@ -205,14 +205,14 @@
       "Čini sistem značajno bržim u procesiranju i generisanju odgovora",
       "AI sistemi su dobri samo onoliko koliko su dobri podaci na kojima su trenirani",
       "Smanjuje troškove hardvera",
-      "Nije važan za moderne AI sisteme"
+      "Sekundaran je jer modeli umeju da ispravljaju greške automatski"
     ],
     "correct": "AI sistemi su dobri samo onoliko koliko su dobri podaci na kojima su trenirani"
   },
   {
     "question": "Šta se može desiti kada se AI trenira na pristrasnim podacima?",
     "answers": [
-      "Sistem postaje brži",
+      "Sistem postaje podjednako tačan kroz sve grupe zbog regularizacije",
       "Ništa značajno",
       "AI može pojačati i zadržati te pristrasnosti",
       "Sistem automatski ispravlja pristrasnost"
@@ -222,12 +222,12 @@
   {
     "question": "Šta su 'halucinacije' u kontekstu AI?",
     "answers": [
-      "Kada AI vizualizuje i procesira slike iz tekstualnih opisa korisnika",
-      "Kada model predviđa verovatne reči umesto istinitih i samouvereno izmišlja činjenice",
-      "Kada sistem pada i prestaje da odgovara",
-      "Kada AI generiše kreativne i umetnički inspirisane odgovore na osnovu unetih podataka"
+      "Kada AI pogrešno interpretira slike koje su date na analizu",
+      "Kada model generiše uverljive ali netačne informacije",
+      "Kada sistem pada i prestaje da radi",
+      "Kada model navodi izvore koje zapravo nije koristio"
     ],
-    "correct": "Kada model predviđa verovatne reči umesto istinitih i samouvereno izmišlja činjenice"
+    "correct": "Kada model generiše uverljive ali netačne informacije"
   },
   {
     "question": "Koji tip AI je najbolji za klasifikaciju imejlova kao spam ili ne-spam?",
@@ -235,7 +235,7 @@
       "Generativna AI",
       "Kreativna AI",
       "Prediktivna/diskriminativna AI",
-      "Umetnička AI"
+      "Generativna AI prilagođena samo za generisanje teksta"
     ],
     "correct": "Prediktivna/diskriminativna AI"
   },
@@ -244,8 +244,8 @@
     "answers": [
       "AI koja značajno poboljšava i koriguje ljudski vid kroz napredne algoritme",
       "AI koja može da prepoznaje i generiše vizuelni sadržaj",
-      "Specijalizovana tehnologija kompjuterskog monitora visokih performansi",
-      "Sistemi virtuelne realnosti za gaming"
+      "AI tehnologija zasnovana na Virtualnoj Realnosti",
+      "AI koja prevodi slike isključivo u tekst"
     ],
     "correct": "AI koja može da prepoznaje i generiše vizuelni sadržaj"
   },
@@ -254,8 +254,8 @@
     "answers": [
       "Trenutno dostupna i integrisana u savremene pametne telefone i druge uređaje",
       "Inteligencija na ljudskom nivou kroz sve domene koja još ne postoji",
-      "Specijalizovana AI koja radi isključivo za video igre",
-      "Potpuno isto što i ANI, samo sa boljim performansama i brzinom procesiranja"
+      "Specijalizovana AI za video igre",
+      "Dostupna samo u istraživačkim laboratorijama"
     ],
     "correct": "Inteligencija na ljudskom nivou kroz sve domene koja još ne postoji"
   },
@@ -264,8 +264,8 @@
     "answers": [
       "Koristi značajno manje podataka i resursa za postizanje istih rezultata",
       "Koristi veštačke neuronske mreže sa više slojeva",
-      "Uvek je brže od tradicionalnih metoda",
-      "Ne zahteva nikakvo treniranje ili podešavanje parametara za funkcionisanje"
+      "Uvek je brže i efikasnije",
+      "Trenira samo poslednji sloj dok ostali ostaju fiksni"
     ],
     "correct": "Koristi veštačke neuronske mreže sa više slojeva"
   },
@@ -274,8 +274,8 @@
     "answers": [
       "Direktno utiče na rezoluciju ekrana i kvalitet vizuelnog prikaza rezultata",
       "Duži dokumenti mogu zahtevati podelu i raniji delovi razgovora mogu biti 'zaboravljeni'",
-      "Određuje maksimalnu brzinu procesiranja AI sistema",
-      "Nije važno za moderne AI sisteme koji nemaju ova ograničenja"
+      "Određuje brzinu i efikasnost obrade podataka",
+      "Određuje koliko slika model može trajno da zapamti"
     ],
     "correct": "Duži dokumenti mogu zahtevati podelu i raniji delovi razgovora mogu biti 'zaboravljeni'"
   }
