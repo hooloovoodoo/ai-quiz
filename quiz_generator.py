@@ -42,9 +42,6 @@ class QuestionGenerator:
         self.confirmation_message = "Hvala što ste učestvovali u kvizu!" + \
         " / Thanks for taking the quiz!"
 
-        # Set random seed for reproducible question selection during development
-        random.seed(42)
-
     def get_file_configs_for_language(
         self, language: str = "ENG") -> List[Dict[str, Any]]:
         """
@@ -66,9 +63,9 @@ class QuestionGenerator:
             raise ValueError(f"Unsupported language: {language}. Use 'ENG' or 'SRB'")
 
         return [
-            {'path': f'{base_path}/M1/m1.json', 'count': 1},  # AI Fundamentals
-            {'path': f'{base_path}/M2/m2.json', 'count': 1},  # AI Ethics & Bias
-            {'path': f'{base_path}/M3/m3.json', 'count': 1}   # AI Applications
+            {'path': f'{base_path}/M1/m1.json', 'count': 7},  # AI Fundamentals
+            {'path': f'{base_path}/M2/m2.json', 'count': 9},  # AI Ethics & Bias
+            {'path': f'{base_path}/M3/m3.json', 'count': 7}   # AI Applications
         ]
 
     def load_questions_from_multiple_files(
@@ -222,6 +219,12 @@ class QuestionGenerator:
             else:
                 # Keep original order
                 correct_index = choices.index(correct_answer)
+
+            # Add "I don't know" option as the last choice (after shuffling)
+            if self.language == "ENG":
+                choices.append("I don't know")
+            else:  # SRB
+                choices.append("Ne znam")
 
             js_question = {
                 'question': question['question'],
