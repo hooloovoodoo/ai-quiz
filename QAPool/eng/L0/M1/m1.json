@@ -3,7 +3,7 @@
     "question": "What does ANI stand for?",
     "answers": [
       "Artificial Narrow Intelligence",
-      "Artificial Natural Intelligence",
+      "Artificial Niche Intelligence",
       "Advanced Neural Intelligence",
       "Automated Network Intelligence"
     ],
@@ -15,7 +15,7 @@
       "ML > AI > DL",
       "DL > ML > AI",
       "AI > ML > DL",
-      "They are all the same thing"
+      "AI > DL > ML"
     ],
     "correct": "AI > ML > DL"
   },
@@ -25,14 +25,14 @@
       "Artificial General Intelligence (AGI)",
       "Artificial Super Intelligence (ASI)",
       "Artificial Narrow Intelligence (ANI)",
-      "Artificial Conscious Intelligence (ACI)"
+      "Artificial Domain Intelligence (ADI)"
     ],
     "correct": "Artificial Narrow Intelligence (ANI)"
   },
   {
     "question": "What is the main difference between traditional software and AI/ML software?",
     "answers": [
-      "Traditional software learns from data patterns while AI/ML uses predefined fixed rules",
+      "Traditional software uses predefined heuristics, while AI/ML relies on manually tuned parameters rather than data",
       "Traditional software uses explicit rules, AI/ML learns patterns from data",
       "There is no significant difference between the two",
       "Traditional software is always faster and more efficient than AI/ML"
@@ -55,7 +55,7 @@
       "The recipe or instructions",
       "The raw data before processing",
       "The result of training - the learned patterns",
-      "The computer hardware used"
+      "The software library used (e.g., TensorFlow)"
     ],
     "correct": "The result of training - the learned patterns"
   },
@@ -85,7 +85,7 @@
       "When the AI is learning from data",
       "When the AI is being initially developed and programmed by engineers",
       "When trained AI applies what it learned to new situations",
-      "When the AI is shut down"
+      "When the AI is initialized but not yet trained"
     ],
     "correct": "When trained AI applies what it learned to new situations"
   },
@@ -112,7 +112,7 @@
   {
     "question": "What does NLP stand for in AI?",
     "answers": [
-      "Neural Learning Protocol",
+      "Natural Language Programming",
       "Natural Language Processing",
       "Network Layer Protection",
       "Non-Linear Programming"
@@ -125,7 +125,7 @@
       "A small, highly efficient and optimized text processing system",
       "A model with billions/trillions of parameters trained on vast text data",
       "A traditional rule-based system with extensive documentation",
-      "A voice recognition system"
+      "A model with hundreds of millions of parameters designed for specialized language tasks"
     ],
     "correct": "A model with billions/trillions of parameters trained on vast text data"
   },
@@ -135,14 +135,14 @@
       "The graphical user interface for interacting with the model",
       "Maximum amount of text the model can 'see' at once",
       "The specific time period allocated for training the model",
-      "The screen resolution"
+      "The time window from the most recent messages that the model prioritizes"
     ],
     "correct": "Maximum amount of text the model can 'see' at once"
   },
   {
     "question": "What is a knowledge cutoff in AI models?",
     "answers": [
-      "When the AI stops working",
+      "The last time the model was prompted by a user",
       "The most recent point when the AI's training data was updated",
       "The maximum processing speed the system can achieve over time",
       "The minimum amount of data required for proper functioning of the model"
@@ -152,7 +152,7 @@
   {
     "question": "What does 'GIGO' mean in the context of AI and data?",
     "answers": [
-      "Great Input, Great Output",
+      "Good Input, Good Output",
       "General Intelligence Goes Online",
       "Garbage In, Garbage Out",
       "Generated Input, Generated Output"
@@ -185,7 +185,7 @@
       "AI that only processes text",
       "AI that combines multiple types of input like text, images, and audio",
       "AI that runs on multiple distributed computer systems, in a systematized manner",
-      "AI with multiple users"
+      "AI that processes output in multiple languages"
     ],
     "correct": "AI that combines multiple types of input like text, images, and audio"
   },
@@ -195,7 +195,7 @@
       "A security credential",
       "A unit of text (usually about 0.75 words)",
       "A type of cryptocurrency",
-      "A processing chip"
+      "An entire word regardless of length"
     ],
     "correct": "A unit of text (usually about 0.75 words)"
   },
@@ -205,14 +205,14 @@
       "It makes the system run significantly faster and more efficiently",
       "AI systems are only as good as the data they're trained on",
       "It reduces hardware costs",
-      "It's not important"
+      "It's secondary because models learn to correct mistakes automatically"
     ],
     "correct": "AI systems are only as good as the data they're trained on"
   },
   {
     "question": "What can happen when AI is trained on biased data?",
     "answers": [
-      "The system becomes faster",
+      "The system becomes equally accurate across groups due to regularization",
       "Nothing significant",
       "The AI can amplify and perpetuate those biases",
       "The system automatically corrects the bias"
@@ -225,7 +225,7 @@
       "When AI processes and interprets visual images incorrectly",
       "When the model generates plausible but false information",
       "When the system crashes unexpectedly during operation",
-      "When AI dreams"
+      "When the model cites sources it never accessed but is still considered correct"
     ],
     "correct": "When the model generates plausible but false information"
   },
@@ -235,7 +235,7 @@
       "Generative AI",
       "Creative AI",
       "Predictive/Discriminative AI",
-      "Artistic AI"
+      "Generative AI fine-tuned for text generation only"
     ],
     "correct": "Predictive/Discriminative AI"
   },
@@ -245,7 +245,7 @@
       "AI that improves human eyesight",
       "AI that can recognize and generate visual content",
       "A computer monitor technology",
-      "Virtual reality systems"
+      "AI that converts images to text only"
     ],
     "correct": "AI that can recognize and generate visual content"
   },
@@ -255,7 +255,7 @@
       "It's currently available and widely deployed in modern smartphones and devices",
       "Human-level intelligence across all domains that doesn't yet exist",
       "It only works for games",
-      "It's the same as ANI"
+      "It's available in research labs but not yet in consumer products"
     ],
     "correct": "Human-level intelligence across all domains that doesn't yet exist"
   },
@@ -265,7 +265,7 @@
       "It uses significantly less data to achieve better results",
       "It uses artificial neural networks with multiple layers",
       "It's always faster and more efficient in all applications",
-      "It doesn't need training"
+      "It trains only the last layer while earlier layers stay fixed"
     ],
     "correct": "It uses artificial neural networks with multiple layers"
   },
@@ -275,7 +275,7 @@
       "It affects the screen resolution",
       "Longer documents may need splitting and earlier conversation parts may be 'forgotten'",
       "It determines the AI's speed and computational efficiency while processing input data",
-      "It's not really that important for most practical applications"
+      "It determines how many images a model can store permanently"
     ],
     "correct": "Longer documents may need splitting and earlier conversation parts may be 'forgotten'"
   }
