@@ -72,12 +72,12 @@
   {
     "question": "What is HAIP's main advantage for enterprise use?",
     "answers": [
-      "It's the cheapest option available with unlimited usage for all employees",
-      "It provides secure enterprise gateway with data privacy compliance",
-      "It has the best image generation capabilities",
-      "It works only in English"
+      "Deep integration with Google Workspace and real-time web access",
+      "Secure enterprise gateway with data privacy compliance",
+      "Source-grounded responses with minimal hallucinations",
+      "Largest context window and multimodal capabilities"
     ],
-    "correct": "It provides secure enterprise gateway with data privacy compliance"
+    "correct": "Secure enterprise gateway with data privacy compliance"
   },
   {
     "question": "According to the data classification table, when can you use client data with internal tools like HAIP?",
@@ -90,12 +90,12 @@
     "correct": "Only with proper approval from IT security"
   },
   {
-    "question": "What is the HLV Success Vision mentioned in the document?",
+    "question": "According to this module, what is HLV's Success Vision for AI adoption?",
     "answers": [
-      "Replace all human workers with AI systems to maximize efficiency and reduce operational costs, starting with our clients",
+      "Automate repetitive tasks to maximize speed and efficiency, even if it slightly reduces human creativity in the short term",
       "AI-augmented teams delivering higher quality work faster while maintaining ethical standards and human creativity",
-      "Use only the most expensive and advanced AI tools available in the market regardless of necessity",
-      "Avoid AI completely in business processes"
+      "Adopt a single enterprise AI tool across all teams to standardize processes and ensure consistency",
+      "AI-enabled teams that improve speed and quality with strong governance, prioritizing efficiency over creativity"
     ],
     "correct": "AI-augmented teams delivering higher quality work faster while maintaining ethical standards and human creativity"
   },
@@ -142,22 +142,22 @@
   {
     "question": "What feature does NotebookLM offer to help find relevant documents from the web?",
     "answers": [
-      "Web Search",
-      "Discover sources",
-      "Auto-complete",
-      "Real-time browsing"
+      "Explore Sources",
+      "Discover Sources",
+      "Source Finder",
+      "Discover Docs"
     ],
-    "correct": "Discover sources"
+    "correct": "Discover Sources"
   },
   {
-    "question": "According to the GPT vs. Gemini comparison, which has superior context window capabilities?",
+    "question": "According to the study material, which is a highlighted strength of Gemini?",
     "answers": [
-      "GPT has superior context window",
-      "Both are equal",
-      "Gemini has superior context window",
-      "Neither supports context windows"
+      "Source-grounded responses with minimal hallucinations",
+      "Real-time web access with source citations",
+      "Secure enterprise gateway with data privacy compliance",
+      "Exceptional creative writing and code generation"
     ],
-    "correct": "Gemini has superior context window"
+    "correct": "Real-time web access with source citations"
   },
   {
     "question": "What does HAIP's 'Improve Prompt' feature do?",
@@ -170,14 +170,14 @@
     "correct": "Suggests prompt enhancement in 1-click"
   },
   {
-    "question": "Which AI tool category does GitHub Copilot belong to?",
+    "question": "You need AI-powered code completion and suggestions directly inside your IDE. Which tool category best fits this need?",
     "answers": [
-      "Multimodal",
-      "Image",
-      "Code",
-      "Audio"
+      "Multimodal AI tools for diverse input types",
+      "Developer productivity and code assistance tools",
+      "Text generation and chat-based AI assistants",
+      "Audio processing and voice synthesis tools"
     ],
-    "correct": "Code"
+    "correct": "Developer productivity and code assistance tools"
   },
   {
     "question": "What is data pseudonymization in the context of AI tools?",
@@ -192,32 +192,32 @@
   {
     "question": "For company accounts, what is a downside of using Gemini mentioned in the document?",
     "answers": [
-      "It's too expensive with hidden costs and complex pricing structures for enterprises",
+      "Chats are automatically deleted after 30 days",
       "Chat sessions can't be deleted since Google considers them company property",
-      "It doesn't support multiple languages",
-      "It has limited functionality"
+      "Source citations are disabled for compliance reasons",
+      "Google Workspace integration requires additional licensing fees"
     ],
     "correct": "Chat sessions can't be deleted since Google considers them company property"
   },
   {
-    "question": "You need to research the latest AI regulation developments in the EU with recent policy changes. Which tool and approach should you use?",
+    "question": "You need to research the latest AI regulation developments in the EU with recent policy changes. Assume no sensitive data is involved. Which tool and approach should you use?",
     "answers": [
-      "NotebookLM with carefully selected and uploaded regulatory documents from official sources",
-      "ChatGPT for creative analysis",
-      "Gemini with a prompt asking for latest developments and recent updates",
-      "HAIP for enterprise security"
+      "Use Gemini's real-time web access to gather and cite the latest EU AI regulation updates",
+      "Use NotebookLM's Discover feature to ingest recent EU regulation sources and synthesize with citations",
+      "Use HAIP's web search to compile current EU AI policy updates and summarize for internal stakeholders",
+      "Use ChatGPT to analyze implications of new EU AI regulations without real-time web browsing"
     ],
-    "correct": "Gemini with a prompt asking for latest developments and recent updates"
+    "correct": "Use Gemini's real-time web access to gather and cite the latest EU AI regulation updates"
   },
   {
     "question": "Your company wants to implement AI tools while maintaining ethical standards. Which principle from the HLV Success Vision should guide this implementation?",
     "answers": [
-      "Use AI to replace human creativity entirely",
-      "Focus only on speed and efficiency",
-      "AI-augmented teams maintaining ethical standards and human creativity",
-      "Avoid AI tools completely"
+      "AI-augmented teams delivering higher quality work faster while maintaining ethical standards and human creativity",
+      "AI-augmented teams delivering higher quality work faster with minimal oversight",
+      "Automation-first approach to maximize efficiency and reduce costs",
+      "Strict data security with AI-driven decision making and reduced human involvement"
     ],
-    "correct": "AI-augmented teams maintaining ethical standards and human creativity"
+    "correct": "AI-augmented teams delivering higher quality work faster while maintaining ethical standards and human creativity"
   },
   {
     "question": "Which constraint pattern example is provided in the basic prompt patterns section?",
