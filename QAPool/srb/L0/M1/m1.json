@@ -170,12 +170,12 @@
     "correct": "Nadgledano učenje"
   },
   {
-    "question": "Koji tip mašinskog učenja uči kroz pokušaje i greške sa nagradama?",
+    "question": "Agent uči da rešava zadatak interakcijom sa okruženjem i dobija pozitivne poene za uspeh i negativne za greške. Koji tip učenja je ovo?",
     "answers": [
-      "Nadgledano učenje sa eksplicitnim oznakama",
-      "Nenadgledano učenje kroz klasterovanje podataka",
+      "Nadgledano učenje (Supervised Learning)",
+      "Nenadgledano učenje (Unsupervised Learning)",
       "Učenje putem nagrada (Reinforcement Learning)",
-      "Duboko učenje sa zamrznutim slojevima"
+      "Duboko učenje (Deep Learning)"
     ],
     "correct": "Učenje putem nagrada (Reinforcement Learning)"
   },
