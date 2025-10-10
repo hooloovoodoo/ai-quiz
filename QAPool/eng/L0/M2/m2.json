@@ -2,20 +2,20 @@
   {
     "question": "What is AI bias?",
     "answers": [
-      "When AI systems are too slow to process information due to computational limitations and hardware constraints",
+      "When a model generates fabricated information while presenting it confidently as fact",
       "When systems make unfair decisions based on race, gender, age, or other protected characteristics",
-      "When AI refuses to work properly",
-      "When AI costs too much to implement"
+      "When a model overfits training data and performs poorly on new data",
+      "When a system's internal decision process cannot be explained or interpreted with confidence"
     ],
     "correct": "When systems make unfair decisions based on race, gender, age, or other protected characteristics"
   },
   {
     "question": "What are AI hallucinations?",
     "answers": [
-      "When AI sees things that aren't there",
-      "When AI enters sleep mode and processes background data while appearing to dream or rest",
+      "When a model overfits training data and memorizes specific examples instead of learning patterns",
+      "When AI refuses to answer questions due to safety policies or content filters",
       "When systems generate incorrect information while presenting it confidently as fact",
-      "When AI gets confused by user input"
+      "When AI misunderstands ambiguous or incomplete user input and requests clarification"
     ],
     "correct": "When systems generate incorrect information while presenting it confidently as fact"
   },
@@ -24,7 +24,7 @@
     "answers": [
       "It was too expensive to maintain",
       "It couldn't guarantee bias elimination after downgrading women's resumes",
-      "It was too slow to process applications",
+      "It struggled to scale effectively during hiring surges",
       "Competitors had developed far superior systems that made Amazon's technology obsolete"
     ],
     "correct": "It couldn't guarantee bias elimination after downgrading women's resumes"
@@ -35,7 +35,7 @@
       "It became the most popular chatbot ever created with millions of satisfied users worldwide",
       "It stopped working due to technical issues",
       "It was manipulated by trolls to post offensive content and had to be shut down",
-      "It achieved sentience"
+      "It achieved self-learning beyond intended boundaries"
     ],
     "correct": "It was manipulated by trolls to post offensive content and had to be shut down"
   },
@@ -43,49 +43,49 @@
     "question": "Which of the following is NOT a core principle of Ethical AI?",
     "answers": [
       "Transparency",
-      "Maximum profit generation",
+      "Efficiency",
       "Fairness",
       "Human in the Loop"
     ],
-    "correct": "Maximum profit generation"
+    "correct": "Efficiency"
   },
   {
     "question": "What are guardrails in AI systems?",
     "answers": [
-      "Physical barriers around computers",
-      "Safety mechanisms that prevent AI from generating harmful, biased, or inappropriate content",
-      "Comprehensive training programs and certification courses designed specifically for AI developers",
-      "Hardware limitations"
+      "Rules and safety mechanisms that prevent AI from generating harmful, biased, or inappropriate content",
+      "Physical or operational restrictions placed around AI hardware deployments",
+      "Comprehensive training programs and certification courses designed specifically for AI developers and architects",
+      "Hardware limitations that cap maximum processing speed"
     ],
-    "correct": "Safety mechanisms that prevent AI from generating harmful, biased, or inappropriate content"
+    "correct": "Rules and safety mechanisms that prevent AI from generating harmful, biased, or inappropriate content"
   },
   {
     "question": "What is the 'Black Box' problem in AI?",
     "answers": [
-      "AI systems are painted black",
+      "AI systems are painted black (honoring The Rolling Stones and their tribute to AI)",
       "We often can't see inside to understand how or why AI reached a conclusion",
-      "AI systems are stored in dark rooms",
-      "The source code is heavily encrypted using advanced cryptographic methods for security"
+      "AI systems are stored on protected servers with limited access",
+      "The source code may be obscured by proprietary or highly technical design choices"
     ],
     "correct": "We often can't see inside to understand how or why AI reached a conclusion"
   },
   {
-    "question": "Which type of data is considered Personally Identifiable Information (PII)?",
+    "question": "Which of the following is considered Personally Identifiable Information (PII)?",
     "answers": [
-      "Weather data",
-      "Stock prices",
-      "Name, address, phone number, and biometric data",
-      "Public news articles"
+      "Anonymized browsing statistics aggregated by region",
+      "Publicly available financial market index data",
+      "Personal identifiers like name, address, and biometric data",
+      "Aggregate location heatmaps without individual tracking"
     ],
-    "correct": "Name, address, phone number, and biometric data"
+    "correct": "Personal identifiers like name, address, and biometric data"
   },
   {
     "question": "What should you do before using AI tools for sensitive work?",
     "answers": [
-      "Nothing special is needed",
-      "Just use private mode",
+      "Nothing special needed, LLMs have built-in security guardrails",
+      "Use browser private / incognito mode",
       "Consult with security teams and use only approved tools",
-      "Delete your browser history"
+      "Delete your browser history after each interaction"
     ],
     "correct": "Consult with security teams and use only approved tools"
   },
@@ -94,8 +94,8 @@
     "answers": [
       "AI systems are close to perfect and require no monitoring or oversight once deployed",
       "AI systems exposed to public input need robust protection against manipulation",
-      "Chatbots should never be used",
-      "Social media is always safe"
+      "Public-facing chatbots are generally ineffective in real-world contexts",
+      "Social media always ensures safe user interactions"
     ],
     "correct": "AI systems exposed to public input need robust protection against manipulation"
   },
@@ -104,8 +104,8 @@
     "answers": [
       "Use it immediately - AI is always accurate",
       "Cross-reference with multiple reliable sources and verify the statistics exist",
-      "Only check if the numbers sound wrong",
-      "Add more decimal places and additional formatting to make the data appear more accurate and professional"
+      "Check only if the numbers appear unusual",
+      "Reformat the data to make it look more professional without validation"
     ],
     "correct": "Cross-reference with multiple reliable sources and verify the statistics exist"
   },
@@ -114,8 +114,8 @@
     "answers": [
       "Paste the entire codebase into ChatGPT for comprehensive and accurate analysis",
       "Share only small, non-proprietary code snippets or use pseudocode",
-      "Post it on a public forum first",
-      "Email the code to your personal account to work on at home"
+      "Seek guidance by posting the code on a programming forum",
+      "Send the code to a personal email to work on it remotely"
     ],
     "correct": "Share only small, non-proprietary code snippets or use pseudocode"
   },
@@ -124,8 +124,8 @@
     "answers": [
       "Trust that all citations are accurate",
       "Verify that each cited source actually exists and contains the referenced information",
-      "Only check the formatting of citations to ensure they follow proper academic style guidelines",
-      "Assume academic citations are always real"
+      "Check only citation formatting for consistency with academic style",
+      "Assume references are reliable if they appear in a formal style"
     ],
     "correct": "Verify that each cited source actually exists and contains the referenced information"
   },
@@ -134,38 +134,38 @@
     "answers": [
       "Include actual salary figures to get more accurate help",
       "Use hypothetical numbers or ranges instead of real salary data",
-      "Share only executive salaries since they're public",
-      "Include employee names but not amounts"
+      "Provide only management-level salaries as examples, never use C-level salaries",
+      "Include employee names but omit salary amounts"
     ],
     "correct": "Use hypothetical numbers or ranges instead of real salary data"
   },
   {
-    "question": "A customer service AI asks for your full social security number to 'verify your identity.' You should:",
+    "question": "A public AI chatbot asks for your national ID number or passport number to 'verify your identity.' You should:",
     "answers": [
-      "Provide it immediately",
-      "Never provide such sensitive information to AI tools",
-      "Only provide the last four digits",
-      "Check if the AI promises to keep it secure"
+      "Provide it since the bot needs to verify your identity for security purposes",
+      "Decline and verify through a secure, official channel; never enter such data into public AI tools",
+      "Provide it because modern chatbots have built-in guardrails that prevent data misuse",
+      "Decline because AI tools cannot guarantee data privacy even with encryption promises"
     ],
-    "correct": "Never provide such sensitive information to AI tools"
+    "correct": "Decline and verify through a secure, official channel; never enter such data into public AI tools"
   },
   {
     "question": "You want to use a colleague's photo in an AI-powered presentation tool. What must you do first?",
     "answers": [
-      "Nothing, it's just for work purposes",
+      "Nothing, if it's just for fun, when used internally, in chats or presentations",
       "Get explicit consent from your colleague before using their image",
-      "Only blur their face slightly",
-      "Use it now and ask for permission later"
+      "Slightly blur their face for anonymity",
+      "Use it first and obtain permission afterward"
     ],
     "correct": "Get explicit consent from your colleague before using their image"
   },
   {
     "question": "An AI chatbot confidently states that your company's main competitor filed for bankruptcy yesterday. Your next step should be:",
     "answers": [
-      "Immediately inform your entire management team and board of directors about this development",
+      "Immediately notify your leadership team",
       "Verify this information through official sources before taking any action",
-      "Start planning to acquire their assets",
-      "Post about it on social media"
+      "Investigate whether your company should file for bankruptcy as well, based on the information provided by the AI chatbot",
+      "Discuss it on social media for quick feedback"
     ],
     "correct": "Verify this information through official sources before taking any action"
   },
@@ -174,17 +174,17 @@
     "answers": [
       "Upload the entire database for comprehensive analysis and better AI recommendations",
       "Anonymize data or use fictional examples that represent your use case",
-      "Only share customers who have opted into marketing",
-      "Use real data but delete the conversation afterward"
+      "Only share information from customers who opted into marketing",
+      "Use real data but delete the chat afterward"
     ],
     "correct": "Anonymize data or use fictional examples that represent your use case"
   },
   {
     "question": "An AI tool generates legal advice about a contract dispute. You should:",
     "answers": [
-      "Follow the advice immediately to save legal fees",
+      "Follow the advice immediately to avoid lawyer fees",
       "Use it as a starting point but consult with qualified legal professionals",
-      "Only follow it if the AI seems confident",
+      "Assume AI provides comprehensive coverage of all relevant laws",
       "Assume it's completely accurate since AI has been trained on all existing laws and regulations"
     ],
     "correct": "Use it as a starting point but consult with qualified legal professionals"
@@ -194,98 +194,98 @@
     "answers": [
       "Use it secretly to avoid bureaucracy",
       "First check with your security team for approved alternatives or get the tool vetted",
-      "It's fine if you use incognito mode",
-      "It's OK from time to time and only for documents that aren't marked as strictly confidential or top secret"
+      "It's acceptable if used in private browsing mode",
+      "Use it occasionally as long as documents aren't marked highly confidential"
     ],
     "correct": "First check with your security team for approved alternatives or get the tool vetted"
   },
   {
-    "question": "What constitutes proprietary code as confidential information?",
+    "question": "Which information counts as proprietary code that should not be shared with public AI tools?",
     "answers": [
-      "Only code comments",
-      "Complete codebases, algorithms, and business logic",
-      "Only variable names",
-      "Documentation only"
+      "Small, generic code snippets that don't reveal business logic",
+      "Complete codebases, algorithms, or business logic",
+      "Open-source dependencies and libraries used by the project",
+      "High-level architectural descriptions without implementation details"
     ],
-    "correct": "Complete codebases, algorithms, and business logic"
+    "correct": "Complete codebases, algorithms, or business logic"
   },
   {
     "question": "When you input confidential information into AI tools, who are you sharing it with?",
     "answers": [
-      "Only with the AI system",
-      "With no one",
+      "Only with the AI interface you're using",
+      "No one else, interaction stays within the browser, on client side",
       "With the AI service provider, potentially other users, and future AI models",
-      "Only with your company"
+      "Only with your company's systems"
     ],
     "correct": "With the AI service provider, potentially other users, and future AI models"
   },
   {
     "question": "What are red flags for recognizing AI hallucinations?",
     "answers": [
-      "Short responses",
+      "Responses that are overly concise or lack detail",
       "Overly specific details without sources, precise quotes without attribution",
-      "Fast responses that appear immediately, without any processing time or delay",
-      "Long responses"
+      "Responses that appear faster than expected with no delay",
+      "Excessively long paragraphs without clear structure"
     ],
     "correct": "Overly specific details without sources, precise quotes without attribution"
   },
   {
-    "question": "What is the basic difference between training phase and inference phase?",
+    "question": "How do AI guardrails typically work to prevent harmful outputs?",
     "answers": [
-      "There is no difference",
-      "Training learns patterns from data, inference applies learned patterns to new situations",
-      "Inference is significantly more expensive and resource-intensive than the model training phase",
-      "Training is faster than inference"
+      "They filter and block outputs during the inference phase before users see them",
+      "They prevent biased data from entering the training dataset initially",
+      "They automatically retrain the model when harmful patterns are detected",
+      "They monitor user behavior and restrict access to AI tools based on usage patterns"
     ],
-    "correct": "Training learns patterns from data, inference applies learned patterns to new situations"
+    "correct": "They filter and block outputs during the inference phase before users see them"
   },
   {
     "question": "What does 'data sharing minimization' mean?",
     "answers": [
-      "Don't share any data",
+      "Never share any information at all",
       "Provide only what is truly necessary",
-      "Share all data",
-      "Share only personal data"
+      "Share all available data for maximum accuracy",
+      "Limit sharing only to personal data while allowing unrestricted business data"
     ],
     "correct": "Provide only what is truly necessary"
   },
   {
     "question": "What was the core problem with Amazon's resume AI system?",
     "answers": [
-      "It was too slow",
+      "It was too slow to process applications",
       "It learned that male candidates were historically 'preferred' from 10 years of data",
-      "It didn't work at all",
-      "It was significantly too expensive to maintain and required constant hardware upgrades"
+      "It didn't perform adequately during high-volume hiring cycles",
+      "It became prohibitively costly due to infrastructure needs"
     ],
     "correct": "It learned that male candidates were historically 'preferred' from 10 years of data"
   },
   {
     "question": "A colleague wants to record a meeting without participants' knowledge for AI transcription. Your response?",
     "answers": [
-      "Help them hide the recording",
+      "Help them do it discreetly",
       "Explain that they must get consent from all participants before recording",
-      "Say it's perfectly acceptable if the recording is exclusively for work-related purposes",
-      "Record only audio without video"
+      "Say it's fine if the purpose is only work-related",
+      "Suggest recording audio only without video"
     ],
     "correct": "Explain that they must get consent from all participants before recording"
   },
   {
     "question": "An AI tool asks for your password to 'verify identity.' What should you do?",
     "answers": [
-      "Provide the password immediately",
+      "Provide it right away to avoid delays",
       "Never share passwords, API keys, or credentials with AI tools",
-      "Give only part of the password",
-      "Check if the AI promises security"
+      "Offer only a partial version of the password",
+      "Proceed if the AI guarantees security"
     ],
     "correct": "Never share passwords, API keys, or credentials with AI tools"
   },
   {
     "question": "You notice that AI gives different medical advice for the same query. What does this show?",
     "answers": [
-      "AI is reliable for medical advice",
+      "AI is dependable for healthcare advice when responses are averaged",
       "AI can hallucinate and should not be used for medical decisions without professional verification",
-      "You should simply try again until you get consistent answers from the system, but then it is OK to use it for medical decisions",
-      "AI learns from your questions"
+      "Retrying until you get a consistent answer is acceptable before relying on it",
+      "AI continuously adapts to user phrasing, so responses naturally differ"
     ],
     "correct": "AI can hallucinate and should not be used for medical decisions without professional verification"
   }

@@ -25,7 +25,7 @@
       "Artificial General Intelligence (AGI)",
       "Artificial Super Intelligence (ASI)",
       "Artificial Narrow Intelligence (ANI)",
-      "Artificial Domain Intelligence (ADI)"
+      "Artificial Limited Intelligence (ALI)"
     ],
     "correct": "Artificial Narrow Intelligence (ANI)"
   },
@@ -212,10 +212,10 @@
   {
     "question": "What can happen when AI is trained on biased data?",
     "answers": [
-      "The system becomes equally accurate across groups due to regularization",
-      "Nothing significant",
+      "It may achieve high overall accuracy but perform poorly on underrepresented groups",
+      "It may appear accurate in validation but fail in real-world deployments due to dataset shift",
       "The AI can amplify and perpetuate those biases",
-      "The system automatically corrects the bias"
+      "It may overfit to majority patterns, increasing false negatives for minority groups"
     ],
     "correct": "The AI can amplify and perpetuate those biases"
   },
@@ -242,10 +242,10 @@
   {
     "question": "What is Computer Vision in AI?",
     "answers": [
-      "AI that improves human eyesight",
+      "AI focused on identifying objects and scenes in images and video",
       "AI that can recognize and generate visual content",
-      "A computer monitor technology",
-      "AI that converts images to text only"
+      "A technology for rendering graphics and 3D scenes",
+      "AI that enhances image quality but does not interpret content"
     ],
     "correct": "AI that can recognize and generate visual content"
   },
