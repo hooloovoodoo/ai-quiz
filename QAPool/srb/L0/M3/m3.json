@@ -90,14 +90,14 @@
     "correct": "Samo uz odgovarajuće odobrenje od IT bezbednosti"
   },
   {
-    "question": "Koja je HLV vizija uspeha?",
+    "question": "Prema materijalu, koja je HLV vizija uspeha u usvajanju AI?",
     "answers": [
-      "Potpuno zameniti sve ljudske radnike sa AI sistemima koji mogu samostalno da donose kompleksne odluke bez ljudskog nadzora",
-      "Timovi potpomognuti AI koji ispoljavaju kvalitetniji rad brže uz održavanje etičkih standarda i ljudske kreativnosti",
-      "Koristiti samo najskuplje AI alate",
-      "Potpuno izbegavati AI u poslovnim procesima"
+      "Timovi koji maksimalno automatizuju procese radi brže isporuke, čak i uz smanjenu ulogu ljudske kreativnosti",
+      "Timovi potpomognuti AI koji isporučuju kvalitetniji rad brže uz održavanje etičkih standarda i ljudske kreativnosti",
+      "Standardizacija na jedan AI alat u celoj organizaciji radi doslednosti i brzine implementacije",
+      "Ubrzanje rada korišćenjem AI uz fokus na efikasnost i smanjenje troškova, ljudske odluke po potrebi"
     ],
-    "correct": "Timovi potpomognuti AI koji ispoljavaju kvalitetniji rad brže uz održavanje etičkih standarda i ljudske kreativnosti"
+    "correct": "Timovi potpomognuti AI koji isporučuju kvalitetniji rad brže uz održavanje etičkih standarda i ljudske kreativnosti"
   },
   {
     "question": "Potrebno vam je da analizirate više istraživačkih radova o etici AI i želite minimalne halucinacije sa preciznim citatima. Koji alat treba da izaberete?",
@@ -150,24 +150,24 @@
     "correct": "Otkrivanje izvora"
   },
   {
-    "question": "Prema tabeli poređenja GPT vs. Gemini, koji ima superiorne mogućnosti kontekstnog prozora?",
+    "question": "Prema materijalu za učenje, koja je istaknuta prednost Gemini alata?",
     "answers": [
-      "GPT ima superiorni kontekstni prozor",
-      "Oba su jednaka",
-      "Gemini ima superiorni kontekstni prozor",
-      "Nijedan ne podržava kontekstne prozore"
+      "Odgovori zasnovani na izvorima sa minimalnim halucinacijama",
+      "Pristup webu u realnom vremenu sa citatima izvora",
+      "Siguran enterprise pristup sa usklađenošću privatnosti podataka",
+      "Izuzetno kreativno pisanje i generisanje kôda"
     ],
-    "correct": "Gemini ima superiorni kontekstni prozor"
+    "correct": "Pristup webu u realnom vremenu sa citatima izvora"
   },
   {
     "question": "Šta radi HAIP-ova funkcija 'Poboljšanje prompta'?",
     "answers": [
-      "Automatski generiše odgovore",
-      "Predlaže poboljšanje prompta u 1 kliku",
-      "Prevodi promptove na različite jezike",
-      "Čuva promptove u biblioteku"
+      "Automatski primenjuje izmene na vaš prompt bez vaše potvrde",
+      "Nudi jednim klikom predloge kako da vaš prompt bude jasniji i precizniji",
+      "Generiše više alternativnih verzija vašeg prompta bez dodatnih predloga",
+      "Skraćuje preduge promptove automatski bez menjanja sadržaja"
     ],
-    "correct": "Predlaže poboljšanje prompta u 1 kliku"
+    "correct": "Nudi jednim klikom predloge kako da vaš prompt bude jasniji i precizniji"
   },
   {
     "question": "Kojoj kategoriji AI alata pripada GitHub Copilot?",
@@ -192,10 +192,10 @@
   {
     "question": "Za kompanijske naloge, koji je nedostatak korišćenja Gemini spomenut u dokumentu?",
     "answers": [
-      "Previše je skup",
+      "Chatovi se automatski brišu nakon 30 dana",
       "Sesije (chatovi) se ne mogu izbrisati jer ih Google smatra vlasništvom kompanije",
-      "Ne podržava više jezika",
-      "Ima veoma ograničenu funkcionalnost u poređenju sa drugim enterprise AI rešenjima na tržištu"
+      "Citati izvora su onemogućeni iz razloga usklađenosti",
+      "Google Workspace integracija zahteva dodatne licence"
     ],
     "correct": "Sesije (chatovi) se ne mogu izbrisati jer ih Google smatra vlasništvom kompanije"
   },
@@ -212,12 +212,12 @@
   {
     "question": "Vaša kompanija želi da implementira AI alate uz održavanje etičkih standarda. Koji princip iz HLV vizije uspeha treba da vodi ovu implementaciju?",
     "answers": [
-      "Koristiti AI da potpuno zameni ljudsku kreativnost",
-      "Fokusirati se isključivo na brzinu i efikasnost bez razmatranja drugih faktora u poslovnom procesu",
-      "Timovi potpomognuti AI održavaju etičke standarde i ljudsku kreativnost",
-      "Potpuno izbegavati AI alate"
+      "Timovi potpomognuti AI isporučuju kvalitetniji rad brže uz održavanje etičkih standarda i ljudske kreativnosti",
+      "Timovi potpomognuti AI isporučuju rad brže i kvalitetnije, bez potrebe za očuvanjem ljudske kreativnosti",
+      "Usvajanje AI treba da bude vođeno povećanjem efikasnosti i kvalitetom, dok će se etički standardi definisati kasnije",
+      "Primarni cilj je poštovanje etičkih standarda, čak i ako to znači smanjenje uloge ljudi u kreativnim procesima"
     ],
-    "correct": "Timovi potpomognuti AI održavaju etičke standarde i ljudsku kreativnost"
+    "correct": "Timovi potpomognuti AI isporučuju kvalitetniji rad brže uz održavanje etičkih standarda i ljudske kreativnosti"
   },
   {
     "question": "Koji primer obrasca ograničenja je dat u osnovnim obrascima promptova?",
@@ -232,12 +232,12 @@
   {
     "question": "Koji je preporučeni pristup kada trebate da unakrsno validirate informacije generisane od strane AI?",
     "answers": [
-      "Koristiti samo jedan AI alat radi konzistentnosti",
-      "Uvek verovati prvom odgovoru koji dobijete bez dodatne provere jer su AI sistemi veoma pouzdani",
-      "Koristiti više alata za sveobuhvatnu analizu i proveravati činjenice kod važnih informacija",
-      "Izbegavati proveru činjenica da biste uštedeli vreme"
+      "Iterirati sa jednim alatom i potvrditi ključne tvrdnje kroz kredibilne izvore",
+      "Porediti odgovore najmanje dva različita AI modela i verifikovati ključne tvrdnje u nezavisnim izvorima",
+      "Osloniti se na jedan proveren AI alat, a proveru obaviti samo ako postoje kontradikcije",
+      "Tražiti dodatna pojašnjenja od istog AI alata umesto da se upoređuju različiti alati"
     ],
-    "correct": "Koristiti više alata za sveobuhvatnu analizu i proveravati činjenice kod važnih informacija"
+    "correct": "Porediti odgovore najmanje dva različita AI modela i verifikovati ključne tvrdnje u nezavisnim izvorima"
   },
   {
     "question": "Šta treba da uradite ako je potrebno odobrenje za korišćenje određenih tipova podataka sa AI alatima?",
