@@ -2,10 +2,10 @@
   {
     "question": "Šta je pristrasnost AI?",
     "answers": [
-      "Kada AI sistemi rade presporo zbog nedostatka procesne moći (CPU), memorije (RAM) ili samo loše optimizacije koda",
+      "Kada model generiše izmišljene informacije predstavljajući ih samouvereno kao činjenice",
       "Kada sistemi donose nepravedne odluke zasnovane na rasi, polu, starosti ili drugim zaštićenim karakteristikama",
-      "Kada AI odbija da radi ispravno",
-      "Kada AI košta previše za implementaciju u malim i srednjim preduzećima zbog visokih troškova licenciranja"
+      "Kada model prefituje trening podatke i loše radi na novim podacima",
+      "Kada se interni proces donošenja odluka sistema ne može objasniti ili interpretirati"
     ],
     "correct": "Kada sistemi donose nepravedne odluke zasnovane na rasi, polu, starosti ili drugim zaštićenim karakteristikama"
   },
@@ -22,12 +22,12 @@
   {
     "question": "Zašto je Amazon odbacio svoj AI sistem za pregled biografija (2014-2018)?",
     "answers": [
-      "Bio je preskup za održavanje i zahtevao je previše računarskih resursa za obradu velikog broja prijava",
-      "Nije mogao garantovati eliminaciju pristrasnosti nakon degradiranja ženskih biografija",
-      "Bio je prespor za obradu prijava",
-      "Konkurenti su imali bolje sisteme"
+      "Zbog zabrinutosti za privatnost kandidata i obradu ličnih podataka",
+      "Zato što je sistem pokazivao rodnu pristrasnost i tim nije mogao garantovati njeno uklanjanje",
+      "Zato što odluke sistema nisu bile dovoljno objašnjive za regulatorne potrebe",
+      "Zbog visokog nivoa pogrešnih odbijanja kandidata, ali bez dokaza o pristrasnosti"
     ],
-    "correct": "Nije mogao garantovati eliminaciju pristrasnosti nakon degradiranja ženskih biografija"
+    "correct": "Zato što je sistem pokazivao rodnu pristrasnost i tim nije mogao garantovati njeno uklanjanje"
   },
   {
     "question": "Šta se desilo sa Microsoft Tay chatbotom u roku od 24 sata od lansiranja?",
@@ -62,22 +62,22 @@
   {
     "question": "Šta je problem 'crne kutije' u AI?",
     "answers": [
-      "AI sistemi su obojeni u crno",
-      "Često ne možemo da vidimo unutra da bismo razumeli kako ili zašto je AI došla do zaključka",
-      "AI sistemi se čuvaju u mračnim prostorijama bez adekvatnog hlađenja što utiče na performanse sistema",
-      "Kod je šifrovan"
+      "Podaci i kôd su namerno šifrovani pa korisnici ne mogu da vide sistem 'ispod haube'",
+      "Često ne možemo da vidimo 'unutra' da bismo razumeli odakle AI-u odgovor",
+      "Problem nastaje jer model nije dovoljno testiran pre puštanja u rad",
+      "AI donosi odluke na osnovu pravila (training weights) koja nisu javno dostupna"
     ],
-    "correct": "Često ne možemo da vidimo unutra da bismo razumeli kako ili zašto je AI došla do zaključka"
+    "correct": "Često ne možemo da vidimo 'unutra' da bismo razumeli odakle AI-u odgovor"
   },
   {
     "question": "Šta se smatra lično prepoznatljivim informacijama (PII)?",
     "answers": [
-      "Podaci o vremenu",
-      "Cene akcija",
-      "Ime, adresa, broj telefona i biometrijski podaci",
-      "Javni članci"
+      "Anonimizirane statistike pregledanja agregirane po regionu",
+      "Javno dostupni podaci o tržišnim indeksima",
+      "Lični identifikatori kao što su ime, adresa i biometrijski podaci",
+      "Agregirane toplotne mape lokacija bez praćenja pojedinaca"
     ],
-    "correct": "Ime, adresa, broj telefona i biometrijski podaci"
+    "correct": "Lični identifikatori kao što su ime, adresa i biometrijski podaci"
   },
   {
     "question": "Šta treba uraditi pre korišćenja AI alata za poverljiv posao?",
@@ -92,10 +92,10 @@
   {
     "question": "Koja je ključna lekcija iz Microsoft Tay incidenta?",
     "answers": [
-      "AI sistemi su savršeni",
+      "Glavni problem je bio nedostatak podataka za obuku; rešenje je više podataka za treniranje",
       "AI sistemi izloženi javnom unosu zahtevaju robusnu zaštitu od manipulacije",
-      "Chatbotovi nikada ne bi trebalo da se koriste",
-      "Društvene mreže su uvek bezbedne za implementaciju AI sistema bez dodatnih mera zaštite"
+      "Dovoljno je onemogućiti učenje iz korisničkih poruka u realnom vremenu",
+      "Najbolje je ograničiti chatbot na određene teme; dodatne zaštite nisu presudne"
     ],
     "correct": "AI sistemi izloženi javnom unosu zahtevaju robusnu zaštitu od manipulacije"
   },
@@ -132,42 +132,42 @@
   {
     "question": "Šta su crvene zastavice za prepoznavanje AI halucinacija?",
     "answers": [
-      "Kratki odgovori bez objašnjenja koji ne pružaju dovoljno konteksta za razumevanje teme",
-      "Previše specifični detalji bez izvora, precizni citati bez navođenja",
-      "Brzi odgovori",
-      "Dugi odgovori"
+      "Opšti, kvalifikovani odgovori sa jasnim upozorenjima o nesigurnosti",
+      "Previše specifični detalji ili precizni citati bez navođenja izvora",
+      "Pruža linkove ka pouzdanim izvorima koji se mogu proveriti",
+      "Navodi autora i stranicu sa punim citatom za proveru"
     ],
-    "correct": "Previše specifični detalji bez izvora, precizni citati bez navođenja"
+    "correct": "Previše specifični detalji ili precizni citati bez navođenja izvora"
   },
   {
-    "question": "Šta je osnovna razlika između faze treninga i faze zaključivanja?",
+    "question": "Kako AI guardrails obično funkcionišu da spreče štetne izlaze?",
     "answers": [
-      "Nema razlike",
-      "Trening uči obrasce iz podataka, zaključivanje primenjuje naučeno na nove situacije",
-      "Zaključivanje je skuplje od treninga",
-      "Trening je brži od zaključivanja"
+      "Filtriraju i blokiraju izlaze tokom faze zaključivanja pre nego što ih korisnici vide",
+      "Sprečavaju pristrasne podatke da uđu u trening skup podataka na početku",
+      "Automatski retreniraju model kada se detektuju štetni obrasci",
+      "Prate ponašanje korisnika i ograničavaju pristup AI alatima na osnovu šablona korišćenja"
     ],
-    "correct": "Trening uči obrasce iz podataka, zaključivanje primenjuje naučeno na nove situacije"
+    "correct": "Filtriraju i blokiraju izlaze tokom faze zaključivanja pre nego što ih korisnici vide"
   },
   {
     "question": "Šta znači 'minimiziranje deljenja podataka'?",
     "answers": [
-      "Ne deliti nikakve podatke",
-      "Pružati samo ono što je zaista neophodno",
-      "Deliti sve podatke",
-      "Deliti samo lične podatke"
+      "Deliti podatke samo sa odobrenim AI alatima bez obzira na količinu",
+      "Pružati samo ono što je zaista neophodno za obavljanje zadatka",
+      "Deliti samo podatke koji ne sadrže lične ili poverljive informacije",
+      "Deliti podatke samo sa internim timovima i sistemima kompanije"
     ],
-    "correct": "Pružati samo ono što je zaista neophodno"
+    "correct": "Pružati samo ono što je zaista neophodno za obavljanje zadatka"
   },
   {
-    "question": "Koji je bio osnovni problem sa Amazon-ovim AI sistemom za biografije?",
+    "question": "Koji je bio osnovni uzrok pristrasnosti u Amazon-ovom AI sistemu za biografije?",
     "answers": [
-      "Bio je prespor",
-      "Naučio je da su muški kandidati istorijski 'preferirani' iz 10 godina podataka",
-      "Nije radio kako je trebalo zbog grešaka u programskom kodu i loše arhitekture sistema",
-      "Bio je preskup"
+      "Model je overfitovao na ključne reči bez razumevanja konteksta",
+      "Pristrasni podaci za treniranje (uglavnom biografije muškaraca)",
+      "Nedostajao je human-in-the-loop nadzor tokom primene sistema",
+      "Model je bio netransparentan (crna kutija) pa se greške nisu mogle ispraviti"
     ],
-    "correct": "Naučio je da su muški kandidati istorijski 'preferirani' iz 10 godina podataka"
+    "correct": "Pristrasni podaci za treniranje (uglavnom biografije muškaraca)"
   },
   {
     "question": "Kolega vas pita da unesete kompletnu bazu koda kompanije u ChatGPT za pomoć. Šta treba da uradite?",
@@ -180,12 +180,12 @@
     "correct": "Odbiti i predložiti korišćenje malih, ne-vlasničkih primera koda ili pseudokoda"
   },
   {
-    "question": "AI alat generiše statistiku o vašoj industriji sa vrlo specifičnim brojevima. Šta treba prvo da uradite?",
+    "question": "AI alat generiše statistiku o vašoj industriji sa vrlo specifičnim brojevima, bez navođenja izvora. Šta je najodgovorniji prvi korak?",
     "answers": [
-      "Odmah koristiti podatke u prezentaciji",
+      "Zatražiti od AI-a da navede konkretne izvore i linkove za proveru",
       "Proveriti sa više pouzdanih izvora da li statistika zaista postoji",
-      "Dodati još decimala da izgleda tačnije",
-      "Verovati AI jer je uvek tačna"
+      "Uporediti brojke sa internim izveštajima i relevantnim bazama podataka",
+      "Proceniti izvodljivost u odnosu na poznate trendove i prethodne izveštaje"
     ],
     "correct": "Proveriti sa više pouzdanih izvora da li statistika zaista postoji"
   },
