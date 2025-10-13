@@ -1,63 +1,63 @@
 [
   {
-    "question": "What does ANI stand for?",
+    "question": "Which scenario best represents Artificial Narrow Intelligence (ANI)?",
     "answers": [
-      "Artificial Narrow Intelligence",
-      "Artificial Niche Intelligence",
-      "Advanced Neural Intelligence",
-      "Automated Network Intelligence"
+      "A translation system that excels at converting text between languages but cannot carry its skills over to unrelated tasks without task-specific training.",
+      "An assistant that reaches human-level competence across diverse fields and flexibly masters new tasks without dedicated training.",
+      "A superintelligence that outperforms humans in all areas and rapidly self-improves beyond human control.",
+      "A thermostat that uses a fixed rule (if temperature > 30°C, turn on cooling) to control a room."
     ],
-    "correct": "Artificial Narrow Intelligence"
+    "correct": "A translation system that excels at converting text between languages but cannot carry its skills over to unrelated tasks without task-specific training."
   },
   {
-    "question": "What is the correct relationship between AI, Machine Learning, and Deep Learning?",
+    "question": "Which statement best describes the containment (subset) relationships among Artificial Intelligence (AI), Machine Learning (ML), and Deep Learning (DL)?",
     "answers": [
-      "ML > AI > DL",
-      "DL > ML > AI",
-      "AI > ML > DL",
-      "AI > DL > ML"
+      "AI contains ML, and ML contains DL.",
+      "ML contains AI, and AI contains DL.",
+      "DL contains ML, and ML contains AI.",
+      "AI equals ML, and both contain DL."
     ],
-    "correct": "AI > ML > DL"
+    "correct": "AI contains ML, and ML contains DL."
   },
   {
-    "question": "Which type of AI is currently available and in use today?",
+    "question": "A voice-enabled assistant reliably handles specific tasks like setting reminders, answering straightforward queries, and translating short phrases. It cannot transfer what it learns to unrelated domains (e.g., composing music or driving a car) without separate training. Which category best describes this system?",
     "answers": [
       "Artificial General Intelligence (AGI)",
-      "Artificial Super Intelligence (ASI)",
       "Artificial Narrow Intelligence (ANI)",
-      "Artificial Limited Intelligence (ALI)"
+      "Generative Artificial Intelligence (GenAI)",
+      "Artificial Superintelligence (ASI)"
     ],
     "correct": "Artificial Narrow Intelligence (ANI)"
   },
   {
-    "question": "What is the main difference between traditional software and AI/ML software?",
+    "question": "A facility runs two climate control systems. System A uses engineer-defined IF/THEN rules; System B was trained on historical temperature – comfort data to predict settings. Which option correctly matches each system on (1) logic, (2) behavior, and (3) how updates are made?",
     "answers": [
-      "Traditional software uses predefined heuristics, while AI/ML relies on manually tuned parameters rather than data",
-      "Traditional software uses explicit rules, AI/ML learns patterns from data",
-      "There is no significant difference between the two",
-      "Traditional software is always faster and more efficient than AI/ML"
+      "System A: explicit rules; deterministic; update via code changes. System B: learned from data; probabilistic; update via retraining.",
+      "System A: explicit rules; probabilistic; update via code changes. System B: learned from data; deterministic; update via retraining.",
+      "System A: learned from data; deterministic; update via retraining. System B: explicit rules; probabilistic; update via code changes.",
+      "System A: explicit rules; deterministic; update via retraining. System B: learned from data; probabilistic; update via code changes."
     ],
-    "correct": "Traditional software uses explicit rules, AI/ML learns patterns from data"
+    "correct": "System A: explicit rules; deterministic; update via code changes. System B: learned from data; probabilistic; update via retraining."
   },
   {
-    "question": "In machine learning, what is an algorithm?",
+    "question": "You train a neural network on 1 million labeled images using a weight – update procedure (e.g., stochastic gradient descent), then use it to classify new photos. In this setup, what is the algorithm?",
     "answers": [
-      "The final trained system that makes predictions",
-      "A set of rules or instructions for solving a problem",
-      "The data used for training",
-      "The output of the system"
+      "The learned network with its final weights used for prediction",
+      "The procedure that specifies how the weights are updated during training",
+      "The dataset of 1 million labeled images used to teach the network",
+      "The class labels the system produces for unseen photos"
     ],
-    "correct": "A set of rules or instructions for solving a problem"
+    "correct": "The procedure that specifies how the weights are updated during training"
   },
   {
-    "question": "What is a model in machine learning?",
+    "question": "Which statement best describes a model in machine learning?",
     "answers": [
-      "The recipe or instructions",
-      "The raw data before processing",
-      "The result of training - the learned patterns",
-      "The software library used (e.g., TensorFlow)"
+      "The learned parameters produced by training that map inputs to outputs",
+      "The algorithmic procedure or rules used to learn from data",
+      "The training configuration of hyperparameters like learning rate and batch size",
+      "The held-out validation set used to tune performance during development"
     ],
-    "correct": "The result of training - the learned patterns"
+    "correct": "The learned parameters produced by training that map inputs to outputs"
   },
   {
     "question": "What does 'deep' refer to in Deep Learning?",
@@ -70,213 +70,213 @@
     "correct": "Multiple layers of processing in neural networks"
   },
   {
-    "question": "What is the training phase in AI systems?",
+    "question": "A team trains a vision model for weeks on thousands of labeled images using many GPUs. After release, the system answers in milliseconds. Which option correctly characterizes the training phase?",
     "answers": [
-      "When the AI applies learned patterns to completely new and unseen situations",
-      "When the AI system learns patterns from large amounts of data",
-      "When users interact with the AI",
-      "When the AI is being tested"
+      "The compute-heavy stage where the model learns from data and updates its parameters",
+      "The fast, per-request stage where the model applies what it already learned",
+      "The post-launch period when end users interact with the system",
+      "The evaluation step that measures accuracy on a held-out test set"
     ],
-    "correct": "When the AI system learns patterns from large amounts of data"
+    "correct": "The compute-heavy stage where the model learns from data and updates its parameters"
   },
   {
-    "question": "What is the inference phase in AI systems?",
+    "question": "Which scenario best illustrates the inference phase of an AI system?",
     "answers": [
-      "When the AI is learning from data",
-      "When the AI is being initially developed and programmed by engineers",
-      "When trained AI applies what it learned to new situations",
-      "When the AI is initialized but not yet trained"
+      "A deployed speech model converts a new voicemail to text using its current weights.",
+      "A vision network adjusts its filters while training on labeled images to lower loss.",
+      "A data pipeline tokenizes and normalizes text before feeding it to the model.",
+      "Engineers modify hyperparameters and restart epochs to improve accuracy on validation data."
     ],
-    "correct": "When trained AI applies what it learned to new situations"
+    "correct": "A deployed speech model converts a new voicemail to text using its current weights."
   },
   {
-    "question": "What type of AI focuses on creating new content rather than just analyzing existing data?",
+    "question": "Which AI paradigm focuses on generating new content – such as drafting product descriptions and producing matching images – from a single prompt? Choose the output paradigm, not the input modality.",
     "answers": [
-      "Predictive AI",
-      "Discriminative AI",
+      "Multimodal AI",
       "Generative AI",
-      "Analytical AI"
+      "Reinforcement Learning",
+      "Predictive (Discriminative) AI"
     ],
     "correct": "Generative AI"
   },
   {
-    "question": "Which of the following is an example of Generative AI?",
+    "question": "Which of the following best exemplifies Generative AI rather than Predictive/Discriminative AI?",
     "answers": [
-      "Spam filters",
-      "Credit scoring systems",
-      "ChatGPT",
-      "Fraud detection"
+      "Generate a product description from a prompt",
+      "Recommend movies based on viewing history",
+      "Extract text from a scanned document",
+      "Classify emails to route them by intent"
     ],
-    "correct": "ChatGPT"
+    "correct": "Generate a product description from a prompt"
   },
   {
-    "question": "What does NLP stand for in AI?",
+    "question": "Which of the following is primarily an NLP task?",
     "answers": [
-      "Natural Language Programming",
-      "Natural Language Processing",
-      "Network Layer Protection",
-      "Non-Linear Programming"
+      "Condensing a long report into a concise summary",
+      "Identifying objects and their locations in images",
+      "Applying an artist's style to a photograph",
+      "Detecting anomalous credit card transactions"
     ],
-    "correct": "Natural Language Processing"
+    "correct": "Condensing a long report into a concise summary"
   },
   {
-    "question": "What is a Large Language Model (LLM)?",
+    "question": "Which statement best describes a Large Language Model (LLM)?",
     "answers": [
-      "A small, highly efficient and optimized text processing system",
-      "A model with billions/trillions of parameters trained on vast text data",
-      "A traditional rule-based system with extensive documentation",
-      "A model with hundreds of millions of parameters designed for specialized language tasks"
+      "An efficiency-focused language model for general text generation, using fewer parameters than frontier systems and trained mainly on labeled datasets",
+      "A general-purpose generative model with billions or more parameters, pre-trained on internet-scale text to predict the next token",
+      "A domain-limited language model trained primarily for classification and routing on small, curated datasets, tuned to maximize accuracy on fixed tasks",
+      "A model exposed to billions of tokens but constrained to hundreds of millions of parameters, optimized for narrow applications like spam filtering"
     ],
-    "correct": "A model with billions/trillions of parameters trained on vast text data"
+    "correct": "A general-purpose generative model with billions or more parameters, pre-trained on internet-scale text to predict the next token"
   },
   {
-    "question": "What is the 'context window' in AI systems?",
+    "question": "In large language models (LLMs), what does the term 'context window' refer to?",
     "answers": [
-      "The graphical user interface for interacting with the model",
-      "Maximum amount of text the model can 'see' at once",
-      "The specific time period allocated for training the model",
-      "The time window from the most recent messages that the model prioritizes"
+      "The maximum tokens the model considers from both the prompt and its own replies at once.",
+      "The maximum number of parameters the model attention layers can examine during pre-training.",
+      "Only the user's input tokens that the model reads before generating an answer.",
+      "The time span of recent messages that the model prioritizes when responding."
     ],
-    "correct": "Maximum amount of text the model can 'see' at once"
+    "correct": "The maximum tokens the model considers from both the prompt and its own replies at once."
   },
   {
-    "question": "What is a knowledge cutoff in AI models?",
+    "question": "A model says, 'My knowledge is current through April 2023.' What does this most accurately indicate?",
     "answers": [
-      "The last time the model was prompted by a user",
-      "The most recent point when the AI's training data was updated",
-      "The maximum processing speed the system can achieve over time",
-      "The minimum amount of data required for proper functioning of the model"
+      "The most recent date included in its training data; events after that may be missing unless it uses external tools.",
+      "The largest amount of text it can process in one go, which limits how much context it can consider.",
+      "The point in a long conversation when earlier messages are dropped because the dialogue exceeds working memory.",
+      "The model's public release or last deployment date, which determines how current its built-in knowledge is."
     ],
-    "correct": "The most recent point when the AI's training data was updated"
+    "correct": "The most recent date included in its training data; events after that may be missing unless it uses external tools."
   },
   {
-    "question": "What does 'GIGO' mean in the context of AI and data?",
+    "question": "Which scenario best illustrates the 'Garbage In, Garbage Out' principle in AI?",
     "answers": [
-      "Good Input, Good Output",
-      "General Intelligence Goes Online",
-      "Garbage In, Garbage Out",
-      "Generated Input, Generated Output"
+      "A hiring model trained on past resumes from a male-dominated workforce begins to systematically score women's resumes lower for similar qualifications.",
+      "The team adds more GPUs and increases batch size; training finishes sooner, and accuracy rises without altering the training data.",
+      "Engineers refactor the pipeline; by changing the training loop and optimizer settings, incorrectly labeled images in the dataset are corrected.",
+      "The model's context window is expanded from 8k to 128k tokens, which stops it from hallucinating incorrect facts in lengthy responses, increasing the Input pool."
     ],
-    "correct": "Garbage In, Garbage Out"
+    "correct": "A hiring model trained on past resumes from a male-dominated workforce begins to systematically score women's resumes lower for similar qualifications."
   },
   {
-    "question": "What type of machine learning uses labeled examples to learn?",
+    "question": "A company builds a spam filter that learns from many emails with user-provided 'spam'/'not spam' tags and then classifies new messages. Which learning approach does this most clearly exemplify?",
     "answers": [
       "Unsupervised Learning",
-      "Supervised Learning",
+      "Semi-Supervised Learning",
       "Reinforcement Learning",
-      "Transfer Learning"
+      "Supervised Learning"
     ],
     "correct": "Supervised Learning"
   },
   {
-    "question": "What type of machine learning learns through trial and error with rewards?",
+    "question": "A robot learns to navigate a warehouse by trying routes, earning points for fast deliveries and penalties for collisions, and gradually improves through trial and error. Which type of machine learning best fits this scenario?",
     "answers": [
-      "Supervised Learning",
       "Unsupervised Learning",
+      "Deep Learning",
       "Reinforcement Learning",
-      "Deep Learning"
+      "Supervised Learning"
     ],
     "correct": "Reinforcement Learning"
   },
   {
-    "question": "What is multimodal AI?",
+    "question": "Which scenario best demonstrates multimodal AI?",
     "answers": [
-      "AI that only processes text",
-      "AI that combines multiple types of input like text, images, and audio",
-      "AI that runs on multiple distributed computer systems, in a systematized manner",
-      "AI that processes output in multiple languages"
+      "A system that takes an image and a spoken question, then returns a text answer and highlights",
+      "A chatbot that reads and writes in dozens of languages, yet operates exclusively on textual data for conversations",
+      "A training pipeline that relies on many GPUs and servers, distributing computation across multiple machines for throughput",
+      "A platform that ensembles several text-only models together to improve sentiment classification performance at scale and speed"
     ],
-    "correct": "AI that combines multiple types of input like text, images, and audio"
+    "correct": "A system that takes an image and a spoken question, then returns a text answer and highlights"
   },
   {
-    "question": "What is a token in the context of LLMs?",
+    "question": "In LLMs, a token is best described as:",
     "answers": [
-      "A security credential",
-      "A unit of text (usually about 0.75 words)",
-      "A type of cryptocurrency",
-      "An entire word regardless of length"
+      "A security credential for accessing the model",
+      "A text unit for context limits, often smaller than a word",
+      "A single character of text, like one letter, number or special character",
+      "An entire word, regardless of length or language"
     ],
-    "correct": "A unit of text (usually about 0.75 words)"
+    "correct": "A text unit for context limits, often smaller than a word"
   },
   {
-    "question": "Why is data quality important for AI systems?",
+    "question": "A company trains a resume-screening model on 10 years of hiring data that underrepresents women and minorities. To mitigate GIGO-related bias in outcomes, which action is most effective?",
     "answers": [
-      "It makes the system run significantly faster and more efficiently",
-      "AI systems are only as good as the data they're trained on",
-      "It reduces hardware costs",
-      "It's secondary because models learn to correct mistakes automatically"
+      "Collect balanced, representative resumes and re-train, then validate fairness across demographic groups.",
+      "Remove names and demographic fields (e.g., gender, race) but keep the original labels and splits unchanged.",
+      "Add more resumes from the same decade to increase sample size and representativeness.",
+      "Tune for higher overall accuracy on current validation data to ensure fair results."
     ],
-    "correct": "AI systems are only as good as the data they're trained on"
+    "correct": "Collect balanced, representative resumes and re-train, then validate fairness across demographic groups."
   },
   {
-    "question": "What can happen when AI is trained on biased data?",
+    "question": "What is a primary risk of training AI on biased data?",
     "answers": [
-      "It may achieve high overall accuracy but perform poorly on underrepresented groups",
-      "It may appear accurate in validation but fail in real-world deployments due to dataset shift",
-      "The AI can amplify and perpetuate those biases",
-      "It may overfit to majority patterns, increasing false negatives for minority groups"
+      "It can amplify and perpetuate the data's biases.",
+      "Validation automatically removes bias and ensures fairness.",
+      "Bigger models inherently eliminate bias without data changes.",
+      "Bias only affects training speed, not real-world predictions."
     ],
-    "correct": "The AI can amplify and perpetuate those biases"
+    "correct": "It can amplify and perpetuate the data's biases."
   },
   {
-    "question": "What is a 'hallucination' in the context of AI?",
+    "question": "While chatting with a large language model, it confidently cites a specific research paper and URL, but when you check, neither exists. What is the most accurate term for this behavior?",
     "answers": [
-      "When AI processes and interprets visual images incorrectly",
-      "When the model generates plausible but false information",
-      "When the system crashes unexpectedly during operation",
-      "When the model cites sources it never accessed but is still considered correct"
+      "Knowledge cutoff: the model's training stopped earlier, so the info is outdated, not invented",
+      "Context window limit: it forgot prior details and filled the gaps with a guess",
+      "Hallucination: it generated plausible but nonexistent citations and content",
+      "Bias in training data: skewed examples led it to produce distorted references"
     ],
-    "correct": "When the model generates plausible but false information"
+    "correct": "Hallucination: it generated plausible but nonexistent citations and content"
   },
   {
-    "question": "What type of AI is best for classifying emails as spam or not spam?",
+    "question": "Which AI approach is most appropriate for classifying emails as spam or not spam?",
     "answers": [
-      "Generative AI",
-      "Creative AI",
-      "Predictive/Discriminative AI",
-      "Generative AI fine-tuned for text generation only"
+      "Generative AI that produces new text responses",
+      "Symbolic/rule-based AI using hand-crafted filters",
+      "Predictive/Discriminative AI trained for email classification",
+      "Reinforcement learning tuned with rewards and penalties (correctly / incorrectly labeled)"
     ],
-    "correct": "Predictive/Discriminative AI"
+    "correct": "Predictive/Discriminative AI trained for email classification"
   },
   {
     "question": "What is Computer Vision in AI?",
     "answers": [
-      "AI focused on identifying objects and scenes in images and video",
-      "AI that can recognize and generate visual content",
-      "A technology for rendering graphics and 3D scenes",
-      "AI that enhances image quality but does not interpret content"
+      "AI that only labels objects and scenes and cannot create images",
+      "AI for rendering realistic 3D graphics and game simulations",
+      "AI that both interprets images/video and creates new visuals",
+      "AI that enhances photos and videos without interpreting them"
     ],
-    "correct": "AI that can recognize and generate visual content"
+    "correct": "AI that both interprets images/video and creates new visuals"
   },
   {
-    "question": "Which statement best describes AGI (Artificial General Intelligence)?",
+    "question": "Which description best matches AGI (Artificial General Intelligence)?",
     "answers": [
-      "It's currently available and widely deployed in modern smartphones and devices",
-      "Human-level intelligence across all domains that doesn't yet exist",
-      "It only works for games",
-      "It's available in research labs but not yet in consumer products"
+      "A system that learns and applies knowledge across unrelated tasks at human level; not yet achieved.",
+      "A model that excels at one task – like translation or Go – but cannot transfer skills between domains.",
+      "A capability already achieved in labs and partly shipped in consumer smartphones today.",
+      "An intelligence that surpasses humans in every domain and is purely theoretical at this point."
     ],
-    "correct": "Human-level intelligence across all domains that doesn't yet exist"
+    "correct": "A system that learns and applies knowledge across unrelated tasks at human level; not yet achieved."
   },
   {
-    "question": "What makes Deep Learning different from traditional Machine Learning?",
+    "question": "Why is Deep Learning referred to as 'deep' compared with traditional machine learning approaches?",
     "answers": [
-      "It uses significantly less data to achieve better results",
-      "It uses artificial neural networks with multiple layers",
-      "It's always faster and more efficient in all applications",
-      "It trains only the last layer while earlier layers stay fixed"
+      "It learns hierarchical representations by stacking multiple neural-network layers",
+      "It achieves high accuracy with limited labeled data mainly through manual feature engineering",
+      "It is typically more computationally efficient to train than shallow models of similar accuracy",
+      "It trains only a final classifier while earlier layers remain fixed during learning"
     ],
-    "correct": "It uses artificial neural networks with multiple layers"
+    "correct": "It learns hierarchical representations by stacking multiple neural-network layers"
   },
   {
-    "question": "When using AI, why is it important to know about the context window limitation?",
+    "question": "Why should practitioners be aware of a model's context window when working with long chats or documents?",
     "answers": [
-      "It affects the screen resolution",
-      "Longer documents may need splitting and earlier conversation parts may be 'forgotten'",
-      "It determines the AI's speed and computational efficiency while processing input data",
-      "It determines how many images a model can store permanently"
+      "It sets the model's knowledge cutoff date, so staying within it keeps information up to date",
+      "Exceeding it can cause earlier turns to be dropped, so long inputs may need chunking to preserve context",
+      "It controls how many parameters the model activates at inference, which drives speed and cost",
+      "It limits how far into training data the model can recall facts, affecting retrieval from older data sources"
     ],
-    "correct": "Longer documents may need splitting and earlier conversation parts may be 'forgotten'"
+    "correct": "Exceeding it can cause earlier turns to be dropped, so long inputs may need chunking to preserve context"
   }
 ]
