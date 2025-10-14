@@ -100,14 +100,14 @@
     "correct": "AI-augmented teams delivering higher quality work faster while maintaining ethical standards and human creativity"
   },
   {
-    "question": "You need to analyze multiple research papers about AI ethics and want minimal hallucinations with precise citations. Which tool should you choose?",
+    "question": "You need to synthesize several research PDFs that you will upload (not available on the web) and want the assistant to automatically cite only those documents while minimizing hallucinations. Which tool is the best fit?",
     "answers": [
-      "ChatGPT for its creative capabilities",
-      "Gemini for real-time information",
-      "NotebookLM for source-grounded responses",
-      "HAIP for enterprise security"
+      "ChatGPT (custom GPT) with an uploaded document set",
+      "Gemini Deep Research with citation features",
+      "NotebookLM using your uploaded sources",
+      "ChatGPT with data controls disabled"
     ],
-    "correct": "NotebookLM for source-grounded responses"
+    "correct": "NotebookLM using your uploaded sources"
   },
   {
     "question": "Your team needs to work with sensitive client data for document analysis. Which tool is most appropriate?",
@@ -120,24 +120,24 @@
     "correct": "HAIP with proper IT security approval"
   },
   {
-    "question": "You want to create a compelling marketing email for CTOs at mid-size companies. Which prompt approach is better?",
+    "question": "Scenario: You need an AI to draft a compelling product launch email to CTOs at mid-size companies. Considering the Art of Prompting (roles, tasks, format/constraints, tone, audience) and that few-shot cues can help with complex outputs, which prompt best follows these practices?",
     "answers": [
-      "Write an email about our product",
-      "Write a compelling product launch email for our new AI analytics tool. Target audience: CTOs at mid-size companies. Tone: professional but approachable. Include a clear call-to-action for a demo.",
-      "Create marketing content that covers all possible use cases, industry applications, and competitive advantages while maintaining brevity",
-      "Help me with business writing"
+      "You are a B2B marketing writer. Draft a 180-220 word launch email for our AI analytics platform to CTOs at mid-size firms. Tone: professional, concise, data-driven. Include a clear subject line, one CTA to book a 20-minute demo, and three benefit bullets with measurable outcomes. Few-shot cues: 'anomaly detection -> 30% faster', 'forecasting -> 25% less planning time'.",
+      "You are a creative copywriter. Draft a 180-220 word launch email for tech leaders. Tone: approachable and modern. Include a clear subject line, one CTA to contact sales, and three benefit bullets focused on ease of use and brand personality; avoid heavy jargon and leave metrics optional. Frame value across security, cost, and productivity.",
+      "You are a B2B marketing writer. Draft a 180-220 word launch email for our AI analytics platform to CTOs at mid-size firms. Tone: professional. Include a clear subject line, one CTA to download a whitepaper, and two bullet points summarizing key features and architecture rather than quantified outcomes. Frame content for evaluation-stage readers.",
+      "You are a marketing specialist. Draft a 180-220 word launch email to CTOs at mid-size companies. Tone: friendly and conversational. Include a clear subject line, three bullet points, and a single CTA to read a blog post for details; emphasize story and customer voice, with minimal emphasis on metrics. Highlight collaboration with engineering stakeholders."
     ],
-    "correct": "Write a compelling product launch email for our new AI analytics tool. Target audience: CTOs at mid-size companies. Tone: professional but approachable. Include a clear call-to-action for a demo."
+    "correct": "You are a B2B marketing writer. Draft a 180-220 word launch email for our AI analytics platform to CTOs at mid-size firms. Tone: professional, concise, data-driven. Include a clear subject line, one CTA to book a 20-minute demo, and three benefit bullets with measurable outcomes. Few-shot cues: 'anomaly detection -> 30% faster', 'forecasting -> 25% less planning time'."
   },
   {
-    "question": "Which of the following is NOT mentioned as a common prompting mistake?",
+    "question": "Given the vague prompt: 'Tell me about AI tools,' which revision best applies the module's guidance (clear role, task, format, length, and deliverable) and, because this is a moderately complex synthesis task, includes a brief few-shot example to guide output style?",
     "answers": [
-      "Being too vague",
-      "Assuming AI knows context",
-      "Not specifying format or length",
-      "Using technical jargon"
+      "You are a tech blogger. Write 180-220 words comparing three AI tools for project managers. Use two headings (Overview, Recommendation) and bullet points. Include a brief few-shot pattern such as: Tool: NotebookLM -> Summary: citations and multi-doc synthesis; Tool: HAIP -> Summary: secure internal docs. End with one clear recommendation and next steps.",
+      "You are a tech blogger. In 180-220 words, explain AI tools for project managers with pros and cons. Choose whichever tools seem relevant and keep a neutral tone. Write as one continuous paragraph; no special structure is required. Avoid overly technical jargon.",
+      "You are an internal comms writer. List AI tools used at Hooloovoo and give some pros and cons; assume the reader knows our approved tools and context. Add examples if you want. No strict length or formatting constraints. Keep it conversational.",
+      "You are a tech blogger. In about 200 words, compare several AI tools for project managers and include a recommendation. Provide a few examples, but format however you like; focus on being helpful to general readers. Use your best judgment on what to include."
     ],
-    "correct": "Using technical jargon"
+    "correct": "You are a tech blogger. Write 180-220 words comparing three AI tools for project managers. Use two headings (Overview, Recommendation) and bullet points. Include a brief few-shot pattern such as: Tool: NotebookLM -> Summary: citations and multi-doc synthesis; Tool: HAIP -> Summary: secure internal docs. End with one clear recommendation and next steps."
   },
   {
     "question": "What feature does NotebookLM offer to help find relevant documents from the web?",
@@ -170,14 +170,14 @@
     "correct": "Suggests prompt enhancement in 1-click"
   },
   {
-    "question": "You need AI-powered code completion and suggestions directly inside your IDE. Which tool category best fits this need?",
+    "question": "You need native inline code completion, real-time suggestions, and refactoring hints directly inside your IDE (e.g., VS Code or JetBrains), without switching to a chat. In the course's AI Tool Ecosystem, which category best matches this need?",
     "answers": [
-      "Multimodal AI tools for diverse input types",
-      "Developer productivity and code assistance tools",
-      "Text generation and chat-based AI assistants",
-      "Audio processing and voice synthesis tools"
+      "Multimodal chat assistants with coding features (e.g., ChatGPT, Gemini)",
+      "Code tools for IDE inline completion and refactoring (e.g., GitHub Copilot)",
+      "Enterprise AI platforms for secure, document-centered tasks (e.g., HAIP)",
+      "Image-generation tools for visual design work (e.g., Midjourney, DALL-E 3)"
     ],
-    "correct": "Developer productivity and code assistance tools"
+    "correct": "Code tools for IDE inline completion and refactoring (e.g., GitHub Copilot)"
   },
   {
     "question": "What is data pseudonymization in the context of AI tools?",
@@ -210,34 +210,34 @@
     "correct": "Use Gemini's real-time web access to gather and cite the latest EU AI regulation updates"
   },
   {
-    "question": "Your company wants to implement AI tools while maintaining ethical standards. Which principle from the HLV Success Vision should guide this implementation?",
+    "question": "Your content lead proposes cutting costs by replacing most copywriters with generative AI and shrinking human review. Which recommendation best aligns with the HLV Success Vision?",
     "answers": [
-      "AI-augmented teams delivering higher quality work faster while maintaining ethical standards and human creativity",
-      "AI-augmented teams delivering higher quality work faster with minimal oversight",
-      "Automation-first approach to maximize efficiency and reduce costs",
-      "Strict data security with AI-driven decision making and reduced human involvement"
+      "Deploy AI for ideation and first drafts with copywriters' in-loop review, aiming for higher-quality, faster output while safeguarding ethical standards and human creativity.",
+      "Adopt AI-first templates to speed delivery; limit human input to exception handling and quarterly ethics audits to keep costs down.",
+      "Replace most drafting with AI and move writers into oversight dashboards, minimizing creative intervention to standardize tone and reduce bias.",
+      "Pilot AI-generated copy with final sign-off by managers, deferring in-depth ethics and creativity considerations until after full rollout."
     ],
-    "correct": "AI-augmented teams delivering higher quality work faster while maintaining ethical standards and human creativity"
+    "correct": "Deploy AI for ideation and first drafts with copywriters' in-loop review, aiming for higher-quality, faster output while safeguarding ethical standards and human creativity."
   },
   {
-    "question": "Which constraint pattern example is provided in the basic prompt patterns section?",
+    "question": "Which prompt includes an explicit prohibition (a constraint)?",
     "answers": [
-      "Summarize this article in 3 bullet points",
-      "You are an expert chef. Create a recipe for...",
-      "Write a poem about AI without using the letter 'e'",
-      "Explain quantum physics like I'm 10 years old"
+      "Assume the role of a project manager.",
+      "Provide a summary of this report.",
+      "Explain this topic like I'm 10 years old.",
+      "Write a post about our app; no hashtags."
     ],
-    "correct": "Write a poem about AI without using the letter 'e'"
+    "correct": "Write a post about our app; no hashtags."
   },
   {
-    "question": "What is the recommended approach when you need to cross-validate AI-generated information?",
+    "question": "After using Gemini to research recent EU AI regulation for a report, which action best strengthens cross-validation before finalizing your summary?",
     "answers": [
-      "Use only one AI tool for maintaining consistency throughout the entire process",
-      "Always trust the first response",
-      "Use multiple tools for comprehensive analysis and fact-check important information",
-      "Avoid fact-checking to save time"
+      "Re-prompt Gemini with varied phrasings and treat internal consistency across answers as sufficient validation.",
+      "Rely mainly on Gemini's citations, spot-checking a single link and moving on without using another tool.",
+      "Export the findings to NotebookLM for synthesis and assume its citation features remove the need for tool-based verification.",
+      "Read the cited sources, then cross-check key claims with a second tool (NotebookLM or HAIP) or independent sources."
     ],
-    "correct": "Use multiple tools for comprehensive analysis and fact-check important information"
+    "correct": "Read the cited sources, then cross-check key claims with a second tool (NotebookLM or HAIP) or independent sources."
   },
   {
     "question": "What should you do if approval is needed for using certain data types with AI tools?",
