@@ -10,14 +10,14 @@
     "correct": "When systems make unfair decisions based on race, gender, age, or other protected characteristics"
   },
   {
-    "question": "What are AI hallucinations?",
+    "question": "A chatbot asserts that 'Smith et al., 2022' found a 37% effect and even cites page numbers, but no such paper can be located in reputable databases. Which option best characterizes this failure mode?",
     "answers": [
-      "When a model overfits training data and memorizes specific examples instead of learning patterns",
-      "When AI refuses to answer questions due to safety policies or content filters",
-      "When systems generate incorrect information while presenting it confidently as fact",
-      "When AI misunderstands ambiguous or incomplete user input and requests clarification"
+      "Exposure to online misinformation - faithful reproduction of a dubious source",
+      "Hallucination - confidently generated but nonexistent citation and statistics",
+      "The black-box problem - reasoning is opaque rather than factually wrong",
+      "Overfitting - memorization of training snippets leading to poor generalization"
     ],
-    "correct": "When systems generate incorrect information while presenting it confidently as fact"
+    "correct": "Hallucination - confidently generated but nonexistent citation and statistics"
   },
   {
     "question": "Why did Amazon scrap its resume screening AI system (2014-2018)?",
@@ -43,11 +43,11 @@
     "question": "Which of the following is NOT a core principle of Ethical AI?",
     "answers": [
       "Transparency",
-      "Efficiency",
-      "Fairness",
-      "Human in the Loop"
+      "Explainability",
+      "Human in the Loop",
+      "Accountability"
     ],
-    "correct": "Efficiency"
+    "correct": "Explainability"
   },
   {
     "question": "What are guardrails in AI systems?",
@@ -70,44 +70,44 @@
     "correct": "We often can't see inside to understand how or why AI reached a conclusion"
   },
   {
-    "question": "Which of the following is considered Personally Identifiable Information (PII)?",
+    "question": "Which item must be treated as PII in your dataset audit?",
     "answers": [
-      "Anonymized browsing statistics aggregated by region",
-      "Publicly available financial market index data",
-      "Personal identifiers like name, address, and biometric data",
-      "Aggregate location heatmaps without individual tracking"
+      "Persistent mobile advertising ID (e.g., IDFA/GAID) linked to a device",
+      "Session telemetry tied to a random ID that resets each launch, with no user link",
+      "Store-visit counts aggregated into 5 km tiles with at least 100 devices per tile",
+      "Citywide average app session length for the last quarter"
     ],
-    "correct": "Personal identifiers like name, address, and biometric data"
+    "correct": "Persistent mobile advertising ID (e.g., IDFA/GAID) linked to a device"
   },
   {
-    "question": "What should you do before using AI tools for sensitive work?",
+    "question": "Before using an AI assistant to troubleshoot proprietary code or handle PII, what is the best first step?",
     "answers": [
-      "Nothing special needed, LLMs have built-in security guardrails",
-      "Use browser private / incognito mode",
-      "Consult with security teams and use only approved tools",
-      "Delete your browser history after each interaction"
+      "Anonymize the data and use any public AI tool.",
+      "Trust the vendor's 'no training' / ZDR (Zero Data Retention) setting and continue.",
+      "Check with HLV security and use an approved enterprise tool.",
+      "Enable guardrails and avoid sharing full files."
     ],
-    "correct": "Consult with security teams and use only approved tools"
+    "correct": "Check with HLV security and use an approved enterprise tool."
   },
   {
-    "question": "What is a key lesson from the Microsoft Tay incident?",
+    "question": "Which design change would most directly mitigate a Tay-like failure in a public-facing chatbot?",
     "answers": [
-      "AI systems are close to perfect and require no monitoring or oversight once deployed",
-      "AI systems exposed to public input need robust protection against manipulation",
-      "Public-facing chatbots are generally ineffective in real-world contexts",
-      "Social media always ensures safe user interactions"
+      "Disable learning from live user interactions and rely only on static pretraining (labeled data)",
+      "Add robust input/output safety filters and adversarial testing to block abusive content",
+      "Retrain on more diverse data while keeping the same public deployment setup",
+      "Publish detailed model cards and usage guidelines to improve system transparency"
     ],
-    "correct": "AI systems exposed to public input need robust protection against manipulation"
+    "correct": "Add robust input/output safety filters and adversarial testing to block abusive content"
   },
   {
-    "question": "Your colleague asks ChatGPT for statistics about your industry and gets very specific numbers. What should you do before using this data in a presentation?",
+    "question": "Your colleague used ChatGPT and got very specific industry figures but no sources. Before adding them to a client presentation, what is the best next step?",
     "answers": [
-      "Use it immediately - AI is always accurate",
-      "Cross-reference with multiple reliable sources and verify the statistics exist",
-      "Check only if the numbers appear unusual",
-      "Reformat the data to make it look more professional without validation"
+      "Ask the model to regenerate the stats with citations and use those citations without further review",
+      "Verify the figures with independent, reputable sources and confirm any cited sources actually exist",
+      "Do a plausibility scan and proceed if the numbers look reasonable given your experience",
+      "Spot-check one figure on a trusted site and assume the remaining numbers are correct"
     ],
-    "correct": "Cross-reference with multiple reliable sources and verify the statistics exist"
+    "correct": "Verify the figures with independent, reputable sources and confirm any cited sources actually exist"
   },
   {
     "question": "You need help debugging code that contains your company's proprietary algorithm. What's the best approach?",
@@ -120,44 +120,44 @@
     "correct": "Share only small, non-proprietary code snippets or use pseudocode"
   },
   {
-    "question": "An AI tool generates a report citing several academic papers. Before submitting this report, you should:",
+    "question": "An AI tool generates a report with academic citations. Which action best aligns with the course's fact-checking strategies before submission?",
     "answers": [
-      "Trust that all citations are accurate",
-      "Verify that each cited source actually exists and contains the referenced information",
-      "Check only citation formatting for consistency with academic style",
-      "Assume references are reliable if they appear in a formal style"
+      "Trust the citations if they look professional and use standard academic formatting",
+      "Confirm each source exists and supports the specific claims it is cited for",
+      "Verify that each link or DOI resolves to a paper; content review isn't required",
+      "Spot-check one or two references for plausibility and submit if nothing seems off"
     ],
-    "correct": "Verify that each cited source actually exists and contains the referenced information"
+    "correct": "Confirm each source exists and supports the specific claims it is cited for"
   },
   {
-    "question": "You're using AI to help write an email about employee salaries. What should you do?",
+    "question": "You are drafting an email about employee salaries and plan to use a public AI writing assistant. What should you do?",
     "answers": [
-      "Include actual salary figures to get more accurate help",
-      "Use hypothetical numbers or ranges instead of real salary data",
-      "Provide only management-level salaries as examples, never use C-level salaries",
-      "Include employee names but omit salary amounts"
+      "Use fictional ranges or placeholders and avoid real names or figures; draft safely, then add specifics offline.",
+      "Turn on the assistant's private/confidential mode and include exact salary figures to ensure precise, tailored wording.",
+      "Share aggregated internal salary bands by role (e.g., $80k-$90k) since no single person is directly identified.",
+      "Provide employee names and titles without amounts; the AI can infer appropriate ranges based on the profession, location, and experience."
     ],
-    "correct": "Use hypothetical numbers or ranges instead of real salary data"
+    "correct": "Use fictional ranges or placeholders and avoid real names or figures; draft safely, then add specifics offline."
   },
   {
-    "question": "A public AI chatbot asks for your national ID number or passport number to 'verify your identity.' You should:",
+    "question": "On a public website not affiliated with your bank, government, or your company's approved tools, an AI chatbot asks for your national ID or passport number to 'verify your identity.' What should you do?",
     "answers": [
-      "Provide it since the bot needs to verify your identity for security purposes",
-      "Decline and verify through a secure, official channel; never enter such data into public AI tools",
-      "Provide it because modern chatbots have built-in guardrails that prevent data misuse",
-      "Decline because AI tools cannot guarantee data privacy even with encryption promises"
+      "Provide it; online verification improves security and chatbots have guardrails.",
+      "Decline and verify through an official channel; never share PII with public AI tools.",
+      "Share only if the bot displays a privacy policy and promises encryption/incognito mode.",
+      "Decline because identity checks should never be done online."
     ],
-    "correct": "Decline and verify through a secure, official channel; never enter such data into public AI tools"
+    "correct": "Decline and verify through an official channel; never share PII with public AI tools."
   },
   {
-    "question": "You want to use a colleague's photo in an AI-powered presentation tool. What must you do first?",
+    "question": "You plan to upload a coworker's headshot to an external AI presentation tool that may retain data for model improvement. What should you do next?",
     "answers": [
-      "Nothing, if it's just for fun, when used internally, in chats or presentations",
-      "Get explicit consent from your colleague before using their image",
-      "Slightly blur their face for anonymity",
-      "Use it first and obtain permission afterward"
+      "Rely on the tool's privacy policy and upload with 'no training' settings",
+      "Get explicit consent and confirm the tool is security-approved before upload",
+      "Blur the face and proceed if the headshot is only used for an internal presentation",
+      "Upload now and ask permission afterward; delete the file if needed"
     ],
-    "correct": "Get explicit consent from your colleague before using their image"
+    "correct": "Get explicit consent and confirm the tool is security-approved before upload"
   },
   {
     "question": "An AI chatbot confidently states that your company's main competitor filed for bankruptcy yesterday. Your next step should be:",
@@ -170,50 +170,50 @@
     "correct": "Verify this information through official sources before taking any action"
   },
   {
-    "question": "You need AI help with a customer database containing names and addresses. The best approach is:",
+    "question": "You need high-level guidance from a public, unvetted AI assistant on cleaning a customer database that includes names and addresses. What is the safest approach?",
     "answers": [
-      "Upload the entire database for comprehensive analysis and better AI recommendations",
-      "Anonymize data or use fictional examples that represent your use case",
-      "Only share information from customers who opted into marketing",
-      "Use real data but delete the chat afterward"
+      "Upload the full dataset so the assistant can analyze real patterns.",
+      "Anonymize or use synthetic records that mirror your data, avoiding PII.",
+      "Share only customers who consented to marketing; that makes it permissible.",
+      "Use real samples but delete the chat afterward to protect privacy."
     ],
-    "correct": "Anonymize data or use fictional examples that represent your use case"
+    "correct": "Anonymize or use synthetic records that mirror your data, avoiding PII."
   },
   {
-    "question": "An AI tool generates legal advice about a contract dispute. You should:",
+    "question": "An AI tool drafts guidance for a high-stakes, jurisdiction-specific contract dispute and includes case and statute citations. What is the most appropriate next step?",
     "answers": [
-      "Follow the advice immediately to avoid lawyer fees",
-      "Use it as a starting point but consult with qualified legal professionals",
-      "Assume AI provides comprehensive coverage of all relevant laws",
-      "Assume it's completely accurate since AI has been trained on all existing laws and regulations"
+      "Proceed if the citations look plausible, seem relevant to your facts, and pass a quick spot check.",
+      "Verify every citation in primary sources and practice guides yourself, then act without consulting licensed counsel.",
+      "Use it as a starting point: confirm each citation exists and applies, and get review from licensed counsel.",
+      "Proceed when multiple sources are cited, the reasoning is coherent, and it appears tailored to your jurisdiction."
     ],
-    "correct": "Use it as a starting point but consult with qualified legal professionals"
+    "correct": "Use it as a starting point: confirm each citation exists and applies, and get review from licensed counsel."
   },
   {
-    "question": "Your team wants to use an unapproved AI tool for processing internal documents. What should you recommend?",
+    "question": "Per company policy requiring security approval for AI tools, your team wants to use an unapproved AI service to process internal documents that may include proprietary code and personal data. What is the most responsible first step?",
     "answers": [
-      "Use it secretly to avoid bureaucracy",
-      "First check with your security team for approved alternatives or get the tool vetted",
-      "It's acceptable if used in private browsing mode",
-      "Use it occasionally as long as documents aren't marked highly confidential"
+      "Anonymize and share only small snippets using the tool's do-not-train setting, then proceed.",
+      "Check with the security team for approved options or request a formal review before any use.",
+      "Share only pseudocode and synthetic data with the tool while you await approval.",
+      "Limit use to documents not marked highly confidential and avoid uploading PII."
     ],
-    "correct": "First check with your security team for approved alternatives or get the tool vetted"
+    "correct": "Check with the security team for approved options or request a formal review before any use."
   },
   {
-    "question": "Which information counts as proprietary code that should not be shared with public AI tools?",
+    "question": "You're preparing a query for a public AI assistant. Which item is the clearest example of proprietary code you should not share?",
     "answers": [
-      "Small, generic code snippets that don't reveal business logic",
-      "Complete codebases, algorithms, or business logic",
-      "Open-source dependencies and libraries used by the project",
-      "High-level architectural descriptions without implementation details"
+      "A 40-line function from your company's private repo implementing discount eligibility rules",
+      "Pseudocode describing your firm's unique dynamic-pricing strategy (no actual code shown)",
+      "A high-level component architecture diagram with no source, sample data, secrets, or identifiers",
+      "A short snippet copied from an open-source library's official documentation"
     ],
-    "correct": "Complete codebases, algorithms, or business logic"
+    "correct": "A 40-line function from your company's private repo implementing discount eligibility rules"
   },
   {
     "question": "When you input confidential information into AI tools, who are you sharing it with?",
     "answers": [
       "Only with the AI interface you're using",
-      "No one else, interaction stays within the browser, on client side",
+      "Chat information is not shared with anyone else, interaction stays within the browser, on client side",
       "With the AI service provider, potentially other users, and future AI models",
       "Only with your company's systems"
     ],
@@ -240,53 +240,53 @@
     "correct": "They filter and block outputs during the inference phase before users see them"
   },
   {
-    "question": "What does 'data sharing minimization' mean?",
+    "question": "You are preparing customer-support data for an AI assistant. Which practice best demonstrates data minimization?",
     "answers": [
-      "Never share any information at all",
-      "Provide only what is truly necessary",
-      "Share all available data for maximum accuracy",
-      "Limit sharing only to personal data while allowing unrestricted business data"
+      "Share only the fields required for the task, removing unrelated identifiers and sensitive attributes",
+      "Share the full dataset but replace names and emails with hashes to protect identity",
+      "Share all records unchanged but enforce role-based access controls and detailed audit logs",
+      "Provide aggregated summaries for analysis while retaining raw, identifiable data for verification purposes"
     ],
-    "correct": "Provide only what is truly necessary"
+    "correct": "Share only the fields required for the task, removing unrelated identifiers and sensitive attributes"
   },
   {
-    "question": "What was the core problem with Amazon's resume AI system?",
+    "question": "What was identified as the primary root cause of bias in Amazon's resume-screening system?",
     "answers": [
-      "It was too slow to process applications",
-      "It learned that male candidates were historically 'preferred' from 10 years of data",
-      "It didn't perform adequately during high-volume hiring cycles",
-      "It became prohibitively costly due to infrastructure needs"
+      "Male-dominated training data from a decade of resumes taught the model to prefer men.",
+      "The system's opaque design limited HR's ability to meaningfully audit or adjust its decisions.",
+      "Overreliance on keyword counts rather than a holistic review of qualifications and experience.",
+      "Initial heuristic rules inadvertently penalized terms associated with women's colleges and activities."
     ],
-    "correct": "It learned that male candidates were historically 'preferred' from 10 years of data"
+    "correct": "Male-dominated training data from a decade of resumes taught the model to prefer men."
   },
   {
-    "question": "A colleague wants to record a meeting without participants' knowledge for AI transcription. Your response?",
+    "question": "A colleague plans to use a third-party AI service to transcribe next week's client meeting. What is the best guidance?",
     "answers": [
-      "Help them do it discreetly",
-      "Explain that they must get consent from all participants before recording",
-      "Say it's fine if the purpose is only work-related",
-      "Suggest recording audio only without video"
+      "Use the service's private/confidential mode under the company NDA, record the meeting, and share the transcript internally; notify participants afterward so they can flag any concerns.",
+      "Before recording, verify the service is security-approved (or use an internal approved tool), explain how the audio will be used and stored, and obtain explicit consent from all participants; otherwise, do not record.",
+      "Record only agenda items and action points, keep the files internal, and distribute a concise summary; treat this as adequate risk reduction without requiring prior explicit consent.",
+      "Proceed if the vendor provides end-to-end encryption, automatic deletion, and compliant terms; provide an opt-out form after the meeting for anyone uncomfortable with the recording."
     ],
-    "correct": "Explain that they must get consent from all participants before recording"
+    "correct": "Before recording, verify the service is security-approved (or use an internal approved tool), explain how the audio will be used and stored, and obtain explicit consent from all participants; otherwise, do not record."
   },
   {
-    "question": "An AI tool asks for your password to 'verify identity.' What should you do?",
+    "question": "In your company's AI chat assistant, the bot asks you inside the chat to paste your password to 'verify identity,' rather than redirecting you to the official company SSO login page. What should you do?",
     "answers": [
-      "Provide it right away to avoid delays",
-      "Never share passwords, API keys, or credentials with AI tools",
-      "Offer only a partial version of the password",
-      "Proceed if the AI guarantees security"
+      "Provide a masked or partial password so the bot can proceed",
+      "Do not share credentials; authenticate only via the official SSO/login page and report the request to security",
+      "Share the password because the tool is security-team approved, encrypted, and says it won't store credentials",
+      "Send a temporary or changed password now and reset it afterward to minimize risk"
     ],
-    "correct": "Never share passwords, API keys, or credentials with AI tools"
+    "correct": "Do not share credentials; authenticate only via the official SSO/login page and report the request to security"
   },
   {
-    "question": "You notice that AI gives different medical advice for the same query. What does this show?",
+    "question": "You ask the same AI the same medical question multiple times and receive confident but contradictory answers with no citations. What is the safest, most responsible action?",
     "answers": [
-      "AI is dependable for healthcare advice when responses are averaged",
-      "AI can hallucinate and should not be used for medical decisions without professional verification",
-      "Retrying until you get a consistent answer is acceptable before relying on it",
-      "AI continuously adapts to user phrasing, so responses naturally differ"
+      "Ask the AI for citations; if it provides them, trust the answer",
+      "Assume hallucination; confirm via authoritative sources or a clinician before acting",
+      "Keep rephrasing until responses converge, then accept that result",
+      "Consult peer-reviewed guidelines and proceed if one answer matches them"
     ],
-    "correct": "AI can hallucinate and should not be used for medical decisions without professional verification"
+    "correct": "Assume hallucination; confirm via authoritative sources or a clinician before acting"
   }
 ]
