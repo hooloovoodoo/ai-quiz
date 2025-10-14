@@ -10,62 +10,62 @@
     "correct": "The instructions, questions, or text you provide to get desired outputs"
   },
   {
-    "question": "Which of the following is a basic prompt pattern for assigning roles?",
+    "question": "Which option exemplifies the Roles prompt pattern (assigning a role to the AI)?",
     "answers": [
-      "Summarize this article in 3 bullet points",
-      "You are an expert chef. Create a recipe for...",
-      "Explain quantum physics like I'm 10 years old",
-      "Write a poem about AI without using the letter 'e'"
+      "Act as a project manager. Draft a risk register for a new product launch.",
+      "Adopt a friendly, authoritative tone. Draft a risk register for a new product launch.",
+      "Summarize the report in five bullets with bolded headers.",
+      "Write a status update under 120 words and avoid acronyms."
     ],
-    "correct": "You are an expert chef. Create a recipe for..."
+    "correct": "Act as a project manager. Draft a risk register for a new product launch."
   },
   {
-    "question": "What is the main difference between zero-shot and few-shot prompting?",
+    "question": "You're drafting marketing copy that must match a specific brand voice and follow a fixed outline across multiple products. Which prompting approach will most reliably achieve the desired tone and structure for this complex task?",
     "answers": [
-      "Zero-shot uses significantly more training data and computational resources than few-shot",
-      "Few-shot is faster than zero-shot",
-      "Zero-shot provides no examples, while few-shot provides a few examples",
-      "Zero-shot is more expensive than few-shot"
+      "Zero-shot: assign a role, explain the tone, and (optionally) high-level constraints; let the model infer the style",
+      "Few-shot: provide a few concise examples that demonstrate the voice and outline, then add the new input",
+      "Zero-shot with a rigid format template and explicit rules, without examples",
+      "Use zero-shot for complex tasks; few-shot is mainly for simple ones"
     ],
-    "correct": "Zero-shot provides no examples, while few-shot provides a few examples"
+    "correct": "Few-shot: provide a few concise examples that demonstrate the voice and outline, then add the new input"
   },
   {
-    "question": "According to the security guidelines, what should you NEVER input into public AI tools?",
+    "question": "Under Hooloovoo's Data Classification policy for public AI tools, which of the following must never be included in your prompt?",
     "answers": [
-      "Public information and general questions",
-      "Client data, passwords, or sensitive company information",
-      "Creative writing requests",
-      "Simple translation tasks"
+      "Client or employee personal data, passwords/keys, or sensitive company information",
+      "Internal, non-sensitive materials with names, IDs, and other identifiers removed",
+      "Aggregated, anonymized internal metrics reported without any personal or client details",
+      "Public sources with citations and general, non-confidential project context"
     ],
-    "correct": "Client data, passwords, or sensitive company information"
+    "correct": "Client or employee personal data, passwords/keys, or sensitive company information"
   },
   {
-    "question": "Which AI tool is best suited for real-time web research and current information?",
+    "question": "You need to brief your team this afternoon on EU policy changes announced yesterday. You must pull the latest information directly from the web and include source citations. According to the module's recommendations, which tool should you choose?",
     "answers": [
-      "ChatGPT",
-      "NotebookLM",
-      "Gemini",
-      "HAIP"
+      "OpenAI ChatGPT",
+      "Google NotebookLM",
+      "Google Gemini",
+      "Hooloovoo HAIP"
     ],
-    "correct": "Gemini"
+    "correct": "Google Gemini"
   },
   {
-    "question": "What makes NotebookLM special for research tasks?",
+    "question": "You must synthesize five PDFs and ensure every claim in your brief is verifiable with exact citations to the uploaded sources. Which NotebookLM capability most directly supports this requirement?",
     "answers": [
-      "It has the fastest response time among all available and approved AI tools",
-      "It provides source-grounded responses with minimal hallucinations",
-      "It can generate images",
-      "It has the largest context window"
+      "Multi-document conversations and synthesis across files",
+      "Source-grounded answers with automatic citations and tracking",
+      "Web-source discovery to broaden citation coverage beyond uploads",
+      "Real-time web browsing with fact-checked links and updates"
     ],
-    "correct": "It provides source-grounded responses with minimal hallucinations"
+    "correct": "Source-grounded answers with automatic citations and tracking"
   },
   {
-    "question": "Which AI tools are officially approved for all Hooloovoo employees?",
+    "question": "As of this training, which set lists only AI tools officially approved for general use by all Hooloovoo employees?",
     "answers": [
-      "ChatGPT, Claude, and Midjourney",
       "Gemini, NotebookLM, and HAIP",
-      "DALL-E, GitHub Copilot, and DeepSeek",
-      "All AI tools are approved"
+      "HAIP, ChatGPT, and Gemini",
+      "NotebookLM, DALL-E 3, and Gemini",
+      "Claude, GitHub Copilot, and HAIP"
     ],
     "correct": "Gemini, NotebookLM, and HAIP"
   },
@@ -90,7 +90,7 @@
     "correct": "Only with proper approval from IT security"
   },
   {
-    "question": "According to this module, what is HLV's Success Vision for AI adoption?",
+    "question": "What is HLV's Success Vision for AI adoption?",
     "answers": [
       "Automate repetitive tasks to maximize speed and efficiency, even if it slightly reduces human creativity in the short term",
       "AI-augmented teams delivering higher quality work faster while maintaining ethical standards and human creativity",
