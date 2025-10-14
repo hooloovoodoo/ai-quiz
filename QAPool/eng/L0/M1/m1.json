@@ -1,13 +1,13 @@
 [
   {
-    "question": "Which scenario best represents Artificial Narrow Intelligence (ANI)?",
-    "answers": [
-      "A translation system that excels at converting text between languages but cannot carry its skills over to unrelated tasks without task-specific training.",
-      "An assistant that reaches human-level competence across diverse fields and flexibly masters new tasks without dedicated training.",
-      "A superintelligence that outperforms humans in all areas and rapidly self-improves beyond human control.",
-      "A thermostat that uses a fixed rule (if temperature > 30°C, turn on cooling) to control a room."
-    ],
-    "correct": "A translation system that excels at converting text between languages but cannot carry its skills over to unrelated tasks without task-specific training."
+  "question": "Which scenario best represents Artificial Narrow Intelligence (ANI)?",
+  "answers": [
+    "A translation system that excels at converting text between languages but cannot carry its skills over to unrelated tasks without task-specific training.",
+    "An assistant that reaches human-level competence across diverse fields and flexibly masters new tasks without dedicated training.",
+    "A superintelligence that outperforms humans in all areas and rapidly self-improves beyond human control.",
+    "A thermostat that uses a fixed rule (if temperature > 30°C, turn on cooling) to control a room."
+  ],
+  "correct": "A translation system that excels at converting text between languages but cannot carry its skills over to unrelated tasks without task-specific training."
   },
   {
     "question": "Which statement best describes the containment (subset) relationships among Artificial Intelligence (AI), Machine Learning (ML), and Deep Learning (DL)?",
@@ -20,17 +20,17 @@
     "correct": "AI contains ML, and ML contains DL."
   },
   {
-    "question": "A voice-enabled assistant reliably handles specific tasks like setting reminders, answering straightforward queries, and translating short phrases. It cannot transfer what it learns to unrelated domains (e.g., composing music or driving a car) without separate training. Which category best describes this system?",
+    "question": "In the ANI/AGI/ASI capability taxonomy, a voice-enabled assistant can set reminders, answer routine questions, and translate short phrases, but cannot transfer its skills to unrelated domains without new training. Which level best describes this system?",
     "answers": [
-      "Artificial General Intelligence (AGI)",
       "Artificial Narrow Intelligence (ANI)",
-      "Generative Artificial Intelligence (GenAI)",
-      "Artificial Superintelligence (ASI)"
+      "Artificial General Intelligence (AGI)",
+      "Artificial Super Intelligence (ASI)",
+      "None of the above"
     ],
     "correct": "Artificial Narrow Intelligence (ANI)"
   },
   {
-    "question": "A facility runs two climate control systems. System A uses engineer-defined IF/THEN rules; System B was trained on historical temperature – comfort data to predict settings. Which option correctly matches each system on (1) logic, (2) behavior, and (3) how updates are made?",
+    "question": "A facility runs two climate control systems. System A uses engineer-defined IF/THEN rules; System B was trained on historical temperature - comfort data to predict settings. Which option correctly matches each system on (1) logic, (2) behavior, and (3) how updates are made?",
     "answers": [
       "System A: explicit rules; deterministic; update via code changes. System B: learned from data; probabilistic; update via retraining.",
       "System A: explicit rules; probabilistic; update via code changes. System B: learned from data; deterministic; update via retraining.",
@@ -40,7 +40,7 @@
     "correct": "System A: explicit rules; deterministic; update via code changes. System B: learned from data; probabilistic; update via retraining."
   },
   {
-    "question": "You train a neural network on 1 million labeled images using a weight – update procedure (e.g., stochastic gradient descent), then use it to classify new photos. In this setup, what is the algorithm?",
+    "question": "You train a neural network on 1 million labeled images using a weight - update procedure (e.g., stochastic gradient descent), then use it to classify new photos. In this setup, what is the algorithm?",
     "answers": [
       "The learned network with its final weights used for prediction",
       "The procedure that specifies how the weights are updated during training",
@@ -50,14 +50,14 @@
     "correct": "The procedure that specifies how the weights are updated during training"
   },
   {
-    "question": "Which statement best describes a model in machine learning?",
+    "question": "Which statement describes a model in machine learning?",
     "answers": [
-      "The learned parameters produced by training that map inputs to outputs",
-      "The algorithmic procedure or rules used to learn from data",
-      "The training configuration of hyperparameters like learning rate and batch size",
-      "The held-out validation set used to tune performance during development"
+      "The result of training - the learned patterns that make predictions or decisions.",
+      "The algorithmic procedure that defines how the system learns from data.",
+      "The training configuration of hyperparameters such as learning rate and batch size.",
+      "The loss function that scores errors and steers parameter updates during training."
     ],
-    "correct": "The learned parameters produced by training that map inputs to outputs"
+    "correct": "The result of training - the learned patterns that make predictions or decisions."
   },
   {
     "question": "What does 'deep' refer to in Deep Learning?",
@@ -90,7 +90,7 @@
     "correct": "A deployed speech model converts a new voicemail to text using its current weights."
   },
   {
-    "question": "Which AI paradigm focuses on generating new content – such as drafting product descriptions and producing matching images – from a single prompt? Choose the output paradigm, not the input modality.",
+    "question": "Which AI paradigm focuses on generating new content - such as drafting product descriptions and producing matching images - from a single prompt? Choose the output paradigm, not the input modality.",
     "answers": [
       "Multimodal AI",
       "Generative AI",
@@ -100,34 +100,34 @@
     "correct": "Generative AI"
   },
   {
-    "question": "Which of the following best exemplifies Generative AI rather than Predictive/Discriminative AI?",
+    "question": "A retailer is evaluating four AI capabilities. Which task most requires a generative approach rather than a predictive/discriminative one?",
     "answers": [
-      "Generate a product description from a prompt",
-      "Recommend movies based on viewing history",
-      "Extract text from a scanned document",
-      "Classify emails to route them by intent"
+      "Write a product description from a short brief",
+      "Generate a churn probability score for each customer",
+      "Extract text from scanned invoices into a spreadsheet",
+      "Classify incoming emails to route them by topic"
     ],
-    "correct": "Generate a product description from a prompt"
+    "correct": "Write a product description from a short brief"
   },
   {
-    "question": "Which of the following is primarily an NLP task?",
+    "question": "Which task is explicitly listed in this module as an NLP application?",
     "answers": [
-      "Condensing a long report into a concise summary",
-      "Identifying objects and their locations in images",
-      "Applying an artist's style to a photograph",
-      "Detecting anomalous credit card transactions"
+      "Producing a concise summary of a lengthy written report",
+      "Converting a scanned paper document into editable digital text (OCR)",
+      "Creating a new image from a natural-language prompt",
+      "Transcribing a recorded meeting from speech audio into text"
     ],
-    "correct": "Condensing a long report into a concise summary"
+    "correct": "Producing a concise summary of a lengthy written report"
   },
   {
-    "question": "Which statement best describes a Large Language Model (LLM)?",
+    "question": "Which statement best describes a modern Large Language Model (LLM) and how it is trained?",
     "answers": [
-      "An efficiency-focused language model for general text generation, using fewer parameters than frontier systems and trained mainly on labeled datasets",
-      "A general-purpose generative model with billions or more parameters, pre-trained on internet-scale text to predict the next token",
-      "A domain-limited language model trained primarily for classification and routing on small, curated datasets, tuned to maximize accuracy on fixed tasks",
-      "A model exposed to billions of tokens but constrained to hundreds of millions of parameters, optimized for narrow applications like spam filtering"
+      "A general-purpose generative model with billions of parameters, pre-trained on internet-scale unlabeled text using next-token prediction",
+      "A general-purpose generative model with billions of parameters trained primarily through supervised learning on labeled instruction datasets to map prompts to answers",
+      "A pre-trained next-token predictor over internet-scale data that delivers deterministic, task-specific outputs once deployed",
+      "A compact, domain-limited classifier optimized for fixed tasks using small curated labeled datasets and hundreds of millions of parameters"
     ],
-    "correct": "A general-purpose generative model with billions or more parameters, pre-trained on internet-scale text to predict the next token"
+    "correct": "A general-purpose generative model with billions of parameters, pre-trained on internet-scale unlabeled text using next-token prediction"
   },
   {
     "question": "In large language models (LLMs), what does the term 'context window' refer to?",
@@ -180,14 +180,14 @@
     "correct": "Reinforcement Learning"
   },
   {
-    "question": "Which scenario best demonstrates multimodal AI?",
+    "question": "Which scenario demonstrates multimodal AI?",
     "answers": [
-      "A system that takes an image and a spoken question, then returns a text answer and highlights",
-      "A chatbot that reads and writes in dozens of languages, yet operates exclusively on textual data for conversations",
-      "A training pipeline that relies on many GPUs and servers, distributing computation across multiple machines for throughput",
-      "A platform that ensembles several text-only models together to improve sentiment classification performance at scale and speed"
+      "A classifier jointly trained on an article's headline and body to improve topic labeling and routing",
+      "A multilingual assistant for support chats that reads and writes text only across all conversations",
+      "An app that takes a photo and a spoken question, then replies in text and highlights regions on the image",
+      "A vision system that fuses several camera feeds into one panorama to expand coverage and tracking"
     ],
-    "correct": "A system that takes an image and a spoken question, then returns a text answer and highlights"
+    "correct": "An app that takes a photo and a spoken question, then replies in text and highlights regions on the image"
   },
   {
     "question": "In LLMs, a token is best described as:",
@@ -210,14 +210,14 @@
     "correct": "Collect balanced, representative resumes and re-train, then validate fairness across demographic groups."
   },
   {
-    "question": "What is a primary risk of training AI on biased data?",
+    "question": "A hospital trains a diagnosis model on a dataset dominated by one demographic group and deploys it for all patients. Which outcome is the most likely real-world consequence?",
     "answers": [
-      "It can amplify and perpetuate the data's biases.",
-      "Validation automatically removes bias and ensures fairness.",
-      "Bigger models inherently eliminate bias without data changes.",
-      "Bias only affects training speed, not real-world predictions."
+      "The model may show high overall accuracy while underperforming for underrepresented patients (e.g., more false negatives).",
+      "Validation accuracy on the held-out set guarantees fairness across demographics, making subgroup errors unlikely.",
+      "The model will debias itself during inference as it encounters more diverse patients, eliminating disparities without retraining.",
+      "Scaling to a larger model typically removes training-data bias, leading to uniform performance across groups."
     ],
-    "correct": "It can amplify and perpetuate the data's biases."
+    "correct": "The model may show high overall accuracy while underperforming for underrepresented patients (e.g., more false negatives)."
   },
   {
     "question": "While chatting with a large language model, it confidently cites a specific research paper and URL, but when you check, neither exists. What is the most accurate term for this behavior?",
@@ -230,14 +230,14 @@
     "correct": "Hallucination: it generated plausible but nonexistent citations and content"
   },
   {
-    "question": "Which AI approach is most appropriate for classifying emails as spam or not spam?",
+    "question": "In modern AI practice, which approach is most appropriate for classifying emails as spam or not spam?",
     "answers": [
-      "Generative AI that produces new text responses",
-      "Symbolic/rule-based AI using hand-crafted filters",
-      "Predictive/Discriminative AI trained for email classification",
-      "Reinforcement learning tuned with rewards and penalties (correctly / incorrectly labeled)"
+      "Generative models that learn to produce realistic email text",
+      "Symbolic rule-based filters with hand-crafted patterns and keywords",
+      "Supervised discriminative ML trained on labeled spam examples",
+      "Unsupervised clustering that groups emails without using labels"
     ],
-    "correct": "Predictive/Discriminative AI trained for email classification"
+    "correct": "Supervised discriminative ML trained on labeled spam examples"
   },
   {
     "question": "What is Computer Vision in AI?",
@@ -253,21 +253,21 @@
     "question": "Which description best matches AGI (Artificial General Intelligence)?",
     "answers": [
       "A system that learns and applies knowledge across unrelated tasks at human level; not yet achieved.",
-      "A model that excels at one task – like translation or Go – but cannot transfer skills between domains.",
+      "A model that excels at one task - like translation or Go - but cannot transfer skills between domains.",
       "A capability already achieved in labs and partly shipped in consumer smartphones today.",
       "An intelligence that surpasses humans in every domain and is purely theoretical at this point."
     ],
     "correct": "A system that learns and applies knowledge across unrelated tasks at human level; not yet achieved."
   },
   {
-    "question": "Why is Deep Learning referred to as 'deep' compared with traditional machine learning approaches?",
+    "question": "In deep learning, what does the term 'deep' specifically refer to?",
     "answers": [
-      "It learns hierarchical representations by stacking multiple neural-network layers",
-      "It achieves high accuracy with limited labeled data mainly through manual feature engineering",
-      "It is typically more computationally efficient to train than shallow models of similar accuracy",
-      "It trains only a final classifier while earlier layers remain fixed during learning"
+      "Training on very large datasets, making the learning process deep in data volume",
+      "Stacking multiple learnable layers to build hierarchical feature representations across stages",
+      "Capturing deeper semantic meaning even with a single layer, not the number of layers",
+      "Freezing early layers and training only a final classifier during the learning process"
     ],
-    "correct": "It learns hierarchical representations by stacking multiple neural-network layers"
+    "correct": "Stacking multiple learnable layers to build hierarchical feature representations across stages"
   },
   {
     "question": "Why should practitioners be aware of a model's context window when working with long chats or documents?",
