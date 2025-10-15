@@ -62,10 +62,10 @@
   {
     "question": "Koji AI alati su zvanično odobreni za sve zaposlene u HLV-u?",
     "answers": [
-      "Gemini, HAIP i ChatGPT",
+      "ChatGPT, Claude i HAIP",
       "Gemini, NotebookLM i HAIP",
-      "NotebookLM, HAIP i Claude",
-      "Gemini, NotebookLM i HAIP"
+      "NotebookLM, HAIP i DeepSeek",
+      "Gemini, ChatGPT i Claude"
     ],
     "correct": "Gemini, NotebookLM i HAIP"
   },
