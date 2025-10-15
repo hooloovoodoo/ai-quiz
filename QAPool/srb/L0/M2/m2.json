@@ -10,14 +10,14 @@
     "correct": "Kada sistemi donose nepravedne odluke zasnovane na rasi, polu, starosti ili drugim zaštićenim karakteristikama"
   },
   {
-    "question": "Šta su halucinacije AI?",
+    "question": "Koji scenario NAJBOLJE opisuje halucinaciju AI?",
     "answers": [
-      "Kada AI vidi stvari koje ne postoje u realnom svetu zbog grešaka u senzorima ili kamerama",
-      "Kada AI sanja tokom procesiranja",
-      "Kada sistemi generišu netačne informacije dok ih samouvereno predstavljaju kao činjenice",
-      "Kada se AI zbuni zbog korisničkog unosa"
+      "Model zbog šuma pogrešno klasifikuje sliku mačke kao psa.",
+      "Model daje samouveren odgovor bez citata, ali ispostavi se da je tačan.",
+      "Asistent navodi naslov i DOI naučnog rada koji zapravo ne postoje.",
+      "Sistem odbija da pruži medicinski savet zbog bezbednosnih pravila."
     ],
-    "correct": "Kada sistemi generišu netačne informacije dok ih samouvereno predstavljaju kao činjenice"
+    "correct": "Asistent navodi naslov i DOI naučnog rada koji zapravo ne postoje."
   },
   {
     "question": "Zašto je Amazon odbacio svoj AI sistem za pregled biografija (2014-2018)?",
@@ -30,24 +30,24 @@
     "correct": "Zato što je sistem pokazivao rodnu pristrasnost i tim nije mogao garantovati njeno uklanjanje"
   },
   {
-    "question": "Šta se desilo sa Microsoft Tay chatbotom u roku od 24 sata od lansiranja?",
+    "question": "Koja kombinacija uzroka i ishoda najtačnije opisuje slučaj Microsoft Tay u prvih 24 sata od lansiranja?",
     "answers": [
-      "Postao je najpopularniji chatbot ikada",
-      "Prestao je da radi zbog tehničkih problema sa serverima i nemogućnosti da obradi veliki broj korisničkih zahteva",
-      "Trolovi su ga manipulisali da objavljuje uvredljiv sadržaj i morao je biti ugašen",
-      "Postigao je svest"
+      "Koordinisani trolovi naveli su ga na rasističke poruke; Microsoft ga je ugasio u roku od 24 sata",
+      "Došlo je do DDoS napada; nalog je pauziran i vraćen nakon više od 48 sati",
+      "Zbog nedovoljnih zaštitnih filtera počeo je da vređa korisnike; ostao je aktivan uz pojačanu moderaciju",
+      "Greške u treniranju su izazvale netačne odgovore; tim je ispravio model bez prekida rada"
     ],
-    "correct": "Trolovi su ga manipulisali da objavljuje uvredljiv sadržaj i morao je biti ugašen"
+    "correct": "Koordinisani trolovi naveli su ga na rasističke poruke; Microsoft ga je ugasio u roku od 24 sata"
   },
   {
-    "question": "Koji NIJE osnovni princip etičke AI?",
+    "question": "AI sistem banke odbio je kreditni zahtev bez ikakvog obrazloženja. Korisnik ulaže žalbu i tvrdi da ima pravo na jasno i razumljivo objašnjenje odluke. Koji je najdirektnije narušeni princip etičke AI u ovom slučaju?",
     "answers": [
-      "Transparentnost",
-      "Maksimiziranje profita",
       "Pravičnost",
-      "Human in the Loop"
+      "Transparentnost",
+      "Privatnost",
+      "Odgovornost"
     ],
-    "correct": "Maksimiziranje profita"
+    "correct": "Transparentnost"
   },
   {
     "question": "Šta su 'guardrails' u AI sistemima?",
@@ -60,24 +60,24 @@
     "correct": "Bezbednosni mehanizmi koji sprečavaju AI da generiše štetni, pristrasni ili neprikladan sadržaj"
   },
   {
-    "question": "Šta je problem 'crne kutije' u AI?",
+    "question": "Šta je osnovni uzrok problema 'crne kutije' u savremenim AI sistemima?",
     "answers": [
-      "Podaci i kôd su namerno šifrovani pa korisnici ne mogu da vide sistem 'ispod haube'",
-      "Često ne možemo da vidimo 'unutra' da bismo razumeli odakle AI-u odgovor",
-      "Problem nastaje jer model nije dovoljno testiran pre puštanja u rad",
-      "AI donosi odluke na osnovu pravila (training weights) koja nisu javno dostupna"
+      "Odluke nastaju iz složenih nelinearnih obrazaca i mnoštva izračunavanja bez jasnog, ljudima pratljivog traga.",
+      "Primarno su krivi loši podaci; sa 'čistim' skupovima objašnjenja postaju trivijalna.",
+      "Glavni razlog je pravna tajnost kompanija (najčešće neobjavljeni weights), ne sam način na koji modeli zaključuju.",
+      "Svi koraci su poznati; problem je samo što su zapisi preopsežni za čitanje."
     ],
-    "correct": "Često ne možemo da vidimo 'unutra' da bismo razumeli odakle AI-u odgovor"
+    "correct": "Odluke nastaju iz složenih nelinearnih obrazaca i mnoštva izračunavanja bez jasnog, ljudima pratljivog traga."
   },
   {
-    "question": "Šta se smatra lično prepoznatljivim informacijama (PII)?",
+    "question": "Koje od sledećeg se smatra ličnim podacima (PII)?",
     "answers": [
-      "Anonimizirane statistike pregledanja agregirane po regionu",
-      "Javno dostupni podaci o tržišnim indeksima",
-      "Lični identifikatori kao što su ime, adresa i biometrijski podaci",
-      "Agregirane toplotne mape lokacija bez praćenja pojedinaca"
+      "Dinamička IP adresa i identifikator uređaja, povezani sa konkretnim korisničkim nalogom tokom sesije",
+      "Sažeci po opštini sa starosnim opsezima, prikazani samo kada prag broja učesnika sprečava izdvajanje pojedinaca",
+      "GPS putanje prikazane kao zone od oko 5 km sa namernim pomeranjem tačaka koje onemogućava praćenje jedne osobe",
+      "Pseudonimi generisani po sesiji (jednosmerno hashirani sa privatnim saltom), bez mogućnosti povezivanja sa nalozima"
     ],
-    "correct": "Lični identifikatori kao što su ime, adresa i biometrijski podaci"
+    "correct": "Dinamička IP adresa i identifikator uređaja, povezani sa konkretnim korisničkim nalogom tokom sesije"
   },
   {
     "question": "Šta treba uraditi pre korišćenja AI alata za poverljiv posao?",
@@ -90,74 +90,74 @@
     "correct": "Konsultovati se sa bezbednosnim timom i koristiti samo odobrene alate"
   },
   {
-    "question": "Koja je ključna lekcija iz Microsoft Tay incidenta?",
+    "question": "Vaš tim planira da pokrene javnog chatbota koji uči iz razgovora. Na osnovu pouka iz slučaja Microsoft Tay, šta je najvažnije obezbediti pre i tokom produkcije?",
     "answers": [
-      "Glavni problem je bio nedostatak podataka za obuku; rešenje je više podataka za treniranje",
-      "AI sistemi izloženi javnom unosu zahtevaju robusnu zaštitu od manipulacije",
-      "Dovoljno je onemogućiti učenje iz korisničkih poruka u realnom vremenu",
-      "Najbolje je ograničiti chatbot na određene teme; dodatne zaštite nisu presudne"
+      "Proširenje i diverzifikacija skupa za obuku je primarno rešenje; operativne zaštite se mogu dodati kad model postane stabilniji.",
+      "Neophodni su snažni guardrails, moderacija i zaštita od neprijateljskih unosa tokom rada sistema otvorenog za javnu interakciju, uz nadzor.",
+      "Onemogućavanje učenja iz razgovora uživo je najefikasnije; naknadne bezbednosne mere su korisne, ali nisu presudne za start.",
+      "Najbolje je ograničiti teme i investirati u opsežno testiranje, umesto stalnih ograničenja i nadzora u produkciji."
     ],
-    "correct": "AI sistemi izloženi javnom unosu zahtevaju robusnu zaštitu od manipulacije"
+    "correct": "Neophodni su snažni guardrails, moderacija i zaštita od neprijateljskih unosa tokom rada sistema otvorenog za javnu interakciju, uz nadzor."
   },
   {
-    "question": "Šta predstavlja vlasnički kôd kao poverljiva informacija?",
+    "question": "Koji od sledećih primera spada u vlasnički kôd (kao poverljivu informaciju)?",
     "answers": [
-      "Samo komentare u kôdu",
-      "Kompletne baze kôda, algoritmi i poslovna logika",
-      "Samo imena promenljivih",
-      "Dokumentaciju"
+      "Interno razvijeni kod, algoritmi ili poslovna logika",
+      "Listing biblioteka treće strane (third party) koju koristi kompanija",
+      "Interna dokumentacija o arhitekturi bez izvornog koda",
+      "Snimci ekrana internih alata bez prikaza koda"
     ],
-    "correct": "Kompletne baze kôda, algoritmi i poslovna logika"
+    "correct": "Interno razvijeni kod, algoritmi ili poslovna logika"
   },
   {
-    "question": "Kada unosite poverljive informacije u AI alate, sa kim ih delite?",
+    "question": "Šta najtačnije opisuje gde poverljive informacije mogu završiti kada ih unesete u javne/spoljne generativne AI alate (bez posebnih enterprise ugovora)?",
     "answers": [
-      "Samo sa AI sistemom",
-      "Ni sa kim",
-      "Sa provajderom AI usluge, potencijalno drugim korisnicima i budućim AI modelima",
-      "Samo sa vašom kompanijom i njenim ovlašćenim partnerima koji imaju potpisan NDA ugovor"
+      "često ostaju u okviru sesije i mogu biti automatski obrisane nakon perioda neaktivnosti, bez šire upotrebe od strane sistema.",
+      "Mogu biti dostupne provajderu, zadržane u logovima i korišćene za treniranje, pa uticati na buduće modele i odgovore.",
+      "Ako je alat reputabilan, podaci se čuvaju u agregiranom i pseudonimizovanom obliku, ali se ne dele dalje izvan te platforme.",
+      "Prenose se i skladište šifrovano, pa najčešće samo korisnik ima uvid u sadržaj, dok provajder u pravilu nema pristup samom tekstu."
     ],
-    "correct": "Sa provajderom AI usluge, potencijalno drugim korisnicima i budućim AI modelima"
+    "correct": "Mogu biti dostupne provajderu, zadržane u logovima i korišćene za treniranje, pa uticati na buduće modele i odgovore."
   },
   {
-    "question": "Šta treba uraditi pre korišćenja nečije fotografije u AI prezentaciji?",
+    "question": "Planiraš da u internu AI prezentaciju uključiš fotografiju koleginice preuzetu sa njenog javnog profila. Pozadina je zamućena i metapodaci su uklonjeni. Prema materijalu, koji je sledeći ispravan korak?",
     "answers": [
-      "Ništa, to je za poslovne svrhe",
-      "Tražiti eksplicitnu dozvolu od te osobe",
-      "Samo malo zamutiti lice",
-      "Koristiti sada, pitati kasnije"
+      "Zbog javne dostupnosti i interne namene, koristi sliku uz navođenje profila.",
+      "Traži menadžersko odobrenje po politici, bez kontaktiranja koleginice.",
+      "Zatraži izričitu saglasnost koleginice, uz objašnjenje svrhe i konteksta.",
+      "Upotrebi sliku uz skrivanje imena/naloga; saglasnost naknadno ako zatreba."
     ],
-    "correct": "Tražiti eksplicitnu dozvolu od te osobe"
+    "correct": "Zatraži izričitu saglasnost koleginice, uz objašnjenje svrhe i konteksta."
   },
   {
-    "question": "Šta su crvene zastavice za prepoznavanje AI halucinacija?",
+    "question": "Koja od sledećih pojava najverovatnije ukazuje na AI halucinaciju?",
     "answers": [
-      "Opšti, kvalifikovani odgovori sa jasnim upozorenjima o nesigurnosti",
-      "Previše specifični detalji ili precizni citati bez navođenja izvora",
-      "Pruža linkove ka pouzdanim izvorima koji se mogu proveriti",
-      "Navodi autora i stranicu sa punim citatom za proveru"
+      "Nejasni, uopšteni odgovori koji naglašavaju nesigurnost i preporučuju dodatnu proveru",
+      "Veoma specifični detalji i precizni citati, ali bez navođenja izvora ili linkova",
+      "Samouveren, tečan stil pisanja koji zvuči ubedljivo",
+      "Odgovor koji se poklapa sa opštim znanjem i ličnim iskustvom korisnika"
     ],
-    "correct": "Previše specifični detalji ili precizni citati bez navođenja izvora"
+    "correct": "Veoma specifični detalji i precizni citati, ali bez navođenja izvora ili linkova"
   },
   {
-    "question": "Kako AI guardrails obično funkcionišu da spreče štetne izlaze?",
+    "question": "Model je već generisao odgovor koji može sadržati neprimerene tvrdnje. Koja vrsta zaštitnih ograda (guardrails) deluje da spreči isporuku tog sadržaja korisniku?",
     "answers": [
-      "Filtriraju i blokiraju izlaze tokom faze zaključivanja pre nego što ih korisnici vide",
-      "Sprečavaju pristrasne podatke da uđu u trening skup podataka na početku",
-      "Automatski retreniraju model kada se detektuju štetni obrasci",
-      "Prate ponašanje korisnika i ograničavaju pristup AI alatima na osnovu šablona korišćenja"
+      "Izlazni filteri: Proveravaju generisani sadržaj i blokiraju/rediguju pre isporuke korisniku",
+      "Ulazni filteri: Zaustavljaju štetne zahteve pre nego što model uopšte generiše odgovor",
+      "Ograničenja ponašanja: Ugrađuju zabrane u model tokom obuke da bi sprečili nepoželjna dela",
+      "Moderacija sadržaja: Uklanja neprikladan materijal nakon objave ili deljenja na platformi"
     ],
-    "correct": "Filtriraju i blokiraju izlaze tokom faze zaključivanja pre nego što ih korisnici vide"
+    "correct": "Izlazni filteri: Proveravaju generisani sadržaj i blokiraju/rediguju pre isporuke korisniku"
   },
   {
-    "question": "Šta znači 'minimiziranje deljenja podataka'?",
+    "question": "Tim traži transakcione podatke za sedmičnu analizu prodaje po proizvodu za poslednja 3 meseca. Potrebne su samo kolone: datum, šifra proizvoda (SKU) i količina, bez podataka o kupcima. Koji pristup najbolje ilustruje minimiziranje deljenja podataka?",
     "answers": [
-      "Deliti podatke samo sa odobrenim AI alatima bez obzira na količinu",
-      "Pružati samo ono što je zaista neophodno za obavljanje zadatka",
-      "Deliti samo podatke koji ne sadrže lične ili poverljive informacije",
-      "Deliti podatke samo sa internim timovima i sistemima kompanije"
+      "Deliti samo kolone datum, SKU i količina za poslednja 3 meseca, bez ličnih identifikatora.",
+      "Podeliti 50% nasumičnog uzorka svih transakcija sa svim kolonama za poslednje 2 godine radi brže analize.",
+      "Deliti potrebne kolone, ali uključiti ID kupca ili e-mail radi naknadne verifikacije tačnosti i deduplikacije.",
+      "Deliti kolone datum, SKU i količina, ali za kompletnu istoriju poslednjih 5 godina radi najveće fleksibilnosti."
     ],
-    "correct": "Pružati samo ono što je zaista neophodno za obavljanje zadatka"
+    "correct": "Deliti samo kolone datum, SKU i količina za poslednja 3 meseca, bez ličnih identifikatora."
   },
   {
     "question": "Koji je bio osnovni uzrok pristrasnosti u Amazon-ovom AI sistemu za biografije?",
@@ -170,64 +170,64 @@
     "correct": "Pristrasni podaci za treniranje (uglavnom biografije muškaraca)"
   },
   {
-    "question": "Kolega vas pita da unesete kompletnu bazu koda kompanije u ChatGPT za pomoć. Šta treba da uradite?",
+    "question": "Kolega traži da kompletnu bazu koda kompanije učitate u javni ChatGPT radi pomoći. Vaša organizacija zahteva korišćenje odobrenih enterprise AI alata. Koji je NAJbezbedniji sledeći korak?",
     "answers": [
-      "Uneti celu bazu koda odmah",
-      "Odbiti i predložiti korišćenje malih, ne-vlasničkih primera koda ili pseudokoda",
-      "Uneti samo polovinu koda kako bi se smanjio rizik od curenja poverljivih informacija kompanije",
-      "Pitati ChatGPT da li je to bezbedno"
+      "Odbiti javni alat i preusmeriti na odobreni enterprise/interni alat, koristeći minimalne, nevlasničke isečke ili pseudokod.",
+      "Učitati ceo kod u javni ChatGPT uz oznaku 'poverljivo' i osloniti se na podešavanja privatnosti alata.",
+      "Podeliti i anonimizovati polovinu koda u javnom alatu; manje podataka znači dovoljan nivo bezbednosti.",
+      "Najpre tražiti odobrenje bezbednosnog tima, pa preneti kompletnu bazu koda u enterprise alat bez ograničenja."
     ],
-    "correct": "Odbiti i predložiti korišćenje malih, ne-vlasničkih primera koda ili pseudokoda"
+    "correct": "Odbiti javni alat i preusmeriti na odobreni enterprise/interni alat, koristeći minimalne, nevlasničke isečke ili pseudokod."
   },
   {
-    "question": "AI alat generiše statistiku o vašoj industriji sa vrlo specifičnim brojevima, bez navođenja izvora. Šta je najodgovorniji prvi korak?",
+    "question": "AI alat generiše statistiku o vašoj industriji sa vrlo specifičnim brojkama, ali bez navođenja izvora. Pre nego što od alata tražite reference, koji korak najviše smanjuje rizik od halucinacija?",
     "answers": [
-      "Zatražiti od AI-a da navede konkretne izvore i linkove za proveru",
-      "Proveriti sa više pouzdanih izvora da li statistika zaista postoji",
-      "Uporediti brojke sa internim izveštajima i relevantnim bazama podataka",
-      "Proceniti izvodljivost u odnosu na poznate trendove i prethodne izveštaje"
+      "Nezavisno unakrsno proveriti tvrdnje u više pouzdanih izvora izvan AI alata",
+      "Zatražiti od AI alata detaljne reference i linkove na osnovu kojih je dao brojke",
+      "Uporediti brojke samo sa internim izveštajima, bez uključivanja spoljnih izvora",
+      "Proceniti da li su brojke u skladu sa poznatim trendovima i ranijim izveštajima"
     ],
-    "correct": "Proveriti sa više pouzdanih izvora da li statistika zaista postoji"
+    "correct": "Nezavisno unakrsno proveriti tvrdnje u više pouzdanih izvora izvan AI alata"
   },
   {
-    "question": "Trebate pomoć sa dokumentom koji sadrži plate zaposlenih. Koji je najbolji pristup?",
+    "question": "Razmatrate upotrebu AI alata za analizu dokumenta sa iznosima plata zaposlenih. Koji pristup je najbezbedniji i u skladu sa pravilima privatnosti?",
     "answers": [
-      "Uneti stvarne cifre plata za tačniju pomoć koja će rezultovati boljom analizom i preporukama",
-      "Koristiti hipotetičke brojeve ili opsege umesto stvarnih podataka o platama",
-      "Deliti samo plate rukovodstva",
-      "Uključiti imena ali ne iznose"
+      "Uneti stvarne cifre u javni AI i dodati napomenu 'poverljivo' radi bolje analize i brzog dobijanja preporuka.",
+      "Upotrebiti odobreni interni AI uz anonimizovane ili agregirane podate; ako to nije moguće, raditi sa hipotetičkim opsezima.",
+      "Ukloniti imena, ali zadržati tačne cifre plata; to bi trebalo da bude dovoljno za zaštitu privatnosti tokom analize.",
+      "Koristiti javni AI u 'privatnom režimu' i podeliti sažetak sa tačnim ciframa, ali bez imena i drugih identifikatora."
     ],
-    "correct": "Koristiti hipotetičke brojeve ili opsege umesto stvarnih podataka o platama"
+    "correct": "Upotrebiti odobreni interni AI uz anonimizovane ili agregirane podate; ako to nije moguće, raditi sa hipotetičkim opsezima."
   },
   {
-    "question": "AI chatbot samouvereno tvrdi da je vaš konkurent bankrotirao juče. Šta je vaš sledeći korak?",
+    "question": "AI chatbot samouvereno tvrdi da je vaš konkurent juče bankrotirao. Koji je ispravan prvi korak pre bilo kakve akcije?",
     "answers": [
-      "Odmah obavestiti rukovodstvo",
-      "Verifikovati ovu informaciju kroz zvanične izvore pre bilo kakve akcije",
-      "Početi planiranje preuzimanja njihove imovine",
-      "Objaviti na društvenim mrežama"
+      "Proveriti u zvaničnim evidencijama i potvrditi iz više nezavisnih izvora.",
+      "Zatražiti od chatbota linkove i, ako deluju verodostojno, odmah postupiti.",
+      "Osloniti se na jedan kredibilan medij i obavestiti rukovodstvo.",
+      "Proveriti jedan zvanični izvor i pokrenuti plan reakcije."
     ],
-    "correct": "Verifikovati ovu informaciju kroz zvanične izvore pre bilo kakve akcije"
+    "correct": "Proveriti u zvaničnim evidencijama i potvrditi iz više nezavisnih izvora."
   },
   {
-    "question": "Trebate AI pomoć sa bazom podataka klijenata koja sadrži imena i adrese. Najbolji pristup je?",
+    "question": "Planirate da postavite pitanje javnom AI asistentu (alat nije odobren od strane bezbednosnog tima) o optimizaciji upita nad bazom klijenata sa imenima i adresama. Da postupite u skladu sa smernicama privatnosti kompanije, šta je najbolji sledeći korak?",
     "answers": [
-      "Učitati celu bazu za analizu",
-      "Anonimizovati podatke ili koristiti izmišljene primere koji predstavljaju vaš slučaj",
-      "Deliti samo klijente koji su pristali na marketing i imaju potpisan ugovor o obradi podataka",
-      "Koristiti stvarne podatke ali obrisati razgovor nakon toga"
+      "Koristiti mali uzorak stvarnih zapisa bez dodatnih identifikatora",
+      "Tražiti privremeno odobrenje i do tada slati pseudokod javnom alatu",
+      "Primeni anonimne ili sintetičke podatke i koristi odobren interni alat",
+      "Raditi sa stvarnim podacima, zatim obrisati istoriju i isključiti čuvanje"
     ],
-    "correct": "Anonimizovati podatke ili koristiti izmišljene primere koji predstavljaju vaš slučaj"
+    "correct": "Primeni anonimne ili sintetičke podatke i koristi odobren interni alat"
   },
   {
-    "question": "AI generiše pravni savet o ugovornom sporu. Kako treba postupiti?",
+    "question": "AI je generisala pravni savet o poverljivom ugovornom sporu i navela sudske presedane. Koji je najprimereniji sledeći korak u skladu sa strategijama verifikacije i zaštite privatnosti?",
     "answers": [
-      "Slediti savet odmah da uštedite na advokatskim troškovima koji mogu biti visoki u složenim slučajevima",
-      "Koristiti kao polaznu tačku ali konsultovati kvalifikovane pravne stručnjake",
-      "Slediti samo ako AI deluje sigurno",
-      "Pretpostaviti da je tačno jer AI zna sve zakone"
+      "Proveriti citirane presedane i interne politike, zatim doneti odluku bez stručne pravne procene.",
+      "Zatražiti od AI izvore i, ako citati postoje, prihvatiti savet bez ljudskog nadzora.",
+      "Podeliti anonimizovan sažetak ugovora sa internim, odobrenim AI alatom i postupiti prema preporuci bez dalje provere.",
+      "Shvatiti savet kao polaznu tačku, potvrditi presedane u pouzdanim izvorima i konsultovati kvalifikovanog pravnika pre odluke."
     ],
-    "correct": "Koristiti kao polaznu tačku ali konsultovati kvalifikovane pravne stručnjake"
+    "correct": "Shvatiti savet kao polaznu tačku, potvrditi presedane u pouzdanim izvorima i konsultovati kvalifikovanog pravnika pre odluke."
   },
   {
     "question": "Vaš tim želi da koristi neodobren AI alat za obradu internih dokumenata. Šta treba preporučiti?",
@@ -240,43 +240,43 @@
     "correct": "Prvo proveriti sa bezbednosnim timom za odobrene alternative ili verifikaciju alata"
   },
   {
-    "question": "Kolega želi da snimi sastanak bez znanja učesnika za AI transkripciju. Vaš odgovor?",
+    "question": "Kolega predlaže da potiho snimi sastanak radi AI transkripcije. Koja je najodgovornija i u skladu sa smernicama reakcija pre bilo kakvog snimanja?",
     "answers": [
-      "Pomoći mu da sakrije snimanje",
-      "Objasniti da mora tražiti pristanak svih učesnika pre snimanja",
-      "Reći da je u redu ako je za posao",
-      "Snimiti samo audio bez videa"
+      "Dodati napomenu u pozivu, uključiti indikator snimanja i nastaviti bez pojedinačnih potvrda učesnika.",
+      "Pre snimanja zatražiti pristanak svih učesnika; ako bilo ko odbije, ne snimati; koristiti isključivo odobren AI alat.",
+      "Snimiti samo audio, čuvati lokalno u šifrovanom fajlu i ograničiti pristup na tim; kasnije zatražiti potvrde.",
+      "Najaviti snimanje na početku i nastaviti ako niko ne prigovori (opt-out); po mogućnosti koristiti 'privatni' AI alat."
     ],
-    "correct": "Objasniti da mora tražiti pristanak svih učesnika pre snimanja"
+    "correct": "Pre snimanja zatražiti pristanak svih učesnika; ako bilo ko odbije, ne snimati; koristiti isključivo odobren AI alat."
   },
   {
-    "question": "AI alat traži vašu lozinku da 'verifikuje identitet'. Šta treba uraditi?",
+    "question": "AI alat u okviru četa (ne na zvaničnoj SSO/login stranici) traži vašu lozinku da 'verifikuje identitet'. Šta treba uraditi?",
     "answers": [
-      "Dati lozinku odmah kako bi alat mogao da personalizuje odgovore prema vašim potrebama i preferencijama",
-      "Nikada ne deliti lozinke, API ključeve ili kredencijale sa AI alatima",
-      "Dati samo deo lozinke",
-      "Proveriti da li AI obećava bezbednost"
+      "Odbijte zahtev; lozinke se unose isključivo na zvaničnoj SSO/login stranici, nikada u četu.",
+      "Podelite lozinku jer alat traži verifikaciju za personalizaciju odgovora.",
+      "Uključite 'privatni/poverljivi' režim i podelite lozinku u četu, to je bezbedno.",
+      "Pošaljite samo deo lozinke ili zamaskiranu verziju; dovoljno je za proveru identiteta."
     ],
-    "correct": "Nikada ne deliti lozinke, API ključeve ili kredencijale sa AI alatima"
+    "correct": "Odbijte zahtev; lozinke se unose isključivo na zvaničnoj SSO/login stranici, nikada u četu."
   },
   {
-    "question": "Primetili ste da AI daje različite medicinske savete za isti upit. Šta to pokazuje?",
+    "question": "Korisnik dobija dva protivrečna odgovora od AI asistenta o doziranju leka na recept nakon identičnog upita, bez promene konteksta. Prema principima odgovorne upotrebe AI i 'Human in the Loop', koja je najprimerenija naredna akcija?",
     "answers": [
-      "AI je pouzdana za medicinske savete",
-      "AI može halucinirati i ne treba je koristiti za medicinske odluke bez stručne verifikacije",
-      "Treba probati još jednom dok ne dobijete konzistentan odgovor koji se ponavlja više puta, poput drugih medicinskih stručnjaka",
-      "AI se uči iz vaših pitanja"
+      "Ponovi isti upit dok ne dobiješ isti ishod više puta; ukoliko je odgovor identičan - tada je savet dovoljno pouzdan.",
+      "Zaustavi se i obavezno se posavetuj sa kvalifikovanim lekarom; unakrsno proveri preporuke u više pouzdanih izvora.",
+      "Pretpostavi da je model treniran na medicini pouzdan; izaberi oprezniju dozu (donju / nižu od ponuđenih) i primeni je.",
+      "Prihvati onaj odgovor koji navodi citate iz recenziranih radova; dalja stručna provera nije neophodna."
     ],
-    "correct": "AI može halucinirati i ne treba je koristiti za medicinske odluke bez stručne verifikacije"
+    "correct": "Zaustavi se i obavezno se posavetuj sa kvalifikovanim lekarom; unakrsno proveri preporuke u više pouzdanih izvora."
   },
   {
-    "question": "AI alat generiše izveštaj navodeći nekoliko akademskih radova. Pre slanja ovog izveštaja, treba da:",
+    "question": "AI alat je generisao izveštaj sa više citata; svi imaju važeće DOI i otvaraju se bez greške, ali niste sigurni da li podržavaju konkretne tvrdnje. Koji je najispravniji sledeći korak?",
     "answers": [
-      "Verujete da su svi citati tačni",
-      "Verifikujete da svaki navedeni izvor stvarno postoji i sadrži referentne informacije",
-      "Proverite samo formatiranje citata",
-      "Pretpostavite da su akademski citati uvek stvarni"
+      "Pročitati sažetke radova (Abstract / Executive Summary) i proveriti da li su radovi tematski povezani",
+      "Otvoriti radove i potvrditi da relevantni delovi podržavaju tvrdnje i podatke",
+      "Proveriti da su DOI tačni, linkovi stabilni i citati pravilno formatirani",
+      "Osloniti se na ugled časopisa i broj citata kao meru pouzdanosti"
     ],
-    "correct": "Verifikujete da svaki navedeni izvor stvarno postoji i sadrži referentne informacije"
+    "correct": "Otvoriti radove i potvrditi da relevantni delovi podržavaju tvrdnje i podatke"
   }
 ]
