@@ -1,13 +1,13 @@
 [
   {
-    "question": "Šta je promptovanje u kontekstu AI?",
+    "question": "Šta u radu sa AI modelima najtačnije opisuje promptovanje?",
     "answers": [
-      "Složen proces treniranja i prilagođavanja AI modela kroz iteracije i algoritamske modifikacije",
-      "Instrukcije, pitanja ili tekst koji pružate da biste dobili željene rezultate",
-      "Brzina kojom AI odgovara",
-      "Troškovi korišćenja AI usluga"
+      "Parametri modela (temperatura, top-p, max tokens) koji utiču na stil odgovora",
+      "Upute koje korisnik daje AI-ju radi dobijanja željenog izlaza",
+      "Kontekst razgovora koji AI pamti između poruka",
+      "Fino podešavanje modela na specifičnom skupu podataka (fine-tuning)"
     ],
-    "correct": "Instrukcije, pitanja ili tekst koji pružate da biste dobili željene rezultate"
+    "correct": "Upute koje korisnik daje AI-ju radi dobijanja željenog izlaza"
   },
   {
     "question": "Koji od sledećih primera predstavlja osnovni obrazac promptova za dodjeljivanje uloga?",
@@ -20,14 +20,14 @@
     "correct": "Ti si profesionalni kuvar. Kreiraj recept za..."
   },
   {
-    "question": "Koja je glavna razlika između zero-shot i few-shot promptovanja?",
+    "question": "Treba da AI napiše sažete recenzije proizvoda u istom tonu i formatu (3 kratke stavke) za novi uređaj. Već imate nekoliko recenzija drugih uređaja koje jasno ilustruju željeni stil. Koji pristup promptovanju je najprimereniji i kako ga formulisati?",
     "answers": [
-      "Zero-shot koristi znatno više podataka i kompleksnije algoritme od few-shot metoda",
-      "Few-shot je brži od zero-shot",
-      "Zero-shot ne daje primere, dok few-shot daje nekoliko primera",
-      "Zero-shot je skuplji od few-shot"
+      "Zero-shot sa vrlo detaljnim instrukcijama i opisom ciljanog tona; primeri nisu potrebni i mogu suziti generalizaciju modela.",
+      "Few-shot sa 2-3 reprezentativna primera koji jasno pokažu ton i strukturu, uz eksplicitno zadat format/ograničenja, da model dosledno isprati šablon.",
+      "Zero-shot uz strogo definisan format i ograničenja je dovoljan kada je stil jednostavan i konzistentan; u ovom slučaju bih se oslonio na to bez primera.",
+      "Few-shot je koristan samo kad uputstva nisu dovoljno jasna; pošto je format (3 stavke) već precizan, dovoljno je zero-shot sa definisanom ulogom i tonom."
     ],
-    "correct": "Zero-shot ne daje primere, dok few-shot daje nekoliko primera"
+    "correct": "Few-shot sa 2-3 reprezentativna primera koji jasno pokažu ton i strukturu, uz eksplicitno zadat format/ograničenja, da model dosledno isprati šablon."
   },
   {
     "question": "Prema smernicama bezbednosti, šta NIKADA ne treba unositi u javne AI alate?",
@@ -50,44 +50,44 @@
     "correct": "Gemini"
   },
   {
-    "question": "Šta čini NotebookLM posebnim za istraživačke zadatke?",
+    "question": "Koji alat je najprimereniji kada morate minimizovati halucinacije i dobiti odgovore sa automatskim citiranjem direktno iz vaših dokumenata?",
     "answers": [
-      "Ima najbrže vreme odgovora i može procesirati najveći broj zahteva istovremeno",
-      "Pruža odgovore zasnovane na izvorima sa minimalnim halucinacijama",
-      "Može generisati slike",
-      "Ima najveći kontekstni prozor"
+      "Gemini",
+      "NotebookLM",
+      "ChatGPT",
+      "HAIP"
     ],
-    "correct": "Pruža odgovore zasnovane na izvorima sa minimalnim halucinacijama"
+    "correct": "NotebookLM"
   },
   {
     "question": "Koji AI alati su zvanično odobreni za sve zaposlene u HLV-u?",
     "answers": [
-      "ChatGPT, Claude i Midjourney",
+      "Gemini, HAIP i ChatGPT",
       "Gemini, NotebookLM i HAIP",
-      "DALL-E, GitHub Copilot i DeepSeek",
-      "Svi AI alati su odobreni"
+      "NotebookLM, HAIP i Claude",
+      "Gemini, NotebookLM i HAIP"
     ],
     "correct": "Gemini, NotebookLM i HAIP"
   },
   {
-    "question": "Koja je glavna prednost HAIP-a za enterprise korišćenje?",
+    "question": "Koja karakteristika najbolje objašnjava zašto je HAIP preporučen za rad sa osetljivim podacima kompanije?",
     "answers": [
-      "To je najjeftinija dostupna opcija",
-      "Pruža siguran enterprise pristup sa usklađenošću privatnosti podataka",
-      "Ima najbolje mogućnosti generisanja slika i video sadržaja uz napredne opcije editovanja",
-      "Radi samo na engleskom jeziku"
+      "Šifrovani razgovori, usklađenost sa ISO 27001 i nekorišćenje podataka za treniranje eksternih modela",
+      "Automatsko citiranje izvora i višedokumentna sinteza sa minimalnim halucinacijama, uz praćenje referenci tokom rada",
+      "Pristup vebu u realnom vremenu sa ugrađenom proverom činjenica i citiranjem aktuelnih izvora tokom istraživanja",
+      "Kreiranje prilagođenih GPT-ova, napredna kreativna ideacija i snažno generisanje koda za raznovrsne profesionalne zadatke"
     ],
-    "correct": "Pruža siguran enterprise pristup sa usklađenošću privatnosti podataka"
+    "correct": "Šifrovani razgovori, usklađenost sa ISO 27001 i nekorišćenje podataka za treniranje eksternih modela"
   },
   {
-    "question": "Prema tabeli klasifikacije podataka, kada možete koristiti podatke klijenata sa internim alatima poput HAIP-a?",
+    "question": "Tim želi da analizira izveštaje klijenata u HAIP-u radi sažetaka. Prema tabeli klasifikacije, pod kojim uslovom je to dozvoljeno, čak i ako su podaci pseudonimizovani?",
     "answers": [
-      "Nikada, ni pod kojim okolnostima",
-      "Uvek, bez ograničenja",
-      "Samo uz odgovarajuće odobrenje od IT bezbednosti",
-      "Samo za zadatke prevođenja"
+      "Uz prethodno odobrenje IT bezbednosti (pseudonimizacija je i dalje preporučena)",
+      "Dozvoljeno u HAIP-u bez dodatnog odobrenja jer je to interni alat",
+      "Zabranjeno uvek, bez izuzetaka",
+      "Dovoljno je ukloniti identifikacione detalje; odobrenje nije potrebno"
     ],
-    "correct": "Samo uz odgovarajuće odobrenje od IT bezbednosti"
+    "correct": "Uz prethodno odobrenje IT bezbednosti (pseudonimizacija je i dalje preporučena)"
   },
   {
     "question": "Prema materijalu, koja je HLV vizija uspeha u usvajanju AI?",
@@ -100,34 +100,34 @@
     "correct": "Timovi potpomognuti AI koji isporučuju kvalitetniji rad brže uz održavanje etičkih standarda i ljudske kreativnosti"
   },
   {
-    "question": "Potrebno vam je da analizirate više istraživačkih radova o etici AI i želite minimalne halucinacije sa preciznim citatima. Koji alat treba da izaberete?",
+    "question": "Radite sa sopstveno uploadovanim istraživačkim radovima o etici AI i želite minimalne halucinacije uz automatsko, precizno citiranje iz tih dokumenata. Koji alat je najprikladniji?",
     "answers": [
-      "ChatGPT zbog kreativnih mogućnosti",
-      "Gemini za informacije u realnom vremenu",
-      "NotebookLM za odgovore zasnovane na izvorima",
-      "HAIP zbog enterprise bezbednosti"
+      "ChatGPT sa prilagođenim GPT-ovima i analizom priloženih dokumenata",
+      "Gemini sa pristupom webu, proverom činjenica i navođenjem izvora",
+      "NotebookLM sa višedokumentnom sintezom i automatskim citiranjem iz uploadovanih izvora",
+      "HAIP za bezbednu obradu internih dokumenata i timsku saradnju"
     ],
-    "correct": "NotebookLM za odgovore zasnovane na izvorima"
+    "correct": "NotebookLM sa višedokumentnom sintezom i automatskim citiranjem iz uploadovanih izvora"
   },
   {
-    "question": "Vašem timu je potrebno da radi sa osetljivim podacima klijenata za analizu dokumenata. Koji alat je najodgovarajući?",
+    "question": "U skladu sa politikom klasifikacije podataka, vaš tim treba da analizira dokumente koji sadrže osetljive podatke klijenata. Koji alat treba da koristite?",
     "answers": [
-      "ChatGPT sa onemogućenim kontrolama podataka",
-      "Gemini zbog integracijskih mogućnosti",
-      "HAIP uz odgovarajuće odobrenje IT bezbednosti",
-      "Bilo koji javni AI alat je u redu"
+      "ChatGPT sa isključenim treniranjem na podacima",
+      "Gemini uz uklonjene identifikacione podatke",
+      "NotebookLM uz pseudonimizaciju sadržaja",
+      "HAIP uz odobrenje IT bezbednosti"
     ],
-    "correct": "HAIP uz odgovarajuće odobrenje IT bezbednosti"
+    "correct": "HAIP uz odobrenje IT bezbednosti"
   },
   {
-    "question": "Želite da napravite ubedljiv marketing email za direktore tehnologije u srednjim preduzećima. Koji pristup promptu je bolji?",
+    "question": "Želite da promptujete AI da napiše ubedljiv email o lansiranju našeg AI rešenja za analitiku usaglašenog sa regulativom, namenjen CTO-ovima u zdravstvu i drugim regulisanim industrijama. Po najboljoj praksi, prompt treba da precizira publiku (CTO u regulisanim sektorima), ton (stručan, ali razumljiv, bez preteranog žargona), dužinu (180-220 reči) i jasan poziv na akciju (pokretanje 30-dnevnog 'pilota'). Koji prompt to najbolje ispunjava?",
     "answers": [
-      "Napišite detaljan marketing email sa jasnim fokusom na ROI, tehničkim specifikacijama našeg proizvoda, uključujući sve moguće benefite i karakteristike bez ograničenja dužine",
-      "Napiši ubedljiv email za lansiranje proizvoda za naš novi AI alat za analitiku. Ciljna publika: direktori tehnologije u srednjim preduzećima. Ton: profesionalan ali pristupačan. Uključi jasan poziv na akciju za demonstraciju.",
-      "Kreiraj marketing sadržaj",
-      "Pomozi mi sa poslovnim pisanjem"
+      "Napiši email od 180-220 reči koji najavljuje naše AI rešenje za analitiku usaglašeno sa relevantnim propisima (npr. GDPR) za CTO-ove u zdravstvu i drugim regulisanim industrijama. Ton: stručan, ali razumljiv, izbegni žargon. Jasno pozovi čitaoca da pokrene 30-dnevni pilot sa našim timom.",
+      "Napiši email od 180-220 reči za najavu našeg AI alata za analitiku za CTO-ove u regulisanim industrijama. Ton: stručan, ali razumljiv. Završi neutralnom rečenicom: 'Saznajte više na našem sajtu' uz link.",
+      "Napiši email od 180-220 reči o našem AI alatu za analitiku za CTO-ove u regulisanim industrijama. Ton: visoko tehnički; koristi domen-specifičan žargon, akronime i detaljne specifikacije. Uključi poziv da pokrenu 30-dnevni pilot.",
+      "Napiši email od 180-220 reči kojim najavljujemo AI analitiku za poslovne lidere u različitim sektorima. Ton: profesionalan i razumljiv. Uključi jasan poziv da zakažu demo prezentaciju."
     ],
-    "correct": "Napiši ubedljiv email za lansiranje proizvoda za naš novi AI alat za analitiku. Ciljna publika: direktori tehnologije u srednjim preduzećima. Ton: profesionalan ali pristupačan. Uključi jasan poziv na akciju za demonstraciju."
+    "correct": "Napiši email od 180-220 reči koji najavljuje naše AI rešenje za analitiku usaglašeno sa relevantnim propisima (npr. GDPR) za CTO-ove u zdravstvu i drugim regulisanim industrijama. Ton: stručan, ali razumljiv, izbegni žargon. Jasno pozovi čitaoca da pokrene 30-dnevni pilot sa našim timom."
   },
   {
     "question": "Koja od sledećih NIJE spomenuta kao česta greška pri promptovanju?",
@@ -170,14 +170,14 @@
     "correct": "Nudi jednim klikom predloge kako da vaš prompt bude jasniji i precizniji"
   },
   {
-    "question": "Kojoj kategoriji AI alata pripada GitHub Copilot?",
+    "question": "Programer želi inline sugestije i automatsko dopunjavanje koda direktno u VS Code dok piše Python, bez prelaska u poseban chat. Prema tabeli 'Popularni AI alati', koji je najprikladniji alat?",
     "answers": [
-      "Multimodalni",
-      "Slike",
-      "Kôd",
-      "Audio"
+      "Gemini",
+      "DeepSeek",
+      "GitHub Copilot",
+      "ChatGPT"
     ],
-    "correct": "Kôd"
+    "correct": "GitHub Copilot"
   },
   {
     "question": "Šta je pseudonimizacija podataka u kontekstu AI alata?",
@@ -200,14 +200,14 @@
     "correct": "Sesije (chatovi) se ne mogu izbrisati jer ih Google smatra vlasništvom kompanije"
   },
   {
-    "question": "Potrebno vam je da istražite najnovije promene u regulaciji AI u EU sa nedavnim promenama politika. Koji alat i pristup treba da koristite?",
+    "question": "Pripremate izveštaj o najnovijim promenama u regulaciji AI u EU objavljenim u poslednjim nedeljama. Potrebni su vam linkovani veb izvori sa citatima i provera navoda. Radite u Google Workspace i nećete deliti osetljive podatke. Koji alat i pristup je najprimereniji?",
     "answers": [
-      "NotebookLM sa uploadovanim dokumentima",
-      "ChatGPT za kreativnu analizu",
-      "Gemini sa promptom koji traži najnovije promene i nedavna ažuriranja",
-      "HAIP zbog enterprise bezbednosti"
+      "Gemini: Postaviti upit za pregled najnovijih promena uz citirane veb izvore i proveru navoda",
+      "NotebookLM: Koristiti Otkrivanje izvora i uvesti pronađene dokumente, zatim sintezu sa automatskim citiranjem iz uploadovanih fajlova",
+      "ChatGPT: Zatražiti sažetak promena i implikacija i dodati reference prema navedenim izvorima u odgovoru",
+      "HAIP: Pokrenuti veb pretragu kroz asistenta, objediniti rezultate i podeliti ih sa timom u zajedničkom prostoru"
     ],
-    "correct": "Gemini sa promptom koji traži najnovije promene i nedavna ažuriranja"
+    "correct": "Gemini: Postaviti upit za pregled najnovijih promena uz citirane veb izvore i proveru navoda"
   },
   {
     "question": "Vaša kompanija želi da implementira AI alate uz održavanje etičkih standarda. Koji princip iz HLV vizije uspeha treba da vodi ovu implementaciju?",
@@ -222,7 +222,7 @@
   {
     "question": "Koji primer obrasca ograničenja je dat u osnovnim obrascima promptova?",
     "answers": [
-      "Sumiraj ovaj članak u 3 tačke",
+      "Sumiraj ovaj članak u nekoliko tačaka",
       "Ti si profesionalni kuvar. Kreiraj recept za...",
       "Napiši pesmu o AI bez korišćenja slova 'a'",
       "Objasni kvantnu fiziku kao da imam 10 godina"
@@ -240,13 +240,13 @@
     "correct": "Porediti odgovore najmanje dva različita AI modela i verifikovati ključne tvrdnje u nezavisnim izvorima"
   },
   {
-    "question": "Šta treba da uradite ako je potrebno odobrenje za korišćenje određenih tipova podataka sa AI alatima?",
+    "question": "Radite na izveštaju koji sadrži podatke klijenata ili lične podatke zaposlenih i želite da ih analizirate u AI alatu. Politika nalaže da je potrebna prethodna dozvola. Šta je ispravan sledeći korak?",
     "answers": [
-      "Nastaviti bez odobrenja ako je hitno",
-      "Kontaktirati IT bezbednost",
-      "Koristiti podatke sa bilo kojim javnim AI alatom",
-      "Potpuno izbegavati AI alate"
+      "Pseudonimizujte podatke i nastavite bez formalnog odobrenja.",
+      "Upotrebite HAIP bez traženja dozvole, jer je interni alat.",
+      "Zatražite odobrenje od IT bezbednosti preko Service Desk portala.",
+      "Obratite se menadžeru i nastavite po njegovom odobrenju."
     ],
-    "correct": "Kontaktirati IT bezbednost"
+    "correct": "Zatražite odobrenje od IT bezbednosti preko Service Desk portala."
   }
 ]
