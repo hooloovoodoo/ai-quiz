@@ -1,53 +1,53 @@
 [
   {
-    "question": "Šta označava skraćenica ANI?",
+    "question": "Koji scenario NAJTAČNIJE ilustruje ANI (usku veštačku inteligenciju) kako je opisano u materijalu - specijalizovan za jedan zadatak, bez prenosa znanja na nepovezane oblasti?",
     "answers": [
-      "Artificial Narrow Intelligence (Uska veštačka inteligencija)",
-      "Artificial Niche Intelligence (Nišna veštačka inteligencija)",
-      "Advanced Neural Intelligence (Napredna neuronska inteligencija)",
-      "Automated Network Intelligence (Automatizovana mrežna inteligencija)"
+      "Prevodilac jezika koji tačno prevodi tekst, ali bez zasebnog treninga ne može da prepoznaje lica niti da vodi razgovor.",
+      "Model za detekciju prevara koji samostalno prelazi na potpuno nove zadatke, poput medicinske dijagnostike, bez dodatne obuke.",
+      "Asistent koji iz nekoliko primera uči da rešava najrazličitije zadatke na nivou čoveka i fleksibilno prenosi znanje između domena.",
+      "Sistem preporuka muzike koji se prilagođava novim žanrovima, a zatim bez obuke pouzdano piše eseje i programira kôd."
     ],
-    "correct": "Artificial Narrow Intelligence (Uska veštačka inteligencija)"
+    "correct": "Prevodilac jezika koji tačno prevodi tekst, ali bez zasebnog treninga ne može da prepoznaje lica niti da vodi razgovor."
   },
   {
-    "question": "Koji je tačan odnos između AI, mašinskog učenja (ML) i dubokog učenja (DL)?",
+    "question": "Po obimu (od najšireg do najužeg), koji je ispravan poredak između AI, mašinskog učenja (ML) i dubokog učenja (DL)? Napomena: '>' znači 'šire po obimu od'.",
     "answers": [
-      "ML > AI > DL",
-      "DL > ML > AI",
       "AI > ML > DL",
-      "AI > DL > ML"
+      "ML > AI > DL",
+      "AI > DL > ML",
+      "DL > ML > AI"
     ],
     "correct": "AI > ML > DL"
   },
   {
-    "question": "Koja vrsta veštačke inteligencije je trenutno dostupna i u upotrebi?",
+    "question": "Prema podeli ANI/AGI/ASI, koja tvrdnja najbolje objašnjava zašto su Siri, Google Translate i Netflix preporuke primer uske veštačke inteligencije (ANI)?",
     "answers": [
-      "Opšta veštačka inteligencija (AGI)",
-      "Super veštačka inteligencija (ASI)",
-      "Uska veštačka inteligencija (ANI)",
-      "Domen-specifična inteligencija (ADI)"
+      "Specijalizovani su za uske zadatke i ne prenose znanje između domena.",
+      "Fleksibilno uče i primenjuju znanje kao ljudi u svim domenima.",
+      "Prevazilaze ljudsku inteligenciju u svim oblastima i rade bez ograničenja.",
+      "Primarno stvaraju nov, originalan sadržaj preko različitih medija."
     ],
-    "correct": "Uska veštačka inteligencija (ANI)"
+    "correct": "Specijalizovani su za uske zadatke i ne prenose znanje između domena."
   },
   {
-    "question": "Koja je glavna razlika između tradicionalnog softvera i AI/ML softvera?",
+    "question": "Sistem treba da donosi odluke u domenu gde su pravila složena i delimično nepoznata. Koja izjava najbolje opisuje suštinsku razliku između tradicionalnog softvera i AI/ML pristupa koja treba da utiče na izbor rešenja?",
     "answers": [
-      "Tradicionalni softver koristi unapred podešene heuristike, AI/ML se oslanja na ručno podešene parametre umesto na podatke",
-      "Tradicionalni softver koristi eksplicitna pravila, AI/ML uči obrasce iz podataka",
-      "Nema razlike između ova dva pristupa",
-      "Tradicionalni softver je uvek značajno brži od AI/ML sistema"
+      "Tradicionalni softver je deterministički i ažurira se promenom kôda; AI/ML je probabilistički i poboljšava se ponovnim treniranjem na novim podacima",
+      "Oba pristupa su deterministička, ali AI/ML koristi veći broj pravila umesto podataka",
+      "Glavna razlika je u testiranju: tradicionalni softver zahteva statističku validaciju, dok se AI/ML testira pokrivanjem putanja kôda",
+      "Tradicionalni softver se pre svega poboljšava dodavanjem podataka, dok se AI/ML poboljšava dodavanjem pravila"
     ],
-    "correct": "Tradicionalni softver koristi eksplicitna pravila, AI/ML uči obrasce iz podataka"
+    "correct": "Tradicionalni softver je deterministički i ažurira se promenom kôda; AI/ML je probabilistički i poboljšava se ponovnim treniranjem na novim podacima"
   },
   {
-    "question": "Šta je algoritam u kontekstu mašinskog učenja?",
+    "question": "Koja opcija ispravno uparuje pojmove mašinskog učenja sa analogijom pravljenja torte?",
     "answers": [
-      "Finalni istrenirani sistem koji vrši predviđanja",
-      "Skup pravila ili instrukcija za rešavanje problema",
-      "Podaci korišćeni za treniranje",
-      "Izlaz sistema"
+      "Algoritam - Recept; Podaci - Sastojci; Model - Torta",
+      "Algoritam - Sastojci; Podaci - Recept; Model - Torta",
+      "Algoritam - Torta; Podaci - Sastojci; Model - Recept",
+      "Algoritam - Recept; Podaci - Torta; Model - Sastojci"
     ],
-    "correct": "Skup pravila ili instrukcija za rešavanje problema"
+    "correct": "Algoritam - Recept; Podaci - Sastojci; Model - Torta"
   },
   {
     "question": "Šta je model u mašinskom učenju?",
@@ -60,34 +60,34 @@
     "correct": "Rezultat treninga - naučeni obrasci"
   },
   {
-    "question": "Na šta se odnosi 'duboko' u dubokom učenju?",
+    "question": "Koja tvrdnja najtačnije objašnjava zašto se mreža naziva 'dubokom' u dubokom učenju?",
     "answers": [
-      "Dubinu analize podataka i kompleksnost algoritama koji se koriste",
-      "Više slojeva obrade u neuronskim mrežama",
-      "Složenost problema koji se rešavaju",
-      "Količinu podataka potrebnih za treniranje"
+      "Više skrivenih slojeva u veštačkoj neuronskoj mreži",
+      "Više neurona unutar jednog skrivenog sloja",
+      "Veoma veliki broj parametara u modelu",
+      "Korišćenje ogromnih skupova podataka pri treningu"
     ],
-    "correct": "Više slojeva obrade u neuronskim mrežama"
+    "correct": "Više skrivenih slojeva u veštačkoj neuronskoj mreži"
   },
   {
-    "question": "Šta je faza treninga u AI sistemima?",
+    "question": "Koja izjava najbolje opisuje fazu treninga u AI sistemima?",
     "answers": [
-      "Kada AI primenjuje već naučene obrasce i pravila na potpuno nove i nepoznate situacije",
-      "Kada AI sistem uči obrasce iz velikih količina podataka",
-      "Kada korisnici direktno komuniciraju i interaguju sa AI sistemom",
-      "Kada se AI testira"
+      "Model uči obrasce iz velikih skupova podataka; postupak je skup i sprovodi se periodično.",
+      "Model primenjuje naučena pravila na nove ulaze u realnom vremenu i generiše odgovore.",
+      "Model se ocenjuje na zasebnom validacionom/test skupu koji nije korišćen tokom učenja.",
+      "Model tokom interakcije sa korisnikom menja parametre i u hodu uči bez dodatnog treninga."
     ],
-    "correct": "Kada AI sistem uči obrasce iz velikih količina podataka"
+    "correct": "Model uči obrasce iz velikih skupova podataka; postupak je skup i sprovodi se periodično."
   },
   {
-    "question": "Šta je faza zaključivanja (inference) u AI sistemima?",
+    "question": "U produkciji, servis prima nove zahteve i na osnovu već istreniranog modela vraća rezultat; postupak je brz i tipično ne uključuje dodatno obučavanje. Koja se faza AI procesa opisuje?",
     "answers": [
-      "Kada AI uči iz novih podataka i prilagođava svoje parametre",
-      "Kada se AI razvija i nadograđuje sa novim funkcionalnostima",
-      "Kada istrenirani AI primenjuje naučeno na nove situacije",
-      "Kada je AI inicijalizovan, ali još nije treniran"
+      "Trening: učenje parametara iz označenih podataka van produkcije.",
+      "Online učenje: kontinuirano prilagođavanje težina tokom rada sistema.",
+      "Zaključivanje (inference): primena istreniranog modela na nove ulaze.",
+      "Fino podešavanje: dodatno obučavanje modela na domenski specifičnim primerima."
     ],
-    "correct": "Kada istrenirani AI primenjuje naučeno na nove situacije"
+    "correct": "Zaključivanje (inference): primena istreniranog modela na nove ulaze."
   },
   {
     "question": "Koji tip AI je fokusiran na kreiranje novog sadržaja?",
@@ -100,14 +100,14 @@
     "correct": "Generativna AI"
   },
   {
-    "question": "Šta je primer generativne AI?",
+    "question": "Koji zadatak najbolje ilustruje ulogu 'kreatora' u podeli na generativnu i prediktivnu AI?",
     "answers": [
-      "Filteri za neželjenu poštu",
-      "Sistemi za kreditno bodovanje",
-      "ChatGPT",
-      "Detekcija prevara"
+      "Generisanje oznake sentimenta za seriju tvitova",
+      "Generisanje upozorenja na anomalne bankarske transakcije",
+      "Generisanje slike na osnovu tekstualnog opisa",
+      "Generisanje transkripta teksta sa fotografija (OCR)"
     ],
-    "correct": "ChatGPT"
+    "correct": "Generisanje slike na osnovu tekstualnog opisa"
   },
   {
     "question": "Šta znači NLP u kontekstu AI?",
@@ -150,22 +150,22 @@
     "correct": "Najnovija tačka u vremenu kada su podaci za treniranje AI modela ažurirani"
   },
   {
-    "question": "Šta znači 'GIGO' u kontekstu AI i podataka?",
+    "question": "Koja situacija najbolje ilustruje princip 'GIGO' (Garbage In, Garbage Out) u kontekstu AI?",
     "answers": [
-      "Dobri podaci, dobar izlaz (Good Input, Good Output)",
-      "Opšta inteligencija ide online",
-      "Đubre unutra, đubre napolje (Garbage In, Garbage Out)",
-      "Generisan ulaz, generisan izlaz"
+      "Model treniran na pristrasnim podacima o zapošljavanju nastavlja da favorizuje jednu grupu kandidata.",
+      "Jači GPU-ovi uklanjaju greške nastale lošim oznakama bez potrebe za novim treningom.",
+      "Veći kontekstni prozor omogućava modelu da ignoriše zastarele trening podatke i daje aktuelne odgovore.",
+      "Napredniji algoritam automatski kompenzuje nepotpune i nekonzistentne ulazne podatke."
     ],
-    "correct": "Đubre unutra, đubre napolje (Garbage In, Garbage Out)"
+    "correct": "Model treniran na pristrasnim podacima o zapošljavanju nastavlja da favorizuje jednu grupu kandidata."
   },
   {
-    "question": "Koji tip mašinskog učenja koristi označene primere?",
+    "question": "Imamo skup od 10.000 imejlova, svaki je ručno označen kao 'spam' ili 'nije spam'. Koji tip mašinskog učenja je najprikladniji za obučavanje filtra?",
     "answers": [
       "Nenadgledano učenje",
       "Nadgledano učenje",
       "Učenje putem nagrada",
-      "Transfer učenje"
+      "Duboko učenje"
     ],
     "correct": "Nadgledano učenje"
   },
@@ -180,14 +180,14 @@
     "correct": "Učenje putem nagrada (Reinforcement Learning)"
   },
   {
-    "question": "Šta je multimodalna AI?",
+    "question": "Šta najtačnije opisuje multimodalnu AI?",
     "answers": [
-      "AI koja obrađuje isključivo tekstualne podatke i generiše tekstualne odgovore",
-      "AI koja kombinuje više tipova ulaza kao što su tekst, slike i audio",
-      "AI koja radi paralelno na više računara",
-      "AI koja obrađuje više jezika, ali samo u tekstualnom obliku"
+      "AI koja istovremeno obrađuje i povezuje različite tipove podataka (npr. tekst i slike) kao ulaz/izlaz u istom zadatku",
+      "AI koja radi sa više jezika (prevođenje, sažimanje) i efikasnije održava kontekst u tekstualnim podacima",
+      "AI koja integriše više izvora istog tipa podataka (npr. više dokumenata ili dugački transkript) pomoću velikog kontekstnog prozora",
+      "AI koja kombinuje više specijalizovanih modela za različite zadatke nad istim tipom podataka (ensemble/multitask pristup)"
     ],
-    "correct": "AI koja kombinuje više tipova ulaza kao što su tekst, slike i audio"
+    "correct": "AI koja istovremeno obrađuje i povezuje različite tipove podataka (npr. tekst i slike) kao ulaz/izlaz u istom zadatku"
   },
   {
     "question": "Šta je token u kontekstu LLM-ova?",
@@ -200,34 +200,34 @@
     "correct": "Jedinica teksta (obično oko 0,75 reči)"
   },
   {
-    "question": "Zašto je kvalitet podataka važan za AI sisteme?",
+    "question": "Tim trenira medicinski AI model na delimično pogrešno označenim podacima koji pretežno potiču iz jedne populacione grupe. Koja tvrdnja najtačnije opisuje očekivane posledice?",
     "answers": [
-      "Čini sistem značajno bržim u procesiranju i generisanju odgovora",
-      "AI sistemi su dobri samo onoliko koliko su dobri podaci na kojima su trenirani",
-      "Smanjuje troškove hardvera",
-      "Sekundaran je jer modeli umeju da ispravljaju greške automatski"
+      "Pristrasne i netačne predikcije, posebno za nedovoljno zastupljene pacijente",
+      "Visoka tačnost na dominantnoj populaciji i pad na ostalim, dok su greške u oznakama zanemarljive",
+      "Greške u oznakama će se izgubiti jer su duboke mreže robusne na šum",
+      "'Naginjanje' ka jednoj populaciji smanjuje overfitting i poboljšava generalizaciju"
     ],
-    "correct": "AI sistemi su dobri samo onoliko koliko su dobri podaci na kojima su trenirani"
+    "correct": "Pristrasne i netačne predikcije, posebno za nedovoljno zastupljene pacijente"
   },
   {
-    "question": "Šta se može desiti kada se AI trenira na pristrasnim podacima?",
+    "question": "Model za selekciju kandidata treniran je na istorijskim podacima o zapošljavanju u kojima dominiraju muški kandidati. Šta je najverovatniji ishod ako se ništa dodatno ne preduzme?",
     "answers": [
-      "Sistem postaje podjednako tačan kroz sve grupe zbog regularizacije",
-      "Ništa značajno",
-      "AI može pojačati i zadržati te pristrasnosti",
-      "Sistem automatski ispravlja pristrasnost"
+      "Model će pojačati obrasce iz podataka i češće favorizovati muške profile.",
+      "Velika količina podataka sama razblažuje pristrasnost i izjednačava ishode po grupama.",
+      "Visoka prosečna tačnost znači da su performanse jednake za sve demografske grupe.",
+      "U fazi zaključivanja model automatski ispravlja pristrasnosti nastale tokom treninga."
     ],
-    "correct": "AI može pojačati i zadržati te pristrasnosti"
+    "correct": "Model će pojačati obrasce iz podataka i češće favorizovati muške profile."
   },
   {
-    "question": "Šta su 'halucinacije' u kontekstu AI?",
+    "question": "Model odgovara vrlo samouvereno: 'Prema studiji Petrović & Marković (2018) u Journal of Global AI Studies, 93% kompanija je već usvojilo AGI alate' i navodi DOI/link koji ne postoje. Nakon provere, ni časopis ni studija ne postoje, a brojke su izmišljene. Koji fenomen ovo NAJVEROVATNIJE prikazuje?",
     "answers": [
-      "Kada AI pogrešno interpretira slike koje su date na analizu",
-      "Kada model generiše uverljive ali netačne informacije",
-      "Kada sistem pada i prestaje da radi",
-      "Kada model navodi izvore koje zapravo nije koristio"
+      "Halucinacije modela - uverljivi, ali izmišljeni detalji (npr. nepostojeće reference)",
+      "Granična tačka znanja - model nema pristup novijim informacijama (posle određenog datuma)",
+      "Odbijanje zbog bezbednosnih pravila - namerno uskraćuje odgovor (etička ograničenja)",
+      "Ograničenje kontekstnog prozora - skraćuje ili zaboravlja raniji deo upita (trunciranje)"
     ],
-    "correct": "Kada model generiše uverljive ali netačne informacije"
+    "correct": "Halucinacije modela - uverljivi, ali izmišljeni detalji (npr. nepostojeće reference)"
   },
   {
     "question": "Koji tip AI je najbolji za klasifikaciju imejlova kao spam ili ne-spam?",
@@ -240,43 +240,43 @@
     "correct": "Prediktivna/diskriminativna AI"
   },
   {
-    "question": "Šta je kompjuterska vizija u AI?",
+    "question": "Koji opis najbolje obuhvata mogućnosti kompjuterske vizije?",
     "answers": [
-      "AI koja značajno poboljšava i koriguje ljudski vid kroz napredne algoritme",
-      "AI koja može da prepoznaje i generiše vizuelni sadržaj",
-      "AI tehnologija zasnovana na Virtualnoj Realnosti",
-      "AI koja prevodi slike isključivo u tekst"
+      "Primarno analiza slika i videa: detekcija, segmentacija, OCR.",
+      "Primarno generisanje: slike iz teksta i uređivanje fotografija.",
+      "Obuhvata i analizu i generisanje vizuelnog sadržaja.",
+      "Uranjajuće tehnologije: VR/AR i interakcija u 3D okruženju."
     ],
-    "correct": "AI koja može da prepoznaje i generiše vizuelni sadržaj"
+    "correct": "Obuhvata i analizu i generisanje vizuelnog sadržaja."
   },
   {
-    "question": "Šta najbolje opisuje AGI (opštu veštačku inteligenciju)?",
+    "question": "Koja izjava najtačnije opisuje AGI (opštu veštačku inteligenciju) po opsegu sposobnosti i trenutnom statusu?",
     "answers": [
-      "Trenutno dostupna i integrisana u savremene pametne telefone i druge uređaje",
-      "Inteligencija na ljudskom nivou kroz sve domene koja još ne postoji",
-      "Specijalizovana AI za video igre",
-      "Dostupna samo u istraživačkim laboratorijama"
+      "Uska inteligencija za specifične zadatke; široko dostupna danas.",
+      "Inteligencija na ljudskom nivou u različitim domenima, uz prenos znanja; još ne postoji.",
+      "Inteligencija koja nadmašuje ljudsku u svim oblastima; zasad samo teorijska.",
+      "Može da uči i primeni znanje u više domena; prisutna u ograničenim industrijskim sistemima."
     ],
-    "correct": "Inteligencija na ljudskom nivou kroz sve domene koja još ne postoji"
+    "correct": "Inteligencija na ljudskom nivou u različitim domenima, uz prenos znanja; još ne postoji."
   },
   {
-    "question": "Šta čini duboko učenje drugačijim od tradicionalnog mašinskog učenja?",
+    "question": "Koja izjava najbolje opisuje šta razlikuje duboko učenje od tradicionalnog mašinskog učenja?",
     "answers": [
-      "Koristi značajno manje podataka i resursa za postizanje istih rezultata",
-      "Koristi veštačke neuronske mreže sa više slojeva",
-      "Uvek je brže i efikasnije",
-      "Trenira samo poslednji sloj dok ostali ostaju fiksni"
+      "Koristi veštačke neuronske mreže sa više slojeva i uči hijerarhijske reprezentacije iz podataka.",
+      "Oslanja se pre svega na ručno dizajnirane karakteristike i eksplicitna pravila pre treniranja.",
+      "Pretežno je namenjeno strukturiranim tabelarnim podacima, a retko se primenjuje na slike ili tekst.",
+      "Glavna praksa je treniranje samo završnog sloja, dok ostatak mreže ostaje zamrznut."
     ],
-    "correct": "Koristi veštačke neuronske mreže sa više slojeva"
+    "correct": "Koristi veštačke neuronske mreže sa više slojeva i uči hijerarhijske reprezentacije iz podataka."
   },
   {
-    "question": "Zašto je važno znati ograničenja kontekstnog prozora kod korišćenja AI?",
+    "question": "Koristite LLM sa kontekstnim prozorom od 8.000 tokena da sumirate dokument od ~60.000 reči i nastavite razgovor kroz više iteracija. Koja je najverovatnija praktična posledica ovog ograničenja?",
     "answers": [
-      "Direktno utiče na rezoluciju ekrana i kvalitet vizuelnog prikaza rezultata",
-      "Duži dokumenti mogu zahtevati podelu i raniji delovi razgovora mogu biti 'zaboravljeni'",
-      "Određuje brzinu i efikasnost obrade podataka",
-      "Određuje koliko slika model može trajno da zapamti"
+      "Moraćete da podelite dokument u delove i stariji kontekst može biti odsečen tokom razgovora",
+      "Ograničenje prozora utiče prvenstveno na brzinu obrade GPU-a, ali ne menja sadržaj koji model vidi",
+      "Prozor određuje koliko tokena model može da nauči tokom treninga, pa fino podešavanje automatski uklanja potrebu za segmentacijom",
+      "Ograničava zbir dužine unosa i odgovora, ali ne utiče na gubitak ranijeg konteksta tokom sesije"
     ],
-    "correct": "Duži dokumenti mogu zahtevati podelu i raniji delovi razgovora mogu biti 'zaboravljeni'"
+    "correct": "Moraćete da podelite dokument u delove i stariji kontekst može biti odsečen tokom razgovora"
   }
 ]
