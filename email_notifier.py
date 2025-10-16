@@ -12,7 +12,9 @@ import logging
 import os
 import random
 import smtplib
+from smtplib import SMTPException, SMTPServerDisconnected, SMTPAuthenticationError
 import sys
+import time
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from pathlib import Path
@@ -227,8 +229,17 @@ HLV 💚 YOU \\o/ :)
             logger.info("Email sent successfully to %s", recipient)
             return True
 
-        except RuntimeError as e:
-            logger.error("Failed to send email to %s: %s", recipient, e)
+        except SMTPServerDisconnected as e:
+            logger.error("SMTP server disconnected while sending to %s: %s. This may be due to rate limiting or connection issues.", recipient, e)
+            return False
+        except SMTPAuthenticationError as e:
+            logger.error("SMTP authentication failed while sending to %s: %s", recipient, e)
+            return False
+        except SMTPException as e:
+            logger.error("SMTP error while sending to %s: %s", recipient, e)
+            return False
+        except Exception as e:
+            logger.error("Unexpected error while sending to %s: %s", recipient, e)
             return False
 
     def send_batch_emails(self, en_urls_file: str, sr_urls_file: str, recipients_file: str) -> dict:
@@ -254,8 +265,9 @@ HLV 💚 YOU \\o/ :)
         logger.info("Available: %d English URLs, %d Serbian URLs", len(en_urls), len(sr_urls))
 
         results = {"success": 0, "failed": 0, "errors": []}
+        consecutive_failures = 0
 
-        for recipient in recipients:
+        for i, recipient in enumerate(recipients):
             # Select random URLs for this recipient
             en_url = random.choice(en_urls)
             sr_url = random.choice(sr_urls)
@@ -264,9 +276,24 @@ HLV 💚 YOU \\o/ :)
 
             if self.send_email(recipient, en_url, sr_url):
                 results["success"] += 1
+                consecutive_failures = 0
             else:
                 results["failed"] += 1
+                consecutive_failures += 1
                 results["errors"].append(f"Failed to send to {recipient}")
+
+                # If we have multiple consecutive failures, it might be rate limiting
+                if consecutive_failures >= 3:
+                    logger.warning(
+                        "Multiple consecutive failures detected (%d). This may indicate rate limiting. "
+                        "Consider adding longer delays between emails or splitting the batch.",
+                        consecutive_failures
+                    )
+
+            # Add a small delay between emails to avoid rate limiting
+            # Skip delay after the last email
+            if i < len(recipients) - 1:
+                time.sleep(1)  # 1 second delay between emails
 
         return results
 

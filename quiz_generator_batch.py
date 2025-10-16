@@ -26,7 +26,7 @@ def generate_quiz_variants(
     language: str = "ENG",
     num_variants: int = 10,
     output_dir: str = "/tmp",
-    results_sheet: str = "1g9A2x0H_qP4MUz3pEWi-kgH3CWftx4CmcAkEgQ2FKX8"
+    results_sheet: str = "1JQAyIR4Y27GlwSJkO8lpwjZuKMvXpmEEwG3MtcUn7cE"
     ) -> list:
     """
     Generate multiple quiz variants for the specified language
@@ -146,7 +146,7 @@ def main():
     parser.add_argument(
         '--results-sheet',
         '-r',
-        default='1g9A2x0H_qP4MUz3pEWi-kgH3CWftx4CmcAkEgQ2FKX8',
+        default='1JQAyIR4Y27GlwSJkO8lpwjZuKMvXpmEEwG3MtcUn7cE',
         help='Google Sheets document ID to store results'
     )
 

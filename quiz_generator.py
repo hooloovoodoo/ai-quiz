@@ -24,7 +24,7 @@ class QuestionGenerator:
 
     def __init__(self,
                  language: str = "ENG",
-                 results_sheet: str = "1g9A2x0H_qP4MUz3pEWi-kgH3CWftx4CmcAkEgQ2FKX8"):
+                 results_sheet: str = "1JQAyIR4Y27GlwSJkO8lpwjZuKMvXpmEEwG3MtcUn7cE"):
         """
         Initialize the quiz generator
 
@@ -64,7 +64,7 @@ class QuestionGenerator:
 
         return [
             {'path': f'{base_path}/M1/m1.json', 'count': 7},  # AI Fundamentals
-            {'path': f'{base_path}/M2/m2.json', 'count': 9},  # AI Ethics & Bias
+            {'path': f'{base_path}/M2/m2.json', 'count': 11},  # AI Ethics & Bias
             {'path': f'{base_path}/M3/m3.json', 'count': 7}   # AI Applications
         ]
 
@@ -256,7 +256,7 @@ class QuestionGenerator:
             ValueError: If requested count exceeds available questions
         """
         if count is None:
-            count = 23  # Total questions: 7 + 9 + 7
+            count = 25  # Total questions: 7 + 11 + 7
 
         if count > len(questions):
             raise ValueError(f"Requested {count} questions but only {len(questions)} available")
@@ -284,7 +284,7 @@ class QuestionGenerator:
  * Creates an AI Knowledge Quiz with {len(questions)} questions
  * - Autograded multiple choice questions with {self.points_per_question} point(s) each
  * - Immediate feedback showing correct answers and score
- * - Email notification with PASS/FAIL result (70% threshold)
+ * - Email notification with PASS/FAIL result (80% threshold)
  * - Centralized response collection in Google Sheets: {self.results_sheet}
  */
 function createRandomAIQuiz() {{
@@ -356,13 +356,13 @@ function createRandomAIQuiz() {{
     .create();
 
   const totalPoints = selectedQuestions.length * {self.points_per_question};
-  const passingScore = Math.ceil(totalPoints * 0.7);
+  const passingScore = Math.ceil(totalPoints * 0.8);
 
   Logger.log('=== QUIZ CREATED SUCCESSFULLY ===');
   Logger.log(`Questions: ${{selectedQuestions.length}}`);
   Logger.log(`Points per question: {self.points_per_question}`);
   Logger.log(`Total possible points: ${{totalPoints}}`);
-  Logger.log(`Passing score (70%): ${{passingScore}} points`);
+  Logger.log(`Passing score (80%): ${{passingScore}} points`);
   Logger.log('');
   Logger.log('Form URLs:');
   Logger.log('Edit form: ' + form.getEditUrl());
@@ -393,7 +393,7 @@ function shuffleArray(array) {{
 
 /**
  * On submit: compute score by comparing responses to marked correct choices
- * for all Multiple Choice items, then email PASS/FAIL at 70%.
+ * for all Multiple Choice items, then email PASS/FAIL at 80%.
  */
 function onFormSubmit(e) {{
   const form = e.source;
@@ -423,7 +423,7 @@ function onFormSubmit(e) {{
   }});
 
   const pct = totalPoints > 0 ? (earnedPoints / totalPoints) * 100 : 0;
-  const passed = pct >= 70;
+  const passed = pct >= 80;
 
   const subject = `AI Citizen: ${{Math.round(pct)}}% — ${{passed ? 'PASS ✅' : 'FAIL ❌'}}`;
 
